@@ -1,0 +1,20 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %title= yield(:title) || t('title')
+    %meta{:name=>'viewport', :content=>'width=device-height'}
+    %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
+    %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
+    = javascript_include_tag "jquery", 'application', :cache => false    
+    = stylesheet_link_tag 'default', :media => 'screen, projection', :cache => false
+  %body
+    %section#eventstreams
+      %header
+        %h3
+          =link_to "Es", root_path
+        %nav#main
+          %ul
+        = render :partial => 'layouts/flashes'
+      %section.main
+        .content
+          = yield
