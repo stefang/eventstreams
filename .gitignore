@@ -1,0 +1,8 @@
+.DS_Store
+log/*.log
+debug.log
+tmp/
+db/*.sqlite3
+public/stylesheets/*.css
+log/
+.bundle
