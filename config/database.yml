@@ -10,7 +10,7 @@ edge:
   adapter: mysql
   database: eventstreams_edge
   username: root
-  password: 
+  password: mrsafe
   pool: 5
   host: 127.0.0.1
 
