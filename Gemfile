@@ -6,7 +6,11 @@ gem 'rails',                  '2.3.8'
 gem 'mysql'
 gem 'haml',                   '3.0.12'
 gem 'thoughtbot-clearance',   '0.6.9',   :require => 'clearance'
-gem 'BlueCloth',              :require => 'bluecloth'
+
+group :development do
+  gem 'vlad' 
+  gem 'vlad-git',             '2.0.0'
+end
 
 group :test, :cucumber do
   gem 'sqlite3-ruby',         '1.2.5'
