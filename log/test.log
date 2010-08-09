@@ -1,0 +1,10 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing StaticPagesController#front (for 0.0.0.0 at 2010-08-09 11:46:15) [GET]
+Rendering template within layouts/default
+Rendering static_pages/front
+Rendered layouts/_flashes (1.4ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://test.host/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m

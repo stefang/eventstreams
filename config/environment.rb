@@ -40,4 +40,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
+DO_NOT_REPLY = "donotreply@example.com"
+
 Haml::Template.options[:format] = :html5

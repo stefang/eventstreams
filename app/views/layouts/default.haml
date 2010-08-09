@@ -14,6 +14,11 @@
           =link_to "Es", root_path
         %nav#main
           %ul
+            -if signed_in?
+              %li=link_to t('authentication.sign_out'), sign_out_path
+            -else
+              %li=link_to t('authentication.sign_up'), new_user_path
+              %li=link_to t('authentication.sign_in'), new_session_path
         = render :partial => 'layouts/flashes'
       %section.main
         .content
