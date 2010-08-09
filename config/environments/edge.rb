@@ -28,3 +28,4 @@ config.action_view.cache_template_loading            = true
 # config.threadsafe!
 
 HOST = "eventstreams.triplegeek.com"
+DO_NOT_REPLY = "Eventstreams Edge <donotreply@eventstreams.triplegeek.com>"
