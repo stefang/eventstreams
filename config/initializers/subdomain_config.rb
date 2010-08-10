@@ -1,1 +1,1 @@
-SubdomainFu.tld_sizes = {:development => 1, :test => 0, :production => 1}
+SubdomainFu.tld_sizes = {:development => 1, :edge => 2, :test => 0, :production => 1}
