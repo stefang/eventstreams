@@ -6,6 +6,7 @@ gem 'rails',                  '2.3.8'
 gem 'mysql'
 gem 'haml',                   '3.0.12'
 gem 'thoughtbot-clearance',   '0.6.9',   :require => 'clearance'
+gem 'subdomain-fu'
 
 group :development do
   gem 'vlad' 

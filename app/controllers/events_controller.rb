@@ -7,7 +7,8 @@ class EventsController < ApplicationController
   end
   
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by_subdomain(current_subdomain)
+    render :layout => 'event'
   end
   
   def new
@@ -19,7 +20,7 @@ class EventsController < ApplicationController
     @event = current_user.owned_events.new(params[:event])
     if @event.save
       flash[:notice] = "Successfully created event."
-      redirect_to @event
+      redirect_to current_user
     else
       render :action => 'new'
     end

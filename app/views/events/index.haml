@@ -1,20 +1,6 @@
 - title "Events"
 
-%table
-  %tr
-    %th Title
-    %th Year
-    %th Start date
-    %th End date
-  - for event in @events
-    %tr
-      %td= h event.title
-      %td= h event.year
-      %td= h event.start_date
-      %td= h event.end_date
-      %td= link_to 'Show', event
-      - if current_user && is_owner?(event)  
-        %td= link_to 'Edit', edit_user_event_path(current_user, event)
-        %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+%table.events
+  =render @events
 - if current_user  
   %p= link_to "New Event", new_user_event_path(current_user)
