@@ -8,13 +8,13 @@
     = javascript_include_tag "jquery", 'application', :cache => false    
     = stylesheet_link_tag 'default', :media => 'screen, projection', :cache => false
   %body
-    %section#eventstreams
+    %section#eventstreams_admin
       %header
         %h3
           =link_to "Es", root_path
+          Admin Pages
         %nav#main
           %ul
-            %li=link_to "All Events", events_path
             -if signed_in?
               %li=link_to "New Event", new_user_event_path(current_user)
               %li=link_to t('profile.link'), user_path(current_user)

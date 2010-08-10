@@ -1,0 +1,20 @@
+- form_for [current_user, @event] do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :year
+    %br
+    = f.text_field :year
+  %p
+    = f.label :start_date
+    %br
+    = f.date_select :start_date
+  %p
+    = f.label :end_date
+    %br
+    = f.date_select :end_date
+  %p
+    = f.submit

@@ -10,12 +10,14 @@ gem 'thoughtbot-clearance',   '0.6.9',   :require => 'clearance'
 group :development do
   gem 'vlad' 
   gem 'vlad-git',             '2.0.0'
+  gem 'nifty-generators'
 end
 
 group :test, :cucumber do
   gem 'sqlite3-ruby',         '1.2.5'
   gem 'factory_girl'
   gem 'shoulda',              '2.10.3'
+  gem 'mocha'
 end
 
 group :test do

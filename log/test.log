@@ -632,3 +632,150 @@ Rendering static_pages/front
 Rendered layouts/_flashes (0.2ms)
 Completed in 4ms (View: 3, DB: 0) | 200 OK [http://www.example.com/]
   [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing EventsController#create (for 0.0.0.0 at 2010-08-10 20:23:38) [POST]
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 5) | 302 Found [http://test.host/events]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing EventsController#create (for 0.0.0.0 at 2010-08-10 20:23:38) [POST]
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/events]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM `events` LIMIT 1[0m
+
+
+Processing EventsController#destroy (for 0.0.0.0 at 2010-08-10 20:23:38) [DELETE]
+  Parameters: {"id"=>#<Event id: 298486374, title: "MyString", year: 1, start_date: "2010-08-10", end_date: "2010-08-10", created_at: "2010-08-10 19:23:38", updated_at: "2010-08-10 19:23:38", user_id: nil>}
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/events/298486374]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM `events` LIMIT 1[0m
+
+
+Processing EventsController#edit (for 0.0.0.0 at 2010-08-10 20:23:38) [GET]
+  Parameters: {"id"=>#<Event id: 298486374, title: "MyString", year: 1, start_date: "2010-08-10", end_date: "2010-08-10", created_at: "2010-08-10 19:23:38", updated_at: "2010-08-10 19:23:38", user_id: nil>}
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/events/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing EventsController#index (for 0.0.0.0 at 2010-08-10 20:23:38) [GET]
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM `events` [0m
+Rendering template within layouts/default
+Rendering events/index
+Rendered layouts/_flashes (0.8ms)
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://test.host/events]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing EventsController#new (for 0.0.0.0 at 2010-08-10 20:23:38) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/events/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM `events` LIMIT 1[0m
+
+
+Processing EventsController#show (for 0.0.0.0 at 2010-08-10 20:23:38) [GET]
+  Parameters: {"id"=>#<Event id: 298486374, title: "MyString", year: 1, start_date: "2010-08-10", end_date: "2010-08-10", created_at: "2010-08-10 19:23:38", updated_at: "2010-08-10 19:23:38", user_id: nil>}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 298486374) [0m
+Rendering template within layouts/default
+Rendering events/show
+Rendered layouts/_flashes (0.1ms)
+Completed in 5ms (View: 5, DB: 1) | 200 OK [http://test.host/events/298486374]
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM `events` LIMIT 1[0m
+
+
+Processing EventsController#update (for 0.0.0.0 at 2010-08-10 20:23:38) [PUT]
+  Parameters: {"id"=>#<Event id: 298486374, title: "MyString", year: 1, start_date: "2010-08-10", end_date: "2010-08-10", created_at: "2010-08-10 19:23:38", updated_at: "2010-08-10 19:23:38", user_id: nil>}
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 1) | 302 Found [http://test.host/events/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM `events` LIMIT 1[0m
+
+
+Processing EventsController#update (for 0.0.0.0 at 2010-08-10 20:23:38) [PUT]
+  Parameters: {"id"=>#<Event id: 298486374, title: "MyString", year: 1, start_date: "2010-08-10", end_date: "2010-08-10", created_at: "2010-08-10 19:23:38", updated_at: "2010-08-10 19:23:38", user_id: nil>}
+Redirected to http://test.host/session/new
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/events/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing StaticPagesController#front (for 0.0.0.0 at 2010-08-10 20:23:38) [GET]
+Rendering template within layouts/default
+Rendering static_pages/front
+Rendered layouts/_flashes (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing EventsController#index (for 0.0.0.0 at 2010-08-10 20:24:53) [GET]
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM `events` [0m
+Rendering template within layouts/default
+Rendering events/index
+Rendered layouts/_flashes (0.8ms)
+Completed in 14ms (View: 12, DB: 6) | 200 OK [http://test.host/events]
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mEvent Load (0.2ms)[0m   [0mSELECT * FROM `events` LIMIT 1[0m
+
+
+Processing EventsController#show (for 0.0.0.0 at 2010-08-10 20:24:53) [GET]
+  Parameters: {"id"=>#<Event id: 298486374, title: "MyString", year: 1, start_date: "2010-08-10", end_date: "2010-08-10", created_at: "2010-08-10 19:24:53", updated_at: "2010-08-10 19:24:53", user_id: nil>}
+  [4;36;1mEvent Load (0.2ms)[0m   [0;1mSELECT * FROM `events` WHERE (`events`.`id` = 298486374) [0m
+Rendering template within layouts/default
+Rendering events/show
+Rendered layouts/_flashes (0.1ms)
+Completed in 5ms (View: 5, DB: 1) | 200 OK [http://test.host/events/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+
+
+Processing StaticPagesController#front (for 0.0.0.0 at 2010-08-10 20:24:53) [GET]
+Rendering template within layouts/default
+Rendering static_pages/front
+Rendered layouts/_flashes (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/]
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+
+
+Processing StaticPagesController#front (for 0.0.0.0 at 2010-08-10 21:23:34) [GET]
+Rendering template within layouts/default
+Rendering static_pages/front
+Rendered layouts/_flashes (0.8ms)
+Completed in 9ms (View: 8, DB: 5) | 200 OK [http://test.host/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m

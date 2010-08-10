@@ -1,0 +1,22 @@
+- title "Event"
+
+%p
+  %strong Title:
+  =h @event.title
+%p
+  %strong Year:
+  =h @event.year
+%p
+  %strong Start Date:
+  =h @event.start_date
+%p
+  %strong End Date:
+  =h @event.end_date
+  
+- if current_user && is_owner?(@event) 
+  %p
+    = link_to "Edit", edit_user_event_path(current_user, @event)
+    |
+    = link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete
+    |
+    = link_to "View All", events_path
