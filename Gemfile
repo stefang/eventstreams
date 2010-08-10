@@ -15,10 +15,10 @@ end
 group :test, :cucumber do
   gem 'sqlite3-ruby',         '1.2.5'
   gem 'factory_girl'
+  gem 'shoulda',              '2.10.3'
 end
 
 group :test do
-  gem 'shoulda',              '2.10.3'
 end
 
 group :cucumber do

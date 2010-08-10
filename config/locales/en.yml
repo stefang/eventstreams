@@ -7,3 +7,21 @@ en:
     sign_up: "Sign up"
     sign_in: "Sign in"
     sign_out: "Sign out"
+    sessions:
+      new:
+        header: Sign In
+        message: 'Not yet a member?'
+        form:
+          username: 'Email Address'
+          password: 'Password'
+          remember: 'Remember me?'
+          submit:   'Sign In'
+          forgot_password: 'Forgotten your password?'
+    user:
+      new:
+        header: 'Sign Up'
+        existing_account: 'Already got an account?'
+        form:
+          submit: 'Create your account'
+  profile:
+    link: 'Your Profile'

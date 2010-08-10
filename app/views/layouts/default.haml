@@ -17,6 +17,7 @@
             %li 
               = RAILS_ENV
             -if signed_in?
+              %li=link_to t('profile.link'), user_path(current_user)
               %li=link_to t('authentication.sign_out'), sign_out_path
             -else
               %li=link_to t('authentication.sign_up'), new_user_path

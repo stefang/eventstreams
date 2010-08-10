@@ -1,0 +1,24 @@
+#signup.account_form.form_wrapper
+  %h3
+    = t 'authentication.user.new.header'
+
+    %span.account_link
+      = t 'authentication.user.new.existing_account'
+      =link_to t('authentication.sign_in'), new_session_path
+
+  -form_for @user, :html => { :multipart => true }  do |form|
+    = hidden_field_tag :invite_code, params[:invite_code]
+    %ol
+      = form.error_messages
+      %li
+        = form.label :email
+        = form.text_field :email
+      %li
+        = form.label :password
+        = form.password_field :password
+      %li
+        = form.label :password_confirmation, "Confirm password"
+        = form.password_field :password_confirmation
+      %li
+        %button.erButton{:type => 'submit'} 
+          =t 'authentication.user.new.form.submit'
