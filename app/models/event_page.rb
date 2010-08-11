@@ -1,5 +1,6 @@
 class EventPage < ActiveRecord::Base
-  attr_accessible :title, :content, :event_id, :published
+  has_friendly_id :title, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true, :scope => :event
+  
   belongs_to :event
 
   validates_presence_of :title, :on => :create

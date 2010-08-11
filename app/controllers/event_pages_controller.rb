@@ -6,7 +6,7 @@ class EventPagesController < ApplicationController
   
   def show
     @event = Event.find_by_subdomain(current_subdomain)
-    @event_page = EventPage.find(params[:id])
+    @event_page = @event.owned_event_pages.find(params[:id])
     render :layout => 'event'
   end
   
@@ -29,7 +29,7 @@ class EventPagesController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
-    @event_page = EventPage.find(params[:id])
+    @event_page = @event.owned_event_pages.find(params[:id])
   end
   
   def update

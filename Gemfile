@@ -7,6 +7,7 @@ gem 'mysql'
 gem 'haml',                   '3.0.12'
 gem 'thoughtbot-clearance',   '0.6.9',   :require => 'clearance'
 gem 'subdomain-fu'
+gem "friendly_id",            "~> 3.1"
 
 group :development do
   gem 'vlad' 
