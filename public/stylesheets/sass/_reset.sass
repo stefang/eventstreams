@@ -1,0 +1,139 @@
+/* Reset */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+  :margin 0
+  :padding 0
+  :border 0
+  :vertical-align baseline
+  :font
+    :weight inherit
+    :style inherit
+    :family inherit
+body 
+  :line-height 18px
+table 
+  :border
+    :collapse collapse
+    :spacing 0
+caption, th, td 
+  :text-align left
+  :font-weight normal
+table, td, th 
+  :vertical-align middle
+blockquote, q 
+  :quotes "\201C" "\201D"
+blockquote:before, q:before 
+  :content open-quote
+blockquote:after, q:after 
+  :content close-quote
+a, button:focus, input, textarea 
+  :outline none
+a img
+  :border none
+strong 
+  :font-weight bold
+em 
+  :font-style italic
+span.reset
+  :display block
+  :height 1px
+  :margin-top -1px
+  :clear both
+input[type=hidden]
+  :display none
+input[disabled='disabled']
+  :color #ccc
+  :background none
+form 
+  :overflow visible
+ul
+  :list-style none
+  
+/* Basic element styles */
+
+a
+  :text-decoration none
+blockquote 
+  :margin 1.5em
+  :font-style italic
+strong
+  :font-weight bold
+em, dfn 
+  :font-style italic
+dfn
+  :font-weight bold
+sup, sub 
+  :line-height 0
+abbr, acronym 
+  :border-bottom 0
+address
+  :margin 0 0 1.5em
+  :font-style italic
+del
+  :text-decoration line-through
+pre, code
+  :display block
+  :background white
+  :padding 9px
+pre, code, tt
+  :font 1em 'andale mono', 'lucida console', monospace
+  :line-height 1.5
+
+/* Base typography */
+
+body
+  :line-height 18px
+  :font
+    :size 13px
+    :family Helvetica, Arial, sans-serif
+  h2, h3, h4, h5, h6
+    :line-height 18px
+    :font
+      :family Helvetica, Arial, Verdana, sans-serif
+      :weight bold
+  h1 
+    :font
+      :size 36px
+      :weight normal
+    :line-height 1
+    :margin-bottom 0px
+  h2 
+    :font-size 24px
+    :line-height 22px
+    :margin-bottom 24px
+  h3 
+    :font-size 18px
+    :line-height 18px
+    :margin-bottom 18px
+  h4 
+    :font-size 14px
+    :line-height 18px
+  h5 
+    :font
+      :size 13px
+      :weight bold
+    :margin-bottom 18px
+  h6
+    :font
+      :size 1em
+      :weight bold
+  h1 img, h2 img, h3 img, h4 img, h5 img, h6 img 
+    :margin 0
+  p 
+    :font-size 13px
+    :line-height 18px
+    :margin 0 0 18px
+
+/* HTML5 Defaults */
+
+section, article, header, footer, nav
+  :display block
+  
+/* Fixing Some RAILS MADNESS!!! *.
+
+div.fieldWithErrors
+  :display inline
+  :padding 0
+  :margin 0
+  label
+    :color #b00

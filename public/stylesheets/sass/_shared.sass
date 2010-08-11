@@ -1,0 +1,33 @@
+@import 'mixins'
+
+.es
+  :margin 36px
+  nav#main
+    :background #ccc
+    :padding 9px
+    :float left
+    :margin-bottom 18px
+    ul
+      :float left
+      :list-style none
+      li
+        :float left
+        a
+          :display block
+          :padding 5px 10px
+          :background #555
+          :margin-right 6px
+          :text-decoration none
+          :font-weight bold
+          :color #eee
+          +rounded(6px)
+        a:hover
+          :background #333
+          
+  section.main
+    :clear both
+    table
+      tr
+        td
+          :padding 6px
+          :border-bottom 1px solid #ddd

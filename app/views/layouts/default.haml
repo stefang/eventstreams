@@ -6,12 +6,12 @@
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     = javascript_include_tag "jquery", 'application', :cache => false    
-    = stylesheet_link_tag 'default', :media => 'screen, projection', :cache => false
+    = stylesheet_link_tag 'eventstreams', :media => 'screen, projection', :cache => false
   %body
-    %section#eventstreams
+    %section#eventstreams.es
       %header
-        %h3
-          =link_to "Es", root_path
+        %h3#site_logo
+          =link_to "Eventstreams", root_path
         %nav#main
           %ul
             %li=link_to "All Events", events_path
