@@ -1,22 +1,36 @@
-- title "Event"
-
-%p
-  %strong Title:
-  =h @event.title
-%p
-  %strong Year:
-  =h @event.year
-%p
-  %strong Start Date:
-  =h @event.start_date
-%p
-  %strong End Date:
-  =h @event.end_date
-  
-- if current_user && is_owner?(@event) 
+- unless current_subdomain.blank?
+  - title "Event"
   %p
-    = link_to "Edit", edit_user_event_path(current_user, @event)
-    |
-    = link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete
-    |
-    = link_to "View All", events_path
+    %strong Title:
+    =h @event.title
+  %p
+    %strong Year:
+    =h @event.year
+  %p
+    %strong Start Date:
+    =h @event.start_date
+  %p
+    %strong End Date:
+    =h @event.end_date
+    
+-else
+  - title "Event Admin"
+  %p
+    %strong Title:
+    =h @event.title
+  %p
+    %strong Year:
+    =h @event.year
+  %p
+    %strong Start Date:
+    =h @event.start_date
+  %p
+    %strong End Date:
+    =h @event.end_date
+  - if current_user && is_owner?(@event) 
+    %p
+      = link_to "Edit", edit_user_event_path(current_user, @event)
+    %p
+      = link_to "Your Events", user_path(current_user)
+    %p
+      = link_to "Manage Event Pages", user_event_event_pages_path(current_user, @event)

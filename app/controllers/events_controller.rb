@@ -7,13 +7,16 @@ class EventsController < ApplicationController
   end
   
   def show
-    @event = Event.find_by_subdomain(current_subdomain)
-    render :layout => 'event'
+    if current_subdomain.blank?
+      @event = get_owned_event
+    else
+      @event = Event.find_by_subdomain(current_subdomain)
+      render :layout => 'event'
+    end
   end
   
   def new
     @event = current_user.owned_events.new
-    render :layout => 'admin'
   end
   
   def create
@@ -28,7 +31,6 @@ class EventsController < ApplicationController
   
   def edit
     @event = Event.find(params[:id])
-    render :layout => 'admin'
   end
   
   def update

@@ -14,6 +14,10 @@
           =link_to "Es", root_path
           Event Page
         %nav#main
+          %ul
+            - unless @event.owned_event_pages.blank?
+              - @event.owned_event_pages.each do |e|
+                %li=link_to e.title, event_page_path(e)
         = render :partial => 'layouts/flashes'
       %section.main
         .content
