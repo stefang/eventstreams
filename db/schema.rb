@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100810231333) do
+ActiveRecord::Schema.define(:version => 20100811013133) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20100810231333) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.integer  "year"
     t.date     "start_date"
     t.date     "end_date"
     t.datetime "created_at"
