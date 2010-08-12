@@ -15,7 +15,8 @@ class TracksController < ApplicationController
   
   def show
     @event = Event.find_by_subdomain(current_subdomain)
-    @track = Track.find(params[:id])
+    @track = @event.owned_tracks.find(params[:id])
+    render :layout => 'event'
   end
   
   def new

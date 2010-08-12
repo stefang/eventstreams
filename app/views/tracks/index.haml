@@ -7,7 +7,7 @@
       %th Description
     - for track in @tracks
       %tr
-        %td= h track.title
+        %td=link_to track.title, track_path(track)
         %td= h track.description
 - else
   %table

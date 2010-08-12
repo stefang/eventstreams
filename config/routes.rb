@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   # Event Show Routes
 
   map.event_root '', :controller => 'events', :action => 'show', :conditions => { :subdomain => /.+/ }
-  map.resources :tracks, :only => [:index], :conditions => { :subdomain => /.+/ }
+  map.resources :tracks, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
 
   map.event_page '/:id', :controller => 'event_pages', :action=>'show', :conditions => { :subdomain => /.+/ }
 
