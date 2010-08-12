@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :hashtags
+
   # Event Show Routes
 
   map.event_root '', :controller => 'events', :action => 'show', :conditions => { :subdomain => /.+/ }

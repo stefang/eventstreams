@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :subdomain, :year, :start_date, :end_date
+  attr_accessible :title, :subdomain, :year, :start_date, :end_date, :hashtag
   belongs_to :user
   validates_presence_of :title, :on => :create
   validates_presence_of :subdomain, :on => :create

@@ -906,3 +906,19 @@ Migrating to AddCachedSlugsToEventPages (20100811015353)
   [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `users`[0m
   [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `users`[0m
+** SubdomainFu: initialized properly
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+** SubdomainFu: initialized properly
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+
+
+Processing StaticPagesController#front (for 0.0.0.0 at 2010-08-12 18:52:06) [GET]
+  Parameters: {"action"=>"front", "controller"=>"static_pages"}
+Rendering template within layouts/default
+Rendering static_pages/front
+Rendered layouts/_flashes (1.9ms)
+Completed in 21ms (View: 17, DB: 46) | 200 OK [http://test.host/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m

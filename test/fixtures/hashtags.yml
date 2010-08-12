@@ -1,0 +1,7 @@
+one:
+  tag: MyString
+  event_id: 1
+
+two:
+  tag: MyString
+  event_id: 1
