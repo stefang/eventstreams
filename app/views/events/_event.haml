@@ -3,6 +3,7 @@
   %td= h event.start_date
   %td= h event.end_date
   %td= link_to 'Show', event_root_url(:subdomain => event.subdomain)
-  %td= link_to 'Content Admin', user_event_path(current_user, event)
-  %td= link_to 'Edit', edit_user_event_path(current_user, event)
-  %td= link_to 'Destroy', user_event_path(current_user, event), :confirm => 'Are you sure?', :method => :delete
+  - if current_user && is_owner?(event)
+    %td= link_to 'Content Admin', user_event_path(current_user, event)
+    %td= link_to 'Edit', edit_user_event_path(current_user, event)
+    %td= link_to 'Destroy', user_event_path(current_user, event), :confirm => 'Are you sure?', :method => :delete
