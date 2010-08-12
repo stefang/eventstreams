@@ -1,7 +1,32 @@
 @import 'reset'
 @import 'shared'
 
+#event_admin_bar
+  :width 100%
+  :background #ccc
+  :float left
+  :margin-bottom 18px
+  ul
+    :padding 6px
+    :float left
+    :list-style none
+    li
+      :float left
+      a
+        :font-size 10px
+        :display block
+        :padding 3px 6px
+        :background #555
+        :margin-right 3px
+        :text-decoration none
+        :font-weight bold
+        :color #eee
+        +rounded(3px)
+      a:hover
+        :background #333
+
 section#eventstreams_event
+  :clear both
   header
     #event_logo
       a

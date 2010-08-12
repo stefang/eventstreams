@@ -17,6 +17,8 @@ module NavigationHelpers
       new_session_path
     when /the password reset request page/i
       new_password_path
+    when /the (.*) subdomain/
+      event_root_url(:subdomain => $1)
 
     else
       begin

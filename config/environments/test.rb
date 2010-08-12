@@ -14,6 +14,14 @@ config.action_controller.consider_all_requests_local = true
 config.action_controller.perform_caching             = false
 config.action_view.cache_template_loading            = true
 
+# Sessions across subdomains
+
+if ActionController::Base.session
+  ActionController::Base.session[:domain] = '.eventstreams.local'
+else
+  ActionController::Base.session = { :domain => '.eventstreams.local' }
+end
+
 # Disable request forgery protection in test environment
 config.action_controller.allow_forgery_protection    = false
 

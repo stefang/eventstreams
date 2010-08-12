@@ -8,6 +8,11 @@
     = javascript_include_tag "jquery", 'application', :cache => false    
     = stylesheet_link_tag 'event', :media => 'screen, projection', :cache => false
   %body
+    - if signed_in? && is_owner?(@event)
+      %nav#event_admin_bar
+        %ul
+          %li=link_to t('profile.link'), user_url(current_user, :subdomain => false)
+          %li=link_to t('authentication.sign_out'), sign_out_url(:subdomain => false)
     %section#eventstreams_event.es
       %header
         %h3#event_logo
