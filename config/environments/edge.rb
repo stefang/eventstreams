@@ -29,3 +29,9 @@ config.action_view.cache_template_loading            = true
 
 HOST = "eventstreams.triplegeek.com"
 DO_NOT_REPLY = "Eventstreams Edge <donotreply@eventstreams.triplegeek.com>"
+
+if ActionController::Base.session
+  ActionController::Base.session[:domain] = '.eventstreams.triplegeek.com'
+else
+  ActionController::Base.session = { :domain => '.eventstreams.triplegeek.com' }
+end
