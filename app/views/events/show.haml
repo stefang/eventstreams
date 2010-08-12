@@ -12,9 +12,7 @@
   
 -else
   - title "Event Admin"
-  %p
-    %strong Title:
-    =h @event.title
+
   %p
     %strong Start Date:
     =h @event.start_date
@@ -22,9 +20,5 @@
     %strong End Date:
     =h @event.end_date
   - if current_user && is_owner?(@event) 
-    %p
-      = link_to "Edit", edit_user_event_path(current_user, @event)
-    %p
-      = link_to "Your Events", user_path(current_user)
-    %p
-      = link_to "Manage Event Pages", user_event_event_pages_path(current_user, @event)
+    %p= link_to "Edit This Event", edit_user_event_path(current_user, @event)
+    %p= link_to 'See the event site', event_root_url(:subdomain => @event.subdomain)

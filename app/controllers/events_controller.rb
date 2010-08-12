@@ -30,11 +30,9 @@ class EventsController < ApplicationController
   end
   
   def edit
-    @event = Event.find(params[:id])
   end
   
   def update
-    @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
       flash[:notice] = "Successfully updated event."
       redirect_to current_user
@@ -44,14 +42,13 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
     flash[:notice] = "Successfully destroyed event."
     redirect_to events_url
   end
   
   def get_owned_event
-    @story = current_user.owned_events.find(params[:id])
+    @event = current_user.owned_events.find(params[:id])
     rescue ActiveRecord::RecordNotFound => e
       flash[:warning] = "Not authed"
       redirect_to '/'

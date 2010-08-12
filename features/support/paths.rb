@@ -19,7 +19,9 @@ module NavigationHelpers
       new_password_path
     when /the (.*) subdomain/
       event_root_url(:subdomain => $1)
-
+    when /my profile page/   
+      user_path(@user)
+    
     else
       begin
         page_name =~ /the (.*) page/

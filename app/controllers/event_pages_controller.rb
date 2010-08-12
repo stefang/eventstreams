@@ -1,4 +1,6 @@
 class EventPagesController < ApplicationController
+  before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
+  
   def index
     @event = current_user.owned_events.find(params[:event_id])
     @event_pages = @event.owned_event_pages.all
@@ -46,6 +48,6 @@ class EventPagesController < ApplicationController
     @event_page = EventPage.find(params[:id])
     @event_page.destroy
     flash[:notice] = "Successfully destroyed event page."
-    redirect_to event_pages_url
+    redirect_to user_event_event_pages_path(current_user, @event)
   end
 end

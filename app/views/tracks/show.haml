@@ -1,0 +1,20 @@
+<% title "Track" %>
+
+<p>
+  <strong>Title:</strong>
+  <%=h @track.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @track.description %>
+</p>
+<p>
+  <strong>Event:</strong>
+  <%=h @track.event_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_track_path(@track) %> |
+  <%= link_to "Destroy", @track, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tracks_path %>
+</p>

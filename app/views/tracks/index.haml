@@ -1,0 +1,25 @@
+-title "Tracks"
+
+- unless current_subdomain.blank?
+  %table
+    %tr
+      %th Title
+      %th Description
+    - for track in @tracks
+      %tr
+        %td= h track.title
+        %td= h track.description
+- else
+  %table
+    %tr
+      %th Title
+      %th Description
+    - for track in @tracks
+      %tr
+        %td= h track.title
+        %td= h track.description
+        %td= link_to 'Edit', edit_user_event_track_path(current_user, @event, track)
+        %td= link_to 'Destroy', user_event_track_path(current_user, @event, track), :confirm => 'Are you sure?', :method => :delete
+
+  %p= link_to "New Track", new_user_event_track_path
+  %p= link_to "Back to Event Page", user_event_path(current_user, @event)

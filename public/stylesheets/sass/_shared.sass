@@ -2,7 +2,8 @@
 
 .es
   :margin 36px
-  nav#main
+  nav
+    :clear both
     :background #ccc
     :padding 9px
     :float left
@@ -23,6 +24,10 @@
           +rounded(6px)
         a:hover
           :background #333
+      li.title
+        a
+          :background #eee
+          :color #333
           
   section.main
     :clear both

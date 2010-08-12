@@ -5,5 +5,6 @@ class Event < ActiveRecord::Base
   validates_presence_of :subdomain, :on => :create
   validates_uniqueness_of :subdomain, :on => :create
   has_many :owned_event_pages, :class_name => 'EventPage', :foreign_key => :event_id
+  has_many :owned_tracks, :class_name => 'Track', :foreign_key => :event_id
 
 end

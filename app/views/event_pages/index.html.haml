@@ -16,4 +16,4 @@
       %td= link_to 'Destroy', user_event_event_page_path(current_user, @event, event_page), :confirm => 'Are you sure?', :method => :delete
 
 %p= link_to "New Event Page", new_user_event_event_page_path
-%p= link_to "Back to Event Page", user_event_path(current_user, @event)
+%p= link_to "Back to Event", user_event_path(current_user, @event)
