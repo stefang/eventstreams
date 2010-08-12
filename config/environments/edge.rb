@@ -9,6 +9,12 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
+if ActionController::Base.session
+  ActionController::Base.session[:domain] = '.eventstreams.triplegeek.com'
+else
+  ActionController::Base.session = { :domain => '.eventstreams.triplegeek.com' }
+end
+
 # See everything in the log (default is :info)
 # config.log_level = :debug
 
@@ -29,9 +35,3 @@ config.action_view.cache_template_loading            = true
 
 HOST = "eventstreams.triplegeek.com"
 DO_NOT_REPLY = "Eventstreams Edge <donotreply@eventstreams.triplegeek.com>"
-
-if ActionController::Base.session
-  ActionController::Base.session[:domain] = '.eventstreams.triplegeek.com'
-else
-  ActionController::Base.session = { :domain => '.eventstreams.triplegeek.com' }
-end
