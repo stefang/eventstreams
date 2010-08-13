@@ -1,0 +1,8 @@
+- title "Edit Talk"
+
+= render :partial => 'form'
+
+%p
+  = link_to "Show", user_event_talk_path(current_user, @event, @talk)
+  |
+  = link_to "View All", user_event_talks_path

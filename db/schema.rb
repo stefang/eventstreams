@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100812200811) do
+ActiveRecord::Schema.define(:version => 20100813145432) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(:version => 20100812200811) do
 
   add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "talks", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start"
+    t.integer  "duration"
+    t.integer  "track_id"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+  end
 
   create_table "tracks", :force => true do |t|
     t.string   "title"

@@ -1,0 +1,27 @@
+- title "Talk"
+
+%p
+  %strong Title:
+  =h @talk.title
+%p
+  %strong Description:
+  =h @talk.description
+%p
+  %strong Start:
+  =h @talk.start
+%p
+  %strong Duration:
+  =h @talk.duration
+%p
+  %strong Track:
+  =h @talk.track_id
+%p
+  %strong Published:
+  =h @talk.published
+
+%p
+  = link_to "Edit", edit_talk_path(@talk)
+  |
+  = link_to "Destroy", @talk, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", talks_path

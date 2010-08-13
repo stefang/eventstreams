@@ -1,0 +1,28 @@
+- unless current_subdomain.blank?
+  %table.events
+    =render @talks
+- else
+
+  - title "Talks"
+
+  %table
+    %tr
+      %th Title
+      %th Description
+      %th Start
+      %th Duration
+      %th Track
+      %th Published
+    - for talk in @talks
+      %tr
+        %td= h talk.title
+        %td= h talk.description
+        %td= h talk.start
+        %td= h talk.duration
+        %td= h talk.track.title
+        %td= h talk.published
+        %td= link_to 'Show', user_event_talk_path(current_user, @event, talk)
+        %td= link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk)
+        %td= link_to 'Destroy', user_event_talk_path(current_user, @event, talk), :confirm => 'Are you sure?', :method => :delete
+
+  %p= link_to "New Talk", new_user_event_talk_path

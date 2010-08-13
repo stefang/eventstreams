@@ -2,13 +2,20 @@ class EventPagesController < ApplicationController
   before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
   
   def index
-    @event = current_user.owned_events.find(params[:event_id])
-    @event_pages = @event.owned_event_pages.all
+    if current_subdomain.blank?
+      @event = current_user.owned_events.find(params[:event_id])
+      @event_pages = @event.owned_event_pages.all
+    else
+      @event = Event.find_by_subdomain(current_subdomain)
+      @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
+      render :layout => 'event'
+    end
   end
   
   def show
     @event = Event.find_by_subdomain(current_subdomain)
-    @event_page = @event.owned_event_pages.find(params[:id])
+    @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
+    @event_page = @event.owned_event_pages.find(params[:id], :conditions => "published = true")
     render :layout => 'event'
   end
   

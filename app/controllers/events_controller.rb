@@ -11,6 +11,7 @@ class EventsController < ApplicationController
       @event = get_owned_event
     else
       @event = Event.find_by_subdomain(current_subdomain)
+      @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
       render :layout => 'event'
     end
   end
@@ -46,7 +47,7 @@ class EventsController < ApplicationController
     flash[:notice] = "Successfully destroyed event."
     redirect_to events_url
   end
-  
+
   def get_owned_event
     @event = current_user.owned_events.find(params[:id])
     rescue ActiveRecord::RecordNotFound => e

@@ -1,0 +1,27 @@
+- form_for [current_user, @event, @talk] do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :start
+    %br
+    = f.datetime_select :start
+  %p
+    = f.label :duration
+    %br
+    = f.text_field :duration
+  %li.select
+    = f.label :track_id
+    = f.collection_select :track_id, @tracks, :id, :title, {:prompt => true}
+  %p
+    = f.label :published
+    %br
+    = f.check_box :published
+  %p
+    = f.submit

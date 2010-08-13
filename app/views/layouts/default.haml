@@ -25,12 +25,10 @@
         -if signed_in? && @event && @event.valid?
           %nav#event_admin
             %ul
-              %li.title
-                = link_to @event.title, user_event_path(current_user, @event)
-              %li
-                = link_to "Event Pages", user_event_event_pages_path(current_user, @event)
-              %li
-                = link_to "Event Tracks", user_event_tracks_path(current_user, @event)
+              %li.title= link_to @event.title, user_event_path(current_user, @event)
+              %li= link_to "Event Pages", user_event_event_pages_path(current_user, @event)
+              %li= link_to "Event Tracks", user_event_tracks_path(current_user, @event)
+              %li= link_to "Talks", user_event_talks_path(current_user, @event)
         
         = render :partial => 'layouts/flashes'
       %section.main
