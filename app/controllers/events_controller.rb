@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     flash[:notice] = "Successfully destroyed event."
-    redirect_to events_url
+    redirect_to current_user
   end
 
   def get_owned_event
