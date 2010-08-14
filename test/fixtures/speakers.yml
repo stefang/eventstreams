@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  biog: MyString
+  event_id: 1
+  talk_id: 1
+  published: false
+
+two:
+  name: MyString
+  biog: MyString
+  event_id: 1
+  talk_id: 1
+  published: false

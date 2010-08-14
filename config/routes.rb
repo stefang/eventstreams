@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :hashtags
 
   # Event Show Routes
 
@@ -20,7 +19,9 @@ ActionController::Routing::Routes.draw do |map|
     u.resources :events, :only => [:show, :new, :create, :edit, :update, :destroy] do |e|
       e.resources :event_pages
       e.resources :tracks
-      e.resources :talks
+      e.resources :talks do |t|
+        t.resources :speakers
+      end
     end
   end
 

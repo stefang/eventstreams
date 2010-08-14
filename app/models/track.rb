@@ -4,7 +4,6 @@ class Track < ActiveRecord::Base
   belongs_to :event
   has_many :owned_talks, :class_name => 'Talk', :foreign_key => :track_id, :dependent => :destroy
   
-
   validates_presence_of :title, :on => :create
   validates_presence_of :event_id, :on => :create
 end

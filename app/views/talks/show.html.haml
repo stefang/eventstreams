@@ -19,6 +19,20 @@
   %p
     %strong Published:
     =h @talk.published
+    
+  %h3 Speakers
+
+  %table
+    %tr
+      %th Name
+      %th Biog
+      %th Published
+    - for speaker in @speakers
+      %tr
+        %td= h speaker.name
+        %td= h speaker.biog
+        %td= h speaker.published
+    
 
 -else 
   - title @talk.title
@@ -48,3 +62,21 @@
     = link_to "Destroy", user_event_talk_path(current_user, @event, @talk), :confirm => 'Are you sure?', :method => :delete
     |
     = link_to "View All", user_event_talks_path
+    
+  %h3 Speakers
+
+  %table
+    %tr
+      %th Name
+      %th Biog
+      %th Published
+    - for speaker in @speakers
+      %tr
+        %td= h speaker.name
+        %td= h speaker.biog
+        %td= h speaker.published
+        %td= link_to 'Show', user_event_talk_speaker_path(current_user, @event, @talk, speaker)
+        %td= link_to 'Edit', edit_user_event_talk_speaker_path(current_user, @event, @talk, speaker)
+        %td= link_to 'Destroy', user_event_talk_speaker_path(current_user, @event, @talk, speaker), :confirm => 'Are you sure?', :method => :delete
+
+  %p= link_to "New Speaker", new_user_event_talk_speaker_path(current_user, @event, @talk)

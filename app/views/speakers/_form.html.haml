@@ -1,0 +1,16 @@
+- form_for [current_user, @event, @talk, @speaker] do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :biog
+    %br
+    = f.text_field :biog
+  %p
+    = f.label :published
+    %br
+    = f.check_box :published
+  %p
+    = f.submit

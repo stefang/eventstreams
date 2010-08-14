@@ -21,6 +21,7 @@ class TalksController < ApplicationController
     if current_subdomain.blank?
       @event = current_user.owned_events.find(params[:event_id])
       @talk = Talk.find(params[:id])
+      @speakers = @talk.owned_speakers.all
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
       if @event.blank?
@@ -28,6 +29,7 @@ class TalksController < ApplicationController
       else
         @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
         @talk = @event.owned_talks.find(params[:id])
+        @speakers = @talk.owned_speakers.find(:all, :conditions => "published = true")
         render :layout => 'event'
       end
     end

@@ -1,0 +1,24 @@
+- title "Speaker"
+
+%p
+  %strong Name:
+  =h @speaker.name
+%p
+  %strong Biog:
+  =h @speaker.biog
+%p
+  %strong Event:
+  =h @speaker.event_id
+%p
+  %strong Talk:
+  =h @speaker.talk_id
+%p
+  %strong Published:
+  =h @speaker.published
+
+%p
+  = link_to "Edit", edit_user_event_talk_speaker_path(current_user, @event, @talk, @speaker)
+  |
+  = link_to "Destroy", user_event_talk_speaker_path(current_user, @event, @talk, @speaker), :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", user_event_talk_path(current_user, @event, @talk)
