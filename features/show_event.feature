@@ -30,7 +30,7 @@ Feature: View event
     And I should see "Your Profile" within "nav#event_admin_bar"
     And I should see "Sign out" within "nav#event_admin_bar"
     And I should see "#myevent" within "a.hashtag"
-  @wip
+
   Scenario: Owner looks at their own event and misses out the hashtag
     Given that I am a user
     When I follow "New Event"

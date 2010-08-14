@@ -15,3 +15,13 @@ Feature: Create event track
     And I press "Save Changes"
     Then I should see "Successfully created track."
     And I should see "My Track"
+
+  Scenario: User creates initial track successfully
+    Given that I am a user
+    And I have an event called "myevent"
+    And "myevent" has a track called "mytrack"
+    When I go to my profile page
+    Then I should see "myevent"
+    And I follow "Content Admin"
+    And I follow "Event Tracks"
+    And I should see "mytrack"
