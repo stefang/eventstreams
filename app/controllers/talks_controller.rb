@@ -14,7 +14,13 @@ class TalksController < ApplicationController
   end
   
   def show
-    @talk = Talk.find(params[:id])
+    if current_subdomain.blank?
+      @event = current_user.owned_events.find(params[:event_id])
+      @talk = Talk.find(params[:id])
+    else
+      @event = Event.find_by_subdomain(current_subdomain)
+      @talk = @event.owned_talks.find(params[:id])
+    end
   end
   
   def new
