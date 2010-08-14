@@ -3,6 +3,6 @@
 = render :partial => 'form'
 
 %p
-  = link_to "Show", user_event_talk_speaker_path(@speaker)
+  = link_to "Show", user_event_talk_speaker_path(current_user, @event, @talk, @speaker)
   |
-  = link_to "View All", user_event_talk_speakers_url
+  = link_to "View All", user_event_talk_url(current_user, @event, @talk)
