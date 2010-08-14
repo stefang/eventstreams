@@ -7,9 +7,13 @@ class TalksController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @talks = @event.owned_talks.all
     else
-      @event = Event.find_by_subdomain(current_subdomain)
-      @talks = @event.owned_talks.find(:all, :conditions => "published = true")
-      render :layout => 'event'
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      if @event.blank?
+        render_404
+      else
+        @talks = @event.owned_talks.find(:all, :conditions => "published = true")
+        render :layout => 'event'
+      end
     end
   end
   
@@ -18,10 +22,14 @@ class TalksController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @talk = Talk.find(params[:id])
     else
-      @event = Event.find_by_subdomain(current_subdomain)
-      @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
-      @talk = @event.owned_talks.find(params[:id])
-      render :layout => 'event'
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      if @event.blank?
+        render_404
+      else
+        @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
+        @talk = @event.owned_talks.find(params[:id])
+        render :layout => 'event'
+      end
     end
   end
   

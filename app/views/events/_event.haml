@@ -2,6 +2,7 @@
   %td= h event.title
   %td= h event.start_date
   %td= h event.end_date
+  %td= h event.published
   %td= link_to 'Show', event_root_url(:subdomain => event.subdomain)
   - if current_user && is_owner?(event)
     %td= link_to 'Content Admin', user_event_path(current_user, event)

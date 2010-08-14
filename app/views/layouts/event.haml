@@ -11,6 +11,10 @@
     - if signed_in? && is_owner?(@event)
       %nav#event_admin_bar
         %ul
+          -if @event.published?
+            %li=link_to "Event Published", edit_user_event_path(current_user, @event, :subdomain => false)
+          -else
+            %li=link_to "Event Hidden", edit_user_event_path(current_user, @event, :subdomain => false)
           %li=link_to t('profile.link'), user_url(current_user, :subdomain => false)
           %li=link_to t('authentication.sign_out'), sign_out_url(:subdomain => false)
     %section#eventstreams_event.es

@@ -7,16 +7,24 @@ class TracksController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @tracks = @event.owned_tracks.all
     else
-      @event = Event.find_by_subdomain(current_subdomain)
-      @tracks = @event.owned_tracks.all
-      render :layout => 'event'
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      if @event.blank?
+        render_404
+      else
+        @tracks = @event.owned_tracks.find(:all, :conditions => "published = true")
+        render :layout => 'event'
+      end
     end
   end
   
   def show
-    @event = Event.find_by_subdomain(current_subdomain)
-    @track = @event.owned_tracks.find(params[:id])
-    render :layout => 'event'
+    @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+    if @event.blank?
+      render_404
+    else
+      @track = @event.owned_tracks.find(params[:id], :conditions => "published = true")
+      render :layout => 'event'
+    end
   end
   
   def new

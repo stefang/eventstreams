@@ -6,14 +6,14 @@ class EventPagesController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @event_pages = @event.owned_event_pages.all
     else
-      @event = Event.find_by_subdomain(current_subdomain)
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
       @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
       render :layout => 'event'
     end
   end
   
   def show
-    @event = Event.find_by_subdomain(current_subdomain)
+    @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
     @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
     @event_page = @event.owned_event_pages.find(params[:id], :conditions => "published = true")
     render :layout => 'event'

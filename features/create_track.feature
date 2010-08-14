@@ -12,14 +12,25 @@ Feature: Create event track
     And I follow "Event Tracks"
     And I follow "New Track"
     Then I fill in "Title" with "My Track"
+    And I check "Published"
     And I press "Save Changes"
     Then I should see "Successfully created track."
     And I should see "My Track"
 
-  Scenario: User creates initial track successfully
+  Scenario: User views initial published track
     Given that I am a user
     And I have an event called "myevent"
-    And "myevent" has a track called "mytrack"
+    And "myevent" has a published track called "mytrack"
+    When I go to my profile page
+    Then I should see "myevent"
+    And I follow "Content Admin"
+    And I follow "Event Tracks"
+    And I should see "mytrack"
+    
+  Scenario: User views initial track
+    Given that I am a user
+    And I have an event called "myevent"
+    And "myevent" has an unpublished track called "mytrack"
     When I go to my profile page
     Then I should see "myevent"
     And I follow "Content Admin"

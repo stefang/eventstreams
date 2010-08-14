@@ -6,7 +6,7 @@ Feature: Create talk
   Scenario: User creates a published talk successfully
     Given that I am a user
     And I have an event called "myevent"
-    And "myevent" has a track called "mytrack"
+    And "myevent" has a published track called "mytrack"
     When I go to the events page
     And I follow "Content Admin"
     And I follow "Talks"
@@ -25,7 +25,7 @@ Feature: Create talk
   Scenario: User creates an unpublished talk successfully
     Given that I am a user
     And I have an event called "myevent"
-    And "myevent" has a track called "mytrack"
+    And "myevent" has a published track called "mytrack"
     When I go to the events page
     And I follow "Content Admin"
     And I follow "Talks"
