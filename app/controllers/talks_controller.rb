@@ -19,7 +19,9 @@ class TalksController < ApplicationController
       @talk = Talk.find(params[:id])
     else
       @event = Event.find_by_subdomain(current_subdomain)
+      @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
       @talk = @event.owned_talks.find(params[:id])
+      render :layout => 'event'
     end
   end
   
