@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100814220034) do
+ActiveRecord::Schema.define(:version => 20100815101104) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20100814220034) do
 
   create_table "speakers", :force => true do |t|
     t.string   "name"
-    t.string   "biog"
+    t.text     "biog"
     t.integer  "event_id"
     t.integer  "talk_id"
     t.boolean  "published"
