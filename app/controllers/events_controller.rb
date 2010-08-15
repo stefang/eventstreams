@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
   before_filter :get_owned_event, :only => [:edit, :update, :destroy]
   
@@ -14,7 +15,6 @@ class EventsController < ApplicationController
       if @event.blank?
         render_404
       else
-        @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
         render :layout => 'event'
       end
     end

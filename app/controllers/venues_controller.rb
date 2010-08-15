@@ -1,0 +1,64 @@
+class VenuesController < ApplicationController
+
+  before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
+
+  def index
+    if current_subdomain.blank?
+      @event = current_user.owned_events.find(params[:event_id])
+      @venues = @event.owned_venues.all
+    else
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      if @event.blank?
+        render_404
+      else
+        @venues = @event.owned_venues.find(:all, :conditions => "published = true")
+        render :layout => 'event'
+      end
+    end
+  end
+  
+  def show
+    @event = current_user.owned_events.find(params[:event_id])
+    @venue = @event.owned_venues.find(params[:id])
+  end
+  
+  def new
+    @event = current_user.owned_events.find(params[:event_id])
+    @venue = @event.owned_venues.new
+  end
+  
+  def create
+    @event = current_user.owned_events.find(params[:event_id])
+    @venue = @event.owned_venues.new(params[:venue])
+    @venue.event_id = @event
+    
+    if @venue.save
+      flash[:notice] = "Successfully created venue."
+      redirect_to user_event_venues_path
+    else
+      render :action => 'new'
+    end
+  end
+  
+  def edit
+    @event = current_user.owned_events.find(params[:event_id])
+    @venue = @event.owned_venues.find(params[:id])
+  end
+  
+  def update
+    @venue = Venue.find(params[:id])
+    if @venue.update_attributes(params[:venue])
+      flash[:notice] = "Successfully updated venue."
+      redirect_to @venue
+    else
+      render :action => 'edit'
+    end
+  end
+  
+  def destroy
+    @venue = Venue.find(params[:id])
+    @venue.destroy
+    flash[:notice] = "Successfully destroyed venue."
+    redirect_to user_event_venues_path
+  end
+end

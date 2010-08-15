@@ -1,4 +1,7 @@
 class SpeakersController < ApplicationController
+
+  before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
+
   def index
     @event = current_user.owned_events.find(params[:event_id])
     @talk = @event.owned_talks.find(params[:talk_id])

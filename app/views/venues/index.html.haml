@@ -1,0 +1,69 @@
+- title "Venues"
+
+- unless current_subdomain.blank?
+  %table
+    %tr
+      %th Name
+      %th Description
+      %th Address 1
+      %th Address 2
+      %th Address 3
+      %th City
+      %th County
+      %th Postcode
+      %th Lat
+      %th Lng
+      %th Website
+      %th Phone number
+      %th Published
+    - for venue in @venues
+      %tr
+        %td= h venue.name
+        %td= h venue.description
+        %td= h venue.address_1
+        %td= h venue.address_2
+        %td= h venue.address_3
+        %td= h venue.city
+        %td= h venue.county
+        %td= h venue.postcode
+        %td= h venue.lat
+        %td= h venue.lng
+        %td= h venue.website
+        %td= h venue.phone_number
+        %td= h venue.published
+- else
+  %table
+    %tr
+      %th Name
+      %th Description
+      %th Address 1
+      %th Address 2
+      %th Address 3
+      %th City
+      %th County
+      %th Postcode
+      %th Lat
+      %th Lng
+      %th Website
+      %th Phone number
+      %th Published
+    - for venue in @venues
+      %tr
+        %td= h venue.name
+        %td= h venue.description
+        %td= h venue.address_1
+        %td= h venue.address_2
+        %td= h venue.address_3
+        %td= h venue.city
+        %td= h venue.county
+        %td= h venue.postcode
+        %td= h venue.lat
+        %td= h venue.lng
+        %td= h venue.website
+        %td= h venue.phone_number
+        %td= h venue.published
+        %td= link_to 'Show', user_event_venue_path(current_user, @event, venue)
+        %td= link_to 'Edit', edit_user_event_venue_path(current_user, @event, venue)
+        %td= link_to 'Destroy', user_event_venue_path(current_user, @event, venue), :confirm => 'Are you sure?', :method => :delete
+
+  %p= link_to "New Venue", new_user_event_venue_path

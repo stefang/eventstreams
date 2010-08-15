@@ -1,4 +1,5 @@
 class EventPagesController < ApplicationController
+
   before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
   
   def index

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100815101104) do
+ActiveRecord::Schema.define(:version => 20100815112854) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -99,5 +99,27 @@ ActiveRecord::Schema.define(:version => 20100815101104) do
   add_index "users", ["id", "token"], :name => "index_users_on_id_and_token"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["token"], :name => "index_users_on_token"
+
+  create_table "venues", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "address_3"
+    t.string   "city"
+    t.string   "county"
+    t.string   "postcode"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "website"
+    t.string   "phone_number"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "venue_type_id"
+    t.integer  "event_id"
+  end
+
+  add_index "venues", ["lat", "lng"], :name => "index_venues_on_lat_and_lng"
 
 end

@@ -1,0 +1,29 @@
+one:
+  name: MyString
+  description: MyText
+  address_1: MyString
+  address_2: MyString
+  address_3: MyString
+  city: MyString
+  county: MyString
+  postcode: MyString
+  lat: 1.5
+  lng: 1.5
+  website: MyString
+  phone_number: MyString
+  published: false
+
+two:
+  name: MyString
+  description: MyText
+  address_1: MyString
+  address_2: MyString
+  address_3: MyString
+  city: MyString
+  county: MyString
+  postcode: MyString
+  lat: 1.5
+  lng: 1.5
+  website: MyString
+  phone_number: MyString
+  published: false

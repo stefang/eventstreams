@@ -12,9 +12,9 @@
       %nav#event_admin_bar
         %ul
           -if @event.published?
-            %li=link_to "Event Published", edit_user_event_path(current_user, @event, :subdomain => false)
+            %li=link_to "Event Published", edit_user_event_url(current_user, @event, :subdomain => false)
           -else
-            %li=link_to "Event Hidden", edit_user_event_path(current_user, @event, :subdomain => false)
+            %li=link_to "Event Hidden", edit_user_event_url(current_user, @event, :subdomain => false)
           %li=link_to t('profile.link'), user_url(current_user, :subdomain => false)
           %li=link_to t('authentication.sign_out'), sign_out_url(:subdomain => false)
     %section#eventstreams_event.es
@@ -26,11 +26,12 @@
             =@event.hashtag
       %nav#main
         %ul
-          - unless @event_pages.blank?
-            - @event_pages.each do |e|
+          - unless @event.published_event_pages.blank?
+            - @event.published_event_pages.each do |e|
               %li=link_to e.title, event_page_path(e)
           %li=link_to 'Tracks', tracks_path
           %li=link_to 'All Talks', talks_path
+          %li=link_to 'Venues', venues_path
               
         = render :partial => 'layouts/flashes'
       %section.main

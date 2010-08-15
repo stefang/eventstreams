@@ -1,0 +1,48 @@
+- title "Venue"
+
+%p
+  %strong Name:
+  =h @venue.name
+%p
+  %strong Description:
+  =h @venue.description
+%p
+  %strong Address 1:
+  =h @venue.address_1
+%p
+  %strong Address 2:
+  =h @venue.address_2
+%p
+  %strong Address 3:
+  =h @venue.address_3
+%p
+  %strong City:
+  =h @venue.city
+%p
+  %strong County:
+  =h @venue.county
+%p
+  %strong Postcode:
+  =h @venue.postcode
+%p
+  %strong Lat:
+  =h @venue.lat
+%p
+  %strong Lng:
+  =h @venue.lng
+%p
+  %strong Website:
+  =h @venue.website
+%p
+  %strong Phone Number:
+  =h @venue.phone_number
+%p
+  %strong Published:
+  =h @venue.published
+
+%p
+  = link_to 'Edit', edit_user_event_venue_path(current_user, @event, @venue)
+  |
+  = link_to 'Destroy', user_event_venue_path(current_user, @event, @venue), :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", user_event_venues_path
