@@ -30,7 +30,7 @@ class VenuesController < ApplicationController
   def create
     @event = current_user.owned_events.find(params[:event_id])
     @venue = @event.owned_venues.new(params[:venue])
-    @venue.event_id = @event
+    @venue.event_id = @event.id
     
     if @venue.save
       flash[:notice] = "Successfully created venue."
@@ -46,10 +46,11 @@ class VenuesController < ApplicationController
   end
   
   def update
-    @venue = Venue.find(params[:id])
+    @event = current_user.owned_events.find(params[:event_id])
+    @venue = @event.owned_venues.find(params[:id])
     if @venue.update_attributes(params[:venue])
       flash[:notice] = "Successfully updated venue."
-      redirect_to @venue
+      redirect_to user_event_venues_path
     else
       render :action => 'edit'
     end
