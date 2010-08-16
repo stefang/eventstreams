@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   before_filter :get_owned_event, :only => [:edit, :update, :destroy]
   
   def index
-    @events = Event.all
+    if params[:user_id]
+      @events = current_user.owned_events.all
+    else
+      @events = Event.all
+    end
   end
   
   def show
