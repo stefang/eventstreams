@@ -24,6 +24,7 @@ class VenuesController < ApplicationController
   
   def new
     @event = current_user.owned_events.find(params[:event_id])
+    @venue_types = VenueType.all(:conditions => "global = true OR event_id = #{@event.id}")
     @venue = @event.owned_venues.new
   end
   
@@ -42,6 +43,7 @@ class VenuesController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
+    @venue_types = VenueType.all(:conditions => "global = true OR event_id = #{@event.id}")
     @venue = @event.owned_venues.find(params[:id])
   end
   

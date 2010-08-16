@@ -1,0 +1,8 @@
+- title "Edit Venue Type"
+
+= render :partial => 'form'
+
+%p
+  = link_to "Show", user_event_venue_type_path(current_user, @event, @venue_type)
+  |
+  = link_to "View All", user_event_venue_types_path

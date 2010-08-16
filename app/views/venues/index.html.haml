@@ -8,6 +8,7 @@
     %tr
       %th Name
       %th Description
+      %th Type
       %th Address 1
       %th Address 2
       %th Address 3
@@ -23,6 +24,7 @@
       %tr.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
         %td= h venue.name
         %td= h venue.description
+        %td= h venue.venue_type.name unless venue.venue_type.blank?
         %td= h venue.address_1
         %td= h venue.address_2
         %td= h venue.address_3
@@ -39,6 +41,7 @@
     %tr
       %th Name
       %th Description
+      %th Type
       %th Address 1
       %th Address 2
       %th Address 3
@@ -54,6 +57,7 @@
       %tr
         %td= h venue.name
         %td= h venue.description
+        %td= h venue.venue_type.name unless venue.venue_type.blank?
         %td= h venue.address_1
         %td= h venue.address_2
         %td= h venue.address_3

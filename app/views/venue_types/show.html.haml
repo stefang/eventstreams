@@ -1,0 +1,18 @@
+- title "Venue Type"
+
+%p
+  %strong Name:
+  =h @venue_type.name
+%p
+  %strong Event:
+  =h @venue_type.event_id
+%p
+  %strong Global:
+  =h @venue_type.global
+
+%p
+  = link_to "Edit", edit_user_event_venue_type_path(current_user, @event, @venue_type)
+  |
+  = link_to "Destroy", user_event_venue_type_path(current_user, @event, @venue_type), :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", user_event_venue_types_path(current_user, @event)

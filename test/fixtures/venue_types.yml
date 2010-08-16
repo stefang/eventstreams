@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  event_id: 1
+  global: false
+
+two:
+  name: MyString
+  event_id: 1
+  global: false

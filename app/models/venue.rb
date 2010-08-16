@@ -2,8 +2,10 @@ class Venue < ActiveRecord::Base
   
   acts_as_mappable
   
-  attr_accessible :name, :description, :address_1, :address_2, :address_3, :city, :county, :postcode, :lat, :lng, :website, :phone_number, :published
+  attr_accessible :name, :description, :address_1, :address_2, :address_3, :city, :county, :postcode, :lat, :lng, :website, :phone_number, :published, :venue_type_id
+
   belongs_to :event
+  belongs_to :venue_type
 
   validates_presence_of :name, :on => :create
   validates_presence_of :event_id, :on => :create

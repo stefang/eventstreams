@@ -8,6 +8,10 @@
     = f.label :description
     %br
     = f.text_area :description
+  -unless @venue_types.blank?
+    %li.select
+      = f.label :venue_type_id
+      = f.collection_select :venue_type_id, @venue_types, :id, :name, {:prompt => true}
   %p
     = f.label :address_1
     %br

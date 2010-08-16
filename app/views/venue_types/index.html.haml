@@ -1,0 +1,23 @@
+- title "Venue Types"
+
+%h3 Global Types
+
+%table
+  %tr
+    %th Name
+  - for venue_type in @global_venue_types
+    %tr
+      %td= h venue_type.name
+
+%h3 Your Types
+
+%table
+  %tr
+    %th Name
+  - for venue_type in @owned_venue_types
+    %tr
+      %td= h venue_type.name
+      %td= link_to 'Edit', edit_user_event_venue_type_path(current_user, @event, venue_type)
+      %td= link_to 'Destroy', user_event_venue_type_path(current_user, @event, venue_type), :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Venue Type", new_user_event_venue_type_path(current_user, @event)
