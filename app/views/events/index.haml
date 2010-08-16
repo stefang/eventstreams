@@ -1,6 +1,4 @@
 - title "Events"
 
 %table.events
-  =render @events
-- if current_user  
-  %p= link_to "New Event", new_user_event_path(current_user)
+  =render current_user.owned_events

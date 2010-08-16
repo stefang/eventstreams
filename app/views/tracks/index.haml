@@ -14,10 +14,12 @@
     %tr
       %th Title
       %th Description
+      %th Published
     - for track in @tracks
       %tr
         %td= h track.title
         %td= h track.description
+        %td= h track.published
         %td= link_to 'Edit', edit_user_event_track_path(current_user, @event, track)
         %td= link_to 'Destroy', user_event_track_path(current_user, @event, track), :confirm => 'Are you sure?', :method => :delete
 

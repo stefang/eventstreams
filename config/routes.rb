@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
   map.resources :users do |u|
-    u.resources :events, :only => [:show, :new, :create, :edit, :update, :destroy] do |e|
+    u.resources :events do |e|
       e.resources :venues
       e.resources :event_pages
       e.resources :tracks
