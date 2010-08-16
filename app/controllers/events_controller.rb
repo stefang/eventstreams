@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     @event = current_user.owned_events.new(params[:event])
     if @event.save
       flash[:notice] = "Successfully created event."
-      redirect_to current_user
+      redirect_to user_events_path(current_user)
     else
       render :action => 'new'
     end
@@ -44,7 +44,7 @@ class EventsController < ApplicationController
   def update
     if @event.update_attributes(params[:event])
       flash[:notice] = "Successfully updated event."
-      redirect_to current_user
+      redirect_to user_events_path(current_user)
     else
       render :action => 'edit'
     end
@@ -53,7 +53,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     flash[:notice] = "Successfully destroyed event."
-    redirect_to current_user
+    redirect_to user_events_path(current_user)
   end
 
   def get_owned_event

@@ -12,7 +12,7 @@ Feature: Create event
     And I check "Published"
     And I press "Save Changes"
     Then I should see "Successfully created event"
-    And I should be on the user page
+    And I should be on the user events page
     Then I should see "My Event"
 
   Scenario: User creates and hides an event successfully

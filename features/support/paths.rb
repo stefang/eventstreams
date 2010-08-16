@@ -21,6 +21,8 @@ module NavigationHelpers
       event_root_url(:subdomain => $1)
     when /my profile page/   
       user_path(@user)
+    when /my user events page/
+      user_events_path(@user)
     
     else
       begin

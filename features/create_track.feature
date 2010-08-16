@@ -6,7 +6,7 @@ Feature: Create event track
   Scenario: User creates initial track successfully
     Given that I am a user
     And I have an event called "myevent"
-    When I go to my profile page
+    When I go to my user events page
     Then I should see "myevent"
     And I follow "Content Admin"
     And I follow "Event Tracks"
@@ -21,7 +21,7 @@ Feature: Create event track
     Given that I am a user
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
-    When I go to my profile page
+    When I go to my user events page
     Then I should see "myevent"
     And I follow "Content Admin"
     And I follow "Event Tracks"
@@ -31,7 +31,7 @@ Feature: Create event track
     Given that I am a user
     And I have an event called "myevent"
     And "myevent" has an unpublished track called "mytrack"
-    When I go to my profile page
+    When I go to my user events page
     Then I should see "myevent"
     And I follow "Content Admin"
     And I follow "Event Tracks"

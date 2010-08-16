@@ -6,7 +6,7 @@ Feature: Create event venue
   Scenario: User creates initial venue successfully
     Given that I am a user
     And I have an event called "myevent"
-    When I go to my profile page
+    When I go to my user events page
     Then I should see "myevent"
     And I follow "Content Admin"
     And I follow "Venues"
@@ -20,7 +20,7 @@ Feature: Create event venue
   Scenario: User creates initial venue unsuccessfully
     Given that I am a user
     And I have an event called "myevent"
-    When I go to my profile page
+    When I go to my user events page
     Then I should see "myevent"
     And I follow "Content Admin"
     And I follow "Venues"
