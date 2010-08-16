@@ -1,6 +1,9 @@
 - title "Venues"
 
 - unless current_subdomain.blank?
+
+  #map_canvas
+    
   %table
     %tr
       %th Name
@@ -17,7 +20,7 @@
       %th Phone number
       %th Published
     - for venue in @venues
-      %tr
+      %tr.location{:data => {:lat => venue.lat, :lng => venue.lng}}
         %td= h venue.name
         %td= h venue.description
         %td= h venue.address_1
