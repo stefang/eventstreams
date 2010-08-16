@@ -19,6 +19,10 @@
   %li.select
     = f.label :track_id
     = f.collection_select :track_id, @tracks, :id, :title, {:prompt => true}
+  -unless @venues.blank?
+    %li.select
+      = f.label :venue_id
+      = f.collection_select :venue_id, @venues, :id, :name, {:prompt => true}
   %p
     = f.label :published
     %br

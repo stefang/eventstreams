@@ -12,6 +12,7 @@
       %th Start
       %th Duration
       %th Track
+      %th Venue
       %th Published
     - for talk in @talks
       %tr
@@ -20,6 +21,7 @@
         %td= h talk.start
         %td= h talk.duration
         %td= h talk.track.title
+        %td= h talk.venue.name unless talk.venue.blank?
         %td= h talk.published
         %td= link_to 'Show', user_event_talk_path(current_user, @event, talk)
         %td= link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk)

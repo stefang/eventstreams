@@ -4,3 +4,4 @@
   %td= h talk.start
   %td= h talk.duration
   %td= link_to talk.track.title, talk.track
+  %td= link_to talk.venue.name, venues_path unless talk.venue.blank?

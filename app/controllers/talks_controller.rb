@@ -37,6 +37,7 @@ class TalksController < ApplicationController
   
   def new
     @event = current_user.owned_events.find(params[:event_id])
+    @venues = @event.owned_venues.all
     @tracks = @event.owned_tracks.all
     @talk = Talk.new
   end
@@ -56,6 +57,7 @@ class TalksController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
+    @venues = @event.owned_venues.all
     @tracks = @event.owned_tracks.all
     @talk = @event.owned_talks.find(params[:id])
   end
