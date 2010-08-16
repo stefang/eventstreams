@@ -20,7 +20,7 @@
       %th Phone number
       %th Published
     - for venue in @venues
-      %tr.location{:data => {:lat => venue.lat, :lng => venue.lng}}
+      %tr.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
         %td= h venue.name
         %td= h venue.description
         %td= h venue.address_1
