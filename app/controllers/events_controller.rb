@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     if params[:user_id]
       @events = current_user.owned_events.all
     else
-      @events = Event.all
+      @events = Event.all(:conditions => "published = true")
     end
   end
   
