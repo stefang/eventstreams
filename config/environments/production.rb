@@ -9,12 +9,13 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
-if ActionController::Base.session
-  ActionController::Base.session[:domain] = '.eventstreamsapp.com'
-else
-  ActionController::Base.session = { :domain => '.eventstreamsapp.com' }
-end
+COOKIE_DOMAIN = '.eventstreamsapp.com'
 
+if ActionController::Base.session
+  ActionController::Base.session[:domain] = COOKIE_DOMAIN
+else
+  ActionController::Base.session = { :domain => COOKIE_DOMAIN }
+end
 
 # See everything in the log (default is :info)
 # config.log_level = :debug
