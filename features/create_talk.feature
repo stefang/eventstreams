@@ -7,6 +7,7 @@ Feature: Create talk
     Given that I am a user
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
+    And "myevent" has a venue called "posh_hotel"
     When I go to the events page
     And I follow "Content Admin"
     And I follow "Talks"
@@ -15,6 +16,7 @@ Feature: Create talk
     And I fill in "Description" with "My talk will be cool"
     And I check "Published"
     And I select "mytrack" from "Track"
+    And I select "posh_hotel" from "Venue"
     And I press "Save Changes"
     Then I should see "Successfully created talk."
     And I should see "My Talk"

@@ -2,7 +2,7 @@ Feature: Create event venue
   In order to setup a new event venue
   A user
   Should be able to sign in and create a new event venue in an existing event
-  @wip
+
   Scenario: User creates initial venue successfully
     Given that I am a user
     And I have an event called "myevent"
