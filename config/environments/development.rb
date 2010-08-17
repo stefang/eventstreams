@@ -15,11 +15,14 @@ config.action_controller.perform_caching             = false
 
 # Sessions across subdomains
 
+COOKIE_DOMAIN = '.eventstreams.local'
+
 if ActionController::Base.session
-  ActionController::Base.session[:domain] = '.eventstreams.local'
+  ActionController::Base.session[:domain] = COOKIE_DOMAIN
 else
-  ActionController::Base.session = { :domain => '.eventstreams.local' }
+  ActionController::Base.session = { :domain => COOKIE_DOMAIN }
 end
+
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
