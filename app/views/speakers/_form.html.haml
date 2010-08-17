@@ -1,4 +1,4 @@
-- form_for [current_user, @event, @talk, @speaker] do |f|
+- form_for [current_user, @event, @talk, @speaker], :html => { :multipart => true } do |f|
   = f.error_messages
   %p
     = f.label :name
@@ -8,6 +8,10 @@
     = f.label :biog
     %br
     = f.text_area :biog
+  %p
+    = f.label :portrait
+    %br
+    = f.file_field :portrait
   %p
     = f.label :published
     %br

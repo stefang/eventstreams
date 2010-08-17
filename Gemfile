@@ -9,6 +9,7 @@ gem 'thoughtbot-clearance',   '0.6.9',   :require => 'clearance'
 gem 'subdomain-fu'
 gem "friendly_id",            "~> 3.1"
 gem "geokit"
+gem "paperclip"
 
 group :development do
   gem 'vlad' 

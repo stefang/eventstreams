@@ -1,5 +1,6 @@
 class Speaker < ActiveRecord::Base
-  attr_accessible :name, :biog, :event_id, :talk_id, :published
+  
+  has_attached_file :portrait, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   belongs_to :talk
 

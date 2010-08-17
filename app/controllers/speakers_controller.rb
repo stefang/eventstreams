@@ -39,6 +39,8 @@ class SpeakersController < ApplicationController
   end
   
   def update
+    @event = current_user.owned_events.find(params[:event_id])
+    @talk = @event.owned_talks.find(params[:talk_id])
     @speaker = Speaker.find(params[:id])
     if @speaker.update_attributes(params[:speaker])
       flash[:notice] = "Successfully updated speaker."
