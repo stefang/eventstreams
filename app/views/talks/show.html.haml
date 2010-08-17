@@ -29,6 +29,7 @@
       %th Published
     - for speaker in @speakers
       %tr
+        %td= image_tag @speaker.portrait.url(:thumb)
         %td= h speaker.name
         %td= h speaker.biog
         %td= h speaker.published
