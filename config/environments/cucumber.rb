@@ -18,10 +18,12 @@ config.action_controller.allow_forgery_protection    = false
 
 # Sessions across subdomains
 
+COOKIE_DOMAIN = '.eventstreams.local'
+
 if ActionController::Base.session
-  ActionController::Base.session[:domain] = '.eventstreams.local'
+  ActionController::Base.session[:domain] = COOKIE_DOMAIN
 else
-  ActionController::Base.session = { :domain => '.eventstreams.local' }
+  ActionController::Base.session = { :domain => COOKIE_DOMAIN }
 end
 
 

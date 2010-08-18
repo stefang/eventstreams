@@ -13,4 +13,3 @@ Feature: Create venue type
     Then I fill in "Name" with "My Venue Type"
     And I press "Save Changes"
     Then I should see "Successfully created venue type."
-    And I should see "My Venue Type"

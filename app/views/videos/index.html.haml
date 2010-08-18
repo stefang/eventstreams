@@ -1,0 +1,16 @@
+- title "Videos"
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Vimeo
+    %th Talk
+    %th Published
+  - for video in @videos
+    %tr
+      %td= h video.title
+      %td= h video.description
+      %td= h video.vimeo_id
+      %td= h video.talk_id
+      %td= h video.published

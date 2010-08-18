@@ -1,0 +1,19 @@
+- title "Video"
+
+%iframe{:src => "http://player.vimeo.com/video/#{@video.vimeo_id}", :width => 400, :height => 225}
+
+%p
+  %strong Title:
+  =h @video.title
+%p
+  %strong Description:
+  =h @video.description
+%p
+  %strong Vimeo:
+  =h @video.vimeo_id
+%p
+  %strong Talk:
+  =h @video.talk_id
+%p
+  %strong Published:
+  =h @video.published

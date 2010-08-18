@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100818110034) do
+ActiveRecord::Schema.define(:version => 20100818161139) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -144,5 +144,15 @@ ActiveRecord::Schema.define(:version => 20100818110034) do
   end
 
   add_index "venues", ["lat", "lng"], :name => "index_venues_on_lat_and_lng"
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "vimeo_id"
+    t.integer  "talk_id"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

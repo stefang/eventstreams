@@ -26,14 +26,24 @@
     %tr
       %th Name
       %th Biog
-      %th Published
     - for speaker in @speakers
       %tr
         %td= image_tag speaker.portrait.url(:thumb)
         %td= h speaker.name
         %td= h speaker.biog
-        %td= h speaker.published
-    
+
+  %h3 Videos
+
+  %table
+    %tr
+      %th Title
+      %th Description
+      %th Vimeo
+    - for video in @videos
+      %tr
+        %td= link_to video.title, talk_video_path(@talk, video)
+        %td= h video.description
+        %td= h video.vimeo_id
 
 -else 
   - title @talk.title
@@ -81,3 +91,23 @@
         %td= link_to 'Destroy', user_event_talk_speaker_path(current_user, @event, @talk, speaker), :confirm => 'Are you sure?', :method => :delete
 
   %p= link_to "New Speaker", new_user_event_talk_speaker_path(current_user, @event, @talk)
+
+  %h3 Videos
+
+  %table
+    %tr
+      %th Title
+      %th Description
+      %th Vimeo
+      %th Published
+    - for video in @videos
+      %tr
+        %td= h video.title
+        %td= h video.description
+        %td= h video.vimeo_id
+        %td= h video.published
+        %td= link_to 'Show', user_event_talk_video_path(current_user, @event, @talk, video)
+        %td= link_to 'Edit', edit_user_event_talk_video_path(current_user, @event, @talk, video)
+        %td= link_to 'Destroy', user_event_talk_video_path(current_user, @event, @talk, video), :confirm => 'Are you sure?', :method => :delete
+
+  %p= link_to "New Video", new_user_event_talk_video_path(current_user, @event, @talk)

@@ -1,0 +1,6 @@
+- title "Edit Video"
+
+= render :partial => 'form'
+
+%p= link_to "Show", user_event_talk_video_path(current_user, @event, @talk,@video)
+%p= link_to "Back to List", user_event_talk_path(current_user, @event, @talk)
