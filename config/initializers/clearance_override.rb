@@ -12,4 +12,3 @@ Clearance::Authentication::InstanceMethods.module_eval do
     reset_session
   end
 end
-

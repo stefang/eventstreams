@@ -13,5 +13,6 @@ class Event < ActiveRecord::Base
   has_many :owned_talks, :class_name => 'Talk', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_venues, :class_name => 'Venue', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_venue_types, :class_name => 'VenueType', :foreign_key => :event_id, :dependent => :destroy
+  has_many :owned_tweets, :class_name => 'Tweet', :foreign_key => :event_id, :dependent => :destroy
   
 end

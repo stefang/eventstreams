@@ -1,0 +1,11 @@
+one:
+  twitter_id: 1
+  event_id: 1
+  text: MyString
+  avatar: MyString
+
+two:
+  twitter_id: 1
+  event_id: 1
+  text: MyString
+  avatar: MyString

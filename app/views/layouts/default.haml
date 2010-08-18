@@ -32,6 +32,7 @@
               %li= link_to "Talks", user_event_talks_path(current_user, @event)
               %li= link_to "Venues", user_event_venues_path(current_user, @event)
               %li= link_to "Venue Types", user_event_venue_types_path(current_user, @event)
+              %li= link_to "Tweets", user_event_tweets_path(current_user, @event)
         
         = render :partial => 'layouts/flashes'
       %section.main

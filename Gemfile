@@ -10,6 +10,8 @@ gem 'subdomain-fu'
 gem "friendly_id",            "~> 3.1"
 gem "geokit"
 gem "paperclip"
+gem 'httparty'
+gem 'twitter'
 
 group :development do
   gem 'vlad' 

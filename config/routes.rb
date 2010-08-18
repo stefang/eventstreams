@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tracks, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :talks, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :venues, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
+  map.resources :tweets, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
 
   map.event_page '/:id', :controller => 'event_pages', :action=>'show', :conditions => { :subdomain => /.+/ }
 
@@ -25,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
       e.resources :talks do |t|
         t.resources :speakers
       end
+      e.resources :tweets
     end
   end
   
