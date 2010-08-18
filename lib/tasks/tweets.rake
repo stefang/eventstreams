@@ -6,6 +6,10 @@ namespace :tweets do
       pull_tweets e
     end
   end
+  desc "Will delete all tweets"
+  task "clear" => :environment do
+    Tweet.delete_all
+  end
 end
 
 def process_tweet(tweet, event)

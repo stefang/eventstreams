@@ -1,14 +1,8 @@
 - title "Tweets"
 
 %table
-  %tr
-    %th Twitter
-    %th Event
-    %th Text
-    %th Avatar
   - for tweet in @tweets
     %tr
-      %td= h tweet.twitter_id
-      %td= h tweet.event_id
+      %td
+        %img{:src=> tweet.avatar, :width=>36 }
       %td= h tweet.text
-      %td= h tweet.avatar
