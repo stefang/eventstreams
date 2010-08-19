@@ -28,6 +28,7 @@ class VideosController < ApplicationController
     @talk = @event.owned_talks.find(params[:talk_id])
     @video = Video.new(params[:video])
     @video.talk_id = @talk.id
+    @video.event_id = @event.id
     if @video.save
       flash[:notice] = "Successfully created video."
       redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])

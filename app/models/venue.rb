@@ -1,8 +1,8 @@
 class Venue < ActiveRecord::Base
   
-  acts_as_mappable
+  has_friendly_id :name, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true, :scope => :event
   
-  attr_accessible :name, :description, :address_1, :address_2, :address_3, :city, :county, :postcode, :lat, :lng, :website, :phone_number, :published, :venue_type_id
+  acts_as_mappable
 
   belongs_to :event
   belongs_to :venue_type

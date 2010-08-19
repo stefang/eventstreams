@@ -21,9 +21,11 @@ class SpeakersController < ApplicationController
   end
   
   def create
+    @event = current_user.owned_events.find(params[:event_id])
+    @talk = @event.owned_talks.find(params[:talk_id])
     @speaker = Speaker.new(params[:speaker])
-    @speaker.event_id = params[:event_id]
-    @speaker.talk_id = params[:talk_id]
+    @speaker.event_id = @event.id
+    @speaker.talk_id = @talk.id
     if @speaker.save
       flash[:notice] = "Successfully created speaker."
       redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])

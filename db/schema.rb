@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100818161139) do
+ActiveRecord::Schema.define(:version => 20100819123858) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -59,7 +59,10 @@ ActiveRecord::Schema.define(:version => 20100818161139) do
     t.string   "portrait_content_type"
     t.integer  "portrait_file_size"
     t.datetime "portrait_updated_at"
+    t.string   "cached_slug"
   end
+
+  add_index "speakers", ["cached_slug"], :name => "index_speakers_on_cached_slug"
 
   create_table "talks", :force => true do |t|
     t.string   "title"
@@ -72,7 +75,10 @@ ActiveRecord::Schema.define(:version => 20100818161139) do
     t.datetime "updated_at"
     t.integer  "event_id"
     t.integer  "venue_id"
+    t.string   "cached_slug"
   end
+
+  add_index "talks", ["cached_slug"], :name => "index_talks_on_cached_slug"
 
   create_table "tracks", :force => true do |t|
     t.string   "title"
@@ -121,7 +127,10 @@ ActiveRecord::Schema.define(:version => 20100818161139) do
     t.boolean  "global"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
+
+  add_index "venue_types", ["cached_slug"], :name => "index_venue_types_on_cached_slug"
 
   create_table "venues", :force => true do |t|
     t.string   "name"
@@ -141,8 +150,10 @@ ActiveRecord::Schema.define(:version => 20100818161139) do
     t.datetime "updated_at"
     t.integer  "venue_type_id"
     t.integer  "event_id"
+    t.string   "cached_slug"
   end
 
+  add_index "venues", ["cached_slug"], :name => "index_venues_on_cached_slug"
   add_index "venues", ["lat", "lng"], :name => "index_venues_on_lat_and_lng"
 
   create_table "videos", :force => true do |t|
@@ -153,6 +164,10 @@ ActiveRecord::Schema.define(:version => 20100818161139) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
+    t.integer  "event_id"
   end
+
+  add_index "videos", ["cached_slug"], :name => "index_videos_on_cached_slug"
 
 end
