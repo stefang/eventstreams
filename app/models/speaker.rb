@@ -3,9 +3,9 @@ class Speaker < ActiveRecord::Base
   
   has_attached_file :portrait, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
-  belongs_to :talk
+  has_and_belongs_to_many :talks
   belongs_to :event
 
   validates_presence_of :name, :on => :create
-  validates_presence_of :talk_id, :on => :create
+  validates_presence_of :event_id, :on => :create
 end

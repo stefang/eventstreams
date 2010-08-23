@@ -4,31 +4,26 @@ class SpeakersController < ApplicationController
 
   def index
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
-    @speakers = @talk.owned_speakers.all
+    @speakers = @event.owned_speakers.all
   end
   
   def show
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
-    @speaker = @talk.owned_speakers.find(params[:id])
+    @speaker = @event.owned_speakers.find(params[:id])
   end
   
   def new
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
-    @speaker = @talk.owned_speakers.new
+    @speaker = @event.owned_speakers.new
   end
   
   def create
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
     @speaker = Speaker.new(params[:speaker])
     @speaker.event_id = @event.id
-    @speaker.talk_id = @talk.id
     if @speaker.save
       flash[:notice] = "Successfully created speaker."
-      redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])
+      redirect_to user_event_speakers_url(current_user, params[:event_id])
     else
       render :action => 'new'
     end
@@ -36,17 +31,15 @@ class SpeakersController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
-    @speaker = Speaker.find(params[:id])
+    @speaker = @event.owned_speakers.find(params[:id])
   end
   
   def update
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
-    @speaker = Speaker.find(params[:id])
+    @speaker = @event.owned_speakers.find(params[:id])
     if @speaker.update_attributes(params[:speaker])
       flash[:notice] = "Successfully updated speaker."
-      redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])
+      redirect_to user_event_speakers_url(current_user, params[:event_id])
     else
       render :action => 'edit'
     end
@@ -56,6 +49,6 @@ class SpeakersController < ApplicationController
     @speaker = Speaker.find(params[:id])
     @speaker.destroy
     flash[:notice] = "Successfully destroyed speaker."
-    redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])
+    redirect_to user_event_speakers_url(current_user, params[:event_id])
   end
 end

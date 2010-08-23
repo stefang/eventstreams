@@ -21,7 +21,7 @@ class TalksController < ApplicationController
     if current_subdomain.blank?
       @event = current_user.owned_events.find(params[:event_id])
       @talk = Talk.find(params[:id])
-      @speakers = @talk.owned_speakers.all
+      @speakers = @talk.speakers.all
       @videos = @talk.owned_videos.all
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
@@ -30,7 +30,7 @@ class TalksController < ApplicationController
       else
         @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
         @talk = @event.owned_talks.find(params[:id])
-        @speakers = @talk.owned_speakers.find(:all, :conditions => "published = true")
+        @speakers = @talk.speakers.find(:all, :conditions => "published = true")
         @videos = @talk.owned_videos.find(:all, :conditions => "published = true")
         render :layout => 'event'
       end
@@ -41,11 +41,13 @@ class TalksController < ApplicationController
     @event = current_user.owned_events.find(params[:event_id])
     @venues = @event.owned_venues.all
     @tracks = @event.owned_tracks.all
+    @speakers = @event.owned_speakers.all
     @talk = Talk.new
   end
   
   def create
     @event = current_user.owned_events.find(params[:event_id])
+    @speakers = @event.owned_speakers.all
     @tracks = @event.owned_tracks.all
     @talk = Talk.new(params[:talk])
     @talk.event_id = @event.id
@@ -61,11 +63,15 @@ class TalksController < ApplicationController
     @event = current_user.owned_events.find(params[:event_id])
     @venues = @event.owned_venues.all
     @tracks = @event.owned_tracks.all
+    @speakers = @event.owned_speakers.all
     @talk = @event.owned_talks.find(params[:id])
+    @videos = @talk.owned_videos.all
   end
   
   def update
+    params[:talk][:speaker_ids] ||= []
     @event = current_user.owned_events.find(params[:event_id])
+    @speakers = @event.owned_speakers.all
     @talk = @event.owned_talks.find(params[:id])
     if @talk.update_attributes(params[:talk])
       flash[:notice] = "Successfully updated talk."

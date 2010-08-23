@@ -4,7 +4,7 @@ class Talk < ActiveRecord::Base
   belongs_to :track
   belongs_to :venue
   belongs_to :event
-  has_many :owned_speakers, :class_name => 'Speaker', :foreign_key => :talk_id, :dependent => :destroy
+  has_and_belongs_to_many :speakers
   has_many :owned_videos, :class_name => 'Video', :foreign_key => :talk_id, :dependent => :destroy
   
   validates_presence_of :title, :on => :create

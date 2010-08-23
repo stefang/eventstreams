@@ -1,3 +1,13 @@
 - title "Edit Talk"
 
 = render :partial => 'form'
+
+%section.item_list
+  = link_to "New Video", new_user_event_talk_video_path(current_user, @event, @talk), :class=>'button add'
+  %h3= "Videos of #{@talk.title}"
+  %ul
+    - for video in @videos
+      %li{:class=> video.published ? '':'disabled'}
+        = link_to 'Edit', edit_user_event_talk_video_path(current_user, @event, @talk, video), :class=>'button manage'
+        = video.title
+        = link_to 'Delete', user_event_talk_video_path(current_user, @event,  @talk, video), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

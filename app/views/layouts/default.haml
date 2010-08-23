@@ -38,6 +38,7 @@
                 %li= link_to @event.title, edit_user_event_path(current_user, @event), :class=>'button'
                 %li= link_to "Event Pages", user_event_event_pages_path(current_user, @event), :class=>'button'
                 %li= link_to "Event Tracks", user_event_tracks_path(current_user, @event), :class=>'button'
+                %li= link_to "Speakers", user_event_speakers_path(current_user, @event), :class=>'button'
                 %li= link_to "Talks", user_event_talks_path(current_user, @event), :class=>'button'
                 %li= link_to "Venues", user_event_venues_path(current_user, @event), :class=>'button'
                 %li= link_to "Venue Types", user_event_venue_types_path(current_user, @event), :class=>'button'

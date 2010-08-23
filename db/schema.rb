@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100819123858) do
+ActiveRecord::Schema.define(:version => 20100823223514) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -63,6 +63,11 @@ ActiveRecord::Schema.define(:version => 20100819123858) do
   end
 
   add_index "speakers", ["cached_slug"], :name => "index_speakers_on_cached_slug"
+
+  create_table "speakers_talks", :id => false, :force => true do |t|
+    t.integer "speaker_id"
+    t.integer "talk_id"
+  end
 
   create_table "talks", :force => true do |t|
     t.string   "title"

@@ -21,6 +21,15 @@
       %li.select
         = f.label :venue_id
         = f.collection_select :venue_id, @venues, :id, :name, {:prompt => true}
+    %li.ticklist
+      %label
+        Speakers taking part in this talk
+      %ul
+        - if @speakers
+          - @speakers.each do |speaker|
+            %li
+              = check_box_tag "talk[speaker_ids][]", speaker.id, talk_has_speaker?(speaker)
+              = speaker.name
     %li.checkbox
       = f.label :published
       = f.check_box :published

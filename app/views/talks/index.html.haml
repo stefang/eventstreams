@@ -2,16 +2,14 @@
   %table.events
     =render @talks
 - else
-
-
-%section.item_list
-  = link_to "New Event talk", new_user_event_talk_path, :class=>'button add'
-  %h3 Your Event talks
-  %ul
-    - for talk in @talks
-      %li{:class=> talk.published ? '':'disabled'}
-        = link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk), :class=>'button manage'
-        = talk.title
-        %span
-          = "/talks/#{talk.cached_slug}"
-        = link_to 'Delete', user_event_talk_path(current_user, @event, talk), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
+  %section.item_list
+    = link_to "New Talk", new_user_event_talk_path, :class=>'button add'
+    %h3 Your Event talks
+    %ul
+      - for talk in @talks
+        %li{:class=> talk.published ? '':'disabled'}
+          = link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk), :class=>'button manage'
+          = talk.title
+          %span
+            = "/talks/#{talk.cached_slug}"
+          = link_to 'Delete', user_event_talk_path(current_user, @event, talk), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

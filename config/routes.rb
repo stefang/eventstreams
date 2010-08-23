@@ -25,8 +25,8 @@ ActionController::Routing::Routes.draw do |map|
       e.resources :venue_types      
       e.resources :event_pages
       e.resources :tracks
+      e.resources :speakers
       e.resources :talks do |t|
-        t.resources :speakers
         t.resources :videos
       end
       e.resources :tweets

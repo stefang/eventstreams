@@ -236,10 +236,10 @@ section#eventstreams
               :border 1px solid #2687A3
               +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.2))
           textarea
-            :width 550px
-            :height 312px
+            :width 425px
+            :height 150px
             :margin-bottom 0
-      li.checkbox, li.select, li.date
+      li.checkbox, li.select, li.date, li.ticklist
         :border 1px solid #ccc
         :width 425px
         :padding 6px
@@ -255,6 +255,11 @@ section#eventstreams
       li.subdomain
         input
           :width 267px
+      li.ticklist
+        label
+          :display block
+          :width 100%
+        
     nav#event_content
       :width 20%
       :height 100%
