@@ -38,7 +38,7 @@
         %td= h venue.published
 - else
   %section.item_list
-    = link_to "New Event Venue", new_user_event_venue_path, :class=>'button add'
+    = link_to "New Venue", new_user_event_venue_path, :class=>'button add'
     %h3 Your Event Venues
     %ul
       - for venue in @venues

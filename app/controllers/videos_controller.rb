@@ -31,7 +31,7 @@ class VideosController < ApplicationController
     @video.event_id = @event.id
     if @video.save
       flash[:notice] = "Successfully created video."
-      redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])
+      redirect_to edit_user_event_talk_url(current_user, params[:event_id], params[:talk_id])
     else
       render :action => 'new'
     end
@@ -47,7 +47,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     if @video.update_attributes(params[:video])
       flash[:notice] = "Successfully updated video."
-      redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])
+      redirect_to edit_user_event_talk_url(current_user, params[:event_id], params[:talk_id])
     else
       render :action => 'edit'
     end
@@ -57,6 +57,6 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video.destroy
     flash[:notice] = "Successfully destroyed video."
-    redirect_to user_event_talk_url(current_user, params[:event_id], params[:talk_id])
+    redirect_to edit_user_event_talk_url(current_user, params[:event_id], params[:talk_id])
   end
 end
