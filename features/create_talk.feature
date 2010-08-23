@@ -9,7 +9,7 @@ Feature: Create talk
     And "myevent" has a published track called "mytrack"
     And "myevent" has a venue called "posh_hotel"
     When I go to the events page
-    And I follow "Content Admin"
+    And I follow "Manage"
     And I follow "Talks"
     And I follow "New Talk"
     Then I fill in "Title" with "My Talk"
@@ -17,7 +17,7 @@ Feature: Create talk
     And I check "Published"
     And I select "mytrack" from "Track"
     And I select "posh_hotel" from "Venue"
-    And I press "Save Changes"
+    And I press "Save"
     Then I should see "Successfully created talk."
     And I should see "My Talk"
     When I go to the myevent subdomain
@@ -29,13 +29,13 @@ Feature: Create talk
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
     When I go to the events page
-    And I follow "Content Admin"
+    And I follow "Manage"
     And I follow "Talks"
     And I follow "New Talk"
     Then I fill in "Title" with "My Talk"
     And I fill in "Description" with "My talk will be cool"
     And I select "mytrack" from "Track"
-    And I press "Save Changes"
+    And I press "Save"
     Then I should see "Successfully created talk."
     And I should see "My Talk"
     When I go to the myevent subdomain

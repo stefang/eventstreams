@@ -7,13 +7,13 @@ Feature: List all events
      Given that I am a user
      And an event exists called "Event One"
      And an event exists called "Event Two"
-     When I go to the events page
+     When I go to the home page
      Then I should see "Event One"
      And I should see "Event Two"
 
   Scenario: Guest looks at event list
     Given an event exists called "Event One"
     And an event exists called "Event Two"
-    When I go to the events page
+    When I go to the home page
     Then I should see "Event One"
     And I should see "Event Two"

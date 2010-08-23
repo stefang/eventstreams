@@ -8,12 +8,12 @@ Feature: Create event track
     And I have an event called "myevent"
     When I go to my user events page
     Then I should see "myevent"
-    And I follow "Content Admin"
+    And I follow "Manage"
     And I follow "Event Tracks"
     And I follow "New Track"
     Then I fill in "Title" with "My Track"
     And I check "Published"
-    And I press "Save Changes"
+    And I press "Save"
     Then I should see "Successfully created track."
     And I should see "My Track"
 
@@ -23,7 +23,7 @@ Feature: Create event track
     And "myevent" has a published track called "mytrack"
     When I go to my user events page
     Then I should see "myevent"
-    And I follow "Content Admin"
+    And I follow "Manage"
     And I follow "Event Tracks"
     And I should see "mytrack"
     
@@ -33,6 +33,6 @@ Feature: Create event track
     And "myevent" has an unpublished track called "mytrack"
     When I go to my user events page
     Then I should see "myevent"
-    And I follow "Content Admin"
+    And I follow "Manage"
     And I follow "Event Tracks"
     And I should see "mytrack"

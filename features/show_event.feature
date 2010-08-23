@@ -29,7 +29,7 @@ Feature: View event
     And I have an event called "myevent"
     And I go to my user events page
     Then I should see "myevent"
-    When I follow "Show"
+    When I follow "http://myevent.example.com"
     Then I should see "myevent" within "h3"
     And I should see "Your Account" within "nav#event_admin_bar"
     And I should see "Sign out" within "nav#event_admin_bar"
@@ -37,16 +37,17 @@ Feature: View event
 
   Scenario: Owner looks at their own event and misses out the hashtag
     Given that I am a user
+    And I go to my user events page
     When I follow "New Event"
-    Then I should see "Add a new event"
+    Then I should see "Title"
     When I fill in "Title" with "My Event"
     And I fill in "Subdomain" with "myevent"
     And I check "Published"
-    And I press "Save Changes"
+    And I press "Save"
     Then I should see "Successfully created event"
     And I should be on my user events page
     And I should see "My Event"
-    Then I follow "Show"
+    Then I follow "http://myevent.example.com"
     Then I should see "My Event" within "h3"
     And I should see "Your Account" within "nav#event_admin_bar"
     And I should see "Sign out" within "nav#event_admin_bar"

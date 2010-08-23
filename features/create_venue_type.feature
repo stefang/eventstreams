@@ -7,9 +7,9 @@ Feature: Create venue type
     Given that I am a user
     And I have an event called "myevent"
     When I go to my user events page
-    And I follow "Content Admin"
+    And I follow "Manage"
     And I follow "Venue Types"
     And I follow "New Venue Type"
     Then I fill in "Name" with "My Venue Type"
-    And I press "Save Changes"
+    And I press "Save"
     Then I should see "Successfully created venue type."
