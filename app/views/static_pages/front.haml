@@ -1,1 +1,8 @@
-%h3 Welcome
+%h4 All events
+
+%table.events
+  -for event in @events
+    %tr
+      %td= link_to event.title, event_root_url(:subdomain => event.subdomain)  
+      %td= h event.start_date
+      %td= h event.end_date

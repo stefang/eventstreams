@@ -1,20 +1,18 @@
 - form_for [current_user, @event, @talk, @video] do |f|
-  = f.error_messages
-  %p
-    = f.label :title
-    %br
-    = f.text_field :title
-  %p
-    = f.label :description
-    %br
-    = f.text_area :description
-  %p
-    = f.label :vimeo_id
-    %br
-    = f.text_field :vimeo_id
-  %p
-    = f.label :published
-    %br
-    = f.check_box :published
-  %p
-    = f.submit
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :title
+      = f.text_field :title
+    %li
+      = f.label :description
+      = f.text_area :description
+    %li
+      = f.label :vimeo_id
+      = f.text_field :vimeo_id
+    %li
+      = f.label :published
+      = f.check_box :published
+    %li
+      = f.submit

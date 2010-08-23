@@ -1,16 +1,15 @@
 - form_for [current_user, @event, @track] do |f|
-  = f.error_messages
-  %p
-    = f.label :title
-    %br
-    = f.text_field :title
-  %p
-    = f.label :description
-    %br
-    = f.text_field :description
-  %p
-    = f.label :published
-    %br
-    = f.check_box :published
-  %p
-    = f.submit
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :title
+      = f.text_field :title
+    %li
+      = f.label :description
+      = f.text_field :description
+    %li
+      = f.label :published
+      = f.check_box :published
+    %li
+      = f.submit

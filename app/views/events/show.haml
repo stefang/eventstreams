@@ -21,4 +21,3 @@
     =h @event.end_date
   - if current_user && is_owner?(@event) 
     %p= link_to "Edit This Event", edit_user_event_path(current_user, @event)
-    %p= link_to 'See the event site', event_root_url(:subdomain => @event.subdomain)

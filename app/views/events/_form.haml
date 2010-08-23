@@ -1,28 +1,24 @@
 - form_for [current_user, @event] do |f|
-  = f.error_messages
-  %p
-    = f.label :title
-    %br
-    = f.text_field :title
-  %p
-    = f.label :subdomain
-    %br
-    = f.text_field :subdomain
-  %p
-    = f.label :hashtag
-    %br
-    = f.text_field :hashtag
-  %p
-    = f.label :start_date
-    %br
-    = f.date_select :start_date
-  %p
-    = f.label :end_date
-    %br
-    = f.date_select :end_date
-  %p
-    = f.label :published
-    %br
-    = f.check_box :published
-  %p
-    = f.submit
+  %ol
+    %li.errors
+      = f.error_messages
+    %li
+      = f.label :title
+      = f.text_field :title
+    %li
+      = f.label :subdomain
+      = f.text_field :subdomain
+    %li
+      = f.label :hashtag
+      = f.text_field :hashtag
+    %li
+      = f.label :start_date
+      = f.date_select :start_date
+    %li
+      = f.label :end_date
+      = f.date_select :end_date
+    %li
+      = f.label :published
+      = f.check_box :published
+    %li
+      = f.submit

@@ -6,35 +6,43 @@
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     %script{:type=>"text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+    = javascript_include_tag "minigrid", :cache => false
     = stylesheet_link_tag 'eventstreams', :media => 'screen, projection', :cache => false
   %body
-    %section#eventstreams.es
+    %section#eventstreams
       %header
-        %h3#site_logo
-          =link_to "Eventstreams", root_path
-        %nav#main
-          %ul
-            %li=link_to "All Events", events_path
-            -if signed_in?
-              %li=link_to "New Event", new_user_event_path(current_user)
-              %li=link_to "Your Events", user_events_path(current_user)
-              %li=link_to t('profile.link'), user_path(current_user)
-              %li=link_to t('authentication.sign_out'), sign_out_path
-            -else
-              %li=link_to t('authentication.sign_up'), new_user_path
-              %li=link_to t('authentication.sign_in'), new_session_path
-        -if signed_in? && @event && @event.valid?
-          %nav#event_admin
+        .inner
+          %h3#site_logo
+            =link_to "Eventstreams", root_path
+          %nav#main
+            %ul
+              -if signed_in?
+                %li=link_to "Your Events", user_events_path(current_user)
+                %li=link_to t('profile.link'), user_path(current_user)
+                %li=link_to t('authentication.sign_out'), sign_out_path
+              -else
+                %li=link_to t('authentication.sign_up'), new_user_path
+                %li=link_to t('authentication.sign_in'), new_session_path
+      = render :partial => 'layouts/flashes'
+      -if signed_in? && @event && @event.valid?
+        %nav#event_header
+          .inner
             %ul
               %li.title= link_to @event.title, user_event_path(current_user, @event)
-              %li= link_to "Event Pages", user_event_event_pages_path(current_user, @event)
-              %li= link_to "Event Tracks", user_event_tracks_path(current_user, @event)
-              %li= link_to "Talks", user_event_talks_path(current_user, @event)
-              %li= link_to "Venues", user_event_venues_path(current_user, @event)
-              %li= link_to "Venue Types", user_event_venue_types_path(current_user, @event)
-              %li= link_to "Tweets", user_event_tweets_path(current_user, @event)
-        
-        = render :partial => 'layouts/flashes'
+              %li.site_link= link_to event_root_url(:subdomain => @event.subdomain), event_root_url(:subdomain => @event.subdomain)
       %section.main
-        .content
-          = yield
+        .inner
+          -if signed_in? && @event && @event.valid?
+            %nav#event_content
+              %ul
+                %li= link_to "Event Pages", user_event_event_pages_path(current_user, @event), :class=>'button'
+                %li= link_to "Event Tracks", user_event_tracks_path(current_user, @event), :class=>'button'
+                %li= link_to "Talks", user_event_talks_path(current_user, @event), :class=>'button'
+                %li= link_to "Venues", user_event_venues_path(current_user, @event), :class=>'button'
+                %li= link_to "Venue Types", user_event_venue_types_path(current_user, @event), :class=>'button'
+                %li= link_to "Tweets", user_event_tweets_path(current_user, @event), :class=>'button'
+            %section.event_content
+              = yield
+          -else
+            = yield
+          

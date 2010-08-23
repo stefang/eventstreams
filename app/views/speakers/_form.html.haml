@@ -1,20 +1,18 @@
 - form_for [current_user, @event, @talk, @speaker], :html => { :multipart => true } do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.label :biog
-    %br
-    = f.text_area :biog
-  %p
-    = f.label :portrait
-    %br
-    = f.file_field :portrait
-  %p
-    = f.label :published
-    %br
-    = f.check_box :published
-  %p
-    = f.submit
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :name
+      = f.text_field :name
+    %li
+      = f.label :biog
+      = f.text_area :biog
+    %li
+      = f.label :portrait
+      = f.file_field :portrait
+    %li
+      = f.label :published
+      = f.check_box :published
+    %li
+      = f.submit

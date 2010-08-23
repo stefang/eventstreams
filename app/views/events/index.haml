@@ -1,4 +1,18 @@
-- title "Events"
+- title "Your events on Eventstreams"
 
-%table.events
-  =render @events
+Welcome to your Eventstreams administration system.
+
+%section.item_list.events
+  =link_to "New Event", new_user_event_path(current_user), :class=>'button add'
+  %h3 Your Events
+  %ul
+    - for event in @events
+      %li
+        = link_to 'Manage', user_event_path(current_user, event), :class=>'button manage'
+        = event.title
+        -if event.published
+          = link_to event_root_url(:subdomain => event.subdomain), event_root_url(:subdomain => event.subdomain), :class => 'event_link active'
+        -else
+          %span.event_link.disabled
+            = event_root_url(:subdomain => event.subdomain)
+        = link_to 'Delete', user_event_path(current_user, event), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

@@ -1,8 +1,9 @@
 - form_for [current_user, @event, @venue_type] do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.submit
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :name
+      = f.text_field :name
+    %li
+      = f.submit

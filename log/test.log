@@ -922,3 +922,74 @@ Rendering static_pages/front
 Rendered layouts/_flashes (1.9ms)
 Completed in 21ms (View: 17, DB: 46) | 200 OK [http://test.host/]
   [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+** SubdomainFu: initialized properly
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to ClearanceUpdateUsers (20100809104412)
+Migrating to CreateEvents (20100810185319)
+Migrating to AddUserIdToEvents (20100810185629)
+Migrating to AddSubdomainToEvent (20100810211255)
+Migrating to CreateEventPages (20100810231333)
+Migrating to RemoveRedundantYearField (20100811013133)
+Migrating to CreateSlugs (20100811014721)
+Migrating to AddCachedSlugsToEventPages (20100811015353)
+Migrating to CreateTracks (20100812171817)
+Migrating to AddCachedSlugsToTracks (20100812184519)
+Migrating to AddHashtagToEvent (20100812200811)
+Migrating to CreateTalks (20100813144915)
+Migrating to AddEventIdToTalk (20100813145432)
+Migrating to AddPublishedBooleanToTracks (20100814174043)
+Migrating to AddPublishedBooleanToEvents (20100814174103)
+Migrating to CreateSpeakers (20100814220034)
+Migrating to ChangeBiogFromStringToText (20100815101104)
+Migrating to CreateVenues (20100815110938)
+Migrating to AddVenueTypeIdToVenue (20100815111759)
+Migrating to AddIndexToVenueLatLng (20100815111935)
+Migrating to AddEventIdToVenue (20100815112854)
+Migrating to CreateVenueTypes (20100816225134)
+Migrating to AddVenueIdToTalk (20100816234810)
+Migrating to AddPortraitFieldsToSpeaker (20100817002232)
+Migrating to CreateTweets (20100817160125)
+Migrating to AddTwitterUserIdToTweets (20100818110034)
+Migrating to ConvertTwitterIdToBigintIfMysql (20100818154032)
+Migrating to ConvertTwitterRecordIdToBigintIfMysql (20100818154258)
+Migrating to CreateVideos (20100818161139)
+Migrating to AddCachedSlugToAllOfTheContentModels (20100819123043)
+Migrating to AddEventIdToVenueTypeTalkSpeakerVideo (20100819123858)
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `event_pages`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `event_pages`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `event_pages`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `slugs`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `slugs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `slugs`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `speakers`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `speakers`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `speakers`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mdescribe `talks`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `talks`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `tracks`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `tracks`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `tweets`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `tweets`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `tweets`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `venue_types`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `venue_types`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `venue_types`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `venues`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `venues`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `venues`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `videos`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mdescribe `videos`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `videos`[0m

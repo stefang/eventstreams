@@ -1,8 +1,7 @@
 .user_content_panel
   %h2 Edit Your Account Details 
-  .form_wrapper
-    -form_for @user, :html => { :multipart => true } do |form|
-      %ol
-        = render :partial => '/users/form', :object => form
-        %li
-          %button{:type => 'submit'} Update
+  -form_for @user, :html => { :multipart => true } do |form|
+    %ol
+      = render :partial => '/users/form', :object => form
+      %li
+        %button{:type => 'submit'} Update

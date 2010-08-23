@@ -1,52 +1,43 @@
 - form_for [current_user, @event, @venue] do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.label :description
-    %br
-    = f.text_area :description
-  -unless @venue_types.blank?
-    %li.select
-      = f.label :venue_type_id
-      = f.collection_select :venue_type_id, @venue_types, :id, :name, {:prompt => true}
-  %p
-    = f.label :address_1
-    %br
-    = f.text_field :address_1
-  %p
-    = f.label :address_2
-    %br
-    = f.text_field :address_2
-  %p
-    = f.label :address_3
-    %br
-    = f.text_field :address_3
-  %p
-    = f.label :city
-    %br
-    = f.text_field :city
-  %p
-    = f.label :county
-    %br
-    = f.text_field :county
-  %p
-    = f.label :postcode
-    %br
-    = f.text_field :postcode
-  %p
-    = f.label :website
-    %br
-    = f.text_field :website
-  %p
-    = f.label :phone_number
-    %br
-    = f.text_field :phone_number
-  %p
-    = f.label :published
-    %br
-    = f.check_box :published
-  %p
-    = f.submit
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :name
+      = f.text_field :name
+    %li
+      = f.label :description
+      = f.text_area :description
+    -unless @venue_types.blank?
+      %li.select
+        = f.label :venue_type_id
+        = f.collection_select :venue_type_id, @venue_types, :id, :name, {:prompt => true}
+    %li
+      = f.label :address_1
+      = f.text_field :address_1
+    %li
+      = f.label :address_2
+      = f.text_field :address_2
+    %li
+      = f.label :address_3
+      = f.text_field :address_3
+    %li
+      = f.label :city
+      = f.text_field :city
+    %li
+      = f.label :county
+      = f.text_field :county
+    %li
+      = f.label :postcode
+      = f.text_field :postcode
+    %li
+      = f.label :website
+      = f.text_field :website
+    %li
+      = f.label :phone_number
+      = f.text_field :phone_number
+    %li
+      = f.label :published
+      = f.check_box :published
+    %li
+      = f.submit

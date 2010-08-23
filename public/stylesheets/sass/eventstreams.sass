@@ -1,18 +1,103 @@
 @import 'reset'
 @import 'shared'
 
+/* Default Site Styles */
+
+a
+  :color #2687A3
+
+.button
+  :display block
+  :background #2687A3
+  :color white
+  :padding 3px 9px
+  +rounded(3px)
+  :font
+    :size 12px
+    :weight bold
+  &:hover, &:focus
+    :background-color #165161
+    
+.button.delete
+  :background-color #700
+  &:hover, &:focus
+    :background-color #500
+.button.add
+  :background-color #070
+  &:hover, &:focus
+    :background-color #050
+
 section#eventstreams
+  .inner
+    :min-width 768px
+    :max-width 1024px
+    :margin 0 auto
+    :position relative
+    :padding 22px
   header
+    :background-color #2687A3
+    :height 88px
+    .inner
+      :height 100%
+      :padding 0 22px
     #site_logo
+      :position absolute
+      :top 22px
       a
         :display block
         :font
-          :size 24px
+          :size 26px
           :weight normal
-        :padding 9px
-        :background #999
+        :line-height 21px  
+        :padding 11px
+        :background rgba(0,0,0,0.1)
         :color white
-        +rounded(3px)
+        :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
+        +rounded(5px)
+    nav#main
+      :position absolute
+      :bottom 22px
+      :right 22px
+      ul
+        :float left
+        li
+          :float left
+          :margin-left 11px
+          a
+            :display block
+            :padding 6px 11px
+            :background rgba(0,0,0,0.1)
+            :color white
+            :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
+            +rounded(5px)
+            &:hover, &:focus
+              :background rgba(0,0,0,0.2)
+            &:hover, &:active
+              :background rgba(0,0,0,0.4)
+  nav#event_header
+    :background #333
+    :height 66px
+    .inner
+      :padding 16px 22px
+      ul
+        li
+          :position absolute
+          a
+            :display block
+            :padding 6px 11px
+            :background rgba(255,255,255,0.1)
+            :color #ddd
+            :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
+            +rounded(5px)
+            &:hover, &:focus
+              :background rgba(0,0,0,0.2)
+              :color white
+            &:hover, &:active
+              :background rgba(0,0,0,0.4)
+        li.title
+          :left 22px
+        li.site_link
+          :right 22px
   section#flash
     div
       :clear both
@@ -20,3 +105,71 @@ section#eventstreams
       :margin 22px 0
       :background #eee
       +rounded(6px)
+
+  section.main
+    :clear both
+    section.item_list
+      :margin-top 44px
+      +rounded(11px)
+      :border 2px solid #ddd
+      :background #fafafa
+      :padding 20px
+      a.button.add
+        :float left
+        :margin-top -3px
+        :margin-right 18px
+      h3
+        :color #666
+        :text-shadow 1px 1px 1px rgba(255,255,255,1)
+      ul
+        +rounded(6px)
+        :background white
+        :border 1px solid #ccc
+        :border-width 1px
+        :margin-right 66px
+        li
+          :position relative
+          :padding 11px 11px 10px
+          :border-bottom 1px solid #ccc
+          .event_link
+            :position absolute
+            :right 22px
+            :font-size 11px
+          .event_link.active
+          .event_link.disabled
+            :font-style italic
+            :color #ccc
+          a.button.manage
+            :float left
+            :margin-top -4px
+            :margin-left -4px
+            :margin-right 11px
+          a.button.delete
+            :position absolute
+            :right -66px
+            :top 7px
+            :opacity 0.3
+          &:last-child
+            :border 0
+          &:hover
+            a.button.delete
+              :opacity 1
+        
+    form
+      ol
+        :list-style none
+    nav#event_content
+      :width 20%
+      :height 100%
+      :min-height 100%
+      :position absolute
+      :top 22px
+      ul
+        li
+          a
+            :padding 9px 18px
+            :margin-bottom 4px
+    section.event_content
+      :width 75%
+      :min-height 100%
+      :margin-left 25%
