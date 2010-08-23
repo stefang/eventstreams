@@ -18,11 +18,21 @@ section#eventstreams
     &:hover, &:focus
       :background-color #165161  
   .button.delete
-    :background-color #700
+    :padding-left 23px
+    :background
+      :image url('../images/cross.png')
+      :position 8px 50%
+      :repeat no-repeat
+      :color #700
     &:hover, &:focus
       :background-color #500
   .button.add
-    :background-color #070
+    :padding-left 23px
+    :background
+      :image url('../images/plus.png')
+      :position 8px 50%
+      :repeat no-repeat
+      :color #070
     &:hover, &:focus
       :background-color #050
   input, textarea
@@ -147,7 +157,7 @@ section#eventstreams
         :background white
         :border 1px solid #ccc
         :border-width 1px
-        :margin-right 66px
+        :margin-right 88px
         li
           :position relative
           :padding 11px 11px 10px
@@ -166,7 +176,7 @@ section#eventstreams
             :margin-right 11px
           a.button.delete
             :position absolute
-            :right -66px
+            :right -88px
             :top 7px
             :opacity 0.3
           &:last-child
@@ -178,7 +188,19 @@ section#eventstreams
           :color #bbb
           :font-style italic
           a
-            :font-style normal        
+            :font-style normal
+        li.tweet
+          :min-height 44px
+          img
+            :float left
+            :width 44px
+            :margin-right 11px
+          span
+            :display block
+            :position static
+            :font-size 13px
+            :margin-left 59px
+            :padding 0
     form
       :margin-bottom 22px
       +rounded(11px)
@@ -224,3 +246,10 @@ section#eventstreams
       :width 75%
       :min-height 100%
       :margin-left 25%
+    ul.tweets
+      :margin-bottom 22px
+      +rounded(11px)
+      :border 2px solid #ddd
+      :background #fafafa
+      :padding 20px
+      :width 450px

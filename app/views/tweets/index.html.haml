@@ -1,8 +1,8 @@
 - title "Tweets"
 
-%table
-  - for tweet in @tweets
-    %tr
-      %td
+%section.item_list
+  %ul
+    - for tweet in @tweets
+      %li.tweet
         %img{:src=> tweet.avatar, :width=>36 }
-      %td= h tweet.text
+        %span.tweet= h tweet.text
