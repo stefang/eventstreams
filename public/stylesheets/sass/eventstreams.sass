@@ -40,6 +40,8 @@ section#eventstreams
     +rounded(3px)
   label
     :color #555
+    &:hover, &:focus
+      :color #333
   button
     :font-family sans-serif
     +rounded(6px)
@@ -51,6 +53,9 @@ section#eventstreams
     :font
       :size 14px
       :weight bold
+    &:hover, &:focus
+      :background-color #050
+      
 
 section#eventstreams
   .inner
@@ -226,15 +231,17 @@ section#eventstreams
             :padding 6px
             :background white
             :border 1px solid #ccc
-            :width 350px
+            :width 425px
+            &:focus
+              :border 1px solid #2687A3
+              +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.2))
           textarea
             :width 550px
             :height 312px
             :margin-bottom 0
       li.checkbox, li.select, li.date
-        :background white
         :border 1px solid #ccc
-        :width 350px
+        :width 425px
         :padding 6px
         +rounded(4px)
         :margin-bottom 8px
@@ -247,7 +254,7 @@ section#eventstreams
           :margin 0
       li.subdomain
         input
-          :width 197px
+          :width 267px
     nav#event_content
       :width 20%
       :height 100%
