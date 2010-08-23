@@ -23,13 +23,13 @@
               -else
                 %li=link_to t('authentication.sign_up'), new_user_path
                 %li=link_to t('authentication.sign_in'), new_session_path
-      = render :partial => 'layouts/flashes'
       -if signed_in? && @event && @event.valid?
         %nav#event_header
           .inner
             %ul
               %li.title= link_to @event.title, user_event_path(current_user, @event)
               %li.site_link= link_to event_root_url(:subdomain => @event.subdomain), event_root_url(:subdomain => @event.subdomain)
+      = render :partial => 'layouts/flashes'
       %section.main
         .inner
           -if signed_in? && @event && @event.valid?

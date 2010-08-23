@@ -99,12 +99,18 @@ section#eventstreams
         li.site_link
           :right 22px
   section#flash
-    div
-      :clear both
-      :padding 18px
-      :margin 22px 0
-      :background #eee
-      +rounded(6px)
+    div.inner
+      :min-width 768px
+      :max-width 1024px
+      :margin 0 auto
+      :position relative
+      :padding 0
+      div
+        :clear both
+        :padding 18px
+        :margin 0
+        :background #eee
+        +rounded(6px)
 
   section.main
     :clear both
@@ -131,11 +137,10 @@ section#eventstreams
           :position relative
           :padding 11px 11px 10px
           :border-bottom 1px solid #ccc
-          .event_link
+          span, a.event_link
             :position absolute
             :right 22px
             :font-size 11px
-          .event_link.active
           .event_link.disabled
             :font-style italic
             :color #ccc

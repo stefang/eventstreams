@@ -1,4 +1,5 @@
 -unless flash.empty?
   %section#flash
-    - flash.each do |key, value|
-      %div{ :class =>"flash_#{key}" }= html_escape(value) if value.is_a? String
+    .inner
+      - flash.each do |key, value|
+        %div{ :class =>"flash_#{key}" }= html_escape(value) if value.is_a? String

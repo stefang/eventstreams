@@ -8,4 +8,6 @@
       %li{:class=> event_page.published ? '':'disabled'}
         = link_to 'Edit', edit_user_event_event_page_path(current_user, @event, event_page), :class=>'button manage'
         = event_page.title
+        %span
+          = "/#{event_page.cached_slug}"
         = link_to 'Delete', user_event_event_page_path(current_user, @event, event_page), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
