@@ -109,7 +109,7 @@ section#eventstreams
   section.main
     :clear both
     section.item_list
-      :margin-top 44px
+      :margin-bottom 22px
       +rounded(11px)
       :border 2px solid #ddd
       :background #fafafa
@@ -154,6 +154,11 @@ section#eventstreams
           &:hover
             a.button.delete
               :opacity 1
+        li.disabled
+          :color #bbb
+          :font-style italic
+          a
+            :font-style normal
         
     form
       ol

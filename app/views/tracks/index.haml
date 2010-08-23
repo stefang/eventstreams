@@ -10,18 +10,13 @@
         %td=link_to track.title, track_path(track)
         %td= h track.description
 - else
-  %table
-    %tr
-      %th Title
-      %th Description
-      %th Published
-    - for track in @tracks
-      %tr
-        %td= h track.title
-        %td= h track.description
-        %td= h track.published
-        %td= link_to 'Edit', edit_user_event_track_path(current_user, @event, track)
-        %td= link_to 'Destroy', user_event_track_path(current_user, @event, track), :confirm => 'Are you sure?', :method => :delete
 
-  %p= link_to "New Track", new_user_event_track_path
-  %p= link_to "Back to Event Page", user_event_path(current_user, @event)
+  %section.item_list
+    = link_to "New Event Track", new_user_event_track_path, :class=>'button add'
+    %h3 Your Event Tracks
+    %ul
+      - for track in @tracks
+        %li{:class=> track.published ? '':'disabled'}
+          = link_to 'Edit', edit_user_event_track_path(current_user, @event, track), :class=>'button manage'
+          = track.title
+          = link_to 'Delete', user_event_track_path(current_user, @event, track), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

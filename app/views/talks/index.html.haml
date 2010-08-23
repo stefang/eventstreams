@@ -3,28 +3,13 @@
     =render @talks
 - else
 
-  - title "Talks"
 
-  %table
-    %tr
-      %th Title
-      %th Description
-      %th Start
-      %th Duration
-      %th Track
-      %th Venue
-      %th Published
+%section.item_list
+  = link_to "New Event talk", new_user_event_talk_path, :class=>'button add'
+  %h3 Your Event talks
+  %ul
     - for talk in @talks
-      %tr
-        %td= h talk.title
-        %td= h talk.description
-        %td= h talk.start
-        %td= h talk.duration
-        %td= h talk.track.title
-        %td= h talk.venue.name unless talk.venue.blank?
-        %td= h talk.published
-        %td= link_to 'Show', user_event_talk_path(current_user, @event, talk)
-        %td= link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk)
-        %td= link_to 'Destroy', user_event_talk_path(current_user, @event, talk), :confirm => 'Are you sure?', :method => :delete
-
-  %p= link_to "New Talk", new_user_event_talk_path
+      %li{:class=> talk.published ? '':'disabled'}
+        = link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk), :class=>'button manage'
+        = talk.title
+        = link_to 'Delete', user_event_talk_path(current_user, @event, talk), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

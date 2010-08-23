@@ -1,0 +1,11 @@
+- title "Event Pages"
+
+%section.item_list
+  = link_to "New Event Page", new_user_event_event_page_path, :class=>'button add'
+  %h3 Your Event Pages
+  %ul
+    - for event_page in @event_pages
+      %li{:class=> event_page.published ? '':'disabled'}
+        = link_to 'Edit', edit_user_event_event_page_path(current_user, @event, event_page), :class=>'button manage'
+        = event_page.title
+        = link_to 'Delete', user_event_event_page_path(current_user, @event, event_page), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
