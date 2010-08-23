@@ -11,8 +11,9 @@
     %li
       = f.label :portrait
       = f.file_field :portrait
-    %li
+    %li.checkbox
       = f.label :published
       = f.check_box :published
     %li
-      = f.submit
+      %button{:type => 'submit'}
+        Save

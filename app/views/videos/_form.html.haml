@@ -11,8 +11,9 @@
     %li
       = f.label :vimeo_id
       = f.text_field :vimeo_id
-    %li
+    %li.checkbox
       = f.label :published
       = f.check_box :published
     %li
-      = f.submit
+      %button{:type => 'submit'}
+        Save

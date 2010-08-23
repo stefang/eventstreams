@@ -3,29 +3,44 @@
 
 /* Default Site Styles */
 
-a
-  :color #2687A3
-
-.button
-  :display block
-  :background #2687A3
-  :color white
-  :padding 3px 9px
-  +rounded(3px)
-  :font
-    :size 12px
-    :weight bold
-  &:hover, &:focus
-    :background-color #165161
-    
-.button.delete
-  :background-color #700
-  &:hover, &:focus
-    :background-color #500
-.button.add
-  :background-color #070
-  &:hover, &:focus
-    :background-color #050
+section#eventstreams
+  a
+    :color #2687A3
+  .button
+    :display block
+    :background #2687A3
+    :color white
+    :padding 3px 9px
+    +rounded(3px)
+    :font
+      :size 12px
+      :weight bold
+    &:hover, &:focus
+      :background-color #165161  
+  .button.delete
+    :background-color #700
+    &:hover, &:focus
+      :background-color #500
+  .button.add
+    :background-color #070
+    &:hover, &:focus
+      :background-color #050
+  input, textarea
+    :color #333
+    +rounded(3px)
+  label
+    :color #555
+  button
+    :font-family sans-serif
+    +rounded(6px)
+    :padding 6px 12px
+    :border 0
+    :cursor pointer
+    :background #070
+    :color white
+    :font
+      :size 14px
+      :weight bold
 
 section#eventstreams
   .inner
@@ -111,7 +126,6 @@ section#eventstreams
         :margin 0
         :background #eee
         +rounded(6px)
-
   section.main
     :clear both
     section.item_list
@@ -127,6 +141,7 @@ section#eventstreams
       h3
         :color #666
         :text-shadow 1px 1px 1px rgba(255,255,255,1)
+        :margin-bottom 21px
       ul
         +rounded(6px)
         :background white
@@ -163,11 +178,37 @@ section#eventstreams
           :color #bbb
           :font-style italic
           a
-            :font-style normal
-        
+            :font-style normal        
     form
+      :margin-bottom 22px
+      +rounded(11px)
+      :border 2px solid #ddd
+      :background #fafafa
+      :padding 20px
       ol
         :list-style none
+        li
+          label
+            :display block
+            :font
+              :size 12px
+              :weight bold
+          input, textarea
+            :font
+              :size 12px
+              :weight bold
+            :padding 6px
+            :background white
+            :border 1px solid #ccc
+            :width 350px
+          textarea
+            :width 550px
+            :height 312px
+            :margin-bottom 0
+      li.checkbox, li.select, li.date
+        :padding 1px 0 6px
+        label
+          :display inline
     nav#event_content
       :width 20%
       :height 100%

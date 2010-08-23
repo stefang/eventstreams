@@ -8,7 +8,7 @@
     %li
       = f.label :description
       = f.text_area :description
-    %li
+    %li.date
       = f.label :start
       = f.datetime_select :start
     %li
@@ -25,4 +25,5 @@
       = f.label :published
       = f.check_box :published
     %li
-      = f.submit
+      %button{:type => 'submit'}
+        Save

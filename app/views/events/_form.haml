@@ -11,14 +11,15 @@
     %li
       = f.label :hashtag
       = f.text_field :hashtag
-    %li
+    %li.date
       = f.label :start_date
       = f.date_select :start_date
-    %li
+    %li.date
       = f.label :end_date
       = f.date_select :end_date
-    %li
+    %li.checkbox
       = f.label :published
       = f.check_box :published
     %li
-      = f.submit
+      %button{:type => 'submit'}
+        Save

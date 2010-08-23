@@ -8,8 +8,9 @@
     %li
       = f.label :content
       = f.text_area :content
-    %li
+    %li.checkbox
       = f.label :published
       = f.check_box :published
-    %li.submit
-      = f.submit
+    %li
+      %button{:type => 'submit'}
+        Save
