@@ -19,4 +19,6 @@
         %li{:class=> track.published ? '':'disabled'}
           = link_to 'Edit', edit_user_event_track_path(current_user, @event, track), :class=>'button manage'
           = track.title
+          %span
+            = "/tracks/#{track.cached_slug}"
           = link_to 'Delete', user_event_track_path(current_user, @event, track), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

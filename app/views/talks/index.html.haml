@@ -12,4 +12,6 @@
       %li{:class=> talk.published ? '':'disabled'}
         = link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk), :class=>'button manage'
         = talk.title
+        %span
+          = "/talks/#{talk.cached_slug}"
         = link_to 'Delete', user_event_talk_path(current_user, @event, talk), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
