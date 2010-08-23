@@ -9,23 +9,3 @@
   %p
     %strong End Date:
     =h @event.end_date
-  
--else
-  - title "Event Admin"
-  %p
-    %strong Title:
-    =h @event.title
-  %p
-    %strong Hashtag:
-    =h @event.hashtag
-  %p
-    %strong Start Date:
-    =h @event.start_date
-  %p
-    %strong End Date:
-    =h @event.end_date
-  %p
-    %strong Published?:
-    =h @event.published
-    
-  %p= link_to "Edit This Event", edit_user_event_path(current_user, @event)
