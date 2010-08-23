@@ -210,6 +210,10 @@ section#eventstreams
       ol
         :list-style none
         li
+          :font
+            :size 12px
+            :weight bold
+          :color #666
           label
             :display block
             :font
@@ -228,9 +232,21 @@ section#eventstreams
             :height 312px
             :margin-bottom 0
       li.checkbox, li.select, li.date
-        :padding 1px 0 6px
+        :background white
+        :border 1px solid #ccc
+        :width 350px
+        :padding 6px
+        +rounded(4px)
+        :margin-bottom 8px
         label
           :display inline
+        input
+          :width 18px
+          :padding 0
+          :margin 0
+      li.subdomain
+        input
+          :width 197px
     nav#event_content
       :width 20%
       :height 100%

@@ -5,9 +5,9 @@
     %li
       = f.label :title
       = f.text_field :title
-    %li
+    %li.subdomain
       = f.label :subdomain
-      = f.text_field :subdomain
+      = "http:// #{f.text_field :subdomain} .#{current_domain}"
     %li
       = f.label :hashtag
       = f.text_field :hashtag
