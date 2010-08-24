@@ -44,7 +44,7 @@ section#eventstreams
       :color #333
   button
     :font-family sans-serif
-    +rounded(6px)
+    +rounded(3px)
     :padding 6px 12px
     :border 0
     :cursor pointer
@@ -189,6 +189,23 @@ section#eventstreams
           &:hover
             a.button.delete
               :opacity 1
+          span.live_edit
+            form
+              :padding 0
+              :margin -2px 0 0 0
+              :background transparent
+              :border 0
+              label, input
+                :margin 0
+                :display inline
+              input
+                :padding 1px
+                :width 30px
+                :border 1px solid #ccc
+                :text-align center
+              button
+                :margin 0
+                :font-size 11px
         li.disabled
           :color #bbb
           :font-style italic
