@@ -6,6 +6,8 @@ class VenuesController < ApplicationController
     if current_subdomain.blank?
       @event = current_user.owned_events.find(params[:event_id])
       @venues = @event.owned_venues.all
+      @global_venue_types = VenueType.all(:conditions => "global = true")
+      @owned_venue_types = @event.owned_venue_types.all
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
       if @event.blank?
