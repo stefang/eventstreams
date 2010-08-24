@@ -1,0 +1,14 @@
+<script type="text/javascript">
+var zenbox_params = {};
+<% if current_user -%>
+  zenbox_params.email = <%= "'#{current_user.email}'" -%>;
+<% end -%>
+zenbox_params.tab_id = "support";
+zenbox_params.tab_color = "#2687A3";
+zenbox_params.title = "Eventstreams Labs";
+zenbox_params.text = "How may we help you? Please fill in details below, and we'll get back to you as soon as possible.";
+zenbox_params.tag = "dropbox";
+zenbox_params.url = "eventstreams.zendesk.com";
+</script>
+<style type='text/css'>@import url('//assets0.zendesk.com/external/zenbox/overlay.css');</style>
+<script type='text/javascript' src='//assets0.zendesk.com/external/zenbox/overlay.js'></script>          
