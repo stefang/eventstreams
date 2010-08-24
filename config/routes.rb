@@ -33,4 +33,6 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
   
+  map.connect 'users/:user_id/events/:event_id/event_pages/update_order', :controller => 'event_pages', :action=>'update_order', :conditions => { :method => :post }
+
 end

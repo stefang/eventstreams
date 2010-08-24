@@ -5,8 +5,7 @@
     %meta{:name=>'viewport', :content=>'width=device-height'}
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
-    %script{:type=>"text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
-    = javascript_include_tag "minigrid", :cache => false
+    = javascript_include_tag "jquery", "jquery_ui", "eventstreams_admin", "minigrid", :cache => false
     = stylesheet_link_tag 'eventstreams', :media => 'screen, projection', :cache => false
   %body
     %section#eventstreams

@@ -144,6 +144,7 @@ section#eventstreams
   section.main
     :clear both
     section.item_list
+      :position relative
       :margin-bottom 22px
       +rounded(11px)
       :border 2px solid #ddd
@@ -223,6 +224,32 @@ section#eventstreams
             :font-size 13px
             :margin-left 59px
             :padding 0
+        li.ui-sortable-helper
+          :border 1px solid #ccc
+          :padding 11px 10px 10px
+          :background white
+          :opacity 0.9
+          +box-shadow(0,1px,6px,rgba(0,0,0,0.4))
+      ul#sortable
+        li
+          :cursor move
+          span
+            :padding-right 22px
+            :background
+              :image url(../images/sortable.png)
+              :position right 50%
+              :repeat no-repeat
+    #ajax_status
+      :padding 4px 9px
+      :font
+        :size 11px
+        :weight bold
+      :color #666
+      :background #FFEE7F
+      +rounded(4px)
+      :position absolute
+      :right 11px
+      :top 11px
     form
       :margin-bottom 22px
       +rounded(11px)

@@ -58,4 +58,17 @@ class EventPagesController < ApplicationController
     flash[:notice] = "Successfully destroyed event page."
     redirect_to user_event_event_pages_path(current_user, @event)
   end
+
+  def update_order
+    current_page = 1
+    page_order = params[:page_order].split("&")
+    page_order.each do |e|
+      event_page = EventPage.find(e.split("=")[1])
+      event_page.page_order = current_page
+      event_page.save
+      current_page += 1
+    end
+    render :text => "Page order saved"
+  end
+
 end
