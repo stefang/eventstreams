@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
       format.any  { head :not_found }
     end
   end
+  
+  def must_be_superadmin
+    unless signed_in?
+      flash[:error] = t('sessions.flash.not_auth')
+      return redirect_to_root 
+    end
+    raise ActionController::Forbidden unless current_user.superadmin?
+  end
 end
