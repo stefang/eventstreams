@@ -5,7 +5,7 @@ class Notification < ActionMailer::Base
   def invitation(invite)
     from       'notifications@eventstreamsapp.com'
     recipients invite.email
-    subject    "[EditRed] Invitation to join Eventstreams"
+    subject    "[Eventstreams] Invitation to join Eventstreams"
     body       :invite => invite
   end
 
