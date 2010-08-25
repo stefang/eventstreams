@@ -1,6 +1,6 @@
 class TalksController < ApplicationController
 
-  before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
+  before_filter :authenticate
 
   def index
     if current_subdomain.blank?

@@ -1,5 +1,6 @@
 class InvitesController < ApplicationController
   
+  before_filter :authenticate
   before_filter :must_be_superadmin
   
   def index

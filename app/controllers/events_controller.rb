@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
+  before_filter :authenticate
   before_filter :get_owned_event, :only => [:edit, :update, :destroy]
   
   def index

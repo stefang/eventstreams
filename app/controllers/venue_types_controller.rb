@@ -1,4 +1,6 @@
 class VenueTypesController < ApplicationController
+  
+  before_filter :authenticate
 
   def new
     @event = current_user.owned_events.find(params[:event_id])

@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+
+  before_filter :authenticate
+
   def index
     if current_subdomain.blank?
       @event = current_user.owned_events.find(params[:event_id])

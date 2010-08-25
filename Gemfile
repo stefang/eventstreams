@@ -30,7 +30,7 @@ group :test do
 end
 
 group :cucumber do
-  gem 'cucumber',             '0.8.3'
+  gem 'cucumber',             '0.8.5'
   gem 'cucumber-rails',       '>= 0.3.1'
   gem 'database_cleaner',     '>= 0.5.0'
   gem 'pickle',               '0.2.11'

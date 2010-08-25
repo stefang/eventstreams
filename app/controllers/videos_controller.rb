@@ -1,4 +1,7 @@
 class VideosController < ApplicationController
+  
+  before_filter :authenticate
+  
   def index
     @event = current_user.owned_events.find(params[:event_id])
     @talk = @event.owned_talks.find(params[:talk_id])

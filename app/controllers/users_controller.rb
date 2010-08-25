@@ -1,7 +1,7 @@
 class UsersController < Clearance::UsersController
   
   before_filter :getuser, :only => [:show, :edit, :update]
-  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :authenticate
   
   def create
     @user = ::User.new params[:user]
@@ -38,6 +38,10 @@ class UsersController < Clearance::UsersController
   end
 
   def show
+    if current_user.id != params[:id].to_i
+      flash[:notice] = "Sorry, you can only see your own profile"
+      redirect_to root_path
+    end
   end
 
   def edit

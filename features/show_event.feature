@@ -3,15 +3,10 @@ Feature: View event
   A user
   Should be able to visit the event subdomain
 
-  Scenario: Guest looks at event
-    Given an event exists called "myevent"
-    When I go to the myevent subdomain
-    And I should see "myevent" within "h3"
-
   Scenario: Guest looks at a published event
     Given an event exists called "myevent"
     When I go to the myevent subdomain
-    And I should see "myevent" within "h3"
+    And I should not see "myevent" within "h3"
 
   Scenario: Guest looks at a hidden event
     Given a hidden event exists called "myevent"
