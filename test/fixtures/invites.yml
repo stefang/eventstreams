@@ -1,0 +1,15 @@
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  invite_code: MyString
+  invited_at: 2010-08-25 12:21:04
+  redeemed_at: 2010-08-25 12:21:04
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  invite_code: MyString
+  invited_at: 2010-08-25 12:21:04
+  redeemed_at: 2010-08-25 12:21:04

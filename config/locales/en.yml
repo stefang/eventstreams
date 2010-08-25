@@ -25,3 +25,5 @@ en:
           submit: 'Create your account'
   profile:
     link: 'Your Account'
+  invites:
+    link: 'Alpha Invites'

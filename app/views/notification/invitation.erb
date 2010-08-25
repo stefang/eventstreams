@@ -1,0 +1,9 @@
+Hi, <%= @invite.first_name %> <%= @invite.last_name %>
+
+You have been invited to join us at the Eventstreams private alpha, a place for event managers.
+
+<%= redeem_invitation_url(@invite.invite_code) %>
+
+Thanks, The Eventstreams Notification Robot
+
+ps. if you have a problem please don't reply to me, I'm just a robot.  you probably want to email us at support@<%=HOST%>

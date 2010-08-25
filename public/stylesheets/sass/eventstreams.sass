@@ -26,6 +26,15 @@ section#eventstreams
       :color #700
     &:hover, &:focus
       :background-color #500
+  .button.invite
+    :padding-left 23px
+    :background
+      :image url('../images/plus.png')
+      :position 8px 50%
+      :repeat no-repeat
+      :color #070
+    &:hover, &:focus
+      :background-color #050
   .button.add
     :padding-left 23px
     :background
@@ -132,7 +141,7 @@ section#eventstreams
     div.inner
       :min-width 768px
       :max-width 1024px
-      :margin 0 auto
+      :margin 22px auto 0
       :position relative
       :padding 0
       div
@@ -180,7 +189,7 @@ section#eventstreams
             :margin-top -4px
             :margin-left -4px
             :margin-right 11px
-          a.button.delete
+          a.button.delete, a.button.invite
             :position absolute
             :right -88px
             :top 7px
@@ -188,7 +197,7 @@ section#eventstreams
           &:last-child
             :border 0
           &:hover
-            a.button.delete
+            a.button.delete, a.button.invite
               :opacity 1
           span.live_edit
             form

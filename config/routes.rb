@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :invites, :conditions => { :subdomain => nil }
+
 
   # Event Show Routes
 
@@ -31,8 +33,15 @@ ActionController::Routing::Routes.draw do |map|
       end
       e.resources :tweets
     end
+    u.resource :confirmation, :controller => 'clearance/confirmations'
   end
   
   map.connect 'users/:user_id/events/:event_id/event_pages/update_order', :controller => 'event_pages', :action=>'update_order', :conditions => { :method => :post }
+
+  map.resource :session, :controller => 'clearance/sessions'
+  map.resource :passwords, :controller => 'clearance/passwords'
+
+  map.send_invitation '/send_invitation/:id', :controller => "invites", :action => "send_invitation"
+  map.redeem_invitation '/signup/:invite_code', :controller => 'users', :action => 'new'
 
 end

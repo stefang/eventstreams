@@ -15,5 +15,5 @@ Feature: List all events
     Given an event exists called "Event One"
     And an event exists called "Event Two"
     When I go to the home page
-    Then I should see "Event One"
-    And I should see "Event Two"
+    Then I should not see "Event One"
+    And I should not see "Event Two"
