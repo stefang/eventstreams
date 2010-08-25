@@ -1,0 +1,11 @@
+#signin.account_form.form_wrapper
+  %h2=t('passwords.new.header')
+  %p=t('passwords.new.message')
+  
+  - form_for :password, :url => passwords_path do |form|
+    %ol
+      %li
+        = form.label :email, t('passwords.new.form.email')
+        = form.text_field :email
+      %li
+        %button.erButton{:type => 'submit'}=t('passwords.new.form.submit')

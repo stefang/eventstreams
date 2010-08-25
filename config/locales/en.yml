@@ -27,3 +27,17 @@ en:
     link: 'Your Account'
   invites:
     link: 'Alpha Invites'
+  passwords:
+    edit:
+      header: "Change your password"
+      message: "Your password has been reset. Choose a new password below."
+      form:
+        password: "Choose password"
+        confirm_password: "Confirm password"
+        submit: "Save this password"
+    new:
+       header: "Reset password"
+       message: "We will email you a link to change your password."
+       form:
+         email: "Email address"
+         submit: "Reset password"

@@ -1,0 +1,12 @@
+-form_for(:user, :url => user_password_path(@user, :token => @user.token), :html => { :method => :put }) do |form|
+  %ol
+    %li.errors
+      = error_messages_for :user
+    %li
+      = form.label :password, t('passwords.edit.form.password')
+      = form.password_field :password
+    %li
+      = form.label :password_confirmation, t('passwords.edit.form.confirm_password')
+      = form.password_field :password_confirmation
+    %li
+      %button{:type => 'submit'}= t('passwords.edit.form.submit')
