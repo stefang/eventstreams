@@ -12,5 +12,5 @@ end
 task :production do
   set :rails_env, 'production'
   set :domain, "eventstreams@eventstreams.triplegeek.com"
-  set :deploy_to, "/var/www/eventstreamsapp.com"
+  set :deploy_to, "/var/www/eventstreamsapp.com/app/"
 end
