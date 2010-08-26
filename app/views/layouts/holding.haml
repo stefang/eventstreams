@@ -1,0 +1,10 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %title= yield(:title) || t('title')
+    %meta{:name=>'viewport', :content=>'width=device-height'}
+    %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
+    %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
+    = stylesheet_link_tag 'holding', 'ballpark.css',:media => 'screen, projection', :cache => false
+  %body
+    = yield

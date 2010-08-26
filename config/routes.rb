@@ -18,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :events, :only => [:index]
 
-  map.root :controller => 'static_pages', :action => 'front'
+  map.root :controller => 'static_pages', :action => 'holding'
   map.resources :users
 
   map.resources :users do |u|

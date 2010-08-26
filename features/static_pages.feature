@@ -5,4 +5,4 @@ Feature: Static Pages
 
     Scenario: User goes to website root
       When I go to the home page
-      Then I should see "Welcome"
+      Then I should see "Eventstreams"
