@@ -8,3 +8,5 @@
     = stylesheet_link_tag 'holding', 'ballpark.css',:media => 'screen, projection', :cache => false
   %body
     = yield
+    -if RAILS_ENV == "production"
+      = render :partial => 'layouts/observer'

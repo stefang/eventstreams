@@ -46,4 +46,6 @@
               = yield
           -else
             = yield
-    = render :partial => 'layouts/zendesk'
+    -if RAILS_ENV == "production"
+      = render :partial => 'layouts/zendesk'
+      = render :partial => 'layouts/observer'
