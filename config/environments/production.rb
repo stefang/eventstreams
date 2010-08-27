@@ -34,3 +34,6 @@ end
 
 # Enable threaded mode
 # config.threadsafe!
+
+HOST = "eventstreamsapp.com"
+DO_NOT_REPLY = "Eventstreams <donotreply@eventstreamsapp.com>"
