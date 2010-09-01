@@ -41,3 +41,6 @@ en:
        form:
          email: "Email address"
          submit: "Reset password"
+  sessions:
+    login:
+      success: "Logged in"

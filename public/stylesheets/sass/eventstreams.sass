@@ -172,6 +172,7 @@ section#eventstreams
   section.main
     :clear both
     section.item_list
+      :color #555
       :position relative
       :margin-bottom 22px
       +rounded(11px)
@@ -300,12 +301,19 @@ section#eventstreams
               :size 12px
               :weight bold
           input, textarea
+            :display inline-block
+            :color #333
+            +rounded(3px)
             :font
               :size 12px
               :weight bold
-            :padding 6px
-            :background white
-            :border 1px solid #ccc
+            :padding 4px
+            :background white url('../images/input_shadow.png') repeat-x
+            :border 1px solid white
+            +box-shadow(0px, 0px, 2px, rgba(0,0,0,0.6))
+            :width 237px
+            &:focus
+              +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.6))
             :width 425px
             &:focus
               :border 1px solid #2687A3
