@@ -6,7 +6,7 @@
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     = javascript_include_tag "jquery", "holding", :cache => false
-    = stylesheet_link_tag 'holding', 'ballpark.css',:media => 'screen, projection', :cache => false
+    = stylesheet_link_tag 'holding',:media => 'screen, projection', :cache => false
   %body
     = yield
     -if RAILS_ENV == "production"

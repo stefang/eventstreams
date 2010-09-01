@@ -1,22 +1,32 @@
 @import 'reset'
 @import 'shared'
+@import 'ballpark'
 
 /* Default Site Styles */
+
+html
+  :height 100%
+  :background #2C4453
+  :background #2C4453 -webkit-gradient(radial, center 25%, 0, center 25%, 600, from(#4E7D9D), to(#2C4453)) fixed
+  :background #2C4453 -moz-radial-gradient(center 25%, circle cover, #4E7D9D, #2C4453) fixed no-repeat
+  :color #E6EAED
 
 section#eventstreams
   a
     :color #2687A3
   .button
     :display block
-    :background #2687A3
+    :background #4B7998
     :color white
+    :text-shadow 0px -1px 1px rgba(0,0,0,0.4)
     :padding 3px 9px
     +rounded(3px)
+    +box-shadow(0px, 1px, 1px, rgba(0,0,0,0.3))
     :font
       :size 12px
       :weight bold
     &:hover, &:focus
-      :background-color #165161  
+      :background-color #4B7998 + #111111  
   .button.delete
     :padding-left 23px
     :background
@@ -54,6 +64,8 @@ section#eventstreams
   button
     :font-family sans-serif
     +rounded(3px)
+    +box-shadow(0px, 1px, 1px, rgba(0,0,0,0.3))
+    :text-shadow 0px -1px 1px rgba(0,0,0,0.4)
     :padding 6px 12px
     :border 0
     :cursor pointer
@@ -65,7 +77,6 @@ section#eventstreams
     &:hover, &:focus
       :background-color #050
       
-
 section#eventstreams
   .inner
     :width 860px
@@ -73,7 +84,6 @@ section#eventstreams
     :position relative
     :padding 22px
   header
-    :background-color #2687A3
     :height 88px
     .inner
       :height 100%
@@ -81,20 +91,26 @@ section#eventstreams
     #site_logo
       :position absolute
       :top 22px
+      :font-family BallparkWeiner, sans-serif
+      :font-weight normal
+      :margin 0
+      :padding 4px 0
       a
         :display block
-        :font
-          :size 26px
-          :weight normal
-        :line-height 21px  
-        :padding 11px
-        :background rgba(0,0,0,0.1)
+        :width 290px
+        :text-decoration none
+        :margin 0
         :color white
-        :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
-        +rounded(5px)
+        :font-size 44px
+        :line-height 44px
+        :text-shadow 0px 1px 1px rgba(0,0,0,0.4)
+        :-webkit-mask-image -webkit-gradient(linear, left 24%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.3)))
+        :-webkit-transition text-shadow 0.1s linear
+        &:hover, &:focus
+          :text-shadow 0px 2px 4px rgba(0,0,0,0.4)
     nav#main
       :position absolute
-      :bottom 22px
+      :bottom 26px
       :right 22px
       ul
         :float left
@@ -108,12 +124,15 @@ section#eventstreams
             :color white
             :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
             +rounded(5px)
+            +box-shadow(0px, 1px, 1px, rgba(0,0,0,0.3))
             &:hover, &:focus
               :background rgba(0,0,0,0.2)
             &:hover, &:active
               :background rgba(0,0,0,0.4)
   nav#event_header
-    :background #333
+    :background #243A49
+    :background rgba(0,0,0,0.5)
+    +box-shadow(0px, 2px, 4px, rgba(0,0,0,0.2))
     :height 66px
     .inner
       :padding 16px 22px
@@ -127,6 +146,7 @@ section#eventstreams
             :color #ddd
             :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
             +rounded(5px)
+            +box-shadow(0px, 1px, 1px, rgba(0,0,0,0.3))
             &:hover, &:focus
               :background rgba(0,0,0,0.2)
               :color white
@@ -155,14 +175,16 @@ section#eventstreams
       :position relative
       :margin-bottom 22px
       +rounded(11px)
-      :border 2px solid #ddd
-      :background #fafafa
+      :border 2px solid #fff
+      :background #f1f1f1
       :padding 20px
+      +box-shadow(0px, 2px, 8px, rgba(0,0,0,0.7))
       a.button.add
         :float left
         :margin-top -3px
         :margin-right 18px
       h3
+        :font-size 18px
         :color #666
         :text-shadow 1px 1px 1px rgba(255,255,255,1)
         :margin-bottom 21px
@@ -261,9 +283,10 @@ section#eventstreams
     form
       :margin-bottom 22px
       +rounded(11px)
-      :border 2px solid #ddd
-      :background #fafafa
+      :border 2px solid #fff
+      :background #f1f1f1
       :padding 20px
+      +box-shadow(0px, 2px, 8px, rgba(0,0,0,0.7))
       ol
         :list-style none
         li

@@ -1,14 +1,12 @@
 - title "Your events on Eventstreams"
 
-%h4 Welcome to your Eventstreams administration system.
-
 %section.item_list.events
   =link_to "New Event", new_user_event_path(current_user), :class=>'button add'
   %h3 Your Events
   %ul
     - for event in @events
       %li
-        = link_to 'Manage', user_event_path(current_user, event), :class=>'button manage'
+        = link_to 'Manage', edit_user_event_path(current_user, event), :class=>'button manage'
         = event.title
         -if event.published
           = link_to event_root_url(:subdomain => event.subdomain), event_root_url(:subdomain => event.subdomain), :class => 'event_link active'
