@@ -3,9 +3,9 @@
   %p=t('passwords.new.message')
   
   - form_for :password, :url => passwords_path do |form|
-    %ol
+    %ol.account_form
       %li
         = form.label :email, t('passwords.new.form.email')
         = form.text_field :email
       %li
-        %button.erButton{:type => 'submit'}=t('passwords.new.form.submit')
+        %button.button{:type => 'submit'}=t('passwords.new.form.submit')

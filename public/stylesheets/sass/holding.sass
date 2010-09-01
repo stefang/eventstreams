@@ -146,11 +146,14 @@ form
         :width 237px
         &:focus
           +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.6))
-  li.checkbox
+  li.checkbox, li.select, li.date, li.ticklist
+    :width 331px
+    :background rgba(0,0,0,0.1)
+    +bevel-shadow
+    :padding 5px 9px
+    +rounded(3px)
     :margin-bottom 18px
-    label
-      :display inline-block
     input
       :width 18px
-      :padding 0
-      :margin 0
+    label
+      :display inline-block

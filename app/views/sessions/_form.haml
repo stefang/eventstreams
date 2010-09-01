@@ -1,7 +1,5 @@
 -form_for :session, :url => session_path do |form|
-  %ol
-    %li
-      %h3= t('authentication.sessions.new.header')
+  %ol.account_form
     %li
       = form.label :email, t('authentication.sessions.new.form.username')
       = form.text_field :email
