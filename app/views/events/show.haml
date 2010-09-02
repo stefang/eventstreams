@@ -5,10 +5,11 @@
       =simple_format @event.description
     -if @speakers
       %ul.speakers
-        - for speaker in @speakers
-          %li.speaker
+        - @speakers.each_with_index do |speaker, index| 
+          %li.speaker{:class => (index+1) % 4  == 0 ? "fourth" : ""}
             = image_tag speaker.portrait.url(:thumb)
             = link_to "<span>#{speaker.name}</span>", speaker
+        
   %section.event_meta
     -if @venues
       #map_canvas.homepage
