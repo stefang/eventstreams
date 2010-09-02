@@ -1,4 +1,5 @@
 class Speaker < ActiveRecord::Base
+  require 'paperclip' 
   has_friendly_id :name, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true, :scope => :event
   
   has_attached_file :portrait, :styles => { :medium => "300x300#", :thumb => "100x88#" }

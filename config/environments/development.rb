@@ -29,3 +29,4 @@ config.action_mailer.raise_delivery_errors = false
 
 HOST = "localhost"
 
+Paperclip.options[:image_magick_path] = "/opt/local/bin"
