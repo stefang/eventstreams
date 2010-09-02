@@ -4,5 +4,6 @@ debug.log
 tmp/
 db/*.sqlite3
 public/stylesheets/*.css
+public/system/*
 log/
 .bundle
