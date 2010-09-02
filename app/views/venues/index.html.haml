@@ -3,20 +3,16 @@
 - unless current_subdomain.blank?
 
   #map_canvas.venues
-  %ul
-    - for venue in @venues
-      %li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
-        = h venue.name
-        = h venue.description
-        = h venue.venue_type.name unless venue.venue_type.blank?
-        = h venue.address_1
-        = h venue.address_2
-        = h venue.address_3
-        = h venue.city
-        = h venue.county
-        = h venue.postcode
-        = h venue.phone_number
-        = link_to 'website', venue.website unless venue.website.blank? 
+  -if @main_venues
+    %section.event_venues
+      %h4 Event Venues
+      %ul
+        =render @main_venues
+  -if @other_venues
+    %section.other_venues
+      %h4 Other Locations
+      %ul
+        =render @other_venues
 - else
   %section.item_list
     = link_to "New Venue", new_user_event_venue_path, :class=>'button add'

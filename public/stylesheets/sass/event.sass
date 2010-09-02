@@ -5,6 +5,8 @@
 body
   :background white
   :color #555
+  a
+    :color #222
 
 section#eventstreams_event
   :clear both
@@ -15,10 +17,10 @@ section#eventstreams_event
     :position relative
   header
     .inner
-      :padding-top 44px
-      :padding-bottom 36px
+      :padding-top 66px
+      :padding-bottom 58px
       #event_logo
-        :margin-bottom 8px
+        :margin-bottom 6px
         a
           :display block
           :font
@@ -28,25 +30,41 @@ section#eventstreams_event
           :line-height 44px
           :text-transform uppercase
           :letter-spacing 4px
-          :color #555
-          :text-shadow 1px 1px 0px rgba(255,255,255,1), 3px 3px 0px rgba(0,0,0,0.1)
+          :color #333
+          :text-shadow 1px 1px 0px rgba(255,255,255,1), 4px 4px 0px rgba(0,0,0,0.2)
+          &:hover, &:focus
+            :color #555
+            
       .tagline
-        :margin 0
-        :color #999
-        :font-size 11px
+        :margin 0 0 2px 0
+        :color #888
         :line-height 22px
-        :font-style italic
+        :text-transform uppercase
+        :letter-spacing 1px
+        :font
+          :family LeagueGothicRegular ,sans-serif
+          :weight normal
+          :size 16px
       .event_meta
         :position absolute
         :right 20px
-        :top 44px
+        :top 63px
         :text-align right
+        :text-transform uppercase
+        :letter-spacing 1px
+        :font
+          :family LeagueGothicRegular ,sans-serif
+          :weight normal
+          :size 22px
         abbr
           :display block
           :color #aaa
+          :margin-bottom 6px
         a.hashtag
           :display block
-          :color #aaa
+          :color #666
+          &:hover, &:focus
+            :color #333
   nav#main
     :background #777
     :overflow auto
@@ -107,15 +125,40 @@ section#eventstreams_event
         :width 220px
         :height 220px
       ul.venues
+        :margin-bottom 22px
         li
           :text-align right
           :font-size 11px
-          :font-style italic
           :color #999
+      section.tweets
+        h4
+          :font
+            :family LeagueGothicRegular ,sans-serif
+            :weight normal
+            :size 22px
+          :color #888
+          a
+            :color #555
+        ul
+          li
+            :font-size 11px
+            :margin-bottom 22px
+            img
+              :float left
+              :margin 0 6px 6px 0
     .speaker
       :clear both
       :border-bottom 1px solid #eee
       :margin-bottom 22px
+      h4
+        :font
+          :family LeagueGothicRegular ,sans-serif
+          :weight normal
+          :size 28px
+        a
+          :color #666
+          &:hover, &:focus
+            :color #333
       img
         :float left
         :width 100px
@@ -127,14 +170,52 @@ section#eventstreams_event
     #map_canvas.venues
       :width 100%
       :height 220px
+      :margin-bottom 22px
+    section.event_venues, section.other_venues
+      :width 340px
+      :float left
+      h4
+        :font
+          :family LeagueGothicRegular ,sans-serif
+          :weight normal
+          :size 28px
+        :border-bottom 1px solid #eee
+        :padding-bottom 21px
+      h5
+        :font-weight bold
+        :letter-spacing -1px
+        :line-height 22px
+        :margin-bottom 0px
+      ul
+        li
+          :margin-bottom 22px
+          :position relative
+          span.type
+            :position absolute
+            :top 0
+            :right 0
+            :display block
+            :background #eee
+            :padding 2px 6px
+            :font
+              :size 11px
+              :weight bold
+          ul
+            li
+              :border-bottom 0
+              :padding-bottom 0
+              :margin-bottom 0
+              
+    section.other_venues
+      :margin-left 20px
 
 #event_admin_bar
   :width 100%
   :background #333
   :float left
-  :margin-bottom 18px
+  :height 44px
   ul
-    :padding 6px
+    :padding 8px
     :float left
     :list-style none
     li
@@ -144,7 +225,7 @@ section#eventstreams_event
         :display block
         :padding 3px 9px
         :background #666
-        :margin-right 6px
+        :margin-right 8px
         :text-decoration none
         :font-weight bold
         :color #eee

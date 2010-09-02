@@ -13,7 +13,8 @@ class VenuesController < ApplicationController
       if @event.blank?
         render_404
       else
-        @venues = @event.owned_venues.find(:all, :conditions => "published = true")
+        @main_venues = @event.owned_venues.find(:all, :conditions => "published = true AND main_venue = true", :order => 'venue_type_id')
+        @other_venues = @event.owned_venues.find(:all, :conditions => "published = true AND main_venue = false", :order => 'venue_type_id')
         render :layout => 'event'
       end
     end

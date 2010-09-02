@@ -1,14 +1,10 @@
 -title "Tracks"
 
 - unless current_subdomain.blank?
-  %table
+  - for track in @tracks
     %tr
-      %th Title
-      %th Description
-    - for track in @tracks
-      %tr
-        %td=link_to track.title, track_path(track)
-        %td= h track.description
+      %td=link_to track.title, track_path(track)
+      %td= h track.description
 - else
 
   %section.item_list

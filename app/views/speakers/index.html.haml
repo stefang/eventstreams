@@ -4,7 +4,7 @@
   %ul.speakers
     - for speaker in @speakers
       %li.speaker
-        = image_tag speaker.portrait.url(:thumb)
+        = link_to image_tag(speaker.portrait.url(:thumb)), speaker, :alt => speaker.name, :title => speaker.name
         %h4= link_to speaker.name, speaker
         = simple_format speaker.biog
 - else

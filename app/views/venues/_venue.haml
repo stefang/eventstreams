@@ -1,0 +1,17 @@
+%li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
+  %h5= venue.name
+  - unless venue.venue_type.blank?
+    -if venue.venue_type && !venue.main_venue
+      %span.type
+        = h venue.venue_type.name
+  = simple_format venue.description unless venue.description.blank?
+  %p.address
+    = h venue.address_1
+    = h venue.address_2
+    = h venue.address_3
+    = h venue.city
+    = h venue.county
+    = h venue.postcode
+  %ul.contact
+    %li= h venue.phone_number
+    %li= link_to 'website', venue.website unless venue.website.blank? 

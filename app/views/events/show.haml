@@ -16,3 +16,14 @@
         - for venue in @venues
           %li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
             = h venue.name
+    -if @tweets
+      %section.tweets
+        %h4 
+          Latest on 
+          =link_to @event.hashtag, tweets_path
+        %ul
+          - for tweet in @tweets
+            %li.tweet
+              %img{:src=> tweet.avatar, :width=>36 }
+              %span.tweet= h tweet.text
+ 

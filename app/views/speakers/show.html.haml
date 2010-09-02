@@ -3,6 +3,6 @@
 - unless current_subdomain.blank?
 
   %article.speaker
-    = image_tag @speaker.portrait.url(:thumb)
+    = image_tag @speaker.portrait.url(:thumb), :alt => @speaker.name, :title => @speaker.name
     %h4= @speaker.name
     = simple_format @speaker.biog

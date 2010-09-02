@@ -18,6 +18,7 @@ class EventsController < ApplicationController
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
       @speakers = @event.owned_speakers.find(:all, :conditions => "published = true AND portrait_file_name IS NOT NULL", :order => 'RAND()')
       @venues = @event.owned_venues.find(:all, :conditions => "published = true AND main_venue = true")
+      @tweets = @event.owned_tweets.find(:all, :limit => 5)
       if @event.blank?
         render_404
       else
