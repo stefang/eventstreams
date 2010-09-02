@@ -1,15 +1,35 @@
 class SpeakersController < ApplicationController
 
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:index, :show]
 
   def index
-    @event = current_user.owned_events.find(params[:event_id])
-    @speakers = @event.owned_speakers.all
+    if current_subdomain.blank?
+      @event = current_user.owned_events.find(params[:event_id])
+      @speakers = @event.owned_speakers.all
+    else
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      if @event.blank?
+        render_404
+      else
+        @speakers = @event.owned_speakers.find(:all, :conditions => "published = true")
+        render :layout => 'event'
+      end
+    end
   end
   
   def show
-    @event = current_user.owned_events.find(params[:event_id])
-    @speaker = @event.owned_speakers.find(params[:id])
+    if current_subdomain.blank?
+      @event = current_user.owned_events.find(params[:event_id])
+      @speaker = @event.owned_speakers.find(params[:id])
+    else
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      if @event.blank?
+        render_404
+      else
+        @speaker = @event.owned_speakers.find(params[:id], :conditions => "published = true")
+        render :layout => 'event'
+      end
+    end
   end
   
   def new

@@ -5,6 +5,9 @@
     %li
       = f.label :title
       = f.text_field :title
+    %li
+      = f.label :tagline
+      = f.text_field :tagline
     %li.subdomain
       = f.label :subdomain
       = "http:// #{f.text_field :subdomain} .#{current_domain}"
@@ -17,6 +20,9 @@
     %li.date
       = f.label :end_date
       = f.date_select :end_date
+    %li
+      = f.label :description
+      = f.text_area :description
     %li.checkbox
       = f.label :published
       = f.check_box :published

@@ -1,13 +1,21 @@
 - title "Speakers"
 
-%section.item_list
-  = link_to "New Speaker", new_user_event_speaker_path, :class=>'button add'
-  %h3 Your Event Speakers
-  %ul
+- unless current_subdomain.blank?
+  %ul.speakers
     - for speaker in @speakers
-      %li{:class=> speaker.published ? '':'disabled'}
-        = link_to 'Edit', edit_user_event_speaker_path(current_user, @event, speaker), :class=>'button manage'
-        = speaker.name
-        %span
-          = "speakers/#{speaker.cached_slug}"
-        = link_to 'Delete', user_event_speaker_path(current_user, @event, speaker), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
+      %li.speaker
+        = image_tag speaker.portrait.url(:thumb)
+        %h4= link_to speaker.name, speaker
+        = simple_format speaker.biog
+- else
+  %section.item_list
+    = link_to "New Speaker", new_user_event_speaker_path, :class=>'button add'
+    %h3 Your Event Speakers
+    %ul
+      - for speaker in @speakers
+        %li{:class=> speaker.published ? '':'disabled'}
+          = link_to 'Edit', edit_user_event_speaker_path(current_user, @event, speaker), :class=>'button manage'
+          = speaker.name
+          %span
+            = "speakers/#{speaker.cached_slug}"
+          = link_to 'Delete', user_event_speaker_path(current_user, @event, speaker), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

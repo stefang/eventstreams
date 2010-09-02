@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100825112104) do
+ActiveRecord::Schema.define(:version => 20100902165055) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20100825112104) do
     t.string   "subdomain"
     t.string   "hashtag"
     t.boolean  "published"
+    t.string   "tagline"
+    t.text     "description"
   end
 
   create_table "invites", :force => true do |t|
@@ -179,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20100825112104) do
     t.integer  "venue_type_id"
     t.integer  "event_id"
     t.string   "cached_slug"
+    t.boolean  "main_venue",    :default => false
   end
 
   add_index "venues", ["cached_slug"], :name => "index_venues_on_cached_slug"

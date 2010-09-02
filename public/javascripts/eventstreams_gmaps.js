@@ -13,6 +13,8 @@ function initialize() {
 	  var myOptions = {
 	    zoom: 15,
 	    center: positions[0],
+			disableDefaultUI: true,
+			 navigationControl: true,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	  };
 

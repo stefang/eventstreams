@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :subdomain, :year, :start_date, :end_date, :hashtag, :published
+  attr_accessible :title, :subdomain, :year, :start_date, :end_date, :hashtag, :published, :description
 
   belongs_to :user
 
@@ -15,5 +15,18 @@ class Event < ActiveRecord::Base
   has_many :owned_venues, :class_name => 'Venue', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_venue_types, :class_name => 'VenueType', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_tweets, :class_name => 'Tweet', :foreign_key => :event_id, :dependent => :destroy
+  
+  def display_date
+    range = start_date .. end_date
+    range.to_s(:condensed)
+  end
+  
+  def browser_title
+    if tagline
+      "#{title} | #{tagline}"
+    else
+      title
+    end
+  end
   
 end

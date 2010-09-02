@@ -17,10 +17,10 @@ $(document).ready(function(){
 	});
 
 	$('#grid .inner').css({
-		width: '990px',
+		width: '740px',
 		margin: '0 auto',
 		padding: '0',
-		background: 'url(/javascripts/minigrid/bg-grid-990.png)',
+		background: 'url(/javascripts/minigrid/bg-grid-980.png)',
 		height: '100%'
 	});
 	

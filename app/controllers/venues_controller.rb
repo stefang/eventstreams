@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
 
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:index, :show]
 
   def index
     if current_subdomain.blank?

@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:index, :show]
   
   def index
     @event = current_user.owned_events.find(params[:event_id])
@@ -17,6 +17,7 @@ class VideosController < ApplicationController
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
       @talk = @event.owned_talks.find(params[:talk_id])
       @video = Video.find(params[:id])
+      render :layout => 'event'
     end
   end
   

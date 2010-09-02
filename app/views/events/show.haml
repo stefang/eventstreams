@@ -1,11 +1,18 @@
 - unless current_subdomain.blank?
-  - title @event.title
-  %p
-    %strong Title:
-    =h @event.title
-  %p
-    %strong Start Date:
-    =h @event.start_date
-  %p
-    %strong End Date:
-    =h @event.end_date
+  - title @event.browser_title
+  %section.overview
+    %article.description
+      =simple_format @event.description
+    -if @speakers
+      %ul.speakers
+        - for speaker in @speakers
+          %li
+            = image_tag speaker.portrait.url(:thumb)
+            = link_to speaker.name, speaker
+  %section.event_meta
+    -if @venues
+      #map_canvas.homepage
+      %ul.venues
+        - for venue in @venues
+          %li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
+            = h venue.name

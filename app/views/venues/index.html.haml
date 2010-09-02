@@ -2,40 +2,21 @@
 
 - unless current_subdomain.blank?
 
-  #map_canvas
-    
-  %table
-    %tr
-      %th Name
-      %th Description
-      %th Type
-      %th Address 1
-      %th Address 2
-      %th Address 3
-      %th City
-      %th County
-      %th Postcode
-      %th Lat
-      %th Lng
-      %th Website
-      %th Phone number
-      %th Published
+  #map_canvas.venues
+  %ul
     - for venue in @venues
-      %tr.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
-        %td= h venue.name
-        %td= h venue.description
-        %td= h venue.venue_type.name unless venue.venue_type.blank?
-        %td= h venue.address_1
-        %td= h venue.address_2
-        %td= h venue.address_3
-        %td= h venue.city
-        %td= h venue.county
-        %td= h venue.postcode
-        %td= h venue.lat
-        %td= h venue.lng
-        %td= h venue.website
-        %td= h venue.phone_number
-        %td= h venue.published
+      %li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
+        = h venue.name
+        = h venue.description
+        = h venue.venue_type.name unless venue.venue_type.blank?
+        = h venue.address_1
+        = h venue.address_2
+        = h venue.address_3
+        = h venue.city
+        = h venue.county
+        = h venue.postcode
+        = h venue.phone_number
+        = link_to 'website', venue.website unless venue.website.blank? 
 - else
   %section.item_list
     = link_to "New Venue", new_user_event_venue_path, :class=>'button add'
