@@ -6,9 +6,9 @@
     -if @speakers
       %ul.speakers
         - for speaker in @speakers
-          %li
+          %li.speaker
             = image_tag speaker.portrait.url(:thumb)
-            = link_to speaker.name, speaker
+            = link_to "<span>#{speaker.name}</span>", speaker
   %section.event_meta
     -if @venues
       #map_canvas.homepage

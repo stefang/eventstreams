@@ -37,3 +37,5 @@ end
 
 HOST = "eventstreamsapp.com"
 DO_NOT_REPLY = "Eventstreams <donotreply@eventstreamsapp.com>"
+
+Paperclip.options[:image_magick_path] = "/usr/local/bin"

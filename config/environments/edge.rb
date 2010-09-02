@@ -37,3 +37,5 @@ end
 
 HOST = "eventstreams.triplegeek.com"
 DO_NOT_REPLY = "Eventstreams Edge <donotreply@eventstreams.triplegeek.com>"
+
+Paperclip.options[:image_magick_path] = "/usr/local/bin"
