@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :subdomain, :year, :start_date, :end_date, :hashtag, :published, :description
+  attr_accessible :title, :subdomain, :year, :start_date, :end_date, :hashtag, :published, :description, :tagline
 
   belongs_to :user
 
