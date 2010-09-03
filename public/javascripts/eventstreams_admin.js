@@ -11,6 +11,22 @@ $(document).ready(function(){
 		} 
 	});
 	$("#sortable").disableSelection();
+	
+  $('#flash').hide();
+  if ($('#flash').length > 0) {
+    flashType = $('#flash div').attr('id');
+    if (flashType == 'error') {
+      stayType = true;
+    } else {
+      stayType = false;
+    }
+    $.noticeAdd({
+     text: $('#flash div.inner div').text(),
+     stay:stayType,
+     type: flashType
+    });
+  }
+	
 });
 
 var update_event_page_list = function(user_id, event_id, serialize) {

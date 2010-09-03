@@ -1,6 +1,7 @@
 @import 'reset'
 @import 'mixins'
 @import 'button'
+@import 'growl'
 @import 'ballpark'
 
 /* Default Site Styles */
@@ -298,10 +299,13 @@ section#eventstreams
       ul
         li
           a
+            :font-size 13px
             :background #69a7d1
             :display block
-            :padding 9px 18px
+            :padding 9px 16px
             :margin-bottom 4px
+            :font-weight normal
+            :text-shadow 0 -1px 1px rgba(0,0,0,0.3)
             &:hover
               :background #4E7D9D
     section.event_content

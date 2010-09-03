@@ -1,0 +1,55 @@
+// For the growl notices
+
+.notice-wrap 
+  :position fixed
+  :top 0px
+  :right 20px
+  :width 350px
+  :z-index 10001
+
+* html .notice-wrap 
+  :position absolute	
+
+.notice-item 
+  :background
+    :color #000000
+    :color rgba(0,0,0,0.6)
+    :image url('../images/flash_info.png')
+    :position 11px 50%
+    :repeat no-repeat
+  +rounded(4px)
+  +box-shadow(0px, 2px, 7px, rgba(0,0,0,0.8))
+  :color #fff
+  :padding 11px 11px 11px 39px
+  :display block
+  :position relative
+  :margin 0 0 11px 0
+  p
+    :font
+      :size 13px
+      :weight normal
+    :text-shadow 0 1px 3px black
+    :margin-bottom 0
+  
+.notice-item.error  
+  :background
+    :image url('../images/flash_error.png')
+    
+.notice-item.notice
+  :background
+    :image url('../images/flash_info.png')
+
+.notice-item-close
+  :width 31px
+  :height 29px
+  :position absolute
+  :font-family Arial
+  :font-size 12px
+  :font-weight bold
+  :right -11px
+  :top -10px
+  :cursor pointer
+  :text-indent -5000em
+  :background
+    :image url('../images/close.png')
+    :repeat no-repeat
