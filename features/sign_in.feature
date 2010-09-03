@@ -7,21 +7,21 @@ Feature: Sign in
       Given no user exists with an email of "mickey.mouse@disney.com"
       When I go to the sign in page
       And I sign in as "mickey.mouse@disney.com/password"
-      Then I should see a flash failure containing "Bad email or password."
+      Then I should see a flash containing "Not logged in, please check your email and password are correct"
       And I should be signed out
 
     Scenario: User is not confirmed
       Given I signed up with "donald.duck@disney.com/password"
       When I go to the sign in page
       And I sign in as "donald.duck@disney.com/password"
-      Then I should see a flash notice containing "User has not confirmed email. Confirmation email will be resent."
+      Then I should see a flash containing "User has not confirmed email. Confirmation email will be resent"
       And I should be signed out
    
    Scenario: User enters wrong password
       Given I am signed up and confirmed as "scooby.doo@disney.com/password"
       When I go to the sign in page
       And I sign in as "scooby.doo@disney.com/shaggy"
-      Then I should see a flash failure containing "Bad email or password."
+      Then I should see a flash containing "Not logged in, please check your email and password are correct"
       And I should be signed out
    
    Scenario: User signs in successfully

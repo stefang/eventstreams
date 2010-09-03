@@ -1,7 +1,7 @@
 class UsersController < Clearance::UsersController
   
   before_filter :getuser, :only => [:show, :edit, :update]
-  before_filter :authenticate
+  before_filter :authenticate, :only => [:index, :show, :edit, :update]
   
   def create
     @user = ::User.new params[:user]

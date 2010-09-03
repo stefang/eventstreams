@@ -10,6 +10,22 @@ $(document).ready(function(){
 			return false;
     }
   });
+
+  $('#flash').hide();
+  if ($('#flash').length > 0) {
+    flashType = $('#flash div').attr('id');
+    if (flashType == 'error') {
+      stayType = true;
+    } else {
+      stayType = false;
+    }
+    $.noticeAdd({
+     text: $('#flash div.inner div').text(),
+     stay:stayType,
+     type: flashType
+    });
+  }
+
 });
 
 var toggle_form = function(){

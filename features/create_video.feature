@@ -20,7 +20,7 @@ Feature: Create video
     Then I should see "Successfully created video."
     And I should see "Video Name"
     When I go to the myevent subdomain
-    And I follow "All Talks"
+    And I follow "Programme"
     And I follow "mytalk"
     Then I should see "Video Name"
 
@@ -40,6 +40,6 @@ Feature: Create video
     Then I should see "Successfully created video."
     And I should see "Video Name"
     When I go to the myevent subdomain
-    And I follow "All Talks"
+    And I follow "Programme"
     And I follow "mytalk"
     Then I should not see "Video Name"

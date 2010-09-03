@@ -6,7 +6,7 @@ Feature: View event
   Scenario: Guest looks at a published event
     Given an event exists called "myevent"
     When I go to the myevent subdomain
-    And I should not see "myevent" within "h3"
+    And I should see "myevent" within "#event_logo"
 
   Scenario: Guest looks at a hidden event
     Given a hidden event exists called "myevent"
@@ -17,7 +17,7 @@ Feature: View event
     Given that I am a user
     And an event exists called "myevent"
     When I go to the myevent subdomain
-    And I should see "myevent" within "h3"
+    And I should see "myevent" within "#event_logo"
 
   Scenario: Owner looks at their own published event
     Given that I am a user
@@ -25,7 +25,7 @@ Feature: View event
     And I go to my user events page
     Then I should see "myevent"
     When I follow "http://myevent.example.com"
-    Then I should see "myevent" within "h3"
+    Then I should see "myevent" within "#event_logo"
     And I should see "Your Account" within "nav#event_admin_bar"
     And I should see "Sign out" within "nav#event_admin_bar"
     And I should see "#myevent" within "a.hashtag"
@@ -43,7 +43,7 @@ Feature: View event
     And I should be on my user events page
     And I should see "My Event"
     Then I follow "http://myevent.example.com"
-    Then I should see "My Event" within "h3"
+    Then I should see "My Event" within "#event_logo"
     And I should see "Your Account" within "nav#event_admin_bar"
     And I should see "Sign out" within "nav#event_admin_bar"
     And "a.hashtag" should not exist

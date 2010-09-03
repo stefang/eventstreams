@@ -3,7 +3,6 @@ Feature: Sign up
   A user
   Should be able to sign up
 
-  @wip
   Scenario: User signs up with invalid data
     When I go to the sign up page
     Then I should see "Sorry, you need an invite to sign up"
@@ -13,7 +12,6 @@ Feature: Sign up
     # And I press "Sign Up"
     # Then I should see error messages
     
-  @wip
   Scenario: User signs up with valid data but no invite code
     When I go to the sign up page
     Then I should see "Sorry, you need an invite to sign up"

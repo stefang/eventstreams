@@ -5,9 +5,11 @@
     %meta{:name=>'viewport', :content=>'width=700px'}
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
-    = javascript_include_tag "jquery", "holding", :cache => false
+    = javascript_include_tag "jquery", "jquery-notice", "holding", :cache => false
     = stylesheet_link_tag 'holding',:media => 'screen, projection', :cache => false
   %body
     = yield
+    = render :partial => 'layouts/flashes'
+    
     -if RAILS_ENV == "production"
       = render :partial => 'layouts/observer'
