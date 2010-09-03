@@ -11,7 +11,9 @@
     - @old_date = talk.start.to_date
     %tr
       %td.start= h talk.start.to_s(:time)
-      %td.end= h (talk.start.to_time + talk.duration.minutes).to_s(:time) unless talk.duration.blank?
+      %td.end
+        -unless talk.duration.blank? || talk.duration < 1
+          = (talk.start.to_time + talk.duration.minutes).to_s(:time)
       %td
         = link_to talk.title, talk
         = h talk.description
