@@ -26,7 +26,7 @@ class SpeakersController < ApplicationController
       if @event.blank?
         render_404
       else
-        @speaker = @event.owned_speakers.find(params[:id], :conditions => "published = true")
+        @speaker = @event.owned_speakers.find(params[:id], :conditions => "published = true", :scope => @event)
         render :layout => 'event'
       end
     end
@@ -51,12 +51,12 @@ class SpeakersController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
-    @speaker = @event.owned_speakers.find(params[:id])
+    @speaker = @event.owned_speakers.find(params[:id], :scope => @event)
   end
   
   def update
     @event = current_user.owned_events.find(params[:event_id])
-    @speaker = @event.owned_speakers.find(params[:id])
+    @speaker = @event.owned_speakers.find(params[:id], :scope => @event)
     if @speaker.update_attributes(params[:speaker])
       flash[:notice] = "Successfully updated speaker."
       redirect_to user_event_speakers_url(current_user, params[:event_id])

@@ -29,7 +29,7 @@ class TalksController < ApplicationController
         render_404
       else
         @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")
-        @talk = @event.owned_talks.find(params[:id])
+        @talk = @event.owned_talks.find(params[:id], :scope => @event)
         @speakers = @talk.speakers.find(:all, :conditions => "published = true")
         @videos = @talk.owned_videos.find(:all, :conditions => "published = true")
         render :layout => 'event'
@@ -64,7 +64,7 @@ class TalksController < ApplicationController
     @venues = @event.owned_venues.all
     @tracks = @event.owned_tracks.all
     @speakers = @event.owned_speakers.all
-    @talk = @event.owned_talks.find(params[:id])
+    @talk = @event.owned_talks.find(params[:id], :scope => @event)
     @videos = @talk.owned_videos.all
   end
   
@@ -72,7 +72,7 @@ class TalksController < ApplicationController
     params[:talk][:speaker_ids] ||= []
     @event = current_user.owned_events.find(params[:event_id])
     @speakers = @event.owned_speakers.all
-    @talk = @event.owned_talks.find(params[:id])
+    @talk = @event.owned_talks.find(params[:id], :scope => @event)
     if @talk.update_attributes(params[:talk])
       flash[:notice] = "Successfully updated talk."
       redirect_to user_event_talks_path(current_user, @event)

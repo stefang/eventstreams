@@ -22,7 +22,7 @@ class VenuesController < ApplicationController
   
   def show
     @event = current_user.owned_events.find(params[:event_id])
-    @venue = @event.owned_venues.find(params[:id])
+    @venue = @event.owned_venues.find(params[:id], :scope => @event)
   end
   
   def new
@@ -47,12 +47,12 @@ class VenuesController < ApplicationController
   def edit
     @event = current_user.owned_events.find(params[:event_id])
     @venue_types = VenueType.all(:conditions => "global = true OR event_id = #{@event.id}")
-    @venue = @event.owned_venues.find(params[:id])
+    @venue = @event.owned_venues.find(params[:id], :scope => @event)
   end
   
   def update
     @event = current_user.owned_events.find(params[:event_id])
-    @venue = @event.owned_venues.find(params[:id])
+    @venue = @event.owned_venues.find(params[:id], :scope => @event)
     if @venue.update_attributes(params[:venue])
       flash[:notice] = "Successfully updated venue."
       redirect_to user_event_venues_path

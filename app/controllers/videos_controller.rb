@@ -15,7 +15,7 @@ class VideosController < ApplicationController
       @video = Video.find(params[:id])
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
-      @talk = @event.owned_talks.find(params[:talk_id])
+      @talk = @event.owned_talks.find(params[:talk_id], :scope => @event)
       @video = Video.find(params[:id])
       render :layout => 'event'
     end
@@ -23,13 +23,13 @@ class VideosController < ApplicationController
   
   def new
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
+    @talk = @event.owned_talks.find(params[:talk_id], :scope => @event)
     @video = Video.new
   end
   
   def create
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
+    @talk = @event.owned_talks.find(params[:talk_id], :scope => @event)
     @video = Video.new(params[:video])
     @video.talk_id = @talk.id
     @video.event_id = @event.id
@@ -43,7 +43,7 @@ class VideosController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:talk_id])
+    @talk = @event.owned_talks.find(params[:talk_id], :scope => @event)
     @video = Video.find(params[:id])
   end
   
