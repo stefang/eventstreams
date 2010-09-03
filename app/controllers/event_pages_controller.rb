@@ -60,13 +60,13 @@ class EventPagesController < ApplicationController
   end
 
   def update_order
-    current_page = 1
-    page_order = params[:page_order].split("&")
-    page_order.each do |e|
-      event_page = EventPage.find(e.split("=")[1])
-      event_page.page_order = current_page
-      event_page.save
-      current_page += 1
+    current_item = 1
+    item_order = params[:item_order].split("&")
+    item_order.each do |e|
+      item = EventPage.find(e.split("=")[1])
+      item.item_order = current_item
+      item.save
+      current_item += 1
     end
     render :text => "Page order saved"
   end

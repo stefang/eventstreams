@@ -4,7 +4,7 @@
   = link_to "New Page", new_user_event_event_page_path, :class=>'button add'
   %h3 Your Event Pages
   #ajax_status
-  %ul#sortable{:data => {:user_id => current_user.id, :event_id => @event.id}}
+  %ul#sortable{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_pages'}}
     - for event_page in @event_pages
       %li[event_page]{:class=> event_page.published ? '':'disabled'}
         = link_to 'Edit', edit_user_event_event_page_path(current_user, @event, event_page), :class=>'button manage'

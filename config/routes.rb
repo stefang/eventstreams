@@ -38,6 +38,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.connect 'users/:user_id/events/:event_id/event_pages/update_order', :controller => 'event_pages', :action=>'update_order', :conditions => { :method => :post }
+  map.connect 'users/:user_id/events/:event_id/speakers/update_order', :controller => 'speakers', :action=>'update_order', :conditions => { :method => :post }
 
   map.resource    :session,
                   :controller => 'sessions',

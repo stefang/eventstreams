@@ -71,4 +71,19 @@ class SpeakersController < ApplicationController
     flash[:notice] = "Successfully destroyed speaker."
     redirect_to user_event_speakers_url(current_user, params[:event_id])
   end
+  
+  def update_order
+    current_item = 1
+    item_order = params[:item_order].split("&")
+    item_order.each do |e|
+      item = Speaker.find(e.split("=")[1])
+      item.item_order = current_item
+      item.save
+      current_item += 1
+    end
+    render :text => "Speaker order saved"
+  end
+  
+  
+  
 end

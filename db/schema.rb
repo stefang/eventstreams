@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902165055) do
+ActiveRecord::Schema.define(:version => 20100903114200) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20100902165055) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_slug"
-    t.integer  "page_order"
+    t.integer  "item_order"
   end
 
   add_index "event_pages", ["cached_slug"], :name => "index_event_pages_on_cached_slug"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20100902165055) do
     t.integer  "portrait_file_size"
     t.datetime "portrait_updated_at"
     t.string   "cached_slug"
+    t.integer  "item_order"
   end
 
   add_index "speakers", ["cached_slug"], :name => "index_speakers_on_cached_slug"

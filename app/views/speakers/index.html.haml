@@ -11,9 +11,10 @@
   %section.item_list
     = link_to "New Speaker", new_user_event_speaker_path, :class=>'button add'
     %h3 Your Event Speakers
-    %ul
+    #ajax_status
+    %ul#sortable{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'speakers'}}
       - for speaker in @speakers
-        %li{:class=> speaker.published ? '':'disabled'}
+        %li[speaker]{:class=> speaker.published ? '':'disabled'}
           = link_to 'Edit', edit_user_event_speaker_path(current_user, @event, speaker), :class=>'button manage'
           = speaker.name
           %span
