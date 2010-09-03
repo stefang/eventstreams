@@ -5,8 +5,20 @@
   - for track in @tracks
     %h4=link_to track.title, track_path(track)
     = simple_format track.description
-    %table.events
-      =render track.published_talks
+    %table.programme
+      -@old_date = nil
+      -for talk in track.published_talks
+        -if talk.start.to_date != @old_date
+          %tr
+            %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
+        - @old_date = talk.start.to_date
+        %tr
+          %td.start= h talk.start.to_s(:time)
+          %td.end= h (talk.start.to_time + talk.duration.minutes).to_s(:time) unless talk.duration.blank?
+          %td
+            = link_to talk.title, talk
+            = h talk.description
+          %td= link_to talk.venue.name, venues_path unless talk.venue.blank?
       
 - else
 

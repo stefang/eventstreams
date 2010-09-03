@@ -22,7 +22,7 @@ class TracksController < ApplicationController
     if @event.blank?
       render_404
     else
-      @track = @event.owned_tracks.find(params[:id], :conditions => "published = true")
+      @track = @event.owned_tracks.find(params[:id], :conditions => "published = true", :scope => @event)
       render :layout => 'event'
     end
   end
@@ -46,11 +46,12 @@ class TracksController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
-    @track = Track.find(params[:id])
+    @track = Track.find(params[:id], :scope => @event)
   end
   
   def update
-    @track = Track.find(params[:id])
+    @event = current_user.owned_events.find(params[:event_id])
+    @track = Track.find(params[:id], :scope => @event)
     if @track.update_attributes(params[:track])
       flash[:notice] = "Successfully updated track."
       redirect_to user_event_tracks_path(current_user, @event)
