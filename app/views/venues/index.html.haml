@@ -5,7 +5,8 @@
   #map_canvas.venues
   -if @main_venues
     %section.event_venues
-      %h4 Event Venues
+      %h4 
+        = pluralize_no_number(@main_venues.count, 'Location')
       %ul
         =render @main_venues
   -if @other_venues
