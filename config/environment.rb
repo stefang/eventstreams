@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
 end
 
-DO_NOT_REPLY = "donotreply@example.com"
+DO_NOT_REPLY = "donotreply@eventstreamsapp.com"
 Haml::Template.options[:format] = :html5
 
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(

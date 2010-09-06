@@ -17,6 +17,8 @@ config.action_controller.perform_caching             = false
 
 COOKIE_DOMAIN = '.eventstreams.local'
 
+DO_NOT_REPLY = "donotreply@eventstreams.local"
+
 if ActionController::Base.session
   ActionController::Base.session[:domain] = COOKIE_DOMAIN
 else
