@@ -69,7 +69,6 @@ class TalksController < ApplicationController
   end
   
   def update
-    params[:talk][:speaker_ids] ||= []
     @event = current_user.owned_events.find(params[:event_id])
     @speakers = @event.owned_speakers.all
     @talk = @event.owned_talks.find(params[:id], :scope => @event)
