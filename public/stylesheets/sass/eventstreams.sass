@@ -154,6 +154,11 @@ section#eventstreams
             :position absolute
             :right 22px
             :font-size 11px
+          p.combo
+            :margin 0 0 0 46px
+          span.inline
+            :position static
+
           .event_link.disabled
             :font-style italic
             :color #ccc
@@ -172,23 +177,41 @@ section#eventstreams
           &:hover
             a.button.delete, a.button.invite
               :opacity 1
+            span.live_edit
+              :display block
           span.live_edit
+            :position absolute
+            :width 457px
+            :height 100%
+            :right 7px
+            :top 0px
+            :background rgba(255,255,255,0.7)
+            :display none
             form
-              :padding 0
-              :margin -2px 0 0 0
-              :background transparent
+              :float right
+              :height 22px
+              :margin-top 7px
+              :background white
+              :padding 4px 4px 4px 18px
               :border 0
               label, input
                 :margin 0
                 :display inline
               input
-                :padding 1px
-                :width 30px
+                :padding 0px
+                :width 26px
                 :border 1px solid #ccc
                 :text-align center
+              select
+                :margin 0
+                :padding 0
               button
+                :padding 0
+                :width 19px
+                :height 22px
                 :margin 0
                 :font-size 11px
+                :text-indent -5000em
         li.disabled
           :color #bbb
           :font-style italic

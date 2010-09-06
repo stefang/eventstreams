@@ -9,7 +9,7 @@
       -@old_date = nil
       -for talk in track.published_talks
         -if talk.start.to_date != @old_date
-          %tr
+          %tr.date_header
             %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
         - @old_date = talk.start.to_date
         %tr
@@ -18,9 +18,14 @@
             -unless talk.duration.blank? || talk.duration < 1
               = (talk.start.to_time + talk.duration.minutes).to_s(:time)
           %td
-            = link_to talk.title, talk
-            = h talk.description
-          %td= link_to talk.venue.name, venues_path unless talk.venue.blank?
+            %ul
+              %li.header
+                %h4= link_to talk.title, talk
+              -if talk.speakers.any?
+                %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
+              -unless talk.description.blank?
+                %li.description= h talk.description
+          %td.venue= link_to talk.venue.name, venues_path unless talk.venue.blank?
       
 - else
 

@@ -39,11 +39,11 @@ class EventPagesController < ApplicationController
   
   def edit
     @event = current_user.owned_events.find(params[:event_id])
-    @event_page = @event.owned_event_pages.find(params[:id])
+    @event_page = @event.owned_event_pages.find(params[:id], :scope => @event)
   end
   
   def update
-    @event_page = EventPage.find(params[:id])
+    @event_page = EventPage.find(params[:id], :scope => @event)
     if @event_page.update_attributes(params[:event_page])
       flash[:notice] = "Successfully updated event page."
       redirect_to user_event_event_pages_path(current_user, @event)
@@ -53,7 +53,7 @@ class EventPagesController < ApplicationController
   end
   
   def destroy
-    @event_page = EventPage.find(params[:id])
+    @event_page = EventPage.find(params[:id], :scope => @event)
     @event_page.destroy
     flash[:notice] = "Successfully destroyed event page."
     redirect_to user_event_event_pages_path(current_user, @event)

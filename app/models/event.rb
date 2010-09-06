@@ -18,8 +18,12 @@ class Event < ActiveRecord::Base
   has_many :published_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :dependent => :destroy, :conditions=>{:published => true}, :order => 'item_order'
   
   def display_date
-    range = start_date .. end_date
-    range.to_s(:condensed)
+    if start_date < end_date
+      range = start_date .. end_date
+      range.to_s(:condensed)
+    else
+      start_date.to_s(:dmy_long)
+    end
   end
   
   def browser_title

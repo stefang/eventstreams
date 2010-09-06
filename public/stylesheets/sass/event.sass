@@ -6,7 +6,7 @@ body
   :background white
   :color #555
   a
-    :color #222
+    :color #2687A3
 
 section#eventstreams_event
   :clear both
@@ -152,15 +152,12 @@ section#eventstreams_event
       :clear both
       :border-bottom 1px solid #eee
       :margin-bottom 22px
+      :overflow auto
       h4
         :font
           :family LeagueGothicRegular ,sans-serif
           :weight normal
           :size 28px
-        a
-          :color #666
-          &:hover, &:focus
-            :color #333
       img
         :float left
         :width 100px
@@ -214,12 +211,28 @@ section#eventstreams_event
     :width 100%
     :margin-bottom 22px
     :border-top 1px solid #eee
+    :font-size 12px
+    tr.date_header
+      td
+        :font-weight bold
+        :font-size 12px
     tr
       td
+        :vertical-align top
         :padding 5px 8px
         :border-bottom 1px solid #eee
+        ul
+          li
+            h4
+              :font-size 12px
+              :font-weight bold
+              :margin-bottom 0
+          li.description
+            :margin-top 22px
       td.start, td.end
         :width 20px
+      td.venue
+        :white-space nowrap 
 
 #event_admin_bar
   :width 100%
