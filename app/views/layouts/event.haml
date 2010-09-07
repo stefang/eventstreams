@@ -38,9 +38,9 @@
           - unless @event.published_event_pages.blank?
             - @event.published_event_pages.each do |e|
               %li=link_to e.title, event_page_path(e)
-          %li=link_to 'Speakers', speakers_path
-          %li=link_to 'Programme', tracks_path
-          %li=link_to 'Venue', venues_path
+          %li=link_to 'Speakers', speakers_path unless @event.owned_speakers.blank? 
+          %li=link_to 'Programme', tracks_path unless @event.owned_tracks.blank? 
+          %li=link_to 'Venue', venues_path unless @event.owned_venues.blank? 
       %section.main
         .inner
           = yield

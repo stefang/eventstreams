@@ -17,7 +17,7 @@
         - for venue in @venues
           %li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
             = h venue.name
-    -if @tweets
+    -if @tweets.any?
       %section.tweets
         %h4 
           Latest on 
