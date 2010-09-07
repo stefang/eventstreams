@@ -32,9 +32,10 @@
   %section.item_list
     = link_to "New Track", new_user_event_track_path, :class=>'button add'
     %h3 Your Event Tracks
-    %ul
+    #ajax_status
+    %ul#sortable{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'tracks'}}
       - for track in @tracks
-        %li{:class=> track.published ? '':'disabled'}
+        %li[track]{:class=> track.published ? '':'disabled'}
           = link_to 'Edit', edit_user_event_track_path(current_user, @event, track), :class=>'button manage'
           = track.title
           %span
