@@ -82,7 +82,7 @@ class TalksController < ApplicationController
   
   def destroy
     @event = current_user.owned_events.find(params[:event_id])
-    @talk = @event.owned_talks.find(params[:id])
+    @talk = @event.owned_talks.find(params[:id], :scope => @event)
     @talk.destroy
     flash[:notice] = "Successfully destroyed talk."
     redirect_to user_event_talks_path(current_user, @event)

@@ -62,7 +62,8 @@ class TracksController < ApplicationController
   end
   
   def destroy
-    @track = Track.find(params[:id])
+    @event = current_user.owned_events.find(params[:event_id])
+    @track = Track.find(params[:id], :scope => @event)
     @track.destroy
     flash[:notice] = "Successfully destroyed track."
     redirect_to user_event_tracks_path(current_user, @event)

@@ -53,6 +53,7 @@ class EventPagesController < ApplicationController
   end
   
   def destroy
+    @event = current_user.owned_events.find(params[:event_id])
     @event_page = EventPage.find(params[:id], :scope => @event)
     @event_page.destroy
     flash[:notice] = "Successfully destroyed event page."

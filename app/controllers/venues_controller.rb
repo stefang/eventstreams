@@ -62,7 +62,8 @@ class VenuesController < ApplicationController
   end
   
   def destroy
-    @venue = Venue.find(params[:id])
+    @event = current_user.owned_events.find(params[:event_id])
+    @venue = Venue.find(params[:id], :scope => @event)
     @venue.destroy
     flash[:notice] = "Successfully destroyed venue."
     redirect_to user_event_venues_path

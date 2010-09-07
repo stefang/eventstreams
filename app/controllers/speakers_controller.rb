@@ -66,7 +66,8 @@ class SpeakersController < ApplicationController
   end
   
   def destroy
-    @speaker = Speaker.find(params[:id])
+    @event = current_user.owned_events.find(params[:event_id])
+    @speaker = Speaker.find(params[:id], :scope => @event)
     @speaker.destroy
     flash[:notice] = "Successfully destroyed speaker."
     redirect_to user_event_speakers_url(current_user, params[:event_id])
