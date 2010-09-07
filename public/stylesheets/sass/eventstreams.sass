@@ -305,7 +305,7 @@ section#eventstreams
             :width 425px
             :height 150px
             :margin-bottom 0
-      li.checkbox, li.select, li.date, li.ticklist
+      li.checkbox, li.select, li.ticklist
         :border 1px solid #ccc
         :width 425px
         :padding 5px 9px
@@ -324,6 +324,20 @@ section#eventstreams
         label
           :display block
           :width 100%
+      li.date
+        :border 1px solid #ccc
+        :width 425px
+        :padding 5px 9px
+        +rounded(4px)
+        :margin-bottom 8px
+        label
+          :display inline-block
+        input
+          :width 80px
+          :padding 0 4px
+          :margin 0
+          +rounded(0)
+          :margin-left 3px
         
     nav#event_content
       :width 20%
@@ -354,6 +368,11 @@ section#eventstreams
       :background #fafafa
       :padding 20px
       :width 450px
+      
+/* Datepicker styles */
+
+@import 'datepicker'
+    
 /* Sign In Form Overrides */
 
 section#eventstreams section.main form ol.account_form
