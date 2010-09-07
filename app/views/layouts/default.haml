@@ -30,7 +30,7 @@
         %nav#event_header
           .inner
             %ul
-              %li.title= link_to @event.title, edit_user_event_path(current_user, @event)
+              %li.title= @event.title
               %li.site_link= link_to event_root_url(:subdomain => @event.subdomain), event_root_url(:subdomain => @event.subdomain)
       = render :partial => 'layouts/flashes'
       %section.main
@@ -38,7 +38,7 @@
           -if signed_in? && @event && @event.valid?
             %nav#event_content
               %ul
-                %li= link_to @event.title, edit_user_event_path(current_user, @event), :class=>'button'
+                %li= link_to "Event Details", edit_user_event_path(current_user, @event), :class=>'button'
                 %li= link_to "Event Pages", user_event_event_pages_path(current_user, @event), :class=>'button'
                 %li= link_to "Speakers", user_event_speakers_path(current_user, @event), :class=>'button'
                 %li= link_to "Event Tracks", user_event_tracks_path(current_user, @event), :class=>'button'
