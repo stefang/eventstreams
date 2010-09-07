@@ -15,7 +15,9 @@ html
 
 section#eventstreams
   a
-    :color #2687A3
+    :color #4E7D9D
+    &:hover, &:focus
+      :color #4E7D9D -#222
   a.button
     :color white
   input, textarea
@@ -69,12 +71,15 @@ section#eventstreams
           :margin-left 11px
           a
             :display block
+            :font-weight bold
+            :font-size 12px
             :padding 6px 11px
             :background rgba(0,0,0,0.1)
             :color white
-            :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
+            :text-shadow 0px -1px 1px rgba(0,0,0,0.6)
             +rounded(5px)
             +box-shadow(0px, 1px, 1px, rgba(0,0,0,0.3))
+            :-webkit-transition background 0.1s linear
             &:hover, &:focus
               :background rgba(0,0,0,0.2)
             &:hover, &:active
@@ -104,6 +109,9 @@ section#eventstreams
               :background rgba(0,0,0,0.4)
         li.title
           :left 22px
+          :padding 6px 18px
+          :background rgba(0,0,0,0.4)
+          :font-weight bold
         li.site_link
           :right 22px
   section#flash
@@ -158,7 +166,6 @@ section#eventstreams
             :margin 0 0 0 46px
           span.inline
             :position static
-
           .event_link.disabled
             :font-style italic
             :color #ccc
