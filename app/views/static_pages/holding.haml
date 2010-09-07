@@ -4,7 +4,10 @@
   %blockquote Virtual Venues
 %ul
   %li
-    =link_to t('authentication.sign_in'), new_session_path, :id=>'signin'
+    -if signed_in?
+      =link_to "Your Account", user_events_path(current_user)
+    -else
+      =link_to t('authentication.sign_in'), new_session_path, :id=>'signin'
   %li
     =link_to "Follow us on twitter", "http://twitter.com/eventstreamsapp", :id=>'twitter'
     
