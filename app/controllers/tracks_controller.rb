@@ -12,6 +12,7 @@ class TracksController < ApplicationController
         render_404
       else
         @tracks = @event.owned_tracks.find(:all, :conditions => "published = true")
+        @untracked_talks = @event.owned_talks.find(:all, :conditions => "published = true AND (track_id IS NULL)", :scope => @event, :order => 'start ASC')
         render :layout => 'event'
       end
     end

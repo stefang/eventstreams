@@ -3,29 +3,27 @@
 - unless current_subdomain.blank?
 
   - for track in @tracks
-    %h4=link_to track.title, track_path(track)
-    = simple_format track.description
-    %table.programme
-      -@old_date = nil
-      -for talk in track.published_talks
-        -if talk.start.to_date != @old_date
-          %tr.date_header
-            %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
-        - @old_date = talk.start.to_date
-        %tr
-          %td.start= h talk.start.to_s(:time)
-          %td.end
-            -unless talk.duration.blank? || talk.duration < 1
-              = (talk.start.to_time + talk.duration.minutes).to_s(:time)
-          %td
-            %ul
-              %li.header
-                %h4= link_to talk.title, talk
-              -if talk.speakers.any?
-                %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
-              -unless talk.description.blank?
-                %li.description= h talk.description
-          %td.venue= link_to talk.venue.name, venues_path unless talk.venue.blank?
+    -if track.published_talks.any?
+      %h4=link_to track.title, track_path(track)
+      = simple_format track.description
+      %table.programme
+        -@old_date = nil
+        -for talk in track.published_talks
+          -if talk.start.to_date != @old_date
+            %tr.date_header
+              %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
+          - @old_date = talk.start.to_date
+          = render talk
+        
+  -if @tracks.any? &&  @untracked_talks.any?
+    %h4 Untracked talks
+  %table.programme
+    -for talk in @untracked_talks
+      -if talk.start.to_date != @old_date
+        %tr.date_header
+          %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
+      - @old_date = talk.start.to_date
+      = render talk
       
 - else
 

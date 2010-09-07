@@ -16,11 +16,11 @@
       = f.text_field :duration
     %li.select
       = f.label :track_id
-      = f.collection_select :track_id, @tracks, :id, :title, {:prompt => true}
+      = f.collection_select :track_id, @tracks, :id, :title, {:prompt => true, :include_blank => true}
     -unless @venues.blank?
       %li.select
         = f.label :venue_id
-        = f.collection_select :venue_id, @venues, :id, :name, {:prompt => true}
+        = f.collection_select :venue_id, @venues, :id, :name, {:prompt => true, :include_blank => true}
     %li.ticklist
       %label
         Speakers taking part in this talk

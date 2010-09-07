@@ -12,8 +12,7 @@
           %p.combo
             = talk.title
             %span.inline
-              = talk.track.title
-              \/
+              = "#{talk.track.title} / " unless talk.track.blank?
               = talk.start.to_s(:short)
               = " / #{talk.duration}mins" unless talk.duration.blank?
           %span.live_edit

@@ -8,6 +8,5 @@ class Talk < ActiveRecord::Base
   has_many :owned_videos, :class_name => 'Video', :foreign_key => :talk_id, :dependent => :destroy
   
   validates_presence_of :title, :on => :create
-  validates_presence_of :track_id, :on => :create
   
 end
