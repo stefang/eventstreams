@@ -3,9 +3,10 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
 
-  validates_presence_of :title, :on => :create
-  validates_presence_of :subdomain, :on => :create
-  validates_uniqueness_of :subdomain, :on => :create
+  validates_presence_of :title
+  validates_presence_of :subdomain
+  validates_uniqueness_of :subdomain
+  validates_format_of :hashtag, :with => /^#/i, :on => :create, :message => "requires a # at the start", :allow_blank => true
 
   has_many :owned_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
   has_many :owned_speakers, :class_name => 'Speaker', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
@@ -32,6 +33,10 @@ class Event < ActiveRecord::Base
     else
       title
     end
+  end
+  
+  def valid_hashtag?
+    errors.add(:hashtag, "requires a # at the start") unless hashtag.starts_with? "#"
   end
   
 end
