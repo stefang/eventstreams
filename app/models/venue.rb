@@ -12,6 +12,7 @@ class Venue < ActiveRecord::Base
   validates_presence_of :postcode, :on => :create
 
   before_validation_on_create :geocode_address
+  before_validation_on_update :geocode_address
 
   private
     def geocode_address
