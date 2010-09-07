@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
         start_date.to_s(:dmy_long)
       end
     else
-      start_date.to_s(:dmy_long)
+      start_date.to_s(:dmy_long) if start_date
     end
   end
   
