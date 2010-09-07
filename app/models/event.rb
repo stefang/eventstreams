@@ -19,11 +19,23 @@ class Event < ActiveRecord::Base
   has_many :published_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :dependent => :destroy, :conditions=>{:published => true}, :order => 'item_order'
   
   def display_date
-    if start_date < end_date
-      range = start_date .. end_date
-      range.to_s(:condensed)
+    if start_date && end_date
+      if start_date < end_date
+        range = start_date .. end_date
+        range.to_s(:condensed)
+      else
+        start_date.to_s(:dmy_long)
+      end
     else
       start_date.to_s(:dmy_long)
+    end
+  end
+  
+  def display_date_full
+    if start_date && end_date
+      "#{start_date.to_date.to_s(:long_ordinal)} to the #{end_date.to_date.to_s(:long_ordinal)}"
+    elsif start_date
+      "#{start_date.to_date.to_s(:long_ordinal)}"
     end
   end
   

@@ -27,7 +27,7 @@ $(document).ready(function(){
      type: flashType
     });
   }
-	$("form ol li.date input").datepicker({dateFormat: "yy-mm-dd"});
+	$("input.datepicker").datepicker({dateFormat: "yy-mm-dd"});
 	
 });
 

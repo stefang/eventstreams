@@ -1,25 +1,30 @@
 - unless current_subdomain.blank?
   %table.events
-    =render @talks
+    =render talks
 - else
   %section.item_list
     = link_to "New Talk", new_user_event_talk_path, :class=>'button add'
     %h3 Your Event talks
     %ul
       - for talk in @talks
-        %li{:class=> talk.published ? '':'disabled'}
+        %li[talk]{:class=> talk.published ? '':'disabled'}
           = link_to 'Edit', edit_user_event_talk_path(current_user, @event, talk), :class=>'button manage'
           %p.combo
             = talk.title
             %span.inline
               = "#{talk.track.title} / " unless talk.track.blank?
-              = talk.start.to_s(:short)
+              = talk.start.to_s(:short) unless talk.start.blank?
               = " / #{talk.duration}mins" unless talk.duration.blank?
           %span.live_edit
             - form_for [current_user, @event, talk] do |f|
               %fieldset
-                = f.label :start
-                = f.time_select :start
+                %label{:for => "start_date"} Start Date
+                %input{:class => "datepicker", :name => "start_date", :id => "start_date", :value => talk.start.blank? ? @event.start_date : talk.start.to_date.to_s(:db)}
+                %label{:for => "start_hour"} Start Time (24hr)
+                %input{:class => "time_input", :name => "start_hour", :id => "start_hour", :value => talk.start.blank? ? "09" : talk.start.strftime("%H")}
+                = ":"
+                %input{:class => "time_input", :name => "start_min", :value => talk.start.blank? ? "00" : talk.start.strftime("%M")}
+
                 = f.label :duration
                 = f.text_field :duration
                 %button.button.save{:type => 'submit'}

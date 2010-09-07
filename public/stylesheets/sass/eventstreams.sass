@@ -192,20 +192,14 @@ section#eventstreams
             span.live_edit
               :display block
           span.live_edit
-            :position absolute
-            :width 457px
-            :height 100%
-            :right 7px
-            :top 0px
-            :background rgba(255,255,255,0.7)
-            :display none
+            :position static
             form
-              :float right
               :height 22px
-              :margin-top 7px
-              :background white
-              :padding 4px 4px 4px 18px
-              :border 0
+              :margin-top 9px
+              :border-top 1px solid #eee
+              :padding-top 9px
+              :padding-bottom 1px
+              :text-align right
               label, input
                 :margin 0
                 :display inline
@@ -214,6 +208,10 @@ section#eventstreams
                 :width 26px
                 :border 1px solid #ccc
                 :text-align center
+                &:focus
+                  :border 1px solid #4E7D9D
+              input.datepicker
+                :width 70px
               select
                 :margin 0
                 :padding 0
@@ -332,12 +330,21 @@ section#eventstreams
         :margin-bottom 8px
         label
           :display inline-block
-        input
+          :margin 0 6px 0 0
+        input.datepicker
+          +remove-box-shadow
           :width 80px
           :padding 0 4px
-          :margin 0
+          :margin 0 6px 0 0
           +rounded(0)
           :margin-left 3px
+          &:focus
+            +remove-box-shadow
+        input.time_input
+          :padding 0 4px
+          :width 20px
+          :text-align center
+          :margin 0
         
     nav#event_content
       :width 20%

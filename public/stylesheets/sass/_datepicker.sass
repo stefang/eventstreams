@@ -1,7 +1,8 @@
 .ui-datepicker
   width: 238px
   padding: 0 4px
-  background: white
+  background: #eee
+  border: 2px solid #fff
   +box-shadow(0,2px,15px,rgba(0,0,0,0.5))
   +rounded(3px)
   color: #666
@@ -57,13 +58,19 @@
     font-weight: bold
     border: 0
   td
-    border: 1px solid #eee
+    border: 1px solid #ddd
+    background: white
     padding: 1px
     span, a
       display: block
       padding: .2em
       text-align: right
       text-decoration: none
+    a:hover
+      background: #4E7D9D
+      color: white
+  td.ui-datepicker-current-day
+    background: #DDE2E5
   .ui-datepicker-buttonpane
     background-image: none
     margin: .7em 0 0 0
@@ -109,7 +116,7 @@
 .ui-datepicker-row-break
   clear: both
   width: 100%
-
+  
 /* RTL support
 
 .ui-datepicker-rtl

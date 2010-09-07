@@ -5,7 +5,7 @@ class TalksController < ApplicationController
   def index
     if current_subdomain.blank?
       @event = current_user.owned_events.find(params[:event_id])
-      @talks = @event.owned_talks.all
+      @talks = @event.owned_talks.find(:all, :order => "start")
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
       if @event.blank?
@@ -50,6 +50,7 @@ class TalksController < ApplicationController
     @speakers = @event.owned_speakers.all
     @tracks = @event.owned_tracks.all
     @talk = Talk.new(params[:talk])
+    @talk.start = "#{params[:start_date]} #{params[:start_hour]}:#{params[:start_min]}"
     @talk.event_id = @event.id
     if @talk.save
       flash[:notice] = "Successfully created talk."
@@ -72,6 +73,7 @@ class TalksController < ApplicationController
     @event = current_user.owned_events.find(params[:event_id])
     @speakers = @event.owned_speakers.all
     @talk = @event.owned_talks.find(params[:id], :scope => @event)
+    params[:talk][:start] = "#{params[:start_date]} #{params[:start_hour]}:#{params[:start_min]}"
     if @talk.update_attributes(params[:talk])
       flash[:notice] = "Successfully updated talk."
       redirect_to user_event_talks_path(current_user, @event)

@@ -28,7 +28,7 @@
             =link_to @event.title, root_path
           %p.tagline=@event.tagline unless @event.tagline.blank?
           .event_meta
-            %abbr.event_date{:title => "#{@event.start_date.to_date.to_s(:long_ordinal)} to #{@event.end_date.to_date.to_s(:long_ordinal)}"}
+            %abbr.event_date{:title => @event.display_date_full}
               =@event.display_date
             -unless @event.hashtag.blank?
               %a.hashtag{:href=>"http://search.twitter.com/search?q=#{u @event.hashtag}"}
