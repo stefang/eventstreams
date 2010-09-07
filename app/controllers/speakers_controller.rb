@@ -84,6 +84,4 @@ class SpeakersController < ApplicationController
     render :text => "Speaker order saved"
   end
   
-  
-  
 end
