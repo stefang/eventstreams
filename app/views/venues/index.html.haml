@@ -6,7 +6,7 @@
   -if @main_venues
     %section.event_venues
       %h4 
-        = pluralize_no_number(@main_venues.count, 'Location')
+        = pluralize_no_number(@main_venues.length, 'Location')
       %ul
         =render @main_venues
   -if @other_venues
