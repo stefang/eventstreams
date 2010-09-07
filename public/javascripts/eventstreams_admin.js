@@ -28,7 +28,7 @@ $(document).ready(function(){
     });
   }
 	$("input.datepicker").datepicker({dateFormat: "yy-mm-dd"});
-	
+	$("#ui-datepicker-div").hide()
 });
 
 var update_list_order = function(user_id, event_id, model, serialize) {
