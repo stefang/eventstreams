@@ -6,3 +6,4 @@
       %li.tweet
         %img{:src=> tweet.avatar, :width=>36 }
         %span.tweet= tweet.text
+        = link_to 'Delete', user_event_tweet_path(current_user, @event, tweet), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
