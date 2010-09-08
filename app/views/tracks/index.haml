@@ -5,7 +5,7 @@
   - for track in @tracks
     -if track.published_talks.any?
       %h4=link_to track.title, track_path(track)
-      = simple_format track.description
+      = markdown track.description
       %table.programme
         -@old_date = nil
         -for talk in track.published_talks

@@ -4,7 +4,7 @@
     -if venue.venue_type && !venue.main_venue
       %span.type
         = h venue.venue_type.name
-  = simple_format venue.description unless venue.description.blank?
+  = markdown venue.description unless venue.description.blank?
   %p.address
     = h venue.address_1
     = h venue.address_2

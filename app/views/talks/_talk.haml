@@ -10,5 +10,5 @@
       -if talk.speakers.any?
         %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
       -unless talk.description.blank?
-        %li.description= h talk.description
+        %li.description= markdown talk.description
   %td.venue= link_to talk.venue.name, venues_path unless talk.venue.blank?

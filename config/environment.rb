@@ -8,6 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 require 'geokit'
 require 'twitter'
+require 'bluecloth'
 
 Rails::Initializer.run do |config|
   config.time_zone = 'UTC'

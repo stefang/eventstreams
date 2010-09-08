@@ -2,7 +2,7 @@
   - title @event.browser_title
   %section.overview
     %article.description
-      =simple_format @event.description
+      = markdown(@event.description)
     -if @speakers
       %ul.speakers
         - @speakers.each_with_index do |speaker, index| 

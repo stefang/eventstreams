@@ -13,6 +13,8 @@ $(document).ready(function(){
 	});
 	$("#sortable").disableSelection();
 	
+	$('textarea').markedit({'toolbar': { 'layout': 'bold italic quote numberlist bulletlist heading'}});
+	
   $('#flash').hide();
   if ($('#flash').length > 0) {
     flashType = $('#flash div').attr('id');

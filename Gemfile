@@ -12,6 +12,7 @@ gem "geokit"
 gem "paperclip"
 gem 'httparty'
 gem 'twitter'
+gem 'BlueCloth',                         :require => 'bluecloth'
 
 group :development do
   gem 'vlad' 
