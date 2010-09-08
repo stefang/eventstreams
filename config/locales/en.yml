@@ -46,3 +46,7 @@ en:
       success: "Logged in"
       failure: "Not logged in, please check your email and password are correct"
       email_not_confirmed: "User has not confirmed email. Confirmation email will be resent"
+  flash:
+    users:
+      notice:
+        signed_up: "Signed up successfully."
