@@ -7,6 +7,10 @@
         = link_to image_tag(speaker.portrait.url(:thumb)), speaker, :alt => speaker.name, :title => speaker.name
         %h4= link_to speaker.name, speaker
         = markdown speaker.biog
+        -if speaker.talks.any?
+          %ul.talks
+            - for talk in speaker.talks
+              %li= link_to talk.title, talk        
 - else
   %section.item_list
     = link_to "New Speaker", new_user_event_speaker_path, :class=>'button add'

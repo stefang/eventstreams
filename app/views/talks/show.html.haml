@@ -1,46 +1,29 @@
 - unless current_subdomain.blank?
-  - title @talk.title
-
-  %p
-    %strong Title:
-    =h @talk.title
-  %p
-    %strong Description:
-    =h @talk.description
-  %p
-    %strong Start:
-    =h @talk.start
-  %p
-    %strong Duration:
-    =h @talk.duration
-  %p
-    %strong Track:
-    =h @talk.track_id
-  %p
-    %strong Published:
-    =h @talk.published
+  - title "#{@talk.title} | #{@event.title}" 
+  
+  %article.talk
+    %h1.talk_title
+      = @talk.title
+      %span
+        = @talk.start.to_s(:time)
+        \-
+        -unless @talk.duration.blank? || @talk.duration < 1
+          = (@talk.start.to_time + @talk.duration.minutes).to_s(:time)
+        =" on the #{@talk.start.to_date.to_s(:dmy_long)}"
     
-  %h3 Speakers
+    =markdown @talk.description
+  
+    -if @speakers
+      %ul.speakers_inline
+        - @speakers.each_with_index do |speaker, index| 
+          %li.speaker{:class => (index+1) % 4  == 0 ? "fourth" : ""}
+            = image_tag speaker.portrait.url(:thumb)
+            = link_to "<span>#{speaker.name}</span>", speaker
 
-  %table
-    %tr
-      %th Name
-      %th Biog
-    - for speaker in @speakers
-      %tr
-        %td= image_tag speaker.portrait.url(:thumb)
-        %td= h speaker.name
-        %td= h speaker.biog
-
-  %h3 Videos
-
-  %table
-    %tr
-      %th Title
-      %th Description
-      %th Vimeo
-    - for video in @videos
-      %tr
-        %td= link_to video.title, talk_video_path(@talk, video)
-        %td= h video.description
-        %td= h video.vimeo_id
+  - if @videos.any?
+    %section.videos
+    %h3 Videos
+    %ul
+      - for video in @videos
+        %li
+          = link_to video.title, talk_video_path(@talk, video)

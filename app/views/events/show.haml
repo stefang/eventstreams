@@ -4,7 +4,7 @@
     %article.description
       = markdown(@event.description)
     -if @speakers
-      %ul.speakers
+      %ul.speakers_inline
         - @speakers.each_with_index do |speaker, index| 
           %li.speaker{:class => (index+1) % 4  == 0 ? "fourth" : ""}
             = image_tag speaker.portrait.url(:thumb)
