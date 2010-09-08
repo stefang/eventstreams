@@ -43,6 +43,7 @@ class EventPagesController < ApplicationController
   end
   
   def update
+    @event = current_user.owned_events.find(params[:event_id])
     @event_page = EventPage.find(params[:id], :scope => @event)
     if @event_page.update_attributes(params[:event_page])
       flash[:notice] = "Successfully updated event page."
