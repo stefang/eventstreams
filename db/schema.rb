@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100907165421) do
+ActiveRecord::Schema.define(:version => 20100907232233) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20100907165421) do
     t.boolean  "published"
     t.string   "tagline"
     t.text     "description"
+    t.text     "colours"
   end
 
   create_table "invites", :force => true do |t|

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate, :except => [:index, :show]
+  before_filter :authenticate, :except => [:index, :show, :custom]
   before_filter :get_owned_event, :only => [:edit, :update, :destroy]
   
   def index
@@ -27,8 +27,17 @@ class EventsController < ApplicationController
     end
   end
   
+  def custom
+    @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+    if @event.blank?
+      render_404
+    else
+      render :content_type => "text/css"
+    end
+  end
+  
   def new
-    @event = current_user.owned_events.new
+    @event = current_user.owned_events.new()
   end
   
   def create

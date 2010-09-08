@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   # Event Show Routes
 
   map.event_root '', :controller => 'events', :action => 'show', :conditions => { :subdomain => /.+/ }
+  map.event_stylesheet 'custom_stylesheets/custom.css', :controller => 'events', :action => 'custom', :conditions => { :subdomain => /.+/ }
   map.resources :speakers, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :tracks, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :talks, :only => [:index, :show], :conditions => { :subdomain => /.+/ } do |t|

@@ -1,6 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :subdomain, :year, :start_date, :end_date, :hashtag, :published, :description, :tagline
-
+  
   belongs_to :user
 
   validates_presence_of :title
@@ -18,6 +17,41 @@ class Event < ActiveRecord::Base
 
   has_many :published_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :dependent => :destroy, :conditions=>{:published => true}, :order => 'item_order'
   
+  serialize :colours
+  
+  def title_colour
+    create_colours_if_empty
+    if colours.has_key? :title_colour
+      colours[:title_colour]
+    else
+      "#333333"
+    end
+  end
+
+  def title_colour=(value)
+    create_colours_if_empty
+    self.colours[:title_colour] = value
+  end
+
+  def link_colour
+    create_colours_if_empty
+    if colours.has_key? :link_colour
+      colours[:link_colour]
+    else
+      "#2687A3"
+    end
+  end
+  def link_colour=(value)
+    create_colours_if_empty
+    self.colours[:link_colour] = value
+  end
+  
+  def create_colours_if_empty
+    if self.colours.blank?
+      self.colours = {} 
+    end
+  end
+
   def display_date
     if start_date && end_date
       if start_date < end_date
@@ -49,6 +83,10 @@ class Event < ActiveRecord::Base
   
   def valid_hashtag?
     errors.add(:hashtag, "requires a # at the start") unless hashtag.starts_with? "#"
+  end
+  
+  def serialized_attr_accessor
+    return true
   end
   
 end

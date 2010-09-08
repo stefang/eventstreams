@@ -345,6 +345,24 @@ section#eventstreams
           :width 20px
           :text-align center
           :margin 0
+      li.colours
+        :border 1px solid #ccc
+        :width 425px
+        :padding 5px 9px
+        +rounded(4px)
+        :margin-bottom 8px
+        :position relative
+        input.colorwell
+          :width 6em
+        #picker
+          :position absolute
+          :top -20px
+          :right -20px
+          :padding 4px
+          :background #eee
+          :border 2px solid #fff
+          +box-shadow(0,2px,15px,rgba(0,0,0,0.5))
+          +rounded(3px)
         
     nav#event_content
       :width 20%
@@ -376,10 +394,6 @@ section#eventstreams
       :padding 20px
       :width 450px
       
-/* Datepicker styles */
-
-@import 'datepicker'
-    
 /* Sign In Form Overrides */
 
 section#eventstreams section.main form ol.account_form
@@ -439,3 +453,6 @@ section#eventstreams section.main form ol.account_form
     +bevel-shadow
     input
       :width 18px
+
+@import 'datepicker'
+@import 'farbtastic'

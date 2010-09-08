@@ -29,6 +29,23 @@ $(document).ready(function(){
   }
 	$("input.datepicker").datepicker({dateFormat: "yy-mm-dd"});
 	$("#ui-datepicker-div").hide()
+	
+  var f = $.farbtastic('#picker');
+  var p = $('#picker').css('opacity', 0);
+  var selected;
+  $('.colorwell')
+    .each(function () { f.linkTo(this); $(this).css('opacity', 0.75); })
+    .focus(function() {
+      if (selected) {
+        $(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+      }
+      f.linkTo(this);
+      p.css('opacity', 1);
+      $(selected = this).css('opacity', 1).addClass('colorwell-selected');
+    })
+		.blur(function(){
+      p.css('opacity', 0);
+		});
 });
 
 var update_list_order = function(user_id, event_id, model, serialize) {
