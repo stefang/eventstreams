@@ -30,4 +30,12 @@ class ApplicationController < ActionController::Base
     end
     raise ActionController::Forbidden unless current_user.superadmin?
   end
+  
+  def get_published_or_owned_event
+    if signed_in?
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true OR user_id = #{current_user.id}")
+    else
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+    end
+  end
 end

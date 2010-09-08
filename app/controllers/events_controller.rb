@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     if current_subdomain.blank?
       @event = get_owned_event
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      get_published_or_owned_event
       if @event.blank?
         render_404
       else
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
   end
   
   def custom
-    @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+    get_published_or_owned_event
     if @event.blank?
       render_404
     else

@@ -7,7 +7,7 @@ class TracksController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @tracks = @event.owned_tracks.all
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      get_published_or_owned_event
       if @event.blank?
         render_404
       else
@@ -19,7 +19,7 @@ class TracksController < ApplicationController
   end
   
   def show
-    @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+    get_published_or_owned_event
     if @event.blank?
       render_404
     else

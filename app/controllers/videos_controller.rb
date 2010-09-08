@@ -14,7 +14,7 @@ class VideosController < ApplicationController
       @talk = @event.owned_talks.find(params[:talk_id])
       @video = Video.find(params[:id])
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      get_published_or_owned_event
       @talk = @event.owned_talks.find(params[:talk_id], :scope => @event)
       @video = Video.find(params[:id])
       render :layout => 'event'

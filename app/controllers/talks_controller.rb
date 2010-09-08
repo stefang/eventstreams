@@ -7,7 +7,7 @@ class TalksController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @talks = @event.owned_talks.find(:all, :order => "start")
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      get_published_or_owned_event
       if @event.blank?
         render_404
       else
@@ -24,7 +24,7 @@ class TalksController < ApplicationController
       @speakers = @talk.speakers.all
       @videos = @talk.owned_videos.all
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      get_published_or_owned_event
       if @event.blank?
         render_404
       else

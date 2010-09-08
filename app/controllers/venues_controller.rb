@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
       @global_venue_types = VenueType.all(:conditions => "global = true")
       @owned_venue_types = @event.owned_venue_types.all
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      get_published_or_owned_event
       if @event.blank?
         render_404
       else

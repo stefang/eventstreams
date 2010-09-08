@@ -17,7 +17,7 @@ Feature: View event
     Given that I am a user
     And an event exists called "myevent"
     When I go to the myevent subdomain
-    And I should see "myevent" within "#event_logo"
+    Then I should see "myevent" within "#event_logo"
 
   Scenario: Owner looks at their own published event
     Given that I am a user
@@ -29,6 +29,14 @@ Feature: View event
     And I should see "Your Account" within "nav#event_admin_bar"
     And I should see "Sign out" within "nav#event_admin_bar"
     And I should see "#myevent" within "a.hashtag"
+
+  Scenario: Owner looks at their own hidden event
+    Given that I am a user
+    And I have a hidden event called "myevent"
+    And I go to my user events page
+    Then I should see "myevent"
+    When I go to the myevent subdomain
+    Then I should see "myevent" within "#event_logo"
 
   Scenario: Owner looks at their own event and misses out the hashtag
     Given that I am a user
