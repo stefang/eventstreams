@@ -1,9 +1,15 @@
-- title "Tweets"
-
-%section.item_list
+- unless current_subdomain.blank?
   %ul
     - for tweet in @tweets
       %li.tweet
         %img{:src=> tweet.avatar, :width=>36 }
         %span.tweet= tweet.text
-        = link_to 'Delete', user_event_tweet_path(current_user, @event, tweet), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
+- else
+  - title "Tweets"
+  %section.item_list
+    %ul
+      - for tweet in @tweets
+        %li.tweet
+          %img{:src=> tweet.avatar, :width=>36 }
+          %span.tweet= tweet.text
+          = link_to 'Delete', user_event_tweet_path(current_user, @event, tweet), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

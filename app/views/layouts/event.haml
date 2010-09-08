@@ -28,12 +28,18 @@
           %h3#event_logo
             =link_to @event.title, root_path
           %p.tagline=@event.tagline unless @event.tagline.blank?
-          .event_meta
-            %abbr.event_date{:title => @event.display_date_full}
-              =@event.display_date
+          %ul.event_meta
+            %li
+              %abbr.event_date{:title => @event.display_date_full}
+                =@event.display_date
+            -unless @event.twitter_account.blank?
+              %li
+                %a.twitter_account{:href=>"http://twitter.com/#{@event.twitter_account}"}
+                  ="Follow #{@event.twitter_account}"
             -unless @event.hashtag.blank?
-              %a.hashtag{:href=>"http://search.twitter.com/search?q=#{u @event.hashtag}"}
-                =@event.hashtag
+              %li
+                %a.hashtag{:href=>"http://search.twitter.com/search?q=#{u @event.hashtag}"}
+                  =@event.hashtag
       %nav#main
         %ul.inner
           - unless @event.published_event_pages.blank?
@@ -41,7 +47,7 @@
               %li=link_to e.title, event_page_path(e)
           %li=link_to 'Speakers', speakers_path unless @event.owned_speakers.blank? 
           %li=link_to 'Programme', tracks_path unless @event.owned_tracks.blank? 
-          %li=link_to 'Venue', venues_path unless @event.owned_venues.blank? 
+          %li=link_to 'Location', venues_path unless @event.owned_venues.blank? 
       %section.main
         .inner
           = yield

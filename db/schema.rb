@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100907232233) do
+ActiveRecord::Schema.define(:version => 20100908180257) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20100907232233) do
     t.string   "tagline"
     t.text     "description"
     t.text     "colours"
+    t.string   "twitter_account"
   end
 
   create_table "invites", :force => true do |t|
@@ -125,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20100907232233) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "twitter_user_id"
+    t.string   "tweet_type"
   end
 
   create_table "users", :force => true do |t|

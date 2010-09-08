@@ -7,6 +7,8 @@ body
   :color #555
   a
     :color #2687A3
+    &:hover, &:focus
+      :color #333     
 
 section#eventstreams_event
   :clear both
@@ -55,16 +57,13 @@ section#eventstreams_event
         :font
           :family LeagueGothicRegular ,sans-serif
           :weight normal
-          :size 22px
-        abbr
-          :display block
-          :color #aaa
-          :margin-bottom 6px
-        a.hashtag
-          :display block
-          :color #666
-          &:hover, &:focus
-            :color #333
+          :size 20px
+        li
+          :margin-bottom 3px
+          abbr
+            :display block
+            :color #aaa
+        
   nav#main
     :background #777
     :overflow auto

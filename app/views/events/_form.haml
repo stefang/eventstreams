@@ -12,6 +12,9 @@
       = f.label :subdomain
       = "http:// #{f.text_field :subdomain} .#{current_domain}"
     %li
+      = f.label :twitter_account
+      = f.text_field :twitter_account
+    %li
       = f.label :hashtag
       = f.text_field :hashtag
     %li.date
