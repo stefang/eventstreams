@@ -34,7 +34,7 @@
                 =@event.display_date
             -unless @event.twitter_account.blank?
               %li
-                %a.twitter_account{:href=>"http://twitter.com/#{@event.twitter_account}"}
+                %a.twitter_account{:href=>"http://twitter.com/#{@event.twitter_account[1..-1]}"}
                   ="Follow #{@event.twitter_account}"
             -unless @event.hashtag.blank?
               %li
