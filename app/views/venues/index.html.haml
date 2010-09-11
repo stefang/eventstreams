@@ -4,13 +4,13 @@
 - unless current_subdomain.blank?
 
   #map_canvas.venues
-  -if @main_venues
+  -if @main_venues.any?
     %section.event_venues
       %h4 
         = pluralize_no_number(@main_venues.length, 'Location')
       %ul
         =render @main_venues
-  -if @other_venues
+  -if @other_venues.any?
     %section.other_venues
       %h4 Other Locations
       %ul
