@@ -31,7 +31,7 @@
         %nav#event_header
           .inner
             %ul
-              %li.title= @event.title
+              %li.title{:class=> @event.header_style}= @event.title
               %li.site_link= link_to event_root_url(:subdomain => @event.subdomain), event_root_url(:subdomain => @event.subdomain)
       = render :partial => 'layouts/flashes'
       %section.main

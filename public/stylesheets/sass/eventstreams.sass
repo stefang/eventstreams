@@ -4,6 +4,7 @@
 @import 'growl'
 @import 'ballpark'
 @import 'league'
+@import 'komika'
 
 /* Default Site Styles */
 
@@ -109,14 +110,22 @@ section#eventstreams
             &:hover, &:active
               :background rgba(0,0,0,0.4)
         li.title
-          :font
-            :family LeagueGothicRegular ,sans-serif
-            :weight normal
-            :size 26px
-          :text-transform uppercase
           :left 22px
           :padding 6px 18px
           :background rgba(0,0,0,0.4)
+        li.title.league
+          :text-transform uppercase
+          :font
+            :family LeagueGothicRegular, sans-serif
+            :weight normal
+            :size 26px
+        li.title.komika
+          :text-transform capitalize
+          :font
+            :family KomikaAxisRegular, sans-serif
+            :weight normal
+            :size 18px
+          :line-height 18px
         li.site_link
           :right 22px
   section#flash

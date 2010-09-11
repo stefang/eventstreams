@@ -20,8 +20,7 @@
     -if @tweets.any?
       %section.tweets
         %h4 
-          Latest on
-          =link_to "Twitter", tweets_path
+          =link_to "Latest on <span>Twitter</span>", tweets_path
         %ul
           - for tweet in @tweets
             %li.tweet

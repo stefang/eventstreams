@@ -31,6 +31,8 @@
       = f.text_field :title_colour, :class => "colorwell"
       = f.label :link_colour
       = f.text_field :link_colour, :class => "colorwell"
+      = f.label :header_style
+      = f.select :header_style, %w{league komika}, {:prompt => true, :include_blank => true}
       #picker
     %li.checkbox
       = f.label :published

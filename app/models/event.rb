@@ -16,7 +16,8 @@ class Event < ActiveRecord::Base
   has_many :owned_venue_types, :class_name => 'VenueType', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_tweets, :class_name => 'Tweet', :foreign_key => :event_id, :dependent => :destroy, :order => 'created_at DESC'
 
-  has_many :published_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :dependent => :destroy, :conditions=>{:published => true}, :order => 'item_order'
+  has_many :published_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'item_order'
+  has_many :published_talks, :class_name => 'Talk', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'start'
   
   serialize :colours
   
@@ -47,6 +48,19 @@ class Event < ActiveRecord::Base
     self.colours[:link_colour] = value
   end
   
+  def header_style
+    create_colours_if_empty
+    if colours.has_key? :header_style
+      colours[:header_style]
+    else
+      "#2687A3"
+    end
+  end
+  def header_style=(value)
+    create_colours_if_empty
+    self.colours[:header_style] = value
+  end
+   
   def create_colours_if_empty
     if self.colours.blank?
       self.colours = {} 
