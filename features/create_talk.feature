@@ -34,10 +34,20 @@ Feature: Create talk
     And I follow "New Talk"
     Then I fill in "Title" with "My Talk"
     And I fill in "Description" with "My talk will be cool"
+    And I check "Published"
     And I select "mytrack" from "Track"
     And I press "Save"
     Then I should see "Successfully created talk."
     And I should see "My Talk"
+
+    And I follow "New Talk"
+    Then I fill in "Title" with "My Other Talk"
+    And I fill in "Description" with "My talk will be cool"
+    And I select "mytrack" from "Track"
+    And I press "Save"
+    Then I should see "Successfully created talk."
+    And I should see "My Other Talk"
+
     When I go to the myevent subdomain
     And I follow "Programme"
-    Then I should not see "My Talk"
+    Then I should not see "My Other Talk"
