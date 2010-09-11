@@ -57,7 +57,7 @@ class Event < ActiveRecord::Base
     if colours.has_key? :header_style
       colours[:header_style]
     else
-      "#2687A3"
+      "league"
     end
   end
   def header_style=(value)
