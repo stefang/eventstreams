@@ -3,8 +3,12 @@ class Event < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :title
+
   validates_presence_of :subdomain
   validates_uniqueness_of :subdomain
+  validates_exclusion_of :subdomain, :in => %w(www about contact faq blog tour features packages tos privacy help support pricing careers),
+      :message => "'%{value}' is reserved."
+  
   validates_format_of :hashtag, :with => /^#/i, :message => "requires a # at the start", :allow_blank => true
   validates_format_of :twitter_account, :with => /^@/i, :message => "should have an @ at the start", :allow_blank => true
 
