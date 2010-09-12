@@ -13,5 +13,8 @@
     = h venue.county
     = h venue.postcode
   %ul.contact
-    %li= h venue.phone_number
-    %li= link_to 'website', venue.website unless venue.website.blank? 
+    %li
+      Telephone:
+      = h venue.phone_number
+    %li= link_to 'Website', venue.website unless venue.website.blank? 
+    %li= link_to 'Get Directions', "http://maps.google.com/maps?f=d&daddr=#{venue.lat},#{venue.lng}"
