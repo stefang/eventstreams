@@ -7,9 +7,8 @@
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     = javascript_include_tag "jquery", "jquery-notice", "holding", :cache => false
     = stylesheet_link_tag 'holding',:media => 'screen, projection', :cache => false
+    -if RAILS_ENV == "production"
+      = render :partial => 'layouts/ga'  
   %body
     = yield
     = render :partial => 'layouts/flashes'
-    
-    -if RAILS_ENV == "production"
-      = render :partial => 'layouts/observer'
