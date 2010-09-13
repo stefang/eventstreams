@@ -1,0 +1,50 @@
+.ui-dialog
+  :margin-bottom 22px
+  +rounded(11px)
+  :background #333
+  :background rgba(0,0,0,0.9)
+  :color #ddd
+  :padding 20px
+  +box-shadow(0px, 4px, 32px, rgba(0,0,0,0.7))
+  :list-style none
+  .ui-dialog-titlebar
+    :display none
+  p
+    :margin-bottom 9px
+  input
+    :display inline-block
+    :color #333
+    +rounded(3px)
+    :font
+      :size 12px
+      :weight bold
+    :padding 4px 6px
+    :background white url('../images/input_shadow.png') repeat-x
+    :border 1px solid white
+    +box-shadow(0px, 0px, 2px, rgba(0,0,0,0.6))
+    :width 237px
+    &:focus
+      +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.6))
+    :width 425px
+  button
+    padding: 9px 18px
+    border: 0
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: bold
+    font-size: 12px
+    background: #4B7897
+    color: white
+    cursor: pointer
+    border-radius: 3px
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    text-shadow: rgba(0,0,0,0.6) 0px -1px 0px
+    -webkit-transition: background 0.1s linear
+  button:hover, button:focus 
+    background: #4E7D9D - #222
+    text-decoration: none
+  button:active
+    background: #4E7D9D
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5)
+    -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5)
+    text-decoration: none

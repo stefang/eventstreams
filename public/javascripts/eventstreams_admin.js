@@ -13,7 +13,7 @@ $(document).ready(function(){
 	});
 	$("#sortable").disableSelection();
 	
-	$('textarea').markedit({'toolbar': { 'layout': 'bold italic quote numberlist bulletlist heading'}});
+	$('textarea').markedit({'toolbar': { 'layout': 'bold italic quote | link numberlist bulletlist heading'}});
 	
   $('#flash').hide();
   if ($('#flash').length > 0) {
