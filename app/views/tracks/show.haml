@@ -16,5 +16,5 @@
           = (talk.start.to_time + talk.duration.minutes).to_s(:time)
       %td
         = link_to talk.title, talk
-        = h talk.description
+        = auto_link(markdown(talk.description))
       %td= link_to talk.venue.name, venues_path unless talk.venue.blank?

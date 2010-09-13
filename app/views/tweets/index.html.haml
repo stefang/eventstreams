@@ -3,7 +3,7 @@
     - for tweet in @tweets
       %li.tweet
         %img{:src=> tweet.avatar, :width=>36 }
-        %span.tweet= tweet.text
+        %span.tweet= auto_link(tweet.text)
 - else
   - title "Tweets"
   %section.item_list

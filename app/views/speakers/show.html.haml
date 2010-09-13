@@ -5,7 +5,7 @@
   %article.speaker
     = image_tag @speaker.portrait.url(:thumb), :alt => @speaker.name, :title => @speaker.name
     %h4= @speaker.name
-    = markdown @speaker.biog
+    = auto_link(markdown(@speaker.biog))
     %ul.talks
       - for talk in @speaker.talks
         %li= link_to talk.title, talk

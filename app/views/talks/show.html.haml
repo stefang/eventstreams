@@ -11,7 +11,7 @@
           = (@talk.start.to_time + @talk.duration.minutes).to_s(:time)
         =" on the #{@talk.start.to_date.to_s(:dmy_long)}"
     
-    =markdown @talk.description
+    =auto_link(markdown(@talk.description))
   
     -if @speakers
       %ul.speakers_inline

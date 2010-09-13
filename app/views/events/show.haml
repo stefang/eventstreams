@@ -2,7 +2,7 @@
   - title @event.browser_title
   %section.overview
     %article.description
-      = markdown(@event.description)
+      = auto_link(markdown(@event.description))
     -if @speakers
       %ul.speakers_inline
         - @speakers.each_with_index do |speaker, index| 
@@ -25,4 +25,4 @@
           - for tweet in @tweets
             %li.tweet
               %img{:src=> tweet.avatar, :width=>36 }
-              %span.tweet= tweet.text
+              %span.tweet= auto_link(tweet.text)
