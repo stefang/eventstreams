@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100908180257) do
+ActiveRecord::Schema.define(:version => 20100913165920) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(:version => 20100908180257) do
   add_index "tracks", ["cached_slug"], :name => "index_tracks_on_cached_slug"
 
   create_table "tweets", :force => true do |t|
-    t.integer  "twitter_id",      :limit => 8
+    t.integer  "twitter_id",        :limit => 8
     t.integer  "event_id"
     t.string   "text"
     t.string   "avatar"
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(:version => 20100908180257) do
     t.datetime "updated_at"
     t.integer  "twitter_user_id"
     t.string   "tweet_type"
+    t.string   "twitter_user_name"
   end
 
   create_table "users", :force => true do |t|

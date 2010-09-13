@@ -7,5 +7,9 @@ module ApplicationHelper
   def pluralize_no_number(count, singular, plural = nil)
      ((count == 1 || count =~ /^1(\.0+)?$/) ? singular : (plural || singular.pluralize))
   end
-  
+
+  def pretty_time_ago(date, options={})
+    options = {:prefix => '', :suffix => ' ago'}.merge options
+    "#{options[:prefix]}#{time_ago_in_words(date)}#{options[:suffix]}"
+  end
 end

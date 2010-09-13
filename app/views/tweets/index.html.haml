@@ -2,8 +2,13 @@
   %ul
     - for tweet in @tweets
       %li.tweet
-        %img{:src=> tweet.avatar, :width=>36 }
-        %span.tweet= auto_link(tweet.text)
+        %a{:href => "http://twitter.com/#{tweet.twitter_user_name}"}
+          %img{:src=> tweet.avatar, :width=>36 }
+        %span.tweet= tweet.html
+        %span.meta
+          Posted by
+          = link_to "@#{tweet.twitter_user_name}", "http://twitter.com/#{tweet.twitter_user_name}"
+          = link_to pretty_time_ago(tweet.created_at), "http://twitter.com/#{tweet.twitter_user_name}/status/#{tweet.twitter_id}"
 - else
   - title "Tweets"
   %section.item_list
