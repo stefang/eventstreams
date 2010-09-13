@@ -34,7 +34,7 @@ Feature: Create event
     And I fill in "Subdomain" with ""
     And I fill in "Hashtag" with "hellothere"
     And I press "Save"
-    Then I should see "3 errors prohibited this event from being saved"
+    Then I should see "4 errors prohibited this event from being saved"
 
   Scenario: User tries to create an event with a subdomain that already exists
     Given that I am a user
@@ -43,6 +43,15 @@ Feature: Create event
     Then I follow "New Event"
     When I fill in "Title" with "Exciting Event"
     And I fill in "Subdomain" with "myevent"
+    And I press "Save"
+    Then I should see "1 error prohibited this event from being saved"
+
+  Scenario: User tries to create an event with a subdomain with non alphanumeric characters
+    Given that I am a user
+    When I follow "Your Events"
+    Then I follow "New Event"
+    When I fill in "Title" with "Exciting Event"
+    And I fill in "Subdomain" with "@./"
     And I press "Save"
     Then I should see "1 error prohibited this event from being saved"
     

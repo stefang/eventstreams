@@ -6,9 +6,10 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :subdomain
   validates_uniqueness_of :subdomain
-  validates_exclusion_of :subdomain, :in => %w(www about contact faq blog tour features packages tos privacy help support pricing careers),
+  validates_exclusion_of :subdomain, :in => %w(www about contact faq blog tour features packages tos privacy help support pricing careers assets),
       :message => "'%{value}' is reserved."
   
+  validates_format_of :subdomain, :with => /^\w+$/i, :message => "must only contain letters and numbers"
   validates_format_of :hashtag, :with => /^#/i, :message => "requires a # at the start", :allow_blank => true
   validates_format_of :twitter_account, :with => /^@/i, :message => "should have an @ at the start", :allow_blank => true
 
