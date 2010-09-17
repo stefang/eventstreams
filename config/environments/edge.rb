@@ -11,6 +11,8 @@ config.action_view.cache_template_loading            = true
 
 COOKIE_DOMAIN = '.eventstreams.triplegeek.com'
 
+ActionController::Base.asset_host = "assets" + COOKIE_DOMAIN
+
 if ActionController::Base.session
   ActionController::Base.session[:domain] = COOKIE_DOMAIN
 else

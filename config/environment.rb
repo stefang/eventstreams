@@ -12,21 +12,8 @@ require 'bluecloth'
 
 Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
+  config.middleware.use "Rack::Asset"
 end
 
 DO_NOT_REPLY = "donotreply@eventstreamsapp.com"
 Haml::Template.options[:format] = :html5
-
-ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
-  :dmy_long => Proc.new { |date| "#{date.day.ordinalize} #{date.strftime '%B %Y'}" }
-)
-
-ActiveSupport::CoreExtensions::Range::Conversions::RANGE_FORMATS.merge!(
-  :condensed => Proc.new do |start, stop|
-    if (start.year == stop.year) and (start.month == stop.month)
-      "#{start.day.ordinalize} - #{stop.to_date.to_s(:dmy_long)}"
-    else
-      "#{start.to_date.to_s(:dmy_long)} to #{stop.to_date.to_s(:dmy_long)}"
-    end
-  end
-)

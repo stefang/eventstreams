@@ -53,17 +53,17 @@ class Event < ActiveRecord::Base
     self.colours[:link_colour] = value
   end
   
-  def header_style
+  def theme_name
     create_colours_if_empty
-    if colours.has_key? :header_style
-      colours[:header_style]
+    if colours.has_key? :theme_name
+      colours[:theme_name]
     else
-      "league"
+      "paper"
     end
   end
-  def header_style=(value)
+  def theme_name=(value)
     create_colours_if_empty
-    self.colours[:header_style] = value
+    self.colours[:theme_name] = value
   end
    
   def create_colours_if_empty

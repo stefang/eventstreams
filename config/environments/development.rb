@@ -19,6 +19,8 @@ COOKIE_DOMAIN = '.eventstreams.local'
 
 DO_NOT_REPLY = "donotreply@eventstreams.local"
 
+ActionController::Base.asset_host = "assets" + COOKIE_DOMAIN
+
 if ActionController::Base.session
   ActionController::Base.session[:domain] = COOKIE_DOMAIN
 else

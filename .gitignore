@@ -3,7 +3,7 @@ log/*.log
 debug.log
 tmp/
 db/*.sqlite3
-public/stylesheets/*.css
-public/system/*
+assets/stylesheets/*.css
+assets/event_assets/*
 log/
 .bundle
