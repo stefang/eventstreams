@@ -1,2 +1,199 @@
+@import 'mixins'
+
 body
-  background: #f1f1f1
+  :background white
+  :color #555
+  a
+    :color #2687A3
+    &:hover, &:focus
+      :color #333     
+
+section#eventstreams_event
+  :clear both
+  .inner
+    :width 700px
+    :padding 0 20px
+    :margin 0 auto
+    :position relative
+  header
+    .inner
+      :padding-top 66px
+      :padding-bottom 44px
+    .event_meta
+      :position absolute
+      :right 0
+      :top 66px
+  nav#main
+    :background #777
+    :overflow auto
+    ul
+      li
+        a
+          :font
+            :size 11px
+            :weight bold
+          :display block
+          :float left
+          :padding 11px 22px
+          :border-left 1px solid white
+          :color #fff
+          &:hover, &:focus
+            :background #222
+      li:last-child
+        a
+          :border-right 1px solid white
+  section.main
+    :clear both
+    :overflow auto
+    :margin-top 44px
+    section.overview
+      :width 460px
+      :float left
+    ul.speakers_inline
+      li.speaker
+        :float left
+        :clear none
+        :margin-right 20px
+        :position relative
+        :width 100px
+        :height 88px
+        :border 0
+        :overflow hidden
+        a
+          :background rgba(0,0,0,0.8)
+          :color white
+          :position absolute
+          :top 0
+          :left 0
+          :display block
+          :width 100px
+          :height 88px
+          :font-size 11px
+          :font-weight bold
+          :opacity 0
+          span
+            :display block
+            :padding 6px 9px
+          &:hover, &:focus
+            :opacity 1
+      li.speaker.fourth
+        :margin-right 0
+    section.videos
+      :clear both
+    section.event_meta
+      :width 220px
+      :float left
+      :margin-left 20px
+      #map_canvas.homepage
+        :width 220px
+        :height 220px
+      ul.venues
+        :margin-bottom 22px
+        li
+          :text-align right
+          :font-size 11px
+          :color #999
+      section.tweets
+        h4
+          :color #888
+          a
+            :color #555
+        ul
+          li
+            :font-size 11px
+            :margin-bottom 22px
+            img
+              :float left
+              :margin 0 6px 6px 0
+    .speaker
+      :clear both
+      :border-bottom 1px solid #eee
+      :margin-bottom 21px
+      :overflow auto
+      h4
+        :font
+          :size 28px
+      img
+        :float left
+        :width 100px
+        :height 88px
+        :margin-bottom 22px
+        :margin-right 20px
+      p, ul
+        :margin-left 120px
+      ul
+        :margin-bottom 22px
+    #map_canvas.venues
+      :width 100%
+      :height 220px
+      :margin-bottom 22px
+    section.event_venues, section.other_venues
+      :width 340px
+      :float left
+      h4
+        :font
+          :size 28px
+        :border-bottom 1px solid #eee
+        :padding-bottom 21px
+      h5
+        :font-weight bold
+        :letter-spacing -1px
+        :line-height 22px
+        :margin-bottom 0px
+      ul
+        li
+          :margin-bottom 22px
+          :position relative
+          span.type
+            :position absolute
+            :top 0
+            :right 0
+            :display block
+            :background #eee
+            :padding 2px 6px
+            :font
+              :size 11px
+              :weight bold
+          ul
+            li
+              :border-bottom 0
+              :padding-bottom 0
+              :margin-bottom 0
+              
+    section.other_venues
+      :margin-left 20px
+  article.talk
+    h1.talk_title
+      :position relative
+      :height 22px
+      span
+        :position absolute
+        :right 0
+        :bottom 1px
+        :color #aaa
+  table.programme
+    :width 100%
+    :margin-bottom 22px
+    :border-top 1px solid #eee
+    :font-size 12px
+    tr.date_header
+      td
+        :font-weight bold
+        :font-size 12px
+    tr
+      td
+        :vertical-align top
+        :padding 5px 8px
+        :border-bottom 1px solid #eee
+        ul
+          li
+            h4
+              :font-size 12px
+              :font-weight bold
+              :margin-bottom 0
+          li.description
+            :margin-top 22px
+      td.start, td.end
+        :width 20px
+      td.venue
+        :white-space nowrap

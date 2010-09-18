@@ -1,2 +1,178 @@
 body {
-  background: #f1f1f1; }
+  background: white;
+  color: #555555; }
+  body a {
+    color: #2687a3; }
+    body a:hover, body a:focus {
+      color: #333333; }
+
+section#eventstreams_event {
+  clear: both; }
+  section#eventstreams_event .inner {
+    width: 700px;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: relative; }
+  section#eventstreams_event header .inner {
+    padding-top: 66px;
+    padding-bottom: 44px; }
+  section#eventstreams_event header .event_meta {
+    position: absolute;
+    right: 0;
+    top: 66px; }
+  section#eventstreams_event nav#main {
+    background: #777777;
+    overflow: auto; }
+    section#eventstreams_event nav#main ul li a {
+      font-size: 11px;
+      font-weight: bold;
+      display: block;
+      float: left;
+      padding: 11px 22px;
+      border-left: 1px solid white;
+      color: white; }
+      section#eventstreams_event nav#main ul li a:hover, section#eventstreams_event nav#main ul li a:focus {
+        background: #222222; }
+    section#eventstreams_event nav#main ul li:last-child a {
+      border-right: 1px solid white; }
+  section#eventstreams_event section.main {
+    clear: both;
+    overflow: auto;
+    margin-top: 44px; }
+    section#eventstreams_event section.main section.overview {
+      width: 460px;
+      float: left; }
+    section#eventstreams_event section.main ul.speakers_inline li.speaker {
+      float: left;
+      clear: none;
+      margin-right: 20px;
+      position: relative;
+      width: 100px;
+      height: 88px;
+      border: 0;
+      overflow: hidden; }
+      section#eventstreams_event section.main ul.speakers_inline li.speaker a {
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100px;
+        height: 88px;
+        font-size: 11px;
+        font-weight: bold;
+        opacity: 0; }
+        section#eventstreams_event section.main ul.speakers_inline li.speaker a span {
+          display: block;
+          padding: 6px 9px; }
+        section#eventstreams_event section.main ul.speakers_inline li.speaker a:hover, section#eventstreams_event section.main ul.speakers_inline li.speaker a:focus {
+          opacity: 1; }
+    section#eventstreams_event section.main ul.speakers_inline li.speaker.fourth {
+      margin-right: 0; }
+    section#eventstreams_event section.main section.videos {
+      clear: both; }
+    section#eventstreams_event section.main section.event_meta {
+      width: 220px;
+      float: left;
+      margin-left: 20px; }
+      section#eventstreams_event section.main section.event_meta #map_canvas.homepage {
+        width: 220px;
+        height: 220px; }
+      section#eventstreams_event section.main section.event_meta ul.venues {
+        margin-bottom: 22px; }
+        section#eventstreams_event section.main section.event_meta ul.venues li {
+          text-align: right;
+          font-size: 11px;
+          color: #999999; }
+      section#eventstreams_event section.main section.event_meta section.tweets h4 {
+        color: #888888; }
+        section#eventstreams_event section.main section.event_meta section.tweets h4 a {
+          color: #555555; }
+      section#eventstreams_event section.main section.event_meta section.tweets ul li {
+        font-size: 11px;
+        margin-bottom: 22px; }
+        section#eventstreams_event section.main section.event_meta section.tweets ul li img {
+          float: left;
+          margin: 0 6px 6px 0; }
+    section#eventstreams_event section.main .speaker {
+      clear: both;
+      border-bottom: 1px solid #eeeeee;
+      margin-bottom: 21px;
+      overflow: auto; }
+      section#eventstreams_event section.main .speaker h4 {
+        font-size: 28px; }
+      section#eventstreams_event section.main .speaker img {
+        float: left;
+        width: 100px;
+        height: 88px;
+        margin-bottom: 22px;
+        margin-right: 20px; }
+      section#eventstreams_event section.main .speaker p, section#eventstreams_event section.main .speaker ul {
+        margin-left: 120px; }
+      section#eventstreams_event section.main .speaker ul {
+        margin-bottom: 22px; }
+    section#eventstreams_event section.main #map_canvas.venues {
+      width: 100%;
+      height: 220px;
+      margin-bottom: 22px; }
+    section#eventstreams_event section.main section.event_venues, section#eventstreams_event section.main section.other_venues {
+      width: 340px;
+      float: left; }
+      section#eventstreams_event section.main section.event_venues h4, section#eventstreams_event section.main section.other_venues h4 {
+        font-size: 28px;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 21px; }
+      section#eventstreams_event section.main section.event_venues h5, section#eventstreams_event section.main section.other_venues h5 {
+        font-weight: bold;
+        letter-spacing: -1px;
+        line-height: 22px;
+        margin-bottom: 0px; }
+      section#eventstreams_event section.main section.event_venues ul li, section#eventstreams_event section.main section.other_venues ul li {
+        margin-bottom: 22px;
+        position: relative; }
+        section#eventstreams_event section.main section.event_venues ul li span.type, section#eventstreams_event section.main section.other_venues ul li span.type {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          background: #eeeeee;
+          padding: 2px 6px;
+          font-size: 11px;
+          font-weight: bold; }
+        section#eventstreams_event section.main section.event_venues ul li ul li, section#eventstreams_event section.main section.other_venues ul li ul li {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0; }
+    section#eventstreams_event section.main section.other_venues {
+      margin-left: 20px; }
+  section#eventstreams_event article.talk h1.talk_title {
+    position: relative;
+    height: 22px; }
+    section#eventstreams_event article.talk h1.talk_title span {
+      position: absolute;
+      right: 0;
+      bottom: 1px;
+      color: #aaaaaa; }
+  section#eventstreams_event table.programme {
+    width: 100%;
+    margin-bottom: 22px;
+    border-top: 1px solid #eeeeee;
+    font-size: 12px; }
+    section#eventstreams_event table.programme tr.date_header td {
+      font-weight: bold;
+      font-size: 12px; }
+    section#eventstreams_event table.programme tr td {
+      vertical-align: top;
+      padding: 5px 8px;
+      border-bottom: 1px solid #eeeeee; }
+      section#eventstreams_event table.programme tr td ul li h4 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 0; }
+      section#eventstreams_event table.programme tr td ul li.description {
+        margin-top: 22px; }
+    section#eventstreams_event table.programme tr td.start, section#eventstreams_event table.programme tr td.end {
+      width: 20px; }
+    section#eventstreams_event table.programme tr td.venue {
+      white-space: nowrap; }

@@ -1,6 +1,10 @@
 /* Inspired by (and partially nicked from) the far superior #grid (http://hashgrid.com/) but simpler for a simple person - me. Look in reset.css for the styleee */
 
 $(document).ready(function(){
+  
+  // Find asset server
+  
+  asset_server = $("script").attr('src').split('/')[2];
 
 	$('body').append('<div id="grid"><div class="inner"></div></div>').css({
 		position: 'relative'
@@ -20,7 +24,7 @@ $(document).ready(function(){
 		width: '740px',
 		margin: '0 auto',
 		padding: '0',
-		background: 'url(/javascripts/minigrid/bg-grid-980.png)',
+		background: 'url(http://'+asset_server+'/javascripts/minigrid/bg-grid-980.png)',
 		height: '100%'
 	});
 	

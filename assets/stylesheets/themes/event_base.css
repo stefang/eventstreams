@@ -1,0 +1,193 @@
+/* Reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit; }
+
+body {
+  line-height: 22px; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+table, td, th {
+  vertical-align: middle; }
+
+blockquote, q {
+  quotes: "\201C" "\201D"; }
+
+blockquote:before, q:before {
+  content: open-quote; }
+
+blockquote:after, q:after {
+  content: close-quote; }
+
+a, button:focus, input, textarea {
+  outline: none; }
+
+a img {
+  border: none; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
+span.reset {
+  display: block;
+  height: 1px;
+  margin-top: -1px;
+  clear: both; }
+
+input[type=hidden] {
+  display: none; }
+
+input[disabled='disabled'] {
+  color: #cccccc;
+  background: none; }
+
+form {
+  overflow: visible; }
+
+ul {
+  list-style: none; }
+
+/* Basic element styles */
+a {
+  text-decoration: none; }
+
+blockquote {
+  margin: 11px;
+  font-style: italic; }
+
+strong {
+  font-weight: bold; }
+
+em, dfn {
+  font-style: italic; }
+
+dfn {
+  font-weight: bold; }
+
+sup, sub {
+  line-height: 0; }
+
+abbr, acronym {
+  border-bottom: 0; }
+
+address {
+  margin: 0 0 22px;
+  font-style: italic; }
+
+del {
+  text-decoration: line-through; }
+
+pre, code {
+  display: block;
+  background: white;
+  padding: 11px; }
+
+pre, code, tt {
+  font: 1em "andale mono", "lucida console", monospace;
+  line-height: 22px; }
+
+/* Base typography */
+body {
+  line-height: 22px;
+  font-size: 14px;
+  font-family: sans-serif; }
+  body h2, body h3, body h4, body h5, body h6 {
+    line-height: 22px;
+    font-family: sans-serif;
+    font-weight: normal; }
+  body h1 {
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 22px; }
+  body h2 {
+    font-size: 22px;
+    margin-bottom: 22px; }
+  body h3 {
+    font-size: 22px;
+    margin-bottom: 22px; }
+  body h4 {
+    font-size: 18px;
+    margin-bottom: 22px; }
+  body h5 {
+    font-size: 16px;
+    margin-bottom: 18px; }
+  body h6 {
+    font-size: 14em;
+    font-weight: bold; }
+  body p {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 22px; }
+  body input, body textarea {
+    line-height: 22px;
+    margin-bottom: 9px;
+    font-family: sans-serif;
+    font-weight: normal; }
+  body label {
+    cursor: pointer;
+    line-height: 19px; }
+
+/* HTML5 Defaults */
+section, article, header, footer, nav, aside {
+  display: block; }
+
+/* Fixing Some RAILS MADNESS!!! */
+section#eventstreams form ol li div.fieldWithErrors {
+  display: inline;
+  padding: 0;
+  margin: 0; }
+  section#eventstreams form ol li div.fieldWithErrors label {
+    color: #bb0000; }
+section#eventstreams #errorExplanation {
+  border: 2px solid #550000;
+  padding: 22px;
+  margin-bottom: 44px;
+  color: #550000; }
+  section#eventstreams #errorExplanation li {
+    color: #bb0000; }
+
+body {
+  background: white;
+  color: #555555; }
+  body a {
+    color: #0000aa; }
+    body a:hover, body a:focus {
+      color: blue; }
+
+#event_admin_bar {
+  width: 100%;
+  background: #333333;
+  float: left;
+  height: 44px; }
+  #event_admin_bar ul {
+    padding: 8px;
+    float: left;
+    list-style: none; }
+    #event_admin_bar ul li {
+      float: left; }
+      #event_admin_bar ul li a {
+        font-size: 11px;
+        display: block;
+        padding: 3px 9px;
+        background: #666666;
+        margin-right: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #eeeeee; }
+      #event_admin_bar ul li a:hover {
+        background: #555555; }

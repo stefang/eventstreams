@@ -5,7 +5,7 @@
     %meta{:name=>'viewport', :content=>'width=device-height'}
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
-    = stylesheet_link_tag 'event', "themes/#{@event.theme_name}", :media => 'screen, projection', :cache => false
+    = stylesheet_link_tag 'themes/event_base', "themes/#{@event.theme_name}", :media => 'screen, projection', :cache => false
     %link{:href => formatted_event_stylesheet_path, :media => "screen",:rel => "stylesheet", :type => "text/css"}
     = javascript_include_tag "jquery", "eventstreams", "minigrid", :cache => false
     -if @main_venues || @other_venues || @venues
