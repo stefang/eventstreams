@@ -13,7 +13,7 @@ module Rack
 
       Sass::Plugin.options[:template_location] = {
         @root+"/stylesheets/sass" => @root+"/stylesheets",
-        @root+"themes/paper/stylesheets/sass" => @root+"themes/paper/stylesheets" 
+        @root+"/stylesheets/themes/sass" => @root+"/stylesheets/themes" 
       }
       
     end
