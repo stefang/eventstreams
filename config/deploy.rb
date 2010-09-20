@@ -13,9 +13,9 @@ end
 
 task :production do
   set :rails_env, 'production'
-  set :domain, "eventstreams@eventstreams.triplegeek.com"
-  set :my_deploy_path, "/var/www/eventstreamsapp.com/app/"
-  set :deploy_to, "/var/www/eventstreamsapp.com/app/"
+  set :domain, "app@eventstreamsapp.com"
+  set :my_deploy_path, "/srv/www/eventstreamsapp.com/app/"
+  set :deploy_to, "/srv/www/eventstreamsapp.com/app/"
 end
 
 desc "Full deployment cycle"
