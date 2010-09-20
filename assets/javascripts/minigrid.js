@@ -21,10 +21,10 @@ $(document).ready(function(){
 	});
 
 	$('#grid .inner').css({
-		width: '740px',
+		width: '980px',
 		margin: '0 auto',
 		padding: '0',
-		background: 'url(http://'+asset_server+'/javascripts/minigrid/bg-grid-980.png)',
+		background: 'url(http://'+asset_server+'/javascripts/minigrid/bg-grid-980_20.png)',
 		height: '100%'
 	});
 	

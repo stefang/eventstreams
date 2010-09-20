@@ -9,7 +9,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   font-family: inherit; }
 
 body {
-  line-height: 22px; }
+  line-height: 20px; }
 
 table {
   border-collapse: collapse;
@@ -86,7 +86,7 @@ abbr, acronym {
   border-bottom: 0; }
 
 address {
-  margin: 0 0 22px;
+  margin: 0 0 20px;
   font-style: italic; }
 
 del {
@@ -99,48 +99,48 @@ pre, code {
 
 pre, code, tt {
   font: 1em "andale mono", "lucida console", monospace;
-  line-height: 22px; }
+  line-height: 20px; }
 
 /* Base typography */
 body {
-  line-height: 22px;
+  line-height: 20px;
   font-size: 14px;
   font-family: sans-serif; }
   body h2, body h3, body h4, body h5, body h6 {
-    line-height: 22px;
+    line-height: 20px;
     font-family: sans-serif;
     font-weight: normal; }
   body h1 {
-    font-size: 44px;
+    font-size: 40px;
     font-weight: normal;
-    margin-bottom: 22px; }
+    margin-bottom: 20px; }
   body h2 {
-    font-size: 22px;
-    margin-bottom: 22px; }
+    font-size: 20px;
+    margin-bottom: 20px; }
   body h3 {
-    font-size: 22px;
-    margin-bottom: 22px; }
+    font-size: 20px;
+    margin-bottom: 20px; }
   body h4 {
     font-size: 18px;
-    margin-bottom: 22px; }
+    margin-bottom: 20px; }
   body h5 {
     font-size: 16px;
-    margin-bottom: 18px; }
+    margin-bottom: 10px; }
   body h6 {
     font-size: 14em;
     font-weight: bold; }
   body p {
     font-size: 14px;
-    line-height: 22px;
-    margin: 0 0 22px; }
+    line-height: 20px;
+    margin: 0 0 20px; }
   body input, body textarea {
-    line-height: 22px;
-    margin-bottom: 9px;
+    line-height: 20px;
+    margin-bottom: 0px;
     font-family: sans-serif;
     font-weight: normal; }
   body label {
     cursor: pointer;
-    line-height: 19px; }
+    line-height: 20px; }
 
 /* HTML5 Defaults */
 section, article, header, footer, nav, aside {
@@ -155,8 +155,8 @@ section#eventstreams form ol li div.fieldWithErrors {
     color: #bb0000; }
 section#eventstreams #errorExplanation {
   border: 2px solid #550000;
-  padding: 22px;
-  margin-bottom: 44px;
+  padding: 20px;
+  margin-bottom: 40px;
   color: #550000; }
   section#eventstreams #errorExplanation li {
     color: #bb0000; }

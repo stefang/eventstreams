@@ -45,7 +45,7 @@ class Event < ActiveRecord::Base
     if colours.has_key? :link_colour
       colours[:link_colour]
     else
-      "#2687A3"
+      "#e16736"
     end
   end
   def link_colour=(value)
