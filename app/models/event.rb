@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :subdomain
   validates_uniqueness_of :subdomain
-  validates_exclusion_of :subdomain, :in => %w(www about contact faq blog tour features packages tos privacy help support pricing careers assets),
+  validates_exclusion_of :subdomain, :in => %w(www about contact faq blog tour features packages tos privacy help support pricing careers assets staging edge),
       :message => "'%{value}' is reserved."
   
   validates_format_of :subdomain, :with => /^\w+$/i, :message => "must only contain letters and numbers"
