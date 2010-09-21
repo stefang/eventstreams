@@ -29,17 +29,28 @@ section#eventstreams_event {
     padding-top: 60px;
     padding-bottom: 40px; }
   section#eventstreams_event header #event_logo {
-    font-family: "LeagueGothicRegular", sans-serif; }
+    font-family: "LeagueGothicRegular", sans-serif;
+    font-size: 75px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #f4f3ef, 4px 4px 0 rgba(0, 0, 0, 0.2);
+    letter-spacing: 4px;
+    line-height: 60px;
+    width: 580px;
+    margin-bottom: 0; }
   section#eventstreams_event header .tagline {
     font-size: 12px;
     font-style: italic;
+    line-height: 12px;
+    margin: 7px 0 0 0;
     color: #84837f;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8); }
   section#eventstreams_event header .event_meta {
     position: absolute;
     right: 20px;
     top: 60px;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8); }
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    width: 340px;
+    text-align: right; }
   section#eventstreams_event nav#main .inner ul {
     background-color: #e3e2de;
     background-color: rgba(0, 0, 0, 0.1);
@@ -130,26 +141,44 @@ section#eventstreams_event {
           float: left;
           margin: 0 6px 6px 0; }
     section#eventstreams_event section.main .speaker {
-      clear: both;
-      border-bottom: 1px solid #eeeeee;
+      border-bottom: 1px solid #dddddd;
       margin-bottom: 19px;
-      overflow: auto; }
+      min-height: 120px; }
       section#eventstreams_event section.main .speaker h4 {
         font-size: 20px; }
-      section#eventstreams_event section.main .speaker img {
+      section#eventstreams_event section.main .speaker a.portrait {
         float: left;
+        clear: none;
+        margin-right: 20px;
+        position: relative;
+        background: white;
         width: 100px;
-        height: 80px;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         margin-bottom: 20px;
         margin-right: 20px; }
+        section#eventstreams_event section.main .speaker a.portrait img {
+          border: 1px solid #aaaaaa;
+          width: 92px;
+          height: 80px;
+          margin: 3px 3px 14px 3px;
+          display: block;
+          overflow: hidden; }
       section#eventstreams_event section.main .speaker p, section#eventstreams_event section.main .speaker ul {
         margin-left: 120px; }
       section#eventstreams_event section.main .speaker ul {
         margin-bottom: 20px; }
-    section#eventstreams_event section.main #map_canvas.venues {
-      width: 100%;
+    section#eventstreams_event section.main .map_wrap.venuepage {
+      width: 920px;
       height: 200px;
-      margin-bottom: 20px; }
+      padding: 10px;
+      margin-bottom: 20px;
+      background: white;
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+      section#eventstreams_event section.main .map_wrap.venuepage #map_canvas.venues {
+        width: 920px;
+        height: 200px; }
     section#eventstreams_event section.main section.event_venues, section#eventstreams_event section.main section.other_venues {
       width: 340px;
       float: left; }

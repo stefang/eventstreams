@@ -2,6 +2,12 @@ body section#eventstreams_event header .inner #event_logo a {
 	<%= "color: #{@event.title_colour};" %>
 }
 
+body section#eventstreams_event header .inner #event_logo a:hover, 
+body section#eventstreams_event header .inner #event_logo a:focus {
+	<%= "color: #{@event.link_colour};" %>
+}
+
+
 body a {
 	<%= "color: #{@event.link_colour};" %>
 }

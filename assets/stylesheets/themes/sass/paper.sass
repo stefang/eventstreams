@@ -28,11 +28,21 @@ section#eventstreams_event
       :padding-top 60px
       :padding-bottom 40px
     #event_logo
-      font-family: 'LeagueGothicRegular', sans-serif
+      :font
+        :family 'LeagueGothicRegular', sans-serif
+        :size 75px
+      :text-transform uppercase
+      :text-shadow 1px 1px 0 #f4f3ef, 4px 4px 0 rgba(0,0,0,0.2)
+      :letter-spacing 4px
+      :line-height 60px
+      :width 580px
+      :margin-bottom 0
     .tagline
       :font
         :size 12px
         :style italic
+      :line-height 12px
+      :margin 7px 0 0 0
       :color #84837f
       :text-shadow 0 1px 1px rgba(255,255,255,0.8)
     .event_meta
@@ -40,6 +50,8 @@ section#eventstreams_event
       :right 20px
       :top 60px
       :text-shadow 0 1px 1px rgba(255,255,255,0.8)
+      :width 340px
+      :text-align right
   nav#main
     .inner
       ul
@@ -136,27 +148,43 @@ section#eventstreams_event
               :float left
               :margin 0 6px 6px 0
     .speaker
-      :clear both
-      :border-bottom 1px solid #eee
+      :border-bottom 1px solid #ddd
       :margin-bottom 19px
-      :overflow auto
+      :min-height 120px
       h4
         :font
           :size 20px
-      img
+      a.portrait
         :float left
+        :clear none
+        :margin-right 20px
+        :position relative
+        :background white
         :width 100px
-        :height 80px
+        +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
         :margin-bottom 20px
         :margin-right 20px
+        img
+          :border 1px solid #aaa
+          :width 92px
+          :height 80px
+          :margin 3px 3px 14px 3px
+          :display block
+          :overflow hidden
       p, ul
         :margin-left 120px
       ul
         :margin-bottom 20px
-    #map_canvas.venues
-      :width 100%
+    .map_wrap.venuepage
+      :width 920px
       :height 200px
+      :padding 10px
       :margin-bottom 20px
+      :background white
+      +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
+      #map_canvas.venues
+        :width 920px
+        :height 200px
     section.event_venues, section.other_venues
       :width 340px
       :float left

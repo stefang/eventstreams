@@ -4,7 +4,7 @@
       %li.tweet
         %a{:href => "http://twitter.com/#{tweet.twitter_user_name}"}
           %img{:src=> tweet.avatar, :width=>36 }
-        %span.tweet= tweet.html
+        %span.tweet= tweet.text
         %span.meta
           Posted by
           = link_to "@#{tweet.twitter_user_name}", "http://twitter.com/#{tweet.twitter_user_name}"
