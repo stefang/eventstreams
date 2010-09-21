@@ -1,14 +1,20 @@
 set :application, "eventstreams"
 set :repository, 'git@github.com:stefang/eventstreams.git'
 set :revision, 'master' # git branch to deploy
-set :web_command, 'sudo apache2ctl' # command to start/stop apache
-set :deploy_timestamped, false
+set :web_command, 'sudo /etc/init.d/nginx' # command to start/stop apache
 
 task :edge do
   set :rails_env, 'edge'
   set :domain, "eventstreams@eventstreams.triplegeek.com"
   set :my_deploy_path, "/var/www/eventstreams.triplegeek.com/app/"
   set :deploy_to, "/var/www/eventstreams.triplegeek.com/app/"
+end
+
+task :staging do
+  set :rails_env, 'staging'
+  set :domain, "app@eventstreamsapp.com"
+  set :my_deploy_path, "/srv/www/staging.eventstreamsapp.com/app/"
+  set :deploy_to, "/srv/www/staging.eventstreamsapp.com/app/"
 end
 
 task :production do
@@ -20,6 +26,9 @@ end
 
 desc "Full deployment cycle"
 namespace :vlad do
+  remote_task :bundle_install do
+      run "cd #{my_deploy_path}current && bundle install --path vendor/bundle"
+  end
   remote_task :manual_migrate do
       run "cd #{my_deploy_path}current && /usr/bin/rake db:migrate RAILS_ENV=#{rails_env}"
   end
@@ -29,5 +38,5 @@ namespace :vlad do
   remote_task :custom_restart do
       run "touch #{my_deploy_path}current/tmp/restart.txt"
   end
-  remote_task :deploy => [:update, :manual_migrate, :symlink_assets, :cleanup, :custom_restart]
+  remote_task :deploy => [:update, :bundle_install, :manual_migrate, :symlink_assets, :cleanup, :custom_restart]
 end

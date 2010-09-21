@@ -11,7 +11,6 @@ class ClearanceUpdateUsers < ActiveRecord::Migration
     end
 
     change_table(:users) do |t|
-      t.string :token, :limit => 128
       t.datetime :token_expires_at
     end
 
