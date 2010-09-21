@@ -5,7 +5,7 @@ body
   :background #f4f3ef url(../../images/themes/paper/background.jpg)
   :font
     :family Georgia, sans-serif
-  :color #676662
+  :color #333
   p
     :margin-bottom 20px
   a
@@ -28,6 +28,7 @@ section#eventstreams_event
       :padding-top 60px
       :padding-bottom 40px
     #event_logo
+      font-family: 'LeagueGothicRegular', sans-serif
     .tagline
       :font
         :size 12px
@@ -54,7 +55,7 @@ section#eventstreams_event
             :float left
             :padding 10px 20px
             :border-right 1px solid white
-            :color #666
+            :color #333
             :text-shadow 0 1px 1px rgba(255,255,255,0.8)
             &:hover, &:focus
               :background-color rgba(0,0,0,0.1)
@@ -71,17 +72,16 @@ section#eventstreams_event
         :clear none
         :margin-right 20px
         :position relative
-        :overflow hidden
         :background white
         :width 100px
         +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
         a
-          :border 1px solid rgba(0,0,0,0.2)
+          :border 1px solid #aaa
           :width 92px
           :height 80px
           :margin 3px 3px 14px 3px
           :display block
-          :overflow auto
+          :overflow hidden
           :font-weight normal
           img
             :width 92px
@@ -93,7 +93,7 @@ section#eventstreams_event
             :position absolute
             :top 3px
             :left 3px
-            :width 94px
+            :width 82px
             :height 76px
             :font-size 11px
           &:hover
