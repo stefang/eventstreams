@@ -40,4 +40,4 @@ end
 HOST = "staging.eventstreamsapp.com"
 DO_NOT_REPLY = "Eventstreams Staging <donotreply@staging.eventstreamsapp.com>"
 
-Paperclip.options[:image_magick_path] = "/usr/local/bin"
+Paperclip.options[:image_magick_path] = "/usr/bin"
