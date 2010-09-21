@@ -10,10 +10,6 @@ class ClearanceUpdateUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    change_table(:users) do |t|
-      t.datetime :token_expires_at
-    end
-
     add_index :users, [:id, :token]
     add_index :users, :email
     add_index :users, :token
@@ -23,9 +19,6 @@ class ClearanceUpdateUsers < ActiveRecord::Migration
   end
 
   def self.down
-    change_table(:users) do |t|
-      t.remove :token,:token_expires_at
-    end
     drop_table :users
   end
 end
