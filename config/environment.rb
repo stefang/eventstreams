@@ -17,3 +17,13 @@ end
 
 DO_NOT_REPLY = "donotreply@eventstreamsapp.com"
 Haml::Template.options[:format] = :html5
+
+ActionMailer::Base.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "eventstreamsapp.com",
+  :authentication => :plain,
+  :user_name => "donotreply@eventstreamsapp.com",
+  :password => "34Kl34"
+}

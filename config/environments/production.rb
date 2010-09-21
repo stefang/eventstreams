@@ -40,13 +40,4 @@ end
 HOST = "eventstreamsapp.com"
 DO_NOT_REPLY = "Eventstreams <donotreply@eventstreamsapp.com>"
 
-ActionMailer::Base.smtp_settings = {
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => "eventstreamsapp.com",
-  :authentication => :plain,
-  :user_name => "donotreply",
-  :password => "34Kl34"
-}
-
 Paperclip.options[:image_magick_path] = "/usr/local/bin"
