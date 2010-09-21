@@ -29,7 +29,7 @@ $(document).ready(function(){
      type: flashType
     });
   }
-	$("input.datepicker").datepicker({dateFormat: "yy-mm-dd"});
+	$("input.datepicker").datepicker({dateFormat: "dd-mm-yy"});
 	$("#ui-datepicker-div").hide()
 	
   var f = $.farbtastic('#picker');

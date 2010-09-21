@@ -1,8 +1,7 @@
-Time::DATE_FORMATS[:header] = "%d %B"
-Time::DATE_FORMATS[:year] = "%Y"
-
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
-  :dmy_long => Proc.new { |date| "#{date.day.ordinalize} #{date.strftime '%B %Y'}" }
+  :dmy_long => Proc.new { |date| "#{date.day.ordinalize} #{date.strftime '%B %Y'}" },
+  :form_display => "%d-%m-%Y"
+  
 )
 
 ActiveSupport::CoreExtensions::Range::Conversions::RANGE_FORMATS.merge!(
@@ -14,3 +13,6 @@ ActiveSupport::CoreExtensions::Range::Conversions::RANGE_FORMATS.merge!(
     end
   end
 )
+
+Time::DATE_FORMATS[:header] = "%d %B"
+Time::DATE_FORMATS[:year] = "%Y"
