@@ -14,7 +14,7 @@ edge:
   pool: 5
   host: 127.0.0.1
   
-development:
+staging:
   adapter: mysql
   database: eventstreams_staging
   username: root
