@@ -12,7 +12,7 @@ Feature: Create event track
     And I follow "Event Tracks"
     And I follow "New Track"
     Then I fill in "Title" with "My Track"
-    And I check "Published"
+    And I check "Show"
     And I press "Save"
     Then I should see "Successfully created track."
     And I should see "My Track"

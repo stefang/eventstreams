@@ -11,9 +11,13 @@
     %li
       = f.label :portrait, "Speaker Image (Less than 1mb)"
       = f.file_field :portrait
-    %li.checkbox
-      = f.label :published
-      = f.check_box :published
+    %li.published
+      This speaker is
+      %em{:class => @speaker.published ? "visible" : "hidden"}
+        = @speaker.published ? "Visible" : "Hidden"
+      %span
+        = f.label :published, "Show"
+        = f.check_box :published
     %li
       %button.button.save{:type => 'submit'}
         Save

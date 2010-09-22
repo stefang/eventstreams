@@ -35,9 +35,13 @@
             %li
               = check_box_tag "talk[speaker_ids][]", speaker.id, talk_has_speaker?(speaker)
               = speaker.name
-    %li.checkbox
-      = f.label :published
-      = f.check_box :published
+    %li.published
+      This talk is
+      %em{:class => @talk.published ? "visible" : "hidden"}
+        = @talk.published ? "Visible" : "Hidden"
+      %span
+        = f.label :published, "Show"
+        = f.check_box :published
     %li
       %button.button.save{:type => 'submit'}
         Save

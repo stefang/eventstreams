@@ -10,7 +10,7 @@ Feature: Create event
     Then I should see "Title"
     When I fill in "Title" with "My Event"
     And I fill in "Subdomain" with "myevent"
-    And I check "Published"
+    And I check "Show"
     And I press "Save"
     Then I should see "Successfully created event"
     And I should be on the user events page

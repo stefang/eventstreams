@@ -34,9 +34,13 @@
       = f.label :link_colour
       = f.text_field :link_colour, :class => "colorwell"
       #picker
-    %li.checkbox
-      = f.label :published
-      = f.check_box :published
+    %li.published
+      This event is
+      %em{:class => @event.published ? "visible" : "hidden"}
+        = @event.published ? "Visible" : "Hidden"
+      %span
+        = f.label :published, "Show"
+        = f.check_box :published
     %li
       %button.button.save{:type => 'submit'}
         Save

@@ -325,7 +325,7 @@ section#eventstreams
             
       li.checkbox, li.select, li.ticklist
         :border 1px solid #ccc
-        :width 425px
+        :width 420px
         :padding 5px 9px
         +rounded(4px)
         :margin-bottom 8px
@@ -335,6 +335,28 @@ section#eventstreams
           :width 18px
           :padding 0
           :margin 0
+      li.published
+        :background white
+        :border 1px solid #ccc
+        :width 420px
+        :padding 5px 9px
+        +rounded(4px)
+        :margin-bottom 8px
+        :position relative
+        em.hidden
+          :color red
+        em.visible
+          :color green
+        span
+          :margin-left 9px
+          :padding-left 9px
+          :border-left 1px solid #ddd
+          :display inline
+          label, input
+            :display inline
+            :height 17px
+          input
+            :width 18px
       li.subdomain
         input
           :width 267px

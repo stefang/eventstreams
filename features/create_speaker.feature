@@ -14,7 +14,7 @@ Feature: Create talk
     And I follow "New Speaker"
     Then I fill in "Name" with "Speaker Name"
     And I fill in "Biog" with "My talk will be cool"
-    And I check "Published"
+    And I check "Show"
     And I press "Save"
     Then I should see "Successfully created speaker."
     And I should see "Speaker Name"
