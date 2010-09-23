@@ -68,7 +68,6 @@ section#eventstreams_event {
         background-color: rgba(0, 0, 0, 0.1); }
   section#eventstreams_event section.main {
     clear: both;
-    overflow: auto;
     margin-top: 40px; }
     section#eventstreams_event section.main section.overview {
       width: 580px;
