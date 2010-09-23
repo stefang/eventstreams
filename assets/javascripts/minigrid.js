@@ -5,10 +5,11 @@ $(document).ready(function(){
   // Find asset server
   
   scripts = $("script");
-  
   scripts.each(function(i,e){
+    e = $(e)
     if (e.attr('src').match(/.*minigrid.*/)) {
-      asset_server = e.attr('src').split('/')[2];
+      url = e.attr('src').split('/');
+      asset_server = url[url.length];
     }
   });
 
