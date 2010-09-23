@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100922113916) do
+ActiveRecord::Schema.define(:version => 20100922175042) do
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20100922113916) do
     t.text     "description"
     t.text     "colours"
     t.string   "twitter_account"
+    t.string   "custom_domain"
   end
 
   create_table "invites", :force => true do |t|

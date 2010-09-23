@@ -15,7 +15,6 @@ module Rack
         @root+"/stylesheets/sass" => @root+"/stylesheets",
         @root+"/stylesheets/themes/sass" => @root+"/stylesheets/themes" 
       }
-      
     end
     
     def call env 

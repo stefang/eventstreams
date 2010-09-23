@@ -13,6 +13,7 @@ require 'bluecloth'
 Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
   config.middleware.use "Rack::Asset"
+  config.middleware.use "Rack::CustomDomain"
 end
 
 DO_NOT_REPLY = "donotreply@eventstreamsapp.com"
