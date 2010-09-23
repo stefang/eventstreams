@@ -4,6 +4,7 @@ debug.log
 tmp/
 db/*.sqlite3
 assets/stylesheets/*.css
+assets/stylesheets/themes/*.css
 assets/event_assets/*
 log/
 .bundle
