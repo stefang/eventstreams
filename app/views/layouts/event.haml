@@ -8,7 +8,7 @@
     = stylesheet_link_tag 'themes/event_base', "themes/#{@event.theme_name}", :media => 'screen, projection', :cache => false
     %link{:href => formatted_event_stylesheet_path, :media => "screen",:rel => "stylesheet", :type => "text/css"}
     = javascript_include_tag "jquery", "eventstreams", :cache => false
-    -if RAILS_ENV != "production" && RAILS_ENV != "staging"
+    -unless RAILS_ENV == "production" || RAILS_ENV == "staging"
       = javascript_include_tag "minigrid", :cache => false
     -if @main_venues || @other_venues || @venues
       %script{:type=>"text/javascript", :src=>"http://maps.google.com/maps/api/js?sensor=false"}
