@@ -4,7 +4,13 @@ $(document).ready(function(){
   
   // Find asset server
   
-  asset_server = $("script").attr('src').split('/')[2];
+  scripts = $("script");
+  
+  scripts.each(function(i,e){
+    if (e.attr('src').match(/.*minigrid.*/)) {
+      asset_server = e.attr('src').split('/')[2];
+    }
+  });
 
 	$('body').append('<div id="grid"><div class="inner"></div></div>').css({
 		position: 'relative'
