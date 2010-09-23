@@ -224,7 +224,7 @@ section#eventstreams_event
   article.talk
     h1.talk_title
       :position relative
-      :height 22px
+      :height 20px
       span
         :position absolute
         :right 0
@@ -232,26 +232,38 @@ section#eventstreams_event
         :color #aaa
   table.programme
     :width 100%
-    :margin-bottom 22px
-    :border-top 1px solid #eee
     :font-size 12px
     tr.date_header
       td
+        :border-width 2px
+        :padding-top 18px
         :font-weight bold
         :font-size 12px
+        :line-height 18px
+        :background none
     tr
       td
+        :background #F7F7F4
+        :background rgba(255, 255, 255, 0.4)
         :vertical-align top
-        :padding 5px 8px
-        :border-bottom 1px solid #eee
+        :padding 2px 8px 1px
+        :border-bottom 1px solid #DAD9D5
+      td.description
+        :padding 0
         ul
+          :margin 3px 0px 3px 10px
           li
+            :line-height 20px
             h4
               :font-size 12px
               :font-weight bold
+              :letter-spacing -1px
               :margin-bottom 0
           li.description
-            :margin-top 22px
+            :margin-top 19px
+            p
+              :font-size 12px
+      
       td.start, td.end
         :width 20px
       td.venue

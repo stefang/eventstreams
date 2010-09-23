@@ -211,7 +211,7 @@ section#eventstreams_event {
       margin-left: 20px; }
   section#eventstreams_event article.talk h1.talk_title {
     position: relative;
-    height: 22px; }
+    height: 20px; }
     section#eventstreams_event article.talk h1.talk_title span {
       position: absolute;
       right: 0;
@@ -219,22 +219,35 @@ section#eventstreams_event {
       color: #aaaaaa; }
   section#eventstreams_event table.programme {
     width: 100%;
-    margin-bottom: 22px;
-    border-top: 1px solid #eeeeee;
     font-size: 12px; }
     section#eventstreams_event table.programme tr.date_header td {
+      border-width: 2px;
+      padding-top: 18px;
       font-weight: bold;
-      font-size: 12px; }
+      font-size: 12px;
+      line-height: 18px;
+      background: none; }
     section#eventstreams_event table.programme tr td {
+      background: #f7f7f4;
+      background: rgba(255, 255, 255, 0.4);
       vertical-align: top;
-      padding: 5px 8px;
-      border-bottom: 1px solid #eeeeee; }
-      section#eventstreams_event table.programme tr td ul li h4 {
-        font-size: 12px;
-        font-weight: bold;
-        margin-bottom: 0; }
-      section#eventstreams_event table.programme tr td ul li.description {
-        margin-top: 22px; }
+      padding: 2px 8px 1px;
+      border-bottom: 1px solid #dad9d5; }
+    section#eventstreams_event table.programme tr td.description {
+      padding: 0; }
+      section#eventstreams_event table.programme tr td.description ul {
+        margin: 3px 0px 3px 10px; }
+        section#eventstreams_event table.programme tr td.description ul li {
+          line-height: 20px; }
+          section#eventstreams_event table.programme tr td.description ul li h4 {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            margin-bottom: 0; }
+        section#eventstreams_event table.programme tr td.description ul li.description {
+          margin-top: 19px; }
+          section#eventstreams_event table.programme tr td.description ul li.description p {
+            font-size: 12px; }
     section#eventstreams_event table.programme tr td.start, section#eventstreams_event table.programme tr td.end {
       width: 20px; }
     section#eventstreams_event table.programme tr td.venue {

@@ -3,7 +3,7 @@
   %td.end
     -unless talk.duration.blank? || talk.duration < 1
       = (talk.start.to_time + talk.duration.minutes).to_s(:time)
-  %td
+  %td.description
     %ul
       %li.header
         %h4= link_to talk.title, talk

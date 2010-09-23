@@ -14,7 +14,7 @@
       %td.end
         -unless talk.duration.blank? || talk.duration < 1
           = (talk.start.to_time + talk.duration.minutes).to_s(:time)
-      %td
+      %td.description
         = link_to talk.title, talk
         = auto_link(markdown(talk.description))
       %td= link_to talk.venue.name, venues_path unless talk.venue.blank?

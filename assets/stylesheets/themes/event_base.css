@@ -173,11 +173,12 @@ body {
   width: 100%;
   background: #333333;
   float: left;
-  height: 44px; }
+  height: 40px; }
   #event_admin_bar ul {
-    padding: 8px;
+    padding: 7px;
     float: left;
-    list-style: none; }
+    list-style: none;
+    font-family: sans-serif; }
     #event_admin_bar ul li {
       float: left; }
       #event_admin_bar ul li a {
