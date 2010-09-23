@@ -16,7 +16,6 @@ def process_tweet(tweet, event, tweet_type)
   t = Tweet.find_by_twitter_id tweet.id
   unless t
     nt = Tweet.new
-    puts tweet
     nt.text = tweet.text
     nt.twitter_id = tweet.id
     nt.event_id = event.id
@@ -69,6 +68,4 @@ def process_tweet(tweet, event, tweet_type)
      }
      puts "Pulled Account Tweets For " + event.title
    end
-
-
  end
