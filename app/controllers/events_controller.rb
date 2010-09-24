@@ -41,6 +41,7 @@ class EventsController < ApplicationController
   end
   
   def create
+    check_twitter
     @event = current_user.owned_events.new(params[:event])
     if @event.save
       flash[:notice] = "Successfully created event."
@@ -54,6 +55,7 @@ class EventsController < ApplicationController
   end
   
   def update
+    check_twitter
     if @event.update_attributes(params[:event])
       flash[:notice] = "Successfully updated event."
       redirect_to edit_user_event_path(current_user, @event)
@@ -73,6 +75,18 @@ class EventsController < ApplicationController
     rescue ActiveRecord::RecordNotFound => e
       flash[:warning] = "Not authed"
       redirect_to '/'
+  end
+  
+  private
+  
+  def check_twitter
+    puts "checking twitter deets"
+    if !params[:event][:hashtag].match /^#/i
+        params[:event][:hashtag] = "##{params[:event][:hashtag]}"
+    end
+    if !params[:event][:twitter_account].match /^@/i
+        params[:event][:twitter_account] = "@#{params[:event][:twitter_account]}"
+    end
   end
   
 end

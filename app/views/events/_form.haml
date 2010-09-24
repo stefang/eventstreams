@@ -12,10 +12,10 @@
       = f.label :subdomain
       = "http:// #{f.text_field :subdomain} .#{current_domain}"
     %li
-      = f.label :twitter_account
+      = f.label :twitter_account, "Twitter account <span>eg. @awesomeevent</span>"
       = f.text_field :twitter_account
     %li
-      = f.label :hashtag
+      = f.label :hashtag, "Twitter hashtag <span>eg. #awesome2010</span>"
       = f.text_field :hashtag
     %li.date
       = f.label :start_date
