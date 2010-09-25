@@ -328,7 +328,6 @@ section#eventstreams
                 :padding-left 18px
                 :list-style disc
                 :margin-bottom 18px
-            
       li.checkbox, li.select, li.ticklist
         :border 1px solid #ccc
         :width 420px
@@ -336,11 +335,12 @@ section#eventstreams
         +rounded(4px)
         :margin-bottom 8px
         label
-          :display inline-block
+          :display inline
+          :width none
         input
           :width 18px
           :padding 0
-          :margin 0
+          :margin 0 9px 0 0
       li.published
         :background white
         :border 1px solid #ccc
@@ -366,10 +366,6 @@ section#eventstreams
       li.subdomain
         input
           :width 267px
-      li.ticklist
-        label
-          :display block
-          :width 100%
       li.date
         :border 1px solid #ccc
         :width 425px
@@ -404,6 +400,7 @@ section#eventstreams
           :width 6em
         #picker
           :position absolute
+          :z-index 5000
           :top -20px
           :right -20px
           :padding 4px

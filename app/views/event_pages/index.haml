@@ -1,8 +1,8 @@
-- title "Event Pages"
+- title "Pages"
 
 %section.item_list
   = link_to "New Page", new_user_event_event_page_path, :class=>'button add'
-  %h3 Your Event Pages
+  %h3 Pages
   #ajax_status
   %ul#sortable{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_pages'}}
     - for event_page in @event_pages
