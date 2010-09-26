@@ -168,6 +168,53 @@ body {
     color: #0000aa; }
     body a:hover, body a:focus {
       color: blue; }
+  body form ol {
+    list-style: none; }
+    body form ol li {
+      padding: 0;
+      margin: 0; }
+      body form ol li label {
+        display: block;
+        margin-bottom: 4px; }
+      body form ol li input, body form ol li textarea {
+        width: 326px;
+        border: 1px solid #dddddd;
+        padding: 6px;
+        font-size: 13px;
+        font-family: sans-serif;
+        margin-bottom: 20px; }
+        body form ol li input:focus, body form ol li textarea:focus {
+          border: 1px solid #aaaaaa;
+          -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+          -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3); }
+      body form ol li textarea {
+        height: 102px; }
+      body form ol li button {
+        padding: 6px 9px;
+        border: 0;
+        font-size: 12px;
+        background: #333333;
+        color: #eeeeee;
+        cursor: pointer;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0px;
+        -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6); }
+        body form ol li button:focus, body form ol li button:hover {
+          background: #111111; }
+
+#flash .inner div {
+  margin: 20px 0;
+  background: #333333;
+  color: #eeeeee;
+  padding: 10px;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px; }
 
 #event_admin_bar {
   width: 100%;

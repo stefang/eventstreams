@@ -56,6 +56,8 @@
             %li=link_to 'Speakers', speakers_path unless @event.owned_speakers.blank? 
             %li=link_to 'Programme', tracks_path unless @event.published_talks.blank? 
             %li=link_to 'Location', venues_path unless @event.owned_venues.blank? 
+            %li=link_to 'Contact', '/contact' unless @event.contact_form_email.blank? 
+      = render :partial => 'layouts/flashes'
       %section.main
         .inner
           = yield

@@ -8,5 +8,12 @@ class Notification < ActionMailer::Base
     subject    "[Eventstreams] Invitation to join Eventstreams"
     body       :invite => invite
   end
+  
+  def contact(data, event)
+    from        'notifications@eventstreamsapp.com'
+    recipients  event.user.email
+    subject     "[Eventstreams] Message from the '#{event.title}' contact form"
+    body        "A message has been sent from the '#{event.title}' contact form. \r\n\r\n **** \r\n\r\n From : #{data[:name]} / #{data[:email]} \r\n\r\n **** \r\n\r\n #{data[:message]}"
+  end
 
 end

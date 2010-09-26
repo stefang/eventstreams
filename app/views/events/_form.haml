@@ -12,6 +12,9 @@
       = f.label :subdomain
       = "http:// #{f.text_field :subdomain} .#{current_domain}"
     %li
+      = f.label :contact_form_email, "Contact form email address <span>eg. contact@awesomeevent.com</span>"
+      = f.text_field :contact_form_email
+    %li
       = f.label :twitter_account, "Twitter account <span>eg. @awesomeevent</span>"
       = f.text_field :twitter_account
     %li

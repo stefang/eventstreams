@@ -13,6 +13,16 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :venues, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :tweets, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
 
+  map.with_options :controller => 'event_contact' do |c|
+    c.contact '/contact',
+      :action => 'index',
+      :conditions => { :method => :get, :subdomain => /.+/ }
+
+    c.contact '/contact',
+      :action => 'create',
+      :conditions => { :method => :post, :subdomain => /.+/ }
+  end
+
   map.event_page '/:id', :controller => 'event_pages', :action=>'show', :conditions => { :subdomain => /.+/ }
 
   # Main Site Routes

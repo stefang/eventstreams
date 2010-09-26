@@ -7,9 +7,10 @@ $(document).ready(function(){
   scripts = $("script");
   scripts.each(function(i,e){
     e = $(e)
-    if (e.attr('src').match(/.*minigrid.*/)) {
+    if (e.attr('src').match(/.+minigrid.+/)) {
+      console.log('found')
       url = e.attr('src').split('/');
-      asset_server = url[url.length];
+      asset_server = url[2];
     }
   });
 
