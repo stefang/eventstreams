@@ -3,6 +3,7 @@
   %head
     %title= yield(:title) || t('title')
     %meta{:name=>'viewport', :content=>'width=900px'}
+    %meta{:charset=>'utf-8'}
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     = javascript_include_tag "jquery", "jquery_ui", "jquery-notice", "farbtastic-min", "eventstreams_admin", :cache => false
