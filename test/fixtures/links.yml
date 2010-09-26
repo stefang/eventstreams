@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  url: MyString
+  event_id: 1
+  published: false
+
+two:
+  title: MyString
+  url: MyString
+  event_id: 1
+  published: false

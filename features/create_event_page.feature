@@ -9,7 +9,7 @@ Feature: Create event page
     When I go to my user events page
     Then I should see "myevent"
     And I follow "Manage"
-    And I follow "Event Pages"
+    And I follow "Pages & Links"
     And I follow "New Page"
     Then I fill in "Title" with "Welcome"
     And I press "Save"

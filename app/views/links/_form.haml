@@ -1,0 +1,20 @@
+-form_for [current_user, @event, @link] do |f|
+  %ol
+    %li.errors
+      = f.error_messages
+    %li
+      = f.label :title
+      = f.text_field :title
+    %li
+      = f.label :url
+      = f.text_field :url
+    %li.published
+      This link is
+      %em{:class => @link.published ? "visible" : "hidden"}
+        = @link.published ? "Visible" : "Hidden"
+      %span
+        = f.label :published, "Show"
+        = f.check_box :published
+    %li
+      %button.button.save{:type => 'submit'}
+        Save

@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :invites, :conditions => { :subdomain => nil }
 
-
   # Event Show Routes
 
   map.event_root '', :controller => 'events', :action => 'show', :conditions => { :subdomain => /.+/ }
@@ -28,6 +27,7 @@ ActionController::Routing::Routes.draw do |map|
       e.resources :venues
       e.resources :venue_types, :except => [:index]      
       e.resources :event_pages
+      e.resources :links
       e.resources :tracks
       e.resources :speakers
       e.resources :talks do |t|

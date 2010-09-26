@@ -6,6 +6,7 @@ class EventPagesController < ApplicationController
     if current_subdomain.blank?
       @event = current_user.owned_events.find(params[:event_id])
       @event_pages = @event.owned_event_pages.all
+      @links = @event.owned_links.all
     else
       get_published_or_owned_event
       @event_pages = @event.owned_event_pages.find(:all, :conditions => "published = true")

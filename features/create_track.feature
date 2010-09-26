@@ -9,7 +9,7 @@ Feature: Create event track
     When I go to my user events page
     Then I should see "myevent"
     And I follow "Manage"
-    And I follow "Event Tracks"
+    And I follow "Tracks"
     And I follow "New Track"
     Then I fill in "Title" with "My Track"
     And I check "Show"
@@ -24,7 +24,7 @@ Feature: Create event track
     When I go to my user events page
     Then I should see "myevent"
     And I follow "Manage"
-    And I follow "Event Tracks"
+    And I follow "Tracks"
     And I should see "mytrack"
     
   Scenario: User views initial track
@@ -34,5 +34,5 @@ Feature: Create event track
     When I go to my user events page
     Then I should see "myevent"
     And I follow "Manage"
-    And I follow "Event Tracks"
+    And I follow "Tracks"
     And I should see "mytrack"

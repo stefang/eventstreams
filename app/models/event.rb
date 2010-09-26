@@ -14,6 +14,7 @@ class Event < ActiveRecord::Base
   validates_format_of :twitter_account, :with => /^@/i, :message => "should have an @ at the start", :allow_blank => true
 
   has_many :owned_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
+  has_many :owned_links, :class_name => 'Link', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_speakers, :class_name => 'Speaker', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
   has_many :owned_tracks, :class_name => 'Track', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
   has_many :owned_talks, :class_name => 'Talk', :foreign_key => :event_id, :dependent => :destroy
@@ -22,6 +23,7 @@ class Event < ActiveRecord::Base
   has_many :owned_tweets, :class_name => 'Tweet', :foreign_key => :event_id, :dependent => :destroy, :order => 'created_at DESC'
 
   has_many :published_event_pages, :class_name => 'EventPage', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'item_order'
+  has_many :published_links, :class_name => 'Link', :foreign_key => :event_id, :conditions=>{:published => true}
   has_many :published_talks, :class_name => 'Talk', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'start'
   
   serialize :colours

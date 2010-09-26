@@ -80,11 +80,10 @@ class EventsController < ApplicationController
   private
   
   def check_twitter
-    puts "checking twitter deets"
-    if !params[:event][:hashtag].match /^#/i
+    if !params[:event][:hashtag].blank? && !params[:event][:hashtag].match(/^#/i)
         params[:event][:hashtag] = "##{params[:event][:hashtag]}"
     end
-    if !params[:event][:twitter_account].match /^@/i
+    if !params[:event][:twitter_account].blank? && !params[:event][:twitter_account].match(/^@/i)
         params[:event][:twitter_account] = "@#{params[:event][:twitter_account]}"
     end
   end

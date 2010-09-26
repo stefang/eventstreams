@@ -32,9 +32,9 @@ Feature: Create event
     Then I follow "New Event"
     When I fill in "Title" with ""
     And I fill in "Subdomain" with ""
-    And I fill in "Hashtag" with "hellothere"
+    And I fill in "Twitter hashtag eg. #awesome2010" with "hellothere"
     And I press "Save"
-    Then I should see "4 errors prohibited this event from being saved"
+    Then I should see "3 errors prohibited this event from being saved"
 
   Scenario: User tries to create an event with a subdomain that already exists
     Given that I am a user
