@@ -16,7 +16,8 @@
       = javascript_include_tag 'eventstreams_gmaps', :cache => false    
     -if RAILS_ENV == "production"
       %script{:type=>"text/javascript", :src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
-      = render :partial => 'layouts/ga'  
+      -unless @event.google_analytics.blank?
+        = render :partial => 'layouts/event_ga'  
   %body
     - if signed_in? && is_owner?(@event)
       %nav#event_admin_bar
