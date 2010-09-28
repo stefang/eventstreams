@@ -50,7 +50,7 @@
         .inner
           %ul
             - for event_menu in @event.menu_order
-              %li
+              %li{:class => event_menu.url == request.request_uri ? "active" : ""}
                 = link_to event_menu.title, event_menu.url
 
       = render :partial => 'layouts/flashes'

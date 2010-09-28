@@ -21,6 +21,14 @@ body
         button
           :font
             :family Georgia, sans-serif
+  .league_header
+    :font
+      :family 'LeagueGothicRegular', Impact, sans-serif
+      :size 24px
+    :text-transform uppercase
+    :color #555
+    :border-bottom 1px solid #ccc
+    :padding-bottom 19px
    
 section#eventstreams_event
   :clear both
@@ -77,6 +85,10 @@ section#eventstreams_event
             :text-shadow 0 1px 1px rgba(255,255,255,0.8)
             &:hover, &:focus
               :background-color rgba(0,0,0,0.1)
+        li.active
+          a
+            :background-color rgba(0,0,0,0.05)
+            :color #111
   section.main
     :clear both
     :margin-top 40px
@@ -195,13 +207,8 @@ section#eventstreams_event
         :width 920px
         :height 200px
     section.event_venues, section.other_venues
-      :width 340px
+      :width 460px
       :float left
-      h4
-        :font
-          :size 28px
-        :border-bottom 1px solid #eee
-        :padding-bottom 21px
       h5
         :font-weight bold
         :letter-spacing -1px
@@ -216,9 +223,11 @@ section#eventstreams_event
             :top 0
             :right 0
             :display block
-            :background #eee
+            :background #D8D7D3
             :padding 2px 6px
+            :color #F6F5F1
             :font
+              :family sans-serif
               :size 11px
               :weight bold
           ul

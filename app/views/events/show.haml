@@ -19,7 +19,7 @@
               = h venue.name
     -if @tweets.any?
       %section.tweets
-        %h4 
+        %h4.league_header
           =link_to "Latest on <span>Twitter</span>", tweets_path
         %ul
           - for tweet in @tweets

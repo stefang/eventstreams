@@ -78,7 +78,6 @@ $(document).ready(function(){
 });
 
 var update_list_order = function(user_id, event_id, model, serialize) {
-  console.log(serialize);
 	$('#ajax_status').show().empty().append("Saving new order");
   $.post("/users/"+user_id+"/events/"+event_id+"/"+model+"/update_order", {item_order: serialize}, function(data){
      $('#ajax_status').empty().append(data);

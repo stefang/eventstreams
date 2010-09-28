@@ -4,7 +4,7 @@
 
   - for track in @tracks
     -if track.published_talks.any?
-      %h4=link_to track.title, track_path(track)
+      %h4.league_header=link_to track.title, track_path(track)
       = markdown track.description
       %table.programme
         -@old_date = nil

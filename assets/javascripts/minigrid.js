@@ -8,7 +8,6 @@ $(document).ready(function(){
   scripts.each(function(i,e){
     e = $(e)
     if (e.attr('src').match(/.+minigrid.+/)) {
-      console.log('found')
       url = e.attr('src').split('/');
       asset_server = url[2];
     }
