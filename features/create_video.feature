@@ -8,6 +8,7 @@ Feature: Create video
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
     And "myevent" event "mytrack" track has a published talk called "mytalk"
+    And "myevent" has a programme menu item
     When I go to the events page
     And I follow "Manage"
     And I follow "Talks"
@@ -29,6 +30,7 @@ Feature: Create video
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
     And "myevent" event "mytrack" track has a published talk called "mytalk"
+    And "myevent" has a programme menu item
     When I go to the events page
     And I follow "Manage"
     And I follow "Talks"

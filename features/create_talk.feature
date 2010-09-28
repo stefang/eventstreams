@@ -8,6 +8,7 @@ Feature: Create talk
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
     And "myevent" has a venue called "posh_hotel"
+    And "myevent" has a programme menu item
     When I go to the events page
     And I follow "Manage"
     And I follow "Talks"
@@ -28,6 +29,7 @@ Feature: Create talk
     Given that I am a user
     And I have an event called "myevent"
     And "myevent" has a published track called "mytrack"
+    And "myevent" has a programme menu item
     When I go to the events page
     And I follow "Manage"
     And I follow "Talks"
@@ -39,7 +41,6 @@ Feature: Create talk
     And I press "Save"
     Then I should see "Successfully created talk."
     And I should see "My Talk"
-
     And I follow "New Talk"
     Then I fill in "Title" with "My Other Talk"
     And I fill in "Description" with "My talk will be cool"
@@ -47,7 +48,6 @@ Feature: Create talk
     And I press "Save"
     Then I should see "Successfully created talk."
     And I should see "My Other Talk"
-
     When I go to the myevent subdomain
     And I follow "Programme"
     Then I should not see "My Other Talk"
