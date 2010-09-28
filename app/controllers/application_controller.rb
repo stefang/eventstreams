@@ -45,15 +45,14 @@ class ApplicationController < ActionController::Base
   #   menu_item = @event.menu_order.new(:item_type => item.class.to_s, :item_id => item.id)
   #   menu_item.save
   # end
-  # 
+  
   # def update_event_menu_item item
   #   menu_item = @event.menu_order.find_by_item_type_and_item_id(item.class.to_s, item.id)
   #   menu_item.save
   # end
   
-  
   def destroy_event_menu_item item
     menu_item = @event.menu_order.find_by_item_type_and_item_id(item.class.to_s, item.id)
-    menu_item.destroy
+    menu_item.destroy if menu_item
   end
 end

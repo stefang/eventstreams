@@ -143,11 +143,25 @@ section#eventstreams
         +rounded(6px)
   section.main
     :clear both
+    p.empty_menu
+      :color #555
+      :position relative
+      :margin-bottom 22px
+      :font-size 12px
+      +rounded(3px)
+      :border 2px solid #fff
+      :background
+        :color #f1f1f1
+        :image url('../images/flash_info.png')
+        :position 11px 50%
+        :repeat no-repeat
+      :padding 12px 20px 12px 40px
+      +box-shadow(0px, 2px, 8px, rgba(0,0,0,0.7))
     section.item_list
       :color #555
       :position relative
       :margin-bottom 22px
-      +rounded(11px)
+      +rounded(3px)
       :border 2px solid #fff
       :background #f1f1f1
       :padding 20px
@@ -166,7 +180,6 @@ section#eventstreams
           :float right
           :font-size 13px
       ul
-        +rounded(6px)
         :background white
         :border 1px solid #ccc
         :border-width 1px
@@ -283,7 +296,7 @@ section#eventstreams
     form
       ol
         :margin-bottom 22px
-        +rounded(11px)
+        +rounded(3px)
         :border 2px solid #fff
         :background #f1f1f1
         :padding 20px

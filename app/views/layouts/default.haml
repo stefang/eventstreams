@@ -53,6 +53,10 @@
                 %li= link_to "Venues", user_event_venues_path(current_user, @event), :class=>'button'
                 %li= link_to "Manage Tweets", user_event_tweets_path(current_user, @event), :class=>'button'
             %section.event_content
+              -unless @event.menu_order.any?
+                %p.empty_menu
+                  Your event's main menu is empty,
+                  = link_to "add links to content when available", user_event_event_menus_path(current_user, @event)
               = yield
           -else
             = yield
