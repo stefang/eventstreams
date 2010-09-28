@@ -41,10 +41,10 @@ class EventMenusController < ApplicationController
         item = @event.menu_order.new()
         item.title = item_data[1].titlecase
         item.url = case item_data[1]
-          when "location" then "/venues"
+          when "location" then "/location"
           when "contact" then "/contact"
           when "speakers" then "/speakers"
-          when "programme" then "/tracks"
+          when "programme" then "/programme"
         end
         item.item_type = item_data[0].camelize
         item.item_id = 0

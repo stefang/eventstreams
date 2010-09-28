@@ -6,11 +6,11 @@ ActionController::Routing::Routes.draw do |map|
   map.event_root '', :controller => 'events', :action => 'show', :conditions => { :subdomain => /.+/ }
   map.event_stylesheet 'custom_stylesheets/custom.css', :controller => 'events', :action => 'custom', :conditions => { :subdomain => /.+/ }
   map.resources :speakers, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
-  map.resources :tracks, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
+  map.resources :tracks, :as => 'programme', :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :talks, :only => [:index, :show], :conditions => { :subdomain => /.+/ } do |t|
     t.resources :videos, :only => [:show], :conditions => { :subdomain => /.+/ }
   end
-  map.resources :venues, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
+  map.resources :venues, :as => 'location', :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :tweets, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
 
   map.with_options :controller => 'event_contact' do |c|
