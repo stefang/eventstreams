@@ -14,7 +14,8 @@
 - else
   %section.item_list
     = link_to "New Speaker", new_user_event_speaker_path, :class=>'button add'
-    %h3 Your Event Speakers
+    %h3 
+      Your Event Speakers
     #ajax_status
     %ul#sortable{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'speakers'}}
       - for speaker in @speakers

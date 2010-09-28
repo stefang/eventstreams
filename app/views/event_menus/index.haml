@@ -1,7 +1,10 @@
 - title "Event Menus"
 
 %section.item_list
-  %h3 Menu Order
+  %h3 
+    Menu Order
+    %span drag items up and down to order event menu
+    
   #ajax_status
   %ul#sortable_target.connected{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_menus'}}
     - for event_menu in @event_menus
@@ -11,7 +14,9 @@
         %span
           = "#{event_menu.url}"
 %section.item_list
-  %h3 Available (drag up to add to event navigation)
+  %h3 
+    Available 
+    %span drag items up to add to event menu
   %ul#sortable_source.connected
     - unless @event.published_event_pages.blank?
       - @event.published_event_pages.each do |e|
