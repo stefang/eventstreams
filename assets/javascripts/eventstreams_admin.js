@@ -18,12 +18,25 @@ $(document).ready(function(){
 	
 	$("#sortable_source").sortable({
 	  axis: 'y',
-	  connectWith: '.connected'
+	  connectWith: '.connected',
+	  placeholder: 'ui-state-highlight',
+	  start: function(){
+	    $("#sortable_target").prepend("<li class='target'>Drop menu item here to activate</li>")
+	  },
+	  beforeStop: function() {
+	    $("#sortable_target .target").remove();
+	  }
 	});
 	
 	$("#sortable_target").sortable({
 	  axis: 'y',
 	  connectWith: '.connected',
+	  start: function(){
+	    $("#sortable_source").prepend("<li class='target'>Drop menu item here to disable</li>")
+	  },
+	  beforeStop: function() {
+	    $("#sortable_source .target").remove();
+    },
 		update: function(event, ui) { 
 			update_list_order(
 				$("#sortable_target").attr('data-user_id'),

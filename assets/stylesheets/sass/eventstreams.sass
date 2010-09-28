@@ -253,7 +253,7 @@ section#eventstreams
           :background white
           :opacity 0.9
           +box-shadow(0,1px,6px,rgba(0,0,0,0.4))
-      ul#sortable
+      ul#sortable, ul#sortable_source, ul#sortable_target
         li
           :cursor move
           span
@@ -262,6 +262,9 @@ section#eventstreams
               :image url(../images/sortable.png)
               :position right 50%
               :repeat no-repeat
+        li.target
+          :background #FFEE7F
+          :opacity 0.5
     #ajax_status
       :padding 4px 9px
       :font
