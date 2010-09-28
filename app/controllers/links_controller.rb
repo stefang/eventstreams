@@ -37,6 +37,7 @@ class LinksController < ApplicationController
   def destroy
     @link = Link.find(params[:id])
     @link.destroy
+    destroy_event_menu_item @link
     flash[:notice] = "Successfully destroyed link."
     redirect_to user_event_event_pages_path(current_user, @event)
   end

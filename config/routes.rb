@@ -44,11 +44,12 @@ ActionController::Routing::Routes.draw do |map|
         t.resources :videos
       end
       e.resources :tweets
+      e.resources :event_menus
     end
     u.resource :confirmation, :controller => 'clearance/confirmations'
   end
   
-  map.connect 'users/:user_id/events/:event_id/event_pages/update_order', :controller => 'event_pages', :action=>'update_order', :conditions => { :method => :post }
+  map.connect 'users/:user_id/events/:event_id/event_menus/update_order', :controller => 'event_menus', :action=>'update_order', :conditions => { :method => :post }
   map.connect 'users/:user_id/events/:event_id/speakers/update_order', :controller => 'speakers', :action=>'update_order', :conditions => { :method => :post }
   map.connect 'users/:user_id/events/:event_id/tracks/update_order', :controller => 'tracks', :action=>'update_order', :conditions => { :method => :post }
 

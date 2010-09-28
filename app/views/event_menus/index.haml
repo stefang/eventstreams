@@ -1,0 +1,38 @@
+- title "Event Menus"
+
+%section.item_list
+  %h3 Menu Order
+  #ajax_status
+  %ul#sortable_target.connected{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_menus'}}
+    - for event_menu in @event_menus
+      - 
+      %li{:id => event_menu.item_type != 'StaticItem' ? "#{event_menu.item_type.tableize.singularize}_#{event_menu.item_id}" : "#{event_menu.item_type.tableize.singularize}_#{event_menu.title.downcase}", :class => event_menu.item_type.tableize.singularize}
+        = event_menu.title
+        %span
+          = "#{event_menu.url}"
+%section.item_list
+  %h3 Available (drag up to add to event navigation)
+  %ul#sortable_source.connected
+    - unless @event.published_event_pages.blank?
+      - @event.published_event_pages.each do |e|
+        -unless @active_items.include? "event_pages_#{e.id}"
+          %li[e]
+            = e.title
+            %span
+              = "/#{e.cached_slug}"
+    - unless @event.published_links.blank?
+      - @event.published_links.each do |e|
+        -unless @active_items.include? "links_#{e.id}"
+          %li[e]
+            = e.title
+            %span
+              = "#{e.url}"
+    - if !@event.owned_speakers.blank? && !@active_items.include?("static_items_speakers")
+      %li.static_item#static_item_speakers='Speakers <span>/speakers</span>'
+    - if !@event.published_talks.blank? && !@active_items.include?("static_items_programme")
+      %li.static_item#static_item_programme='Programme <span>/tracks</span>'
+    - if !@event.owned_venues.blank? && !@active_items.include?("static_items_location")
+      %li.static_item#static_item_location='Location <span>/venues</span>'
+    - if !@event.contact_form_email.blank? && !@active_items.include?("static_items_contact")
+      %li.static_item#static_item_contact='Contact <span>/contact</span>'
+  

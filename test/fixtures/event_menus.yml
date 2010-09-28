@@ -1,0 +1,11 @@
+one:
+  type: MyString
+  item_id: 1
+  event_id: 1
+  item_order: 1
+
+two:
+  type: MyString
+  item_id: 1
+  event_id: 1
+  item_order: 1

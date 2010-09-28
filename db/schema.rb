@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100927001645) do
+ActiveRecord::Schema.define(:version => 20100928093423) do
+
+  create_table "event_menus", :force => true do |t|
+    t.string   "item_type"
+    t.integer  "item_id"
+    t.integer  "event_id"
+    t.integer  "item_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "url"
+  end
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"

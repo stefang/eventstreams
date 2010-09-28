@@ -40,4 +40,20 @@ class ApplicationController < ActionController::Base
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
     end
   end
+  
+  # def create_event_menu_item item
+  #   menu_item = @event.menu_order.new(:item_type => item.class.to_s, :item_id => item.id)
+  #   menu_item.save
+  # end
+  # 
+  # def update_event_menu_item item
+  #   menu_item = @event.menu_order.find_by_item_type_and_item_id(item.class.to_s, item.id)
+  #   menu_item.save
+  # end
+  
+  
+  def destroy_event_menu_item item
+    menu_item = @event.menu_order.find_by_item_type_and_item_id(item.class.to_s, item.id)
+    menu_item.destroy
+  end
 end
