@@ -27,7 +27,8 @@ end
 desc "Full deployment cycle"
 namespace :vlad do
   remote_task :bundle_install do
-      run "cd #{my_deploy_path}current && bundle install --path vendor/bundle"
+      run "cd #{my_deploy_path}current && bundle install --path #{my_deploy_path}shared/bundled_gems"
+      run "ln -s #{my_deploy_path}shared/bundled_gems #{my_deploy_path}current/vendor/bundle"
   end
   remote_task :manual_migrate do
       run "cd #{my_deploy_path}current && /usr/bin/rake db:migrate RAILS_ENV=#{rails_env}"

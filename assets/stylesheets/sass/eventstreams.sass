@@ -181,13 +181,12 @@ section#eventstreams
           :font-size 13px
       ul
         :background white
-        :border 1px solid #ccc
-        :border-width 1px
+        :border 4px solid #e7e7e7
         :margin-right 88px
         li
           :position relative
           :padding 11px 11px 10px
-          :border-bottom 1px solid #ccc
+          :border-bottom 1px solid #e7e7e7
           span, a.event_link
             :position absolute
             :right 22px
@@ -282,6 +281,8 @@ section#eventstreams
         li.target
           :background #FFEE7F
           :opacity 0.5
+      ul#sortable.activeTarget, ul#sortable_source.activeTarget, ul#sortable_target.activeTarget
+        :border-color #FFEE7F
     #ajax_status
       :padding 4px 9px
       :font

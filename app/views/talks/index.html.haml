@@ -12,9 +12,7 @@
           %p.combo
             = talk.title
             %span.inline
-              = "#{talk.track.title} / " unless talk.track.blank?
-              = talk.start.to_s(:short) unless talk.start.blank?
-              = " / #{talk.duration}mins" unless talk.duration.blank?
+              = "#{talk.track.title}" unless talk.track.blank?
           %span.live_edit
             - form_for [current_user, @event, talk] do |f|
               %fieldset

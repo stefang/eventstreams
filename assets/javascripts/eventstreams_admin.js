@@ -19,11 +19,11 @@ $(document).ready(function(){
 	$("#sortable_source").sortable({
 	  axis: 'y',
 	  connectWith: '.connected',
-	  placeholder: 'ui-state-highlight',
 	  start: function(){
-	    $("#sortable_target").prepend("<li class='target'>Drop menu item here to activate</li>")
+	    $("#sortable_target").prepend("<li class='target'>Drop menu item here to activate</li>").addClass('activeTarget');
 	  },
 	  beforeStop: function() {
+	    $("#sortable_target").removeClass('activeTarget')
 	    $("#sortable_target .target").remove();
 	  }
 	});
@@ -32,9 +32,10 @@ $(document).ready(function(){
 	  axis: 'y',
 	  connectWith: '.connected',
 	  start: function(){
-	    $("#sortable_source").prepend("<li class='target'>Drop menu item here to disable</li>")
+	    $("#sortable_source").prepend("<li class='target'>Drop menu item here to disable</li>").addClass('activeTarget');
 	  },
 	  beforeStop: function() {
+	    $("#sortable_source").removeClass('activeTarget')
 	    $("#sortable_source .target").remove();
     },
 		update: function(event, ui) { 
@@ -66,7 +67,7 @@ $(document).ready(function(){
     });
   }
 	$("input.datepicker").datepicker({dateFormat: "dd-mm-yy"});
-	$("#ui-datepicker-div").hide()
+	$("#ui-datepicker-div").hide();
 	
 	if ($('#picker').length > 0) {
     var f = $.farbtastic('#picker');
@@ -85,7 +86,6 @@ $(document).ready(function(){
   		.blur(function(){
         p.css('opacity', 0);
   		});    
-	  
 	}
 
 });
