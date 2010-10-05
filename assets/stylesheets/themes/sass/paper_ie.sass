@@ -5,3 +5,13 @@ section#eventstreams_event
         :background-color #e3e2de
         li
           :float left
+
+        li.register
+          a
+            span
+              :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+          	  :filter alpha(opacity=10);
+            &:hover, &:focus
+              span
+                :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+            	  :filter alpha(opacity=20);
