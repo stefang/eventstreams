@@ -9,7 +9,7 @@
     %script{:type=>"text/javascript", :src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
     = stylesheet_link_tag 'themes/event_base', "themes/#{@event.theme_name}", :media => 'screen, projection', :cache => false
     /[if lt IE 8]
-    = stylesheet_link_tag "themes/#{@event.theme_name}_ie", :media => 'screen, projection', :cache => false
+      = stylesheet_link_tag "themes/#{@event.theme_name}_ie", :media => 'screen, projection', :cache => false
     %link{:href => formatted_event_stylesheet_path, :media => "screen",:rel => "stylesheet", :type => "text/css"}
     = javascript_include_tag "jquery", "eventstreams", :cache => false
     -unless RAILS_ENV == "production" || RAILS_ENV == "staging"
