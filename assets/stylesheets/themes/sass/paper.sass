@@ -73,7 +73,7 @@ section#eventstreams_event
       ul
         :background-color #e3e2de
         :background-color rgba(0,0,0,0.1)
-        :overflow auto
+        :height 40px
         li
           a
             :font
@@ -91,6 +91,32 @@ section#eventstreams_event
           a
             :background-color rgba(0,0,0,0.05)
             :color #111
+        li.register
+          :float right
+          a
+            :position relative
+            :border 0
+            :border-left 1px solid white
+            :text-transform uppercase
+            :text-shadow 1px 1px 0 #f4f3ef, 2px 2px 0 rgba(0,0,0,0.2)
+            :letter-spacing 2px
+            :padding-right 15px
+            :font
+              :family 'LeagueGothicRegular', Impact, sans-serif
+              :size 24px
+            span
+              :display block
+              :width 20px
+              :height 40px
+              :position absolute
+              :right -20px
+              :top 0
+              :opacity 0.1
+              :background
+                :image url('../../images/register_end.png')
+            &:hover, &:focus
+              span
+                :opacity 0.2
   section.main
     :clear both
     :margin-top 40px

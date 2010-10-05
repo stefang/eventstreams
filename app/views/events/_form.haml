@@ -12,6 +12,9 @@
       = f.label :subdomain
       = "http:// #{f.text_field :subdomain} .#{current_domain}"
     %li
+      = f.label :booking_url, "Booking service url <span>eg. an Eventbright URL</span>"
+      = f.text_field :booking_url
+    %li
       = f.label :contact_form_email, "Contact form email address <span>eg. contact@awesomeevent.com</span>"
       = f.text_field :contact_form_email
     %li

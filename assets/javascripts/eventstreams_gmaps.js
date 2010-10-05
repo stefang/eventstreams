@@ -1,4 +1,4 @@
-function initialize() {
+function initialize_google_map() {
 	
 	var positions = [];
 	var marker_descriptions = [];
@@ -42,5 +42,5 @@ function initialize() {
 }
 
 $(document).ready(function(){
-	initialize();
+	initialize_google_map();
 });

@@ -54,7 +54,10 @@
             - for event_menu in @event.menu_order
               %li{:class => event_menu.url == request.request_uri ? "active" : ""}
                 = link_to event_menu.title, event_menu.url
-
+            - if @event.booking_url
+              %li.register
+                = link_to 'Register<span></span>', @event.booking_url
+                
       = render :partial => 'layouts/flashes'
       %section.main
         .inner
