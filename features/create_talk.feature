@@ -22,7 +22,7 @@ Feature: Create talk
     Then I should see "Successfully created talk."
     And I should see "My Talk"
     When I go to the myevent subdomain
-    And I follow "Programme"
+    And I go to the programme page
     Then I should see "My Talk"
 
   Scenario: User creates an unpublished talk successfully
@@ -49,5 +49,5 @@ Feature: Create talk
     Then I should see "Successfully created talk."
     And I should see "My Other Talk"
     When I go to the myevent subdomain
-    And I follow "Programme"
+    And I go to the programme page
     Then I should not see "My Other Talk"

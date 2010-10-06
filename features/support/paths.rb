@@ -23,7 +23,8 @@ module NavigationHelpers
       user_path(@user)
     when /my user events page/
       user_events_path(@user)
-    
+    when /the programme page/
+      '/programme'
     else
       begin
         page_name =~ /the (.*) page/
