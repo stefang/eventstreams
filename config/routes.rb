@@ -15,14 +15,24 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options :controller => 'event_contact' do |c|
     c.contact '/contact',
-      :action => 'index',
+      :action => 'index', 
       :conditions => { :method => :get, :subdomain => /.+/ }
 
     c.contact '/contact',
-      :action => 'create',
+      :action => 'create', 
       :conditions => { :method => :post, :subdomain => /.+/ }
   end
+  
+  map.with_options :controller => 'support_email' do |c|
+    c.contact '/contact',
+      :action => 'index', 
+      :conditions => { :method => :get, :subdomain => nil }
 
+    c.contact '/contact',
+      :action => 'create', 
+      :conditions => { :method => :post, :subdomain => nil }
+  end
+  
   map.event_page '/:id', :controller => 'event_pages', :action=>'show', :conditions => { :subdomain => /.+/ }
 
   # Main Site Routes

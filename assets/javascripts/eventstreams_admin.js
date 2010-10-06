@@ -50,7 +50,7 @@ $(document).ready(function(){
 	
 	$("#sortable_source, #sortable_target").disableSelection();
 	
-	$('textarea').markedit({'toolbar': { 'layout': 'bold italic quote | link numberlist bulletlist heading'}});
+	$('textarea').not('.no_markedit').markedit({'toolbar': { 'layout': 'bold italic quote | link numberlist bulletlist heading'}});
 	
   $('#flash').hide();
   if ($('#flash').length > 0) {

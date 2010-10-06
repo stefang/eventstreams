@@ -24,6 +24,7 @@
               =link_to "Eventstreams", root_path
           %nav#main
             %ul
+              %li=link_to "Feedback", contact_path
               -if signed_in?
                 %li=link_to "Your Events", user_events_path(current_user)
                 / %li=link_to t('profile.link'), user_path(current_user)

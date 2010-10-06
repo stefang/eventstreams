@@ -1,0 +1,13 @@
+- form_for(:contact) do |f|
+  %ol.feedback_form
+    %li
+      %label{:for => 'name'} Your Name
+      %input{:type=>'text', :id=>'name', :name=>'name'}
+    %li
+      %label{:for => 'email'} Your Email Address
+      %input{:type=>'text', :id=>'email', :name=>'email'}
+    %li
+      %label{:for => 'message'} Your Message
+      %textarea{:id=>'message', :name=>'message', :class=>'no_markedit'}
+    %li
+      %button.button Send Your Message

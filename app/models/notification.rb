@@ -15,5 +15,12 @@ class Notification < ActionMailer::Base
     subject     "[Eventstreams] Message from the '#{event.title}' contact form"
     body        "A message has been sent from the '#{event.title}' contact form. \r\n\r\n **** \r\n\r\n From : #{data[:name]} / #{data[:email]} \r\n\r\n **** \r\n\r\n #{data[:message]}"
   end
+  
+  def support_email(data)
+    from        'notifications@eventstreamsapp.com'
+    recipients  'me@stefangoodchild.com'
+    subject     "[Eventstreams] Support Request"
+    body        "A support request has been sent. \r\n\r\n **** \r\n\r\n From : #{data[:name]} / #{data[:email]} \r\n\r\n **** \r\n\r\n #{data[:message]}"
+  end
 
 end
