@@ -12,4 +12,11 @@ module ApplicationHelper
     options = {:prefix => '', :suffix => ' ago'}.merge options
     "#{options[:prefix]}#{time_ago_in_words(date)}#{options[:suffix]}"
   end
+  
+  def body_class
+    body_class = controller.controller_name
+    body_class += " #{controller.action_name}"
+    body_class += " #{@event_page.cached_slug}" if @event_page
+    return body_class
+  end
 end

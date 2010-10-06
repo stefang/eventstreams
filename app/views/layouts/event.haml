@@ -20,7 +20,7 @@
     -if RAILS_ENV == "production"
       -unless @event.google_analytics.blank?
         = render :partial => 'layouts/event_ga'  
-  %body
+  %body{:class => body_class}
     - if signed_in? && is_owner?(@event)
       %nav#event_admin_bar
         %ul
