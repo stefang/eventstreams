@@ -298,38 +298,41 @@ section#eventstreams_event
   table.programme
     :width 100%
     :font-size 12px
+    :margin-bottom 40px
     tr.date_header
       td
         :border-width 2px
         :padding-top 18px
-        :font-weight bold
-        :font-size 12px
+        :padding-bottom 18px
+        :font-weight normal
+        :font-size 18px
         :line-height 18px
         :background none
     tr
       td
-        :background #F7F7F4
-        :background rgba(255, 255, 255, 0.4)
         :vertical-align top
-        :padding 2px 8px 1px
+        :padding 8px 8px 8px
         :border-bottom 1px solid #DAD9D5
       td.description
-        :padding 0
         ul
           :margin 3px 0px 3px 10px
           li
             :line-height 20px
             h4
-              :font-size 12px
-              :font-weight bold
-              :letter-spacing -1px
-              :margin-bottom 0
+              :font-size 16px
+              :font-weight normal
+              :margin-bottom 1px
           li.description
             :margin-top 19px
             p
               :font-size 12px
-      
+            p:last-child
+              :margin-bottom 0
+      td.start_date
+        :width 60px
+        :white-space nowrap
+        :border-bottom 0px
       td.start, td.end
-        :width 20px
+        :width 40px
       td.venue
         :white-space nowrap

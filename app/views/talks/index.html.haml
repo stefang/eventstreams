@@ -17,7 +17,7 @@
             - form_for [current_user, @event, talk] do |f|
               %fieldset
                 %label{:for => "start_date"} Start Date
-                %input{:class => "datepicker", :name => "start_date", :id => "start_date", :value => talk.start.blank? ? @event.start_date : talk.start.to_date.to_s(:db)}
+                %input{:class => "datepicker", :name => "start_date", :id => "start_date", :value => talk.start.blank? ? @event.start_date : talk.start.to_date.to_s(:form_display)}
                 %label{:for => "start_hour"} Start Time (24hr)
                 %input{:class => "time_input", :name => "start_hour", :id => "start_hour", :value => talk.start.blank? ? "09" : talk.start.strftime("%H")}
                 = ":"

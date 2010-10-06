@@ -1,14 +1,13 @@
-%tr
-  %td.start= h talk.start.to_s(:time)
-  %td.end
-    -unless talk.duration.blank? || talk.duration < 1
-      = (talk.start.to_time + talk.duration.minutes).to_s(:time)
-  %td.description
-    %ul
-      %li.header
-        %h4= link_to talk.title, talk
-      -if talk.speakers.any?
-        %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
-      -unless talk.description.blank?
-        %li.description= markdown talk.description
-  %td.venue= link_to talk.venue.name, venues_path unless talk.venue.blank?
+%td.start= h talk.start.to_s(:time)
+%td.end
+  -unless talk.duration.blank? || talk.duration < 1
+    = (talk.start.to_time + talk.duration.minutes).to_s(:time)
+%td.description
+  %ul
+    %li.header
+      %h4= link_to talk.title, talk
+    -if talk.speakers.any?
+      %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
+    -unless talk.description.blank?
+      %li.description= markdown talk.description
+%td.venue= link_to talk.venue.name, venues_path unless talk.venue.blank?

@@ -9,21 +9,27 @@
       %table.programme
         -@old_date = nil
         -for talk in track.published_talks
+          %tr
           -if talk.start.to_date != @old_date
-            %tr.date_header
-              %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
+            %td.start_date= h talk.start.to_date.to_s(:short)
+          -else
+            %td.start_date
           - @old_date = talk.start.to_date
           = render talk
         
-  -if @tracks.any? &&  @untracked_talks.any?
-    %h4 Untracked talks
-  %table.programme
-    -for talk in @untracked_talks
-      -if talk.start.to_date != @old_date
-        %tr.date_header
-          %td{:colspan => 4}= h talk.start.to_date.to_s(:short)
-      - @old_date = talk.start.to_date
-      = render talk
+  -if @tracks.any? && @untracked_talks.any?
+    %h4.league_header Other Talks
+  -if @untracked_talks.any?
+    %table.programme
+      -@old_date = nil
+      -for talk in @untracked_talks
+        %tr
+        -if talk.start.to_date != @old_date
+          %td.start_date= h talk.start.to_date.to_s(:short)
+        -else
+          %td.start_date
+        - @old_date = talk.start.to_date
+        = render talk
       
 - else
 
