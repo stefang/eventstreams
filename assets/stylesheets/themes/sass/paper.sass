@@ -31,7 +31,6 @@ body
     :padding-bottom 19px
     :text-shadow 1px 1px 0 #f4f3ef, 2px 2px 0 rgba(0,0,0,0.2)
     :letter-spacing 2px
-   
 section#eventstreams_event
   :clear both
   .inner
@@ -119,7 +118,7 @@ section#eventstreams_event
                 :opacity 0.2
   section.main
     :clear both
-    :margin-top 40px
+    :padding-top 40px
     :padding-bottom 40px
     :overflow hidden
     section.overview
@@ -282,8 +281,7 @@ section#eventstreams_event
       :width 92px
       :height 80px
       :display block
-      :overflow hidden
-      
+      :overflow hidden  
   article.talk
     h1.talk_title
       :position relative
@@ -295,6 +293,7 @@ section#eventstreams_event
         :bottom 1px
         :color #aaa
         :font-size 12px
+        
   table.programme
     :width 100%
     :font-size 12px
@@ -312,7 +311,6 @@ section#eventstreams_event
       td
         :vertical-align top
         :padding 8px 8px 8px
-        :border-bottom 1px solid #DAD9D5
       td.description
         ul
           :margin 3px 0px 3px 10px
@@ -328,11 +326,10 @@ section#eventstreams_event
               :font-size 12px
             p:last-child
               :margin-bottom 0
-      td.start_date
-        :width 60px
-        :white-space nowrap
-        :border-bottom 0px
-      td.start, td.end
-        :width 40px
-      td.venue
-        :white-space nowrap
+        
+body.tracks.index
+  .league_header
+    border-bottom: 0
+    padding-bottom: 0
+    
+@import 'paper_mobile'

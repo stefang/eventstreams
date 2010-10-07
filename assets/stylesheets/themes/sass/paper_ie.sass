@@ -1,17 +1,27 @@
-section#eventstreams_event
-  nav#main
-    .inner
-      ul
-        :background-color #e3e2de
-        li
-          :float left
+body
+  section#eventstreams_event
+    nav#main
+      .inner
+        ul
+          :background-color #e3e2de
+          :height 40px
+          li
+            :float left
 
-        li.register
-          a
-            span
-              :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-          	  :filter alpha(opacity=10);
-            &:hover, &:focus
+          li.register
+            a
               span
-                :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-            	  :filter alpha(opacity=20);
+                :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+            	  :filter alpha(opacity=10);
+              &:hover, &:focus
+                span
+                  :-ms-filter "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+              	  :filter alpha(opacity=20);
+
+
+  section.main
+    ul.speakers_inline
+      li.speaker
+        a
+          span
+            :background black

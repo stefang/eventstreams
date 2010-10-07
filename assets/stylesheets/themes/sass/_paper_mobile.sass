@@ -1,0 +1,158 @@
+@media only screen and (max-device-width : 600px)
+  body
+    width: 100%
+    padding: 0
+    form ol li input, form ol li textarea
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      width: 100%
+    section#eventstreams_event
+      .inner
+        padding: 0
+        margin: 0 auto
+        width: 90%
+      header
+        .inner
+          padding: 20px 0
+          width: 90%
+          #event_logo
+            font-size: 36px
+            line-height: 36px
+            width: 90%
+          .event_meta
+            width: 90%
+            position: static
+            text-align: left
+            font-size: 11px
+      nav#main
+        .inner
+          ul
+            background-color: transparent
+            height: auto
+            li, li.register
+              float: none
+              a
+                padding: 10px 10px 10px
+                float: none
+                border: 0
+                background-color: rgba(0,0,0,0.1)
+                +rounded(6px)
+                margin-bottom: 1px
+            li.register
+              a
+                padding: 13px 10px 7px
+                span
+                  display: none
+      section.main
+        .inner
+          section.overview
+            width: 100%
+            float: none
+          section.event_meta
+            clear: both
+            margin: 0
+            width: 100%
+            float: none
+            .map_wrap.homepage
+              width: 93%
+              #map_canvas
+                width: 100%
+          .map_wrap.venuepage
+            width: 93%
+            #map_canvas
+              width: 100%
+          section.event_venues, section.other_venues
+            width: 100%
+            margin-left: 0
+            ul
+              li
+                span
+                  display: none
+        ul.speakers_inline
+          margin-bottom: 20px
+          li.speaker
+            float: none
+            margin: 0 0 1px 0
+            background-color: rgba(0,0,0,0.1)
+            +rounded(6px)
+            position: relative
+            width: 100%
+            height: none
+            +remove-box-shadow
+            a
+              :border 0
+              :padding 10px 10px
+              :margin 0
+              :display block
+              :overflow hidden
+              :font-weight normal
+              :width 97%
+              :height auto
+              img
+                :width 22px
+                :height auto
+                :float left
+              span
+                :background transparent
+                :width auto
+                :height auto
+                :padding 0
+                :margin-left 4%
+                :float left
+                :display block
+                :position static
+                :font-size 14px
+                :text-shadow 0 1px 1px rgba(255,255,255,0.8)
+                :color #333
+              &:hover
+                span
+                  :display block
+          li.speaker.last
+            :margin-right 0
+        ul.speakers
+          li.speaker
+            :border-bottom 1px solid #ddd
+            :margin-bottom 19px
+            :min-height 120px
+            h4
+              :font
+                :size 20px
+            a.portrait
+              :float left
+              :clear none
+              :margin-right 20px
+              :position relative
+              :background white
+              :width 20%
+              :height auto
+              +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
+              :margin-bottom 20px
+              :margin-right 20px
+              img
+                :border 0
+                :width 100%
+                :height auto
+                :margin 0
+                :display block
+                :overflow hidden
+            p, ul
+              :margin-left 0px
+            ul
+              :margin-bottom 20px
+      article.speaker
+        :padding-left 0px
+        img
+          :margin-left 0px
+          :position relative
+      article.talk 
+        h1.talk_title 
+          height: auto
+          span
+            display: block
+            position: static
+
+  body.event_pages, body.tracks, body.event_contact, body.speakers, body.talks, body.venues
+    section#eventstreams_event
+      nav#main
+        display: none

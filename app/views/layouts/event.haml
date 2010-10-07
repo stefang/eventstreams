@@ -3,6 +3,7 @@
   %head
     %title= yield(:title) || t('title')
     %meta{:charset=>'utf-8'}
+    %meta{:name=>'viewport', :content=>'width=device-width, user-scalable=no, initial-scale=1'}
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     %script{:type=>"text/javascript", :src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
