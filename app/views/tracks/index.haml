@@ -2,35 +2,30 @@
 
 - unless current_subdomain.blank?
 
-  - for track in @tracks
-    -if track.published_talks.any?
-      %h4.league_header=link_to track.title, track_path(track)
-      = markdown track.description
-      %table.programme
-        -@old_date = nil
-        -for talk in track.published_talks
+  - for track in @programme
+    - if track && track.first && track.first.first && track.first.first.track && !track.first.first.track.title.blank?
+      %h4.league_header= track.first.first.track.title
+    -elsif @programme.length > 1
+      %h4.league_header Untracked    
+    -for day in track
+      %h5.day_header= day.first.start.to_date.to_s(:short)
+      %table.programme  
+        -for talk in day
           %tr
-          -if talk.start.to_date != @old_date
-            %td.start_date= h talk.start.to_date.to_s(:short)
-          -else
-            %td.start_date
-          - @old_date = talk.start.to_date
-          = render talk
-        
-  -if @tracks.any? && @untracked_talks.any?
-    %h4.league_header Other Talks
-  -if @untracked_talks.any?
-    %table.programme
-      -@old_date = nil
-      -for talk in @untracked_talks
-        %tr
-        -if talk.start.to_date != @old_date
-          %td.start_date= h talk.start.to_date.to_s(:short)
-        -else
-          %td.start_date
-        - @old_date = talk.start.to_date
-        = render talk
-      
+            %td.time
+              =talk.start.to_s(:time)
+              -unless talk.duration.blank? || talk.duration < 1
+                \-
+                = (talk.start.to_time + talk.duration.minutes).to_s(:time)
+            %td.description
+              %ul
+                %li.header
+                  %h4= link_to talk.title, talk
+                -if talk.speakers.any?
+                  %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
+                -unless talk.venue.blank? 
+                  %li.venue= link_to "#{talk.venue.name}", venues_path
+
 - else
 
   %section.item_list
