@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  cached_slug: MyString
+  descrption: MyText
+  event_id: 1
+
+two:
+  name: MyString
+  cached_slug: MyString
+  descrption: MyText
+  event_id: 1

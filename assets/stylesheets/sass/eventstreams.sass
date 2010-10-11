@@ -362,6 +362,29 @@ section#eventstreams
           :width 18px
           :padding 0
           :margin 0 9px 0 0
+
+      li.image_upload
+        :border 1px solid #ccc
+        :width 420px
+        :padding 9px
+        +rounded(4px)
+        :margin-bottom 8px
+        :overflow auto
+        img
+          :padding 3px
+          :background white
+          :float left
+          :margin-right 9px
+          :width 42px
+        label
+          :margin-bottom 6px
+        input
+          :width 200px
+          :background none
+          :border 0
+          :padding 0
+          +remove-box-shadow
+
       li.published
         :background white
         :border 1px solid #ccc
@@ -519,7 +542,7 @@ section#eventstreams section.main form ol.account_form
     +bevel-shadow
     input
       :width 18px
-      
+        
 section#eventstreams section.main form ol.feedback_form
   :width 440px
   :margin 0 auto

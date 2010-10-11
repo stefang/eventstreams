@@ -9,6 +9,7 @@ class LinksController < ApplicationController
   
   def create
     @event = current_user.owned_events.find(params[:event_id])
+    check_url
     @link = @event.owned_links.new(params[:link])
     if @link.save
       flash[:notice] = "Successfully created link."
@@ -25,6 +26,7 @@ class LinksController < ApplicationController
   
   def update
     @event = current_user.owned_events.find(params[:event_id])
+    check_url
     @link = @event.owned_links.find(params[:id])
     if @link.update_attributes(params[:link])
       flash[:notice] = "Successfully updated link."
@@ -42,4 +44,11 @@ class LinksController < ApplicationController
     flash[:notice] = "Successfully destroyed link."
     redirect_to user_event_event_pages_path(current_user, @event)
   end
+  
+  def check_url
+    if !params[:link][:url].blank? && !params[:link][:url].match(/^http:\/\//i)
+        params[:link][:url] = "http:\/\/#{params[:link][:url]}"
+    end
+  end
+  
 end

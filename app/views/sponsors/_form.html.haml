@@ -1,0 +1,25 @@
+- form_for [current_user, @event, @sponsor], :html => { :multipart => true } do |f|
+  %ol
+    %li.errors
+      = f.error_messages
+    %li
+      = f.label :name
+      = f.text_field :name
+    %li
+      = f.label :url
+      = f.text_field :url
+    %li.image_upload
+      -if :logo
+        = image_tag(@sponsor.logo.url(:tiny))
+      = f.label :logo, "Sponsor's Logo (Resized to fit in 210px x 90px)"
+      = f.file_field :logo
+    %li.published
+      This sponsor is
+      %em{:class => @sponsor.published ? "visible" : "hidden"}
+        = @sponsor.published ? "Visible" : "Hidden"
+      %span
+        = f.label :published, "Show"
+        = f.check_box :published
+    %li
+      %button.button.save{:type => 'submit'}
+        Save

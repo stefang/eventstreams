@@ -40,4 +40,6 @@
       %li.static_item#static_item_location='Location <span>/location</span>'
     - if !@event.contact_form_email.blank? && !@active_items.include?("static_items_contact")
       %li.static_item#static_item_contact='Contact <span>/contact</span>'
+    - if !@event.owned_sponsors.blank? && !@active_items.include?("static_items_sponsors")
+      %li.static_item#static_item_sponsors='Sponsors <span>/sponsors</span>'
   

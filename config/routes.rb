@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :invites, :conditions => { :subdomain => nil }
 
   # Event Show Routes
@@ -6,12 +7,14 @@ ActionController::Routing::Routes.draw do |map|
   map.event_root '', :controller => 'events', :action => 'show', :conditions => { :subdomain => /.+/ }
   map.event_stylesheet 'custom_stylesheets/custom.css', :controller => 'events', :action => 'custom', :conditions => { :subdomain => /.+/ }
   map.resources :speakers, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
+  map.resources :sponsors, :only => [:index], :conditions => { :subdomain => /.+/ }
   map.resources :tracks, :as => 'programme', :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :talks, :only => [:index, :show], :conditions => { :subdomain => /.+/ } do |t|
     t.resources :videos, :only => [:show], :conditions => { :subdomain => /.+/ }
   end
   map.resources :venues, :as => 'location', :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :tweets, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
+  map.resources :sponsors, :only => [:index], :conditions => { :subdomain => /.+/ }
 
   map.with_options :controller => 'event_contact' do |c|
     c.contact '/contact',
@@ -47,6 +50,7 @@ ActionController::Routing::Routes.draw do |map|
       e.resources :venues
       e.resources :venue_types, :except => [:index]      
       e.resources :event_pages
+      e.resources :sponsors
       e.resources :links
       e.resources :tracks
       e.resources :speakers
@@ -62,6 +66,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'users/:user_id/events/:event_id/event_menus/update_order', :controller => 'event_menus', :action=>'update_order', :conditions => { :method => :post }
   map.connect 'users/:user_id/events/:event_id/speakers/update_order', :controller => 'speakers', :action=>'update_order', :conditions => { :method => :post }
   map.connect 'users/:user_id/events/:event_id/tracks/update_order', :controller => 'tracks', :action=>'update_order', :conditions => { :method => :post }
+  map.connect 'users/:user_id/events/:event_id/sponsors/update_order', :controller => 'sponsors', :action=>'update_order', :conditions => { :method => :post }
 
   map.resource    :session,
                   :controller => 'sessions',

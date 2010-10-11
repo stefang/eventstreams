@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100929163306) do
+ActiveRecord::Schema.define(:version => 20101011123659) do
 
   create_table "event_menus", :force => true do |t|
     t.string   "item_type"
@@ -111,6 +111,21 @@ ActiveRecord::Schema.define(:version => 20100929163306) do
   create_table "speakers_talks", :id => false, :force => true do |t|
     t.integer "speaker_id"
     t.integer "talk_id"
+  end
+
+  create_table "sponsors", :force => true do |t|
+    t.string   "name"
+    t.string   "cached_slug"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "item_order"
+    t.boolean  "published"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "url"
   end
 
   create_table "talks", :force => true do |t|

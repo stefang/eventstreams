@@ -8,7 +8,9 @@
     %li
       = f.label :biog
       = f.text_area :biog
-    %li
+    %li.image_upload
+      -if :portrait
+        = image_tag(@speaker.portrait.url(:tiny))
       = f.label :portrait, "Speaker Image (Less than 1mb)"
       = f.file_field :portrait
     %li.published

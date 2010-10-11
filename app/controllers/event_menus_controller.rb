@@ -45,6 +45,7 @@ class EventMenusController < ApplicationController
           when "contact" then "/contact"
           when "speakers" then "/speakers"
           when "programme" then "/programme"
+          when "sponsors" then "/sponsors"
         end
         item.item_type = item_data[0].camelize
         item.item_id = 0

@@ -87,5 +87,4 @@ class EventsController < ApplicationController
         params[:event][:twitter_account] = "@#{params[:event][:twitter_account]}"
     end
   end
-  
 end

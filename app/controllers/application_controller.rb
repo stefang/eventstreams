@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
     end
-  end
+  end  
   
   # def create_event_menu_item item
   #   menu_item = @event.menu_order.new(:item_type => item.class.to_s, :item_id => item.id)

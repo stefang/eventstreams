@@ -7,6 +7,6 @@ class Talk < ActiveRecord::Base
   has_and_belongs_to_many :speakers
   has_many :owned_videos, :class_name => 'Video', :foreign_key => :talk_id, :dependent => :destroy
   
-  validates_presence_of :title, :on => :create
+  validates_presence_of :title
   
 end
