@@ -1,6 +1,14 @@
 class Event < ActiveRecord::Base
   
   belongs_to :user
+  
+  has_attached_file :logo, :styles => { :original => "980x980", :medium => "460x300>", :header => "580x100>", :tiny => "42x42#" }, 
+    :path => ":rails_root/assets/event_assets/:id/event_logo/:id/:style/:id.jpg",
+    :url => "/event_assets/:id/event_logo/:id/:style/:id.jpg",
+    :convert_options => {
+        :all => "-strip -colorspace RGB -resample 72", 
+        :header => "-quality 92" 
+    }
 
   validates_presence_of :title
 
@@ -28,6 +36,14 @@ class Event < ActiveRecord::Base
   has_many :published_sponsors, :class_name => 'Sponsor', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'item_order'
   has_many :published_links, :class_name => 'Link', :foreign_key => :event_id, :conditions=>{:published => true}
   has_many :published_talks, :class_name => 'Talk', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'start'
+  
+  attr_accessor :remove_logo
+  before_save :perform_remove_logo
+  
+  def perform_remove_logo 
+    self.logo = nil if self.remove_logo=="1" && !self.logo.dirty?
+    true 
+  end  
   
   serialize :colours
   

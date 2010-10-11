@@ -33,8 +33,11 @@
     %section#eventstreams_event.es
       %header
         .inner
-          %h3#event_logo
-            =link_to @event.title, root_path
+          -if @event.logo?
+            =link_to image_tag(@event.logo(:header), :alt => @event.title), root_path, :class => 'event_logo'
+          -else
+            %h3#event_logo
+              =link_to @event.title, root_path
           %p.tagline=@event.tagline unless @event.tagline.blank?
           %ul.event_meta
             %li

@@ -1,4 +1,4 @@
-- form_for [current_user, @event] do |f|
+- form_for [current_user, @event], :html => { :multipart => true } do |f|
   %ol
     %li.errors
       = f.error_messages
@@ -35,6 +35,14 @@
     %li
       = f.label :description
       = f.text_area :description
+    %li.image_upload
+      -if @event.logo?
+        = image_tag(@event.logo.url(:tiny))
+      = f.label :logo, "Event Logo (Resized to display within 580px x 100px)"
+      = f.file_field :logo
+    %li.checkbox
+      = f.check_box :remove_logo
+      = f.label :remove_logo, "Delete logo image"
     %li.colours
       / = f.label :theme_name, "Paper", :value=>'paper'
       / = f.radio_button(:theme_name, "paper")
@@ -48,8 +56,8 @@
       %em{:class => @event.published ? "visible" : "hidden"}
         = @event.published ? "Visible" : "Hidden"
       %span
-        = f.label :published, "Show"
         = f.check_box :published
+        = f.label :published, "Show"
     %li
       %button.button.save{:type => 'submit'}
         Save

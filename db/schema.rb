@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101011123659) do
+ActiveRecord::Schema.define(:version => 20101011155501) do
 
   create_table "event_menus", :force => true do |t|
     t.string   "item_type"
@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20101011123659) do
     t.string   "contact_form_email"
     t.string   "google_analytics"
     t.string   "booking_url"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "invites", :force => true do |t|
