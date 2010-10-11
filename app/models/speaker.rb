@@ -3,7 +3,11 @@ class Speaker < ActiveRecord::Base
   
   has_attached_file :portrait, :styles => { :original => "980x980", :medium => "300x300#", :thumb => "100x88#", :tiny => "42x42#" }, 
     :path => ":rails_root/assets/event_assets/:event_id/:attachment/:id/:style/:id.jpg",
-    :url => "/event_assets/:event_id/:attachment/:id/:style/:id.jpg"
+    :url => "/event_assets/:event_id/:attachment/:id/:style/:id.jpg",
+    :convert_options => {
+         :all => "-strip -colorspace RGB -resample 72", 
+         :thumb => "-quality 92" 
+    }
 
   has_and_belongs_to_many :talks
   belongs_to :event
