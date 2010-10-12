@@ -9,4 +9,6 @@ class Talk < ActiveRecord::Base
   
   validates_presence_of :title
   
+  named_scope :published, { :conditions => { :published => true } }
+  
 end

@@ -1,16 +1,16 @@
 - title "Programme of talks | #{@event.title}" 
 
 - unless current_subdomain.blank?
-
-  - for track in @programme
-    - if track && track.first && track.first.first && track.first.first.track && !track.first.first.track.title.blank?
-      %h4.league_header= track.first.first.track.title
-    -elsif @programme.length > 1
-      %h4.league_header Untracked    
-    -for day in track
-      %h5.day_header= day.first.start.to_date.to_s(:short)
+  
+  - @tracks.each do |track, track_talks|
+    - if track
+      %h4.league_header= track.title
+    - elsif @tracks.many?
+      %h4.league_header Untracked        
+    - track_talks.group_by{|t| t.start.to_date }.each do |date, day_talks|
+      %h5.day_header= date.to_s(:short)
       %table.programme  
-        -for talk in day
+        - day_talks.each do |talk|
           %tr
             %td.time
               =talk.start.to_s(:time)

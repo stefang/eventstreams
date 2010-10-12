@@ -11,35 +11,8 @@ class TracksController < ApplicationController
       if @event.blank?
         render_404
       else
-        @talks = @event.owned_talks.find(:all, :conditions => "published = true", :scope => @event, :order => 'start ASC')         
-        @tracks = @event.owned_tracks.find(:all, :conditions => "published = true", :scope => @event, :order => 'item_order ASC')
-        @track_days = @event.owned_talks.find(:all, :conditions => "published = true", :scope => @event, :order => 'start ASC', :group => 'DATE(start)')
-        
-        @programme = Array.new
-        day = Array.new
-        track = Array.new
-        last_date = nil
-        
-        @tracks.each do |tr|
-          track_talks = @talks.select {|t| t.track_id == tr.id}
-          for maybe_day in @track_days
-            day_talks = track_talks.select {|t| t.start.to_date == maybe_day.start.to_date}
-            track << Array.new(day_talks) if day_talks.any?
-            day_talks.clear
-          end
-          @programme << Array.new(track) if track.any?
-          track.clear
-        end
-        
-        untracked_talks = @talks.select {|t| t.track_id == nil}
-        for maybe_day in @track_days
-          day_talks = untracked_talks.select {|t| t.start.to_date == maybe_day.start.to_date}
-          track << Array.new(day_talks) if day_talks.any?
-          day_talks.clear
-        end
-        @programme << Array.new(track)
-        track.clear
-        
+        @talks = @event.owned_talks.published.find(:all, :include => :track)
+        @tracks = ActiveSupport::OrderedHash[@talks.group_by(&:track).sort_by{|track, track_talks| track.try(:item_order) || 1/0.0 }]
         render :layout => 'event'
       end
     end

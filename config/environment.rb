@@ -28,3 +28,8 @@ ActionMailer::Base.smtp_settings = {
   :user_name => "donotreply@eventstreamsapp.com",
   :password => "34Kl34"
 }
+
+def log_to(stream=$stdout)
+  ActiveRecord::Base.logger = Logger.new(stream)
+  ActiveRecord::Base.connection_pool.clear_reloadable_connections!
+end
