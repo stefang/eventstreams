@@ -1,7 +1,7 @@
 class Speaker < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true, :scope => :event
   
-  has_attached_file :portrait, :styles => { :original => "980x980", :medium => "300x300#", :thumb => "100x88#", :tiny => "42x42#" }, 
+  has_attached_file :portrait, :styles => { :original => "980x980", :medium => "220x220#", :thumb => "100x80#", :tiny => "42x42#" }, 
     :path => ":rails_root/assets/event_assets/:event_id/:attachment/:id/:style/:id.jpg",
     :url => "/event_assets/:event_id/:attachment/:id/:style/:id.jpg",
     :convert_options => {
