@@ -25,7 +25,7 @@ class Event < ActiveRecord::Base
   has_many :owned_links, :class_name => 'Link', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_speakers, :class_name => 'Speaker', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
   has_many :owned_tracks, :class_name => 'Track', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
-  has_many :owned_talks, :class_name => 'Talk', :foreign_key => :event_id, :dependent => :destroy
+  has_many :owned_talks, :class_name => 'Talk', :foreign_key => :event_id, :dependent => :destroy, :order => 'start ASC'
   has_many :owned_venues, :class_name => 'Venue', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_sponsors, :class_name => 'Sponsor', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
   has_many :owned_venue_types, :class_name => 'VenueType', :foreign_key => :event_id, :dependent => :destroy
