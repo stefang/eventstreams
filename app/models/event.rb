@@ -13,7 +13,10 @@ class Event < ActiveRecord::Base
   validates_presence_of :title
 
   validates_presence_of :subdomain
-  validates_uniqueness_of :subdomain
+  #validates_uniqueness_of :subdomain
+  
+  validate :validate_subdomain
+  
   validates_exclusion_of :subdomain, :in => %w(www about contact faq blog tour features packages tos privacy help support pricing careers assets staging edge),
       :message => "'%{value}' is reserved."
   
@@ -125,6 +128,12 @@ class Event < ActiveRecord::Base
   
   def serialized_attr_accessor
     return true
+  end
+  
+  def validate_subdomain
+    if Event.count(:conditions => ["subdomain = ? and user_id != ?", subdomain, user_id]) > 0
+      errors.add_to_base("Someone has already bagged this subdomain, sorry!")
+    end
   end
   
 end

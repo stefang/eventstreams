@@ -32,12 +32,13 @@ class ApplicationController < ActionController::Base
   end
   
   def get_published_or_owned_event
+    
     if signed_in? && current_user.superadmin?
-      @event = Event.find_by_subdomain(current_subdomain)
+      @event = Event.find_by_subdomain(current_subdomain, :order => 'start_date DESC', :limit => 1)
     elsif signed_in?
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true OR user_id = #{current_user.id}")
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true OR user_id = #{current_user.id}", :order => 'start_date DESC', :limit => 1)
     else
-      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true")
+      @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true", :order => 'start_date DESC', :limit => 1)
     end
   end  
   

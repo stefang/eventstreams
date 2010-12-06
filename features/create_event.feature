@@ -10,11 +10,16 @@ Feature: Create event
     Then I should see "Title"
     When I fill in "Title" with "My Event"
     And I fill in "Subdomain" with "myevent"
-    And I check "Show"
     And I press "Save"
     Then I should see "Successfully created event"
     And I should be on the user events page
     Then I should see "My Event"
+    Then I follow "Manage"
+    And I check "Show"
+    And I press "Save"
+    When I go to the myevent subdomain
+    Then I should see "My Event"
+    And I should see "Powered by Eventstreams"
 
   Scenario: User creates and hides an event successfully
     Given that I am a user
@@ -25,6 +30,10 @@ Feature: Create event
     And I press "Save"
     Then I should see "Successfully created event"
     Then I should see "My Event"
+    When I go to the myevent subdomain
+    Then I should see "My Event"
+    And I should see "Powered by Eventstreams"
+    And I should see "Event Hidden"
 
   Scenario: User creates event unsuccessfully
     Given that I am a user
@@ -32,11 +41,10 @@ Feature: Create event
     Then I follow "New Event"
     When I fill in "Title" with ""
     And I fill in "Subdomain" with ""
-    And I fill in "Twitter hashtag eg. #awesome2010" with "hellothere"
     And I press "Save"
     Then I should see "3 errors prohibited this event from being saved"
 
-  Scenario: User tries to create an event with a subdomain that already exists
+  Scenario: User tries to create an event with a subdomain that already exists and is owned by someone else
     Given that I am a user
     And an event exists called "myevent"
     When I follow "Your Events"
@@ -45,6 +53,17 @@ Feature: Create event
     And I fill in "Subdomain" with "myevent"
     And I press "Save"
     Then I should see "1 error prohibited this event from being saved"
+
+  Scenario: User tries to create an event with a subdomain that already exists and is owned by themselves
+    Given that I am a user
+    And I have an event called "myevent"
+    When I follow "Your Events"
+    Then I follow "New Event"
+    When I fill in "Title" with "Exciting Event"
+    And I fill in "Subdomain" with "myevent"
+    And I press "Save"
+    Then I should see "Successfully created event"
+    Then I should see "Exciting Event"
 
   Scenario: User tries to create an event with a subdomain with non alphanumeric characters
     Given that I am a user

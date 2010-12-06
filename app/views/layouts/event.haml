@@ -57,9 +57,8 @@
             - for event_menu in @event.menu_order_main
               %li{:class => event_menu.url == request.request_uri ? "active" : ""}
                 = link_to event_menu.title, event_menu.url
-            - if @event.booking_url
-              %li.register
-                = link_to 'Register<span></span>', @event.booking_url
+          - if @event.booking_url
+            = link_to 'Register<span></span>', @event.booking_url, :class=> 'register'
                 
       = render :partial => 'layouts/flashes'
       %section.main
@@ -70,6 +69,6 @@
           %nav#footer
             %ul
               - for event_menu in @event.menu_order_footer
-                %li{:class => event_menu.url == request.request_uri ? "active" : ""}
+                %li
                   = link_to event_menu.title, event_menu.url
           =link_to 'Powered by Eventstreams', root_url(:subdomain => false), :class => "powered_by"
