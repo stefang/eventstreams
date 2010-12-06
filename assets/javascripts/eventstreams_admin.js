@@ -8,6 +8,7 @@ $(document).ready(function(){
 				$("#sortable").attr('data-user_id'),
 				$("#sortable").attr('data-event_id'),
 				$("#sortable").attr('data-model'),
+				$("#sortable").attr('data-location'),
 				$("#sortable").sortable('serialize')
 			); 
 		} 
@@ -20,30 +21,31 @@ $(document).ready(function(){
 	  axis: 'y',
 	  connectWith: '.connected',
 	  start: function(){
-	    $("#sortable_target").prepend("<li class='target'>Drop menu item here to activate</li>").addClass('activeTarget');
+	    $(".sortable_target").prepend("<li class='target'>Drop menu item here to activate</li>").addClass('activeTarget');
 	  },
 	  beforeStop: function() {
-	    $("#sortable_target").removeClass('activeTarget')
-	    $("#sortable_target .target").remove();
+	    $(".sortable_target").removeClass('activeTarget');
+	    $(".sortable_target .target").remove();
 	  }
 	});
 	
-	$("#sortable_target").sortable({
+	$(".sortable_target").sortable({
 	  axis: 'y',
 	  connectWith: '.connected',
 	  start: function(){
 	    $("#sortable_source").prepend("<li class='target'>Drop menu item here to disable</li>").addClass('activeTarget');
 	  },
 	  beforeStop: function() {
-	    $("#sortable_source").removeClass('activeTarget')
+	    $("#sortable_source").removeClass('activeTarget');
 	    $("#sortable_source .target").remove();
     },
 		update: function(event, ui) { 
 			update_list_order(
-				$("#sortable_target").attr('data-user_id'),
-				$("#sortable_target").attr('data-event_id'),
-				$("#sortable_target").attr('data-model'),
-				$("#sortable_target").sortable('serialize')
+				$(this).attr('data-user_id'),
+				$(this).attr('data-event_id'),
+				$(this).attr('data-model'),
+				$(this).attr('data-location'),
+				$(this).sortable('serialize')
 			); 
 		} 
 	});
@@ -90,9 +92,10 @@ $(document).ready(function(){
 
 });
 
-var update_list_order = function(user_id, event_id, model, serialize) {
+var update_list_order = function(user_id, event_id, model, location, serialize) {
+  console.log(serialize)
 	$('#ajax_status').show().empty().append("Saving new order");
-  $.post("/users/"+user_id+"/events/"+event_id+"/"+model+"/update_order", {item_order: serialize}, function(data){
+  $.post("/users/"+user_id+"/events/"+event_id+"/"+model+"/update_order", {menu_location: location, item_order: serialize}, function(data){
      $('#ajax_status').empty().append(data);
      
      if ($('#sortable_target li').length > 0) {

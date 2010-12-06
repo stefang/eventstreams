@@ -55,7 +55,7 @@
                 %li= link_to "Sponsors", user_event_sponsors_path(current_user, @event), :class=>'button'
                 %li= link_to "Manage Tweets", user_event_tweets_path(current_user, @event), :class=>'button'
             %section.event_content
-              -unless @event.menu_order.any?
+              -unless @event.menu_order_main.any?
                 %p.empty_menu
                   Your event's main menu is empty,
                   = link_to "add links to content when available", user_event_event_menus_path(current_user, @event)

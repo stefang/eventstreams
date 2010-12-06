@@ -207,11 +207,18 @@ body {
   body section.footer .inner {
     height: 80px;
     position: relative; }
+    body section.footer .inner nav#footer {
+      position: absolute;
+      top: 25px;
+      left: 7px; }
+      body section.footer .inner nav#footer ul li {
+        float: left;
+        margin-right: 20px; }
     body section.footer .inner a.powered_by {
       opacity: 0.5;
       display: block;
       position: absolute;
-      bottom: 25px;
+      top: 25px;
       right: 7px;
       width: 166px;
       height: 29px;

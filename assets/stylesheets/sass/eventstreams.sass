@@ -269,7 +269,7 @@ section#eventstreams
           :background white
           :opacity 0.9
           +box-shadow(0,1px,6px,rgba(0,0,0,0.4))
-      ul#sortable, ul#sortable_source, ul#sortable_target
+      ul#sortable, ul#sortable_source, ul.sortable_target
         li
           :cursor move
           span
@@ -281,7 +281,7 @@ section#eventstreams
         li.target
           :background #FFEE7F
           :opacity 0.5
-      ul#sortable.activeTarget, ul#sortable_source.activeTarget, ul#sortable_target.activeTarget
+      ul#sortable.activeTarget, ul#sortable_source.activeTarget, ul.sortable_target.activeTarget
         :border-color #FFEE7F
     #ajax_status
       :padding 4px 9px
@@ -349,7 +349,7 @@ section#eventstreams
                 :padding-left 18px
                 :list-style disc
                 :margin-bottom 18px
-      li.checkbox, li.select, li.ticklist
+      li.checkbox, li.select, li.ticklist, li.theme
         :border 1px solid #ccc
         :width 420px
         :padding 5px 9px
@@ -367,7 +367,6 @@ section#eventstreams
         ul
           li
             margin-bottom: 3px
-
       li.image_upload
         :border 1px solid #ccc
         :width 420px
@@ -401,7 +400,7 @@ section#eventstreams
         em.hidden
           :color red
         em.visible
-          :color green
+          :color #007651
         span
           :margin-left 9px
           :padding-left 9px
@@ -441,7 +440,7 @@ section#eventstreams
       li.colours
         :border 1px solid #ccc
         :width 425px
-        :padding 5px 9px
+        :padding 5px 9px 9px
         +rounded(4px)
         :margin-bottom 8px
         :position relative

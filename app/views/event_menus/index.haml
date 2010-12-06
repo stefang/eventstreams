@@ -2,17 +2,29 @@
 
 %section.item_list
   %h3 
-    Menu Order
+    Main Navigation
     %span drag items up and down to order event menu
     
   #ajax_status
-  %ul#sortable_target.connected{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_menus'}}
-    - for event_menu in @event_menus
-      - 
+  %ul.sortable_target.connected{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_menus', :location => 'main'}}
+    - for event_menu in @event_menus_main
       %li{:id => event_menu.item_type != 'StaticItem' ? "#{event_menu.item_type.tableize.singularize}_#{event_menu.item_id}" : "#{event_menu.item_type.tableize.singularize}_#{event_menu.title.downcase}", :class => event_menu.item_type.tableize.singularize}
         = event_menu.title
         %span
           = "#{event_menu.url}"
+
+%section.item_list
+  %h3 
+    Footer Navigation
+    %span drag items up and down to order event menu
+
+  %ul.sortable_target.connected{:data => {:user_id => current_user.id, :event_id => @event.id, :model => 'event_menus', :location => 'footer'}}
+    - for event_menu in @event_menus_footer
+      %li{:id => event_menu.item_type != 'StaticItem' ? "#{event_menu.item_type.tableize.singularize}_#{event_menu.item_id}" : "#{event_menu.item_type.tableize.singularize}_#{event_menu.title.downcase}", :class => event_menu.item_type.tableize.singularize}
+        = event_menu.title
+        %span
+          = "#{event_menu.url}"
+
 %section.item_list
   %h3 
     Available 

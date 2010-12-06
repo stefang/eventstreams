@@ -53,8 +53,8 @@
                   =@event.hashtag
       %nav#main
         .inner
-          %ul
-            - for event_menu in @event.menu_order
+          %ul.main
+            - for event_menu in @event.menu_order_main
               %li{:class => event_menu.url == request.request_uri ? "active" : ""}
                 = link_to event_menu.title, event_menu.url
             - if @event.booking_url
@@ -67,4 +67,9 @@
           = yield
       %section.footer
         .inner
+          %nav#footer
+            %ul
+              - for event_menu in @event.menu_order_footer
+                %li{:class => event_menu.url == request.request_uri ? "active" : ""}
+                  = link_to event_menu.title, event_menu.url
           =link_to 'Powered by Eventstreams', root_url(:subdomain => false), :class => "powered_by"
