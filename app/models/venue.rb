@@ -13,6 +13,22 @@ class Venue < ActiveRecord::Base
 
   before_validation_on_create :geocode_address
   before_validation_on_update :geocode_address
+  
+  def inline_address
+    
+    address_array = [address_1, address_2, address_3, city, county, country, postcode]
+    
+    return address_array.compact.reject(&:blank?).join(", ")
+    
+    # = h venue.address_1
+    # = h venue.address_2
+    # = h venue.address_3
+    # = h venue.city
+    # = h venue.county
+    # = h venue.country
+    # = h venue.postcode
+    
+  end
 
   private
     def geocode_address

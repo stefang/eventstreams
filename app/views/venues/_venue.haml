@@ -6,13 +6,7 @@
         = h venue.venue_type.name
   = markdown venue.description unless venue.description.blank?
   %p.address
-    = h venue.address_1
-    = h venue.address_2
-    = h venue.address_3
-    = h venue.city
-    = h venue.county
-    = h venue.country
-    = h venue.postcode
+    = h venue.inline_address
   %ul.contact
     %li
       Telephone:
