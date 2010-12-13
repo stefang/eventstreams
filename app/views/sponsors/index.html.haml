@@ -4,7 +4,9 @@
   %ul.sponsors
     - for sponsor in @event.published_sponsors
       %li.sponsor
-        = link_to sponsor.name, sponsor.url, :title => sponsor.name, :class => 'logo', :style => "background-image: url(#{image_path(sponsor.logo.url(:thumb))});"
+        
+        = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
+        = sponsor.description
         
 - else
 
