@@ -4,6 +4,8 @@
     %article.description
       = auto_link(markdown(@event.description))
     -if @speakers
+      %h4.league_header 
+        =link_to "The speakers", speakers_path
       %ul.speakers_inline
         - @speakers.each_with_index do |speaker, index| 
           %li.speaker{:class => (index+1) % 5  == 0 ? "last" : ""}
@@ -31,3 +33,11 @@
                 Posted by
                 = link_to "@#{tweet.twitter_user_name}", "http://twitter.com/#{tweet.twitter_user_name}"
                 = link_to pretty_time_ago(tweet.created_at), "http://twitter.com/#{tweet.twitter_user_name}/status/#{tweet.twitter_id}"
+  -if @event.published_sponsors
+    %h4.league_header 
+      =link_to "Sponsored by", sponsors_path
+    %ul.sponsors
+      - for sponsor in @event.published_sponsors
+        %li.sponsor
+          = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
+  

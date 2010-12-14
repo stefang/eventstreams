@@ -5,7 +5,7 @@
     - for sponsor in @event.published_sponsors
       %li.sponsor
         = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
-
+        
 - else
 
   %section.item_list
