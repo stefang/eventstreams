@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
     :path => ":rails_root/assets/event_assets/:id/event_logo/:id/:style/:id.jpg",
     :url => "/event_assets/:id/event_logo/:id/:style/:id.jpg",
     :convert_options => {
-        :all => "-strip -colorspace RGB -resample 72", 
+        :all => "-strip -colorspace RGB", 
         :header => "-quality 92" 
     }
 

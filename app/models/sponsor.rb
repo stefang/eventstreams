@@ -5,7 +5,7 @@ class Sponsor < ActiveRecord::Base
     :path => ":rails_root/assets/event_assets/:event_id/:attachment/:id/:style/:id.jpg",
     :url => "/event_assets/:event_id/:attachment/:id/:style/:id.jpg",
     :convert_options => {
-         :all => "-strip -colorspace RGB -resample 72", 
+         :all => "-strip -colorspace RGB", 
          :thumb => "-quality 92" 
     }
 
