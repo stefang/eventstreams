@@ -361,10 +361,10 @@ section#eventstreams_event
   ul.sponsors
     li.sponsor
       :float left
+      :margin-right 20px
+      :margin-bottom 20px
+      :float left
       a.logo
-        :margin-bottom 20px
-        :float left
-        :margin-right 20px
         :position relative
         +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
         :padding 5px
@@ -382,8 +382,9 @@ section#eventstreams_event
           :max-height 90px
         &:hover, &:focus
           +box-shadow(0, 2px, 5px, rgba(0,0,0,0.6))
-
-              
+    li.sponsor.last
+      :margin-right 0
+ 
   section.footer
     section.sponsors
       :background rgba(0,0,0,0.05)

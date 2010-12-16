@@ -78,6 +78,6 @@
               %h4.league_header
                 =link_to "Sponsored by", sponsors_path
               %ul.sponsors
-                - for sponsor in @event.published_sponsors
-                  %li.sponsor
+                - @event.published_sponsors.each_with_index do |sponsor, index| 
+                  %li.sponsor{:class => (index+1) % 4  == 0 ? "last" : ""}
                     = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
