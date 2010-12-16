@@ -209,8 +209,8 @@ body {
     position: relative; }
     body section.footer .inner nav#footer {
       position: absolute;
-      top: 25px;
-      left: 7px; }
+      top: 30px;
+      left: 20px; }
       body section.footer .inner nav#footer ul li {
         float: left;
         margin-right: 20px; }
