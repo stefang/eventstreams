@@ -93,18 +93,36 @@ section#eventstreams
         li
           :position absolute
           a
+            :float left
             :display block
             :padding 6px 11px
             :background rgba(255,255,255,0.1)
             :color #ddd
             :text-shadow 1px -1px 1px rgba(0,0,0,0.3)
-            +rounded(5px)
+            +rounded(3px)
             +box-shadow(0px, 1px, 1px, rgba(0,0,0,0.3))
             &:hover, &:focus
               :background rgba(0,0,0,0.2)
               :color white
             &:hover, &:active
               :background rgba(0,0,0,0.4)
+          span.published
+            :float left
+            :display block
+            :color #555
+            :position relative
+            :margin-left 10px
+            :font-size 12px
+            +rounded(3px)
+            :border 2px solid #fff
+            
+            :background
+              :color #f1f1f1
+              :image url('../images/flash_info.png')
+              :position 4px 49%
+              :repeat no-repeat
+            :padding 4px 8px 4px 28px
+            +box-shadow(0px, 2px, 8px, rgba(0,0,0,0.7))
         li.title
           :left 22px
           :padding 6px 18px
@@ -115,14 +133,6 @@ section#eventstreams
             :family LeagueGothicRegular, sans-serif
             :weight normal
             :size 26px
-        li.title.komika
-          :text-transform capitalize
-          :font
-            :family KomikaAxisRegular, sans-serif
-            :weight normal
-            :size 18px
-          :line-height 18px
-          :padding 5px 18px 9px
         li.site_link
           :right 22px
   section#flash

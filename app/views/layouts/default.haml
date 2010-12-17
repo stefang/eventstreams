@@ -38,7 +38,12 @@
           .inner
             %ul
               %li.title= @event.title
-              %li.site_link= link_to event_root_url(:subdomain => @event.subdomain), event_root_url(:subdomain => @event.subdomain)
+              %li.site_link
+                = link_to event_root_url(:subdomain => @event.subdomain), event_root_url(:subdomain => @event.subdomain)
+                -unless @event.published
+                  %span.published
+                    This event is hidden
+              
       = render :partial => 'layouts/flashes'
       %section.main
         .inner
