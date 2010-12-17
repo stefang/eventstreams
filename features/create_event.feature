@@ -20,6 +20,7 @@ Feature: Create event
     When I go to the myevent subdomain
     Then I should see "My Event"
     And I should see "Powered by Eventstreams"
+    And I should not see "This event is currently hidden"
 
   Scenario: User creates and hides an event successfully
     Given that I am a user

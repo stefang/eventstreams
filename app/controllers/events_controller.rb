@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     else
       get_published_or_owned_event
       if @event.blank?
-        render_404
+        render :layout => 'hidden_event', :action => 'hidden_event'
       else
         @speakers = @event.owned_speakers.find(:all, :conditions => "published = true AND portrait_file_name IS NOT NULL", :order => 'RAND()')
         @venues = @event.owned_venues.find(:all, :conditions => "published = true AND main_venue = true")

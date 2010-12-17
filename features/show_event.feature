@@ -11,6 +11,7 @@ Feature: View event
   Scenario: Guest looks at a hidden event
     Given a hidden event exists called "myevent"
     When I go to the myevent subdomain
+    Then I should see "This event is currently hidden"
     And I should not see "myevent"
 
   Scenario: User looks at published event
