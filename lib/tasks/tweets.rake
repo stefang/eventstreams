@@ -57,14 +57,14 @@ def process_tweet(tweet, event, tweet_type)
      page = 1
      batch = nil
      begin
-       puts "Twitter::Search.new.from(#{event.twitter_account[1..-1]}).since(#{since_id}).per_page(#{100}).page(#{page}).max(#{max_id}).fetch()"
-       batch = Twitter::Search.new(event.twitter_account[1..-1]).since(since_id).per_page(100).page(page).max(max_id).fetch()
+       batch = Twitter::Search.new.from(event.twitter_account[1..-1]).since(since_id).per_page(100).page(page).max(max_id).fetch()
        max_id = batch.max_id if max_id.nil?
        results.concat batch.results
        page += 1
      end while batch.key?("next_page")
      results.reverse.each {|tweet|
-       process_tweet tweet, event, "account"
+       puts tweet.text
+       # process_tweet tweet, event, "account"
      }
      puts "Pulled Account Tweets For " + event.title
    end
