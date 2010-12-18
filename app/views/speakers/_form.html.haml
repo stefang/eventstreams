@@ -13,6 +13,7 @@
         = image_tag(@speaker.portrait.url(:tiny))
       = f.label :portrait, "Speaker Image (Less than 1mb)"
       = f.file_field :portrait
+      %p.helptext Speakers will not appear on the front page unless an image has been uploaded
     %li.published
       This speaker is
       %em{:class => @speaker.published ? "visible" : "hidden"}
