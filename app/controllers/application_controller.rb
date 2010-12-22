@@ -53,7 +53,16 @@ class ApplicationController < ActionController::Base
   # end
   
   def destroy_event_menu_item item
-    menu_item = @event.menu_order.find_by_item_type_and_item_id(item.class.to_s, item.id)
+    menu_item = @event.menu_order_main.find_by_item_type_and_item_id(item.class.to_s, item.id)
     menu_item.destroy if menu_item
+    menu_item = @event.menu_order_footer.find_by_item_type_and_item_id(item.class.to_s, item.id)
+    menu_item.destroy if menu_item
+  end
+  
+  def user_from_session
+     if session[:user_id]
+       return nil  unless user = ::User.find_by_id(session[:user_id])
+       return user
+     end
   end
 end

@@ -38,7 +38,7 @@ class LinksController < ApplicationController
   
   def destroy
     @event = current_user.owned_events.find(params[:event_id])
-    @link = Link.find(params[:id])
+    @link = @event.owned_links.find(params[:id])
     destroy_event_menu_item @link
     @link.destroy
     flash[:notice] = "Successfully destroyed link."
