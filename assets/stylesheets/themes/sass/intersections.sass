@@ -9,12 +9,12 @@ body
   p
     :margin-bottom 20px
   a
-    :color #e16736
+    :color #01cc00
     &:hover, &:focus
       :color #333    
   h1, h2, h3, h4, h5
     :font
-      :family "Helvetic Neue", sans-serif
+      :family sans-serif
   form
     ol
       list-style: none
@@ -41,6 +41,7 @@ body
           padding: 6px 9px
           border: 0
           font-size: 12px
+          font-weight: bold
           background: #333
           color: #eee
           cursor: pointer
@@ -50,24 +51,26 @@ body
           text-shadow: rgba(0,0,0,0.6) 0px -1px 0px
           +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.6))
           :font
-            :family Georgia, sans-serif
+            :family sans-serif
           &:focus, &:hover
             background: #111
   .fontface_header
     :font
       :size 18px
       :weight normal
-    :text-transform uppercase
     :color #555
-    :border-bottom 1px solid #ccc
-    :padding-bottom 19px
+    :padding-bottom 20px
     :letter-spacing -1px
 section#eventstreams_event
   :clear both
+  :width 940px
+  :padding 0 20px
+  :margin 0 auto
+  :position relative
   .inner
-    :width 940px
-    :padding 0 20px
-    :margin 0 auto
+    :width 770px
+    :padding 0
+    :margin-left 170px
     :position relative
   header
     .inner
@@ -76,8 +79,9 @@ section#eventstreams_event
     #event_logo
       :font
         :size 45px
+        :weight bold
       :letter-spacing -3px
-      :line-height 60px
+      :line-height 40px
       :width 580px
       :margin-bottom 0
     a.event_logo
@@ -89,41 +93,77 @@ section#eventstreams_event
         :margin 0
         :padding 0
     .tagline
+      :position absolute
+      :top 60px
+      :left 320px
+      :letter-spacing -1px
       :font
-        :size 12px
-        :style italic
-      :line-height 12px
-      :margin 7px 0 0 0
-      :color #84837f
+        :size 18px
+        :weight bold
+      :line-height 20px
+      :width 190px
+      :text-align right
     .event_meta
       :position absolute
-      :right 20px
+      :right 0px
       :top 60px
       :width 340px
       :text-align right
+      :letter-spacing -1px
+      :font
+        :size 18px
+        :weight bold
+      :line-height 20px
   nav#main
+    width: 160px
+    position: absolute
+    top: 50px
+    left: 0
     .inner
+      width: 160px
+      margin-left: 0
       ul
+        :margin-bottom 20px
         li
+          :overflow auto
           a
+            :margin-right 20px
+            :background #01cc00
             :font
-              :size 14px
-              :weight normal
-            :display block
-            :padding 10px 20px
-            :color #333
+              :size 15px
+              :weight bold
+            :letter-spacing -1px
+            :padding 5px 10px
+            :color #fff
+            :float right
             &:hover, &:focus
-              :background-color #ccc
+              background:
+                color: #66df66
         li.active
           a
-            :background-color #ddd
-            :color #111
+            padding-right: 30px
+            margin-right: 0
+            background:
+              color: #00d5ff
+              image: url('../../images/themes/intersections/menuarrow.png')
+              position: right 50%
+              repeat: no-repeat
       a.register
+        :margin 0 0 0 20px
         :display block
-        :padding 10px 20px
-        :color #333
+        :padding 5px 30px 5px 10px
+        background:
+          color: #000
+          image: url('../../images/themes/intersections/menuarrow.png')
+          position: right 50%
+          repeat: no-repeat
+        :color #fff
+        :font-weight bold
+        :font-size 20px
+        :letter-spacing -1px
+        :float right
         &:hover, &:focus
-          :background-color #ccc
+          :background-color #333
   section.main
     :padding-top 40px
     :padding-bottom 40px
@@ -213,8 +253,7 @@ section#eventstreams_event
               :margin 0 6px 6px 0
     ul.speakers
       li.speaker
-        :border-bottom 1px solid #ddd
-        :margin-bottom 19px
+        :margin-bottom 20px
         :min-height 120px
         h4
           :font
@@ -238,13 +277,10 @@ section#eventstreams_event
             :overflow hidden
           &:hover, &:focus
             +box-shadow(0, 2px, 5px, rgba(0,0,0,0.6))
-
         p, ul
           :margin-left 120px
         ul
           :margin-bottom 20px
-      li.speaker:last-child
-        :border-bottom 0px
     h4.fontface_header
       clear: both
           
@@ -387,8 +423,6 @@ section#eventstreams_event
   section.footer
     section.sponsors
       :clear both
-      :padding 36px 20px 20px 20px
-      :border-top 4px solid #ccc
       :overflow auto
       .inner
         :height auto
@@ -397,8 +431,7 @@ section#eventstreams_event
         :border-bottom 0
         :padding-bottom 0
     .inner
-      :height 79px
-      :border-top 1px solid #ddd
+      height: 80px
       position: relative
       nav#footer
         float: left

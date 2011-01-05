@@ -57,8 +57,8 @@
             - for event_menu in @event.menu_order_main
               %li{:class => event_menu.url == request.request_uri ? "active" : ""}
                 = link_to event_menu.title, event_menu.url
-          - if @event.booking_url
-            = link_to 'Register<span></span>', @event.booking_url, :class=> 'register'
+          - unless @event.booking_url.blank?
+            = link_to t("#{@event.theme_name}.register")+"<span></span>", @event.booking_url, :class=> 'register'
                 
       = render :partial => 'layouts/flashes'
       %section.main
@@ -76,7 +76,7 @@
           %section.sponsors
             .inner
               %h4.fontface_header
-                =link_to "Sponsored by", sponsors_path
+                =link_to t("#{@event.theme_name}.sponsors"), sponsors_path
               %ul.sponsors
                 - @event.published_sponsors.each_with_index do |sponsor, index| 
                   %li.sponsor{:class => (index+1) % 4  == 0 ? "last" : ""}
