@@ -43,15 +43,18 @@
     %li.checkbox
       = f.check_box :remove_logo
       = f.label :remove_logo, "Delete logo image"
-    / %li.theme
-    /   %label Choose a theme
-    /   %ul
-    /     %li
-    /       = f.radio_button(:theme_name, "paper")
-    /       = f.label :theme_name, "Paper", :value=>'paper'
-    /     %li
-    /       = f.radio_button(:theme_name, "flat_white")    
-    /       = f.label :theme_name, "Flat White", :value=>'flat_white'
+    %li.theme
+      %label Choose a theme
+      %ul
+        %li
+          = f.radio_button(:theme_name, "paper")
+          = f.label :theme_name, "Paper", :value=>'paper'
+        %li
+          = f.radio_button(:theme_name, "flat_white")    
+          = f.label :theme_name, "Flat White", :value=>'flat_white'
+        %li
+          = f.radio_button(:theme_name, "intersections")    
+          = f.label :theme_name, "Intersections", :value=>'intersections'
     %li.colours
       = f.label :title_colour
       = f.text_field :title_colour, :class => "colorwell"
