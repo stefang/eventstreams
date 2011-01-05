@@ -3,9 +3,9 @@
   %section.overview
     %article.description
       = auto_link(markdown(@event.description))
-    -if @speakers
+    -if @speakers.any?
       %h4.fontface_header 
-        =link_to "The speakers", speakers_path
+        =link_to "The Speakers", speakers_path
       %ul.speakers_inline
         - @speakers.each_with_index do |speaker, index| 
           %li.speaker{:class => (index+1) % 5  == 0 ? "last" : ""}
