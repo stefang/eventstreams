@@ -7,7 +7,7 @@
     %link{:rel=>'shortcut icon', :href => image_path("favicon.ico")}
     %link{:rel=>'icon', :type=>'image/png', :href => image_path("favicon.png")}
     %script{:type=>"text/javascript", :src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
-    = stylesheet_link_tag 'themes/event_base', "themes/#{@event.theme_name}", :media => 'screen, projection', :cache => false
+    = stylesheet_link_tag "themes/#{@event.theme_name}", :media => 'screen, projection', :cache => false
     /[if lt IE 8]
       = stylesheet_link_tag "themes/#{@event.theme_name}_ie", :media => 'screen, projection', :cache => false
     %link{:href => formatted_event_stylesheet_path, :media => "screen",:rel => "stylesheet", :type => "text/css"}
@@ -75,7 +75,7 @@
         -if @event.published_sponsors
           %section.sponsors
             .inner
-              %h4.league_header
+              %h4.fontface_header
                 =link_to "Sponsored by", sponsors_path
               %ul.sponsors
                 - @event.published_sponsors.each_with_index do |sponsor, index| 

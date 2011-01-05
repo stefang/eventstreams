@@ -1,11 +1,10 @@
 @import 'mixins'
 @import 'reset'
-@import 'league'
 
 body
-  :background #f4f3ef url(../../images/themes/paper/background.jpg)
+  :background white
   :font
-    :family Georgia, sans-serif
+    :family sans-serif
   :color #333
   p
     :margin-bottom 20px
@@ -15,7 +14,7 @@ body
       :color #333    
   h1, h2, h3, h4, h5
     :font
-      :family Georgia, sans-serif
+      :family "Helvetic Neue", sans-serif
   form
     ol
       list-style: none
@@ -56,14 +55,13 @@ body
             background: #111
   .fontface_header
     :font
-      :family 'LeagueGothicRegular', Impact, sans-serif
-      :size 24px
+      :size 18px
+      :weight normal
     :text-transform uppercase
     :color #555
     :border-bottom 1px solid #ccc
     :padding-bottom 19px
-    :text-shadow 1px 1px 0 #f4f3ef, 2px 2px 0 rgba(0,0,0,0.2)
-    :letter-spacing 2px
+    :letter-spacing -1px
 section#eventstreams_event
   :clear both
   .inner
@@ -77,11 +75,8 @@ section#eventstreams_event
       :padding-bottom 40px
     #event_logo
       :font
-        :family 'LeagueGothicRegular', Impact, sans-serif
-        :size 75px
-      :text-transform uppercase
-      :text-shadow 1px 1px 0 #f4f3ef, 4px 4px 0 rgba(0,0,0,0.2)
-      :letter-spacing 4px
+        :size 45px
+      :letter-spacing -3px
       :line-height 60px
       :width 580px
       :margin-bottom 0
@@ -100,67 +95,36 @@ section#eventstreams_event
       :line-height 12px
       :margin 7px 0 0 0
       :color #84837f
-      :text-shadow 0 1px 1px rgba(255,255,255,0.8)
     .event_meta
       :position absolute
       :right 20px
       :top 60px
-      :text-shadow 0 1px 1px rgba(255,255,255,0.8)
       :width 340px
       :text-align right
   nav#main
     .inner
       ul
-        :background-color #e3e2de
-        :background-color rgba(0,0,0,0.1)
-        :height 40px
         li
           a
             :font
               :size 14px
               :weight normal
             :display block
-            :float left
             :padding 10px 20px
-            :border-right 1px solid white
             :color #333
-            :text-shadow 0 1px 1px rgba(255,255,255,0.8)
             &:hover, &:focus
-              :background-color rgba(0,0,0,0.1)
+              :background-color #ccc
         li.active
           a
-            :background-color rgba(0,0,0,0.05)
+            :background-color #ddd
             :color #111
       a.register
-        :position absolute
-        :top 0
-        :right 20px
-        :border 0
-        :border-left 1px solid white
-        :text-transform uppercase
-        :text-shadow 1px 1px 0 #f4f3ef, 2px 2px 0 rgba(0,0,0,0.2)
-        :letter-spacing 2px
+        :display block
         :padding 10px 20px
-        :padding-right 15px
-        :font
-          :family 'LeagueGothicRegular', Impact, sans-serif
-          :size 24px
-        span
-          :display block
-          :width 20px
-          :height 40px
-          :position absolute
-          :right -20px
-          :top 0
-          :opacity 0.1
-          :background
-            :image url('../../images/register_end.png')
+        :color #333
         &:hover, &:focus
-          :background-color rgba(0,0,0,0.1)
-          span
-            :opacity 0.2
+          :background-color #ccc
   section.main
-    :clear both
     :padding-top 40px
     :padding-bottom 40px
     :overflow hidden
@@ -423,7 +387,6 @@ section#eventstreams_event
   section.footer
     section.sponsors
       :clear both
-      :background rgba(0,0,0,0.05)
       :padding 36px 20px 20px 20px
       :border-top 4px solid #ccc
       :overflow auto

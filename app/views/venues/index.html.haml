@@ -7,13 +7,13 @@
     #map_canvas.venues
   -if @main_venues.any?
     %section.event_venues
-      %h4.league_header
+      %h4.fontface_header
         = pluralize_no_number(@main_venues.length, 'Location')
       %ul
         =render @main_venues
   -if @other_venues.any?
     %section.other_venues
-      %h4.league_header Other Locations
+      %h4.fontface_header Other Locations
       %ul
         =render @other_venues
 - else

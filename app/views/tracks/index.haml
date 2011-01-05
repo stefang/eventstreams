@@ -4,9 +4,9 @@
   
   - @tracks.each do |track, track_talks|
     - if track
-      %h4.league_header= track.title
+      %h4.fontface_header= track.title
     - elsif @tracks.many?
-      %h4.league_header Untracked        
+      %h4.fontface_header Untracked        
     - track_talks.group_by{|t| t.start.to_date }.each do |date, day_talks|
       %h5.day_header= date.to_s(:short)
       %table.programme  

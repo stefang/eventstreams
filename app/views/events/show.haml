@@ -4,7 +4,7 @@
     %article.description
       = auto_link(markdown(@event.description))
     -if @speakers
-      %h4.league_header 
+      %h4.fontface_header 
         =link_to "The speakers", speakers_path
       %ul.speakers_inline
         - @speakers.each_with_index do |speaker, index| 
@@ -21,7 +21,7 @@
               = h venue.name
     -if @tweets.any?
       %section.tweets
-        %h4.league_header
+        %h4.fontface_header
           =link_to "Latest on <span>Twitter</span>", tweets_path
         %ul
           - for tweet in @tweets
