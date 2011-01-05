@@ -1,10 +1,11 @@
 - title "Event Sponsors"
 
 - unless current_subdomain.blank?
-  %ul.sponsors
-    - @event.published_sponsors.each_with_index do |sponsor, index| 
-      %li.sponsor{:class => (index+1) % 4  == 0 ? "last" : ""}
-        = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
+  - if @event.published_sponsors.any?
+    %ul.sponsors
+      - @event.published_sponsors.each_with_index do |sponsor, index| 
+        %li.sponsor{:class => (index+1) % 4  == 0 ? "last" : ""}
+          = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
         
 - else
 

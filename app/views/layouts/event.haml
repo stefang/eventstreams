@@ -72,7 +72,7 @@
                 %li
                   = link_to event_menu.title, event_menu.url
           =link_to 'Powered by Eventstreams', root_url(:subdomain => false), :class => "powered_by"
-        -if @event.published_sponsors
+        -if @event.published_sponsors.any?
           %section.sponsors
             .inner
               %h4.fontface_header
