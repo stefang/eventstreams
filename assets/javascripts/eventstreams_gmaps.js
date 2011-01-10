@@ -42,5 +42,7 @@ function initialize_google_map() {
 }
 
 $(document).ready(function(){
-	initialize_google_map();
+  if ($('.map_wrap').css('display') != 'none') {
+  	initialize_google_map();
+  }
 });

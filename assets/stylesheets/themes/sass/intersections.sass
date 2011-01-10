@@ -69,6 +69,9 @@ body
       &:hover, &:focus
         background:
           color: #66df66
+  .fontface_header.no_link
+    :padding 0px 10px
+    
 section#eventstreams_event
   :clear both
   :width 940px
@@ -243,21 +246,7 @@ section#eventstreams_event
       :float left
       :margin-left 20px
       .map_wrap.homepage
-        :width 320px
-        :padding 10px 10px 0 10px
-        :background white
-        :margin-bottom 20px
-        +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
-        #map_canvas
-          :width 320px
-          :height 200px
-        ul.venues
-          :margin-bottom 0
-          li
-            :line-height 30px
-            :text-align right
-            :font-size 11px
-            :color #999
+        :display none
       section.tweets
         :margin-bottom 40px
         ul
@@ -297,7 +286,6 @@ section#eventstreams_event
           :margin-bottom 20px
     h4.fontface_header
       clear: both
-          
     .map_wrap.venuepage
       :width 749px
       :height 200px
@@ -308,14 +296,15 @@ section#eventstreams_event
       #map_canvas.venues
         :height 200px
     section.event_venues, section.other_venues
-      :width 460px
+      :width 375px
       :float left
       h5
         :font-weight bold
         :letter-spacing -1px
         :line-height 22px
         :margin-bottom 0px
-      ul
+      ul.location_list
+        clear: left
         li
           :margin-bottom 22px
           :position relative

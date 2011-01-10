@@ -5,16 +5,16 @@
 
   .map_wrap.venuepage
     #map_canvas.venues
-  -if @main_venues.any?
-    %section.event_venues
-      %h4.fontface_header
+  %section.event_venues
+    -if @main_venues.any?
+      %h4.fontface_header.no_link
         = pluralize_no_number(@main_venues.length, 'Location')
-      %ul
+      %ul.location_list
         =render @main_venues
-  -if @other_venues.any?
-    %section.other_venues
-      %h4.fontface_header Other Locations
-      %ul
+  %section.other_venues
+    -if @other_venues.any?
+      %h4.fontface_header.no_link Other Locations
+      %ul.location_list
         =render @other_venues
 - else
   %section.item_list
