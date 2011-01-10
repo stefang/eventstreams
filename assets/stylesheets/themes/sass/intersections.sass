@@ -74,7 +74,7 @@ section#eventstreams_event
     :position relative
   header
     .inner
-      :padding-top 60px
+      :padding-top 50px
       :padding-bottom 40px
     #event_logo
       :font
@@ -165,12 +165,10 @@ section#eventstreams_event
         &:hover, &:focus
           :background-color #333
   section.main
-    :padding-top 40px
+    :padding-top 10px
     :padding-bottom 40px
     :overflow hidden
     section.overview
-      :width 580px
-      :float left
       article.description
         :margin-bottom 40px
         ul, ol
@@ -179,43 +177,39 @@ section#eventstreams_event
           :margin-bottom 20px
         ol
           :list-style-type decimal
-    ul.speakers_inline
-      :margin-bottom 20px
-      li.speaker
-        :float left
-        :clear none
-        :margin-right 20px
-        :margin-bottom 13px
-        :position relative
-        :background white
-        :width 100px
-        +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
-        a
-          :border 1px solid #aaa
-          :width 92px
-          :height 73px
-          :margin 3px 3px 9px 3px
-          :display block
-          :overflow hidden
-          :font-weight normal
-          img
+    section.speakers
+      :width 340px
+      :float left
+      ul.speakers_inline
+        li.speaker
+          :float left
+          :clear none
+          :margin-right 10px
+          :margin-bottom 10px
+          :position relative
+          a
             :width 92px
-          span
-            :display none
-            :padding 3px 6px
-            :background rgba(0,0,0,0.8)
-            :color #eee
-            :position absolute
-            :top 3px
-            :left 3px
-            :width 82px
-            :height 69px
-            :font-size 11px
-          &:hover
+            :height 73px
+            :display block
+            :overflow hidden
+            :font-weight normal
+            img
+              :width 92px
             span
-              :display block
-      li.speaker.last
-        :margin-right 0
+              :display none
+              :padding 3px 6px
+              :background rgba(0,229,255,0.8)
+              :color #fff
+              :position absolute
+              :top 0px
+              :left 0px
+              :width 80px
+              :height 67px
+              :font-size 11px
+              :font-weight bold
+            &:hover
+              span
+                :display block
     section.videos
       :clear both
     section.event_meta
@@ -247,10 +241,14 @@ section#eventstreams_event
         ul
           li
             :font-size 11px
-            :margin-bottom 20px
+            :margin-bottom 10px
+            :clear left
+            :overflow auto
             img
               :float left
-              :margin 0 6px 6px 0
+              :margin 0 10px 10px 0
+            span.tweet
+              :display block
     ul.speakers
       li.speaker
         :margin-bottom 20px
@@ -263,20 +261,14 @@ section#eventstreams_event
           :clear none
           :margin-right 20px
           :position relative
-          :background white
-          :width 100px
-          +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
           :margin-bottom 20px
           :margin-right 20px
           img
-            :border 1px solid #aaa
             :width 92px
             :height 80px
-            :margin 3px 3px 14px 3px
             :display block
             :overflow hidden
           &:hover, &:focus
-            +box-shadow(0, 2px, 5px, rgba(0,0,0,0.6))
         p, ul
           :margin-left 120px
         ul
@@ -285,14 +277,13 @@ section#eventstreams_event
       clear: both
           
     .map_wrap.venuepage
-      :width 920px
+      :width 749px
       :height 200px
       :padding 10px
       :margin-bottom 20px
       :background white
       +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
       #map_canvas.venues
-        :width 920px
         :height 200px
     section.event_venues, section.other_venues
       :width 460px
@@ -401,8 +392,6 @@ section#eventstreams_event
       :float left
       a.logo
         :position relative
-        +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
-        :padding 5px
         :background
           :color white
           :repeat no-repeat
@@ -416,7 +405,6 @@ section#eventstreams_event
           :max-width 210px
           :max-height 90px
         &:hover, &:focus
-          +box-shadow(0, 2px, 5px, rgba(0,0,0,0.6))
     li.sponsor.last
       :margin-right 0
  
