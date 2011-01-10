@@ -4,12 +4,13 @@
     %article.description
       = auto_link(markdown(@event.description))
     -if @speakers.any?
-      %h4.fontface_header 
-        =link_to "The Speakers", speakers_path
-      %ul.speakers_inline
-        - @speakers.each_with_index do |speaker, index| 
-          %li.speaker{:class => (index+1) % 5  == 0 ? "last" : ""}
-            = link_to "#{image_tag speaker.portrait.url(:thumb)}<span>#{speaker.name}</span>", speaker
+      %section.speakers
+        %h4.fontface_header 
+          =link_to "The Speakers", speakers_path
+        %ul.speakers_inline
+          - @speakers.each_with_index do |speaker, index| 
+            %li.speaker{:class => (index+1) % 5  == 0 ? "last" : ""}
+              = link_to "#{image_tag speaker.portrait.url(:thumb)}<span>#{speaker.name}</span>", speaker
         
   %section.event_meta
     -if @venues.any?
@@ -28,8 +29,9 @@
             %li.tweet
               %a{:href => "http://twitter.com/#{tweet.twitter_user_name}"}
                 %img{:src=> tweet.avatar, :width=>36 }
-              %span.tweet= auto_link(tweet.text)
-              %span.meta
-                Posted by
-                = link_to "@#{tweet.twitter_user_name}", "http://twitter.com/#{tweet.twitter_user_name}"
-                = link_to pretty_time_ago(tweet.created_at), "http://twitter.com/#{tweet.twitter_user_name}/status/#{tweet.twitter_id}"  
+              %span.tweet
+                = auto_link(tweet.text)
+                %span.meta
+                  Posted by
+                  = link_to "@#{tweet.twitter_user_name}", "http://twitter.com/#{tweet.twitter_user_name}"
+                  = link_to pretty_time_ago(tweet.created_at), "http://twitter.com/#{tweet.twitter_user_name}/status/#{tweet.twitter_id}"  
