@@ -1,6 +1,8 @@
 ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS.merge!(
   :dmy_long => Proc.new { |date| "#{date.day.ordinalize} #{date.strftime '%B %Y'}" },
-  :form_display => "%d-%m-%Y"
+  :dm_long => Proc.new { |date| "#{date.day.ordinalize} #{date.strftime '%B'}" },
+  :form_display => "%d-%m-%Y",
+  :programme_header => Proc.new { |date| "#{date.strftime '%A'} #{date.day.ordinalize} #{date.strftime '%B'}" }
   
 )
 
