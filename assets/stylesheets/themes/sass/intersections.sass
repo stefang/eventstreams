@@ -58,9 +58,17 @@ body
     :font
       :size 18px
       :weight normal
-    :color #555
-    :padding-bottom 20px
+    :line-height 30px
+    :color #fff
+    :background #01cc00
     :letter-spacing -1px
+    :float left
+    a 
+      :padding 5px 10px
+      :color #fff
+      &:hover, &:focus
+        background:
+          color: #66df66
 section#eventstreams_event
   :clear both
   :width 940px
@@ -70,12 +78,17 @@ section#eventstreams_event
   .inner
     :width 770px
     :padding 0
-    :margin-left 170px
     :position relative
   header
+    :margin-left 170px
     .inner
+      background:
+        image: url('../../images/themes/intersections/diagonals.png')
+        position: bottom
+        repeat: repeat-x
+      margin-bottom: 40px
       :padding-top 50px
-      :padding-bottom 40px
+      :padding-bottom 60px
     #event_logo
       :font
         :size 45px
@@ -165,12 +178,24 @@ section#eventstreams_event
         &:hover, &:focus
           :background-color #333
   section.main
+    background:
+      image: url('../../images/themes/intersections/diagonals.png')
+      position: bottom
+      repeat: repeat-x
     :padding-top 10px
     :padding-bottom 40px
     :overflow hidden
+    :margin-left 170px
+    margin-bottom: 40px
+    .inner
     section.overview
       article.description
+        background:
+          image: url('../../images/themes/intersections/diagonals.png')
+          position: bottom
+          repeat: repeat-x
         :margin-bottom 40px
+        :padding-bottom 40px
         ul, ol
           :list-style disc
           :padding-left 20px
@@ -181,6 +206,7 @@ section#eventstreams_event
       :width 340px
       :float left
       ul.speakers_inline
+        clear: left
         li.speaker
           :float left
           :clear none
@@ -234,10 +260,6 @@ section#eventstreams_event
             :color #999
       section.tweets
         :margin-bottom 40px
-        h4
-          :color #888
-          a
-            :color #555
         ul
           li
             :font-size 11px
@@ -345,46 +367,51 @@ section#eventstreams_event
         :bottom 1px
         :color #aaa
         :font-size 12px
-  h5.day_header
-    :width 10%
-    :float left
-    :padding 8px 0px 8px
-  table.programme
-    :width 90%
-    :font-size 12px
-    :margin-bottom 40px
-    tr.date_header
-      td
-        :border-width 2px
-        :padding-top 18px
-        :padding-bottom 18px
-        :font-weight normal
-        :font-size 18px
-        :line-height 18px
-        :background none
-    tr
-      td
-        :vertical-align top
-        :padding 8px 8px 8px
-        :border-bottom 1px solid #ddd
-      td.time
-        :width 100px
-      td.description
-        ul
-          :margin 3px 0px 3px 10px
-          li
-            :line-height 20px
-            h4
-              :font-size 16px
-              :font-weight normal
-              :margin-bottom 1px
-          li.description
-            :margin-top 19px
-            p
-              :font-size 12px
-            p:last-child
-              :margin-bottom 0
+  section.programme_day
+    width: 385px
+    float: left
+    h5.day_header
+      :font-size 24px
+      :line-heght 30px
+      :letter-spacing -1px
+      :margin-bottom 20px
+    table.programme
+      :width 95%
+      :font-size 12px
+      :margin-bottom 40px
+      tr.date_header
+        td
+          :border-width 2px
+          :padding-top 18px
+          :padding-bottom 18px
+          :font-weight normal
+          :font-size 18px
+          :line-height 18px
+          :background none
+      tr
+        td
+          :vertical-align top
+          :padding 8px 8px 8px
+          :border-bottom 1px solid #ddd
+        td.time
+          :width 100px
+        td.description
+          ul
+            :margin 3px 0px 3px 10px
+            li
+              :line-height 20px
+              h4
+                :font-size 16px
+                :font-weight normal
+                :margin-bottom 1px
+            li.description
+              :margin-top 19px
+              p
+                :font-size 12px
+              p:last-child
+                :margin-bottom 0
   ul.sponsors
+    clear: left
     li.sponsor
       :float left
       :margin-right 20px
@@ -398,17 +425,14 @@ section#eventstreams_event
           :position 50% 50%
         :display block
         :clear none
-        :width 210px
-        :height 90px
         :text-align center
         img
           :max-width 210px
           :max-height 90px
         &:hover, &:focus
-    li.sponsor.last
-      :margin-right 0
  
   section.footer
+    :margin-left 170px
     section.sponsors
       :clear both
       :overflow auto
