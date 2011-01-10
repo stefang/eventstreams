@@ -65,13 +65,13 @@
         .inner
           = yield
       %section.footer
-        .inner
-          %nav#footer
-            %ul
-              - for event_menu in @event.menu_order_footer
-                %li
-                  = link_to event_menu.title, event_menu.url
-          =link_to 'Powered by Eventstreams', root_url(:subdomain => false), :class => "powered_by"
+        -if @event.menu_order_footer.any?
+          .inner
+            %nav#footer
+              %ul
+                - for event_menu in @event.menu_order_footer
+                  %li
+                    = link_to event_menu.title, event_menu.url
         -if @event.published_sponsors.any?
           %section.sponsors
             .inner
@@ -81,3 +81,7 @@
                 - @event.published_sponsors.each_with_index do |sponsor, index| 
                   %li.sponsor{:class => (index+1) % 4  == 0 ? "last" : ""}
                     = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
+        %section.powered
+          .inner
+            =link_to 'Powered by Eventstreams', root_url(:subdomain => false), :class => "powered_by"
+          
