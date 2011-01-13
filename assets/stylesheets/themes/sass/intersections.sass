@@ -63,6 +63,7 @@ body
     :background #01cc00
     :letter-spacing -1px
     :float left
+    :margin-bottom 30px
     a 
       :padding 5px 10px
       :color #fff
@@ -213,8 +214,8 @@ section#eventstreams_event
         li.speaker
           :float left
           :clear none
-          :margin-right 10px
-          :margin-bottom 10px
+          :margin-right 21px
+          :margin-bottom 27px
           :position relative
           a
             :width 92px
@@ -261,9 +262,19 @@ section#eventstreams_event
             span.tweet
               :display block
     ul.speakers
+      margin-top: -20px
+      li.speaker:last-child
+        background: none
       li.speaker
-        :margin-bottom 20px
-        :min-height 120px
+        clear: both
+        margin-bottom: 20px
+        padding-bottom: 40px
+        padding-top: 20px
+        overflow: auto
+        background:
+          image: url('../../images/themes/intersections/diagonals.png')
+          position: bottom
+          repeat: repeat-x
         h4
           :font
             :size 20px
@@ -282,8 +293,6 @@ section#eventstreams_event
           &:hover, &:focus
         p, ul
           :margin-left 120px
-        ul
-          :margin-bottom 20px
     h4.fontface_header
       clear: both
     .map_wrap.venuepage
@@ -359,20 +368,24 @@ section#eventstreams_event
   section.programme_day
     width: 385px
     float: left
+    margin-bottom: 10px
     h5.day_header
       :font-size 24px
       :line-heght 30px
       :letter-spacing -1px
-      :margin-bottom 20px
+      :margin-bottom 10px
     table.programme
       :width 95%
       :font-size 12px
       :margin-bottom 40px
       tr
         td
-          :vertical-align top
-          :padding 20px 6px 19px
-          :border-bottom 1px solid #ddd
+          vertical-align: top
+          padding: 30px 6px 30px
+          background:
+            image: url('../../images/themes/intersections/diagonals.png')
+            position: bottom
+            repeat: repeat-x
         td.time
           :width 100px
         td.description
