@@ -16,7 +16,7 @@ class Venue < ActiveRecord::Base
   
   def inline_address
     
-    address_array = [address_1, address_2, address_3, city, county, country, postcode]
+    address_array = [name, address_1, address_2, address_3, city, county, country, postcode]
     
     return address_array.compact.reject(&:blank?).join(", ")
     
