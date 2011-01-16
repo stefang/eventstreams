@@ -16,14 +16,14 @@
           %span.live_edit
             - form_for [current_user, @event, talk] do |f|
               %fieldset
-                %label{:for => "start_date"} Start Date
-                %input{:class => "datepicker", :name => "start_date", :id => "start_date", :value => talk.start.blank? ? @event.start_date : talk.start.to_date.to_s(:form_display)}
-                %label{:for => "start_hour"} Start Time (24hr)
+                %label{:for => "start_date"} Date
+                %input{:class => "datepicker", :name => "start_date", :id => "start_date_#{talk.id}", :value => talk.start.blank? ? @event.start_date : talk.start.to_date.to_s(:form_display)}
+                %label{:for => "start_hour"} Time (24hr)
                 %input{:class => "time_input", :name => "start_hour", :id => "start_hour", :value => talk.start.blank? ? "09" : talk.start.strftime("%H")}
                 = ":"
                 %input{:class => "time_input", :name => "start_min", :value => talk.start.blank? ? "00" : talk.start.strftime("%M")}
 
-                = f.label :duration
+                = f.label :duration, "Duration (mins)"
                 = f.text_field :duration
                 %button.button.save{:type => 'submit'}
                   Save            
