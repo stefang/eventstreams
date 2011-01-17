@@ -72,6 +72,15 @@
                 - for event_menu in @event.menu_order_footer
                   %li
                     = link_to event_menu.title, event_menu.url
+        -if @event.published_partners.any?
+          %section.sponsors
+            .inner
+              %h4.fontface_header
+                =link_to t("#{@event.theme_name}.partners"), sponsors_path
+              %ul.sponsors
+                - @event.published_partners.each_with_index do |sponsor, index| 
+                  %li.sponsor{:class => (index+1) % 4  == 0 ? "last" : ""}
+                    = link_to image_tag(sponsor.logo.url(:thumb)), sponsor.url, :title => sponsor.name, :class => 'logo'
         -if @event.published_sponsors.any?
           %section.sponsors
             .inner

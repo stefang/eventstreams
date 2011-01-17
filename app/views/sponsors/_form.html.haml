@@ -8,6 +8,10 @@
     %li
       = f.label :url
       = f.text_field :url
+    %li.select
+      = f.label :sponsor_type
+      = f.select :sponsor_type, options_for_select([ "Sponsor", "Partner"], :selected => @sponsor.sponsor_type)
+
     %li.image_upload
       -if :logo
         = image_tag(@sponsor.logo.url(:tiny))
