@@ -19,7 +19,7 @@ class EventsController < ApplicationController
       if @event.blank?
         render :layout => 'hidden_event', :action => 'hidden_event'
       else
-        @speakers = @event.owned_speakers.find(:all, :conditions => "published = true AND portrait_file_name IS NOT NULL", :order => 'RAND()')
+        @speakers = @event.owned_speakers.find(:all, :conditions => "published = true AND portrait_file_name IS NOT NULL", :order => 'RAND()', :limit => 9)
         @venues = @event.owned_venues.find(:all, :conditions => "published = true AND main_venue = true")
         @tweets = @event.owned_tweets.find(:all, :limit => 5)
         render :layout => 'event'
