@@ -193,12 +193,17 @@ section#eventstreams_event
     margin-bottom: 40px
     .inner
     section.overview
+      background:
+        image: url('../../images/themes/intersections/diagonals.png')
+        position: bottom
+        repeat: repeat-x
       article.description
-        overflow: auto
         background:
-          image: url('../../images/themes/intersections/diagonals.png')
-          position: bottom
-          repeat: repeat-x
+          image: url('../../images/themes/intersections/front_page.png')
+          position: top left
+          repeat: no-repeat
+        overflow: auto
+        :padding-left 400px
         :margin-bottom 40px
         :padding-bottom 40px
         .leader
@@ -244,15 +249,15 @@ section#eventstreams_event
         list-style: disc
     section.speakers
       :clear left
-      :width 340px
+      :width 382px
       :float left
       ul.speakers_inline
         clear: left
         li.speaker
           :float left
           :clear none
-          :margin-right 21px
-          :margin-bottom 27px
+          :margin-right 1px
+          :margin-bottom 1px
           :position relative
           a
             :width 92px
