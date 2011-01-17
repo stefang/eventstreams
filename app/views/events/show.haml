@@ -9,7 +9,7 @@
           =link_to "The Speakers", speakers_path
         %ul.speakers_inline
           - @speakers.each_with_index do |speaker, index| 
-            %li.speaker{:class => (index+1) % 5  == 0 ? "last" : ""}
+            %li.speaker{:class => (index+1) % t("#{@event.theme_name}.front_page_speaker_count")  == 0 ? "last" : ""}
               = link_to "#{image_tag speaker.portrait.url(:thumb)}<span>#{speaker.name}</span>", speaker
         
   %section.event_meta
