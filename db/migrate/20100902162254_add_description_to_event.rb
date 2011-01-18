@@ -4,6 +4,6 @@ class AddDescriptionToEvent < ActiveRecord::Migration
    end
 
    def self.down
-     remove_column :description, :tagline
+     remove_column :events, :description
    end
 end

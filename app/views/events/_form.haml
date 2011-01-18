@@ -11,21 +11,6 @@
     %li.subdomain
       = f.label :subdomain
       = "http:// #{f.text_field :subdomain} .#{current_domain}"
-    %li
-      = f.label :booking_url, "Booking service url <span>eg. an Eventbrite URL</span>"
-      = f.text_field :booking_url
-    %li
-      = f.label :contact_form_email, "Contact form email address <span>eg. contact@awesomeevent.com</span>"
-      = f.text_field :contact_form_email
-    %li
-      = f.label :twitter_account, "Twitter account <span>eg. @awesomeevent</span>"
-      = f.text_field :twitter_account
-    %li
-      = f.label :hashtag, "Twitter hashtag <span>eg. #awesome2010</span>"
-      = f.text_field :hashtag
-    %li
-      = f.label :google_analytics, "Google Analytics UA# <span>eg. UA-1234567-8</span>"
-      = f.text_field :google_analytics
     %li.date
       = f.label :start_date
       = f.text_field :start_date, :class => "datepicker", :value =>@event.start_date ? @event.start_date.to_s(:form_display) : ''
@@ -35,6 +20,26 @@
     %li
       = f.label :description
       = f.text_area :description
+  %ol
+    %li
+      = f.label :google_analytics, "Google Analytics UA# <span>eg. UA-1234567-8</span>"
+      = f.text_field :google_analytics
+    %li
+      = f.label :booking_url, "Booking service url <span>eg. an Eventbrite URL</span>"
+      = f.text_field :booking_url
+    %li
+      = f.label :twitter_account, "Twitter account <span>eg. @awesomeevent</span>"
+      = f.text_field :twitter_account
+    %li
+      = f.label :hashtag, "Twitter hashtag <span>eg. #awesome2010</span>"
+      = f.text_field :hashtag
+    %li
+      = f.label :contact_form_email, "Contact form email address <span>eg. contact@awesomeevent.com</span>"
+      = f.text_field :contact_form_email
+    %li
+      = f.label :contact_description
+      = f.text_area :contact_description
+  %ol
     %li.image_upload
       -if @event.logo?
         = image_tag(@event.logo.url(:tiny))

@@ -1,14 +1,18 @@
 - title "Contact | #{@event.title}" 
-- form_for(:contact) do |f|
-  %ol
-    %li
-      %label{:for => 'name'} Your Name
-      %input{:type=>'text', :id=>'name', :name=>'name'}
-    %li
-      %label{:for => 'email'} Your Email Address
-      %input{:type=>'text', :id=>'email', :name=>'email'}
-    %li
-      %label{:for => 'message'} Your Message
-      %textarea{:id=>'message', :name=>'message'}
-    %li
-      %button.button Send Your Message
+%h1 Contact
+%section.contact_form
+  - form_for(:contact) do |f|
+    %ol
+      %li
+        %label{:for => 'name'} Your Name
+        %input{:type=>'text', :id=>'name', :name=>'name'}
+      %li
+        %label{:for => 'email'} Your Email Address
+        %input{:type=>'text', :id=>'email', :name=>'email'}
+      %li
+        %label{:for => 'message'} Your Message
+        %textarea{:id=>'message', :name=>'message'}
+      %li
+        %button.button Send Your Message
+%section.contact_description
+  = auto_link(markdown(@event.contact_description))
