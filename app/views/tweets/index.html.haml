@@ -3,7 +3,7 @@
     - for tweet in @tweets
       %li.tweet
         %a{:href => "http://twitter.com/#{tweet.twitter_user_name}"}
-          %img{:src=> tweet.avatar, :width=>36 }
+          %img{:src=> tweet.avatar }
         %span.tweet= tweet.text
         %span.meta
           Posted by
@@ -15,6 +15,6 @@
     %ul
       - for tweet in @tweets
         %li.tweet
-          %img{:src=> tweet.avatar, :width=>36 }
+          %img{:src=> tweet.avatar }
           %span.tweet= tweet.text
           = link_to 'Delete', user_event_tweet_path(current_user, @event, tweet), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

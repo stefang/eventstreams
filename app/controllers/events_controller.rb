@@ -21,7 +21,7 @@ class EventsController < ApplicationController
       else
         @speakers = @event.owned_speakers.find(:all, :conditions => "published = true AND portrait_file_name IS NOT NULL", :order => 'item_order ASC', :limit => t("#{@event.theme_name}.front_page_speaker_total"))
         @venues = @event.owned_venues.find(:all, :conditions => "published = true AND main_venue = true")
-        @tweets = @event.owned_tweets.find(:all, :limit => 5)
+        @tweets = @event.owned_tweets.find(:all, :limit => t("#{@event.theme_name}.front_page_tweet_count"))
         render :layout => 'event'
       end
     end

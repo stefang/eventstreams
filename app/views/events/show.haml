@@ -28,7 +28,7 @@
           - for tweet in @tweets
             %li.tweet
               %a{:href => "http://twitter.com/#{tweet.twitter_user_name}"}
-                %img{:src=> tweet.avatar, :width=>36 }
+                %img{:src=> tweet.avatar }
               %span.tweet
                 = auto_link(tweet.text)
                 %span.meta
