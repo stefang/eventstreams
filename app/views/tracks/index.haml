@@ -21,6 +21,8 @@
                 %ul
                   %li.header
                     %h4= link_to talk.title, talk
+                  -unless talk.description.blank?
+                    %li= markdown(truncate(talk.description, :length => 50))
                   -if talk.speakers.any?
                     %li.speakers= talk.speakers.map { |s| "<a href='#{speaker_path(s)}'>#{s.name}</a>"}.to_sentence
                   -unless talk.venue.blank? 
