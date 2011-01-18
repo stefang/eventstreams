@@ -1,7 +1,6 @@
 - title "Programme of talks | #{@event.title}" 
 
 - unless current_subdomain.blank?
-  
   - @tracks.each do |track, track_talks|
     - if track
       %h4.fontface_header= track.title
