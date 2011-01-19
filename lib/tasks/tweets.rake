@@ -31,9 +31,9 @@ def process_tweet(tweet, event, tweet_type)
  end
 
  def pull_tweets(event)
-   unless event.hashtag.blank?
+   unless event.hashtag.blank? || event.published == false
      since_id = Tweet.maximum(:twitter_id, :conditions => "event_id = #{event.id} AND tweet_type = 'hashtag'")
-     puts "Pulling Tweets For " + event.title
+     puts event.title + ": Pulling Hashtag Tweets"
      results = []
      max_id = nil
      page = 1
@@ -47,11 +47,11 @@ def process_tweet(tweet, event, tweet_type)
      results.reverse.each {|tweet|
        process_tweet tweet, event, "hashtag"
      }
-     puts "Pulled Hashtag Tweets For " + event.title
+     puts event.title + ": Pulled Hashtag Tweets"
    end
-   unless event.twitter_account.blank?
+   unless event.twitter_account.blank? || event.published == false
      since_id = Tweet.maximum(:twitter_id, :conditions => "event_id = #{event.id} AND tweet_type = 'account'")
-     puts "Pulling Tweets For " + event.title
+     puts event.title + ": Pulling Account Tweets"
      results = []
      max_id = nil
      page = 1
@@ -63,9 +63,8 @@ def process_tweet(tweet, event, tweet_type)
        page += 1
      end while batch.key?("next_page")
      results.reverse.each {|tweet|
-       puts tweet.text
-       # process_tweet tweet, event, "account"
+       process_tweet tweet, event, "account"
      }
-     puts "Pulled Account Tweets For " + event.title
+     puts event.title + ": Pulled Account Tweets"
    end
  end
