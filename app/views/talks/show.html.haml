@@ -1,6 +1,5 @@
 - unless current_subdomain.blank?
-  - title "#{@talk.title} | #{@event.title}" 
-  
+  - title "#{@talk.title} | #{@event.title}"   
   %article.talk
     %h1.talk_title
       = @talk.title
@@ -10,10 +9,8 @@
         -unless @talk.duration.blank? || @talk.duration < 1
           = (@talk.start.to_time + @talk.duration.minutes).to_s(:time)
         =" on the #{@talk.start.to_date.to_s(:dmy_long)}"
-    
     =auto_link(markdown(@talk.description))
-  
-    -if @speakers
+    -if @speakers.any?
       %section.speakers
         %h4.fontface_header 
           =link_to "The Speakers", speakers_path
@@ -21,7 +18,6 @@
           - @speakers.each_with_index do |speaker, index| 
             %li.speaker{:class => (index+1) % 5  == 0 ? "last" : ""}
               = link_to "#{image_tag speaker.portrait.url(:thumb)}<span>#{speaker.name}</span>", speaker
-
   - if @videos.any?
     %section.videos
     %h3 Videos
