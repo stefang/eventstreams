@@ -22,12 +22,13 @@ body
   a
     :color white
     :text-decoration none
+  p
+    :font-size 13px
+    :line-height 20px
 
   header
-    :position relative
-    :top 25%
-    :width 300px
-    :margin 0 auto 0
+    :width 580px
+    :margin 40px auto 40px
   
   h1
     :font-family BallparkWeiner, sans-serif
@@ -37,7 +38,7 @@ body
     :padding 4px 0
     a
       :display block
-      :width 290px
+      :width 570px
       :text-decoration none
       :margin 0
       :color white
@@ -49,6 +50,24 @@ body
       :-webkit-transition text-shadow 0.1s linear
       &:hover, &:focus
         :text-shadow 0px 2px 4px rgba(0,0,0,0.4)
+        
+  section.elevator
+    :width 500px
+    :padding 40px
+    :margin 20px auto 2px
+    :text-shadow 0px 1px 1px white
+    +rounded(3px)
+    :border 2px solid #fff
+    :background #f1f1f1
+    :padding 20px
+    +box-shadow(0px, 2px, 8px, rgba(0,0,0,0.7))
+    :color #333
+    a
+      :color #b76708
+      :font-weight bold
+      &:hover, &:focus
+        :color #e37f0a
+
   
 blockquote
   :font-style normal
