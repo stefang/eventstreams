@@ -15,7 +15,7 @@ class EventContactController < ApplicationController
     else
       if Notification.deliver_contact(params, @event)
         flash[:notice] = "Email was successfully sent."
-        redirect_to(contact_path)
+        render :layout => 'event', :action => :index    
       else
         flash.now[:error] = "An error occurred while sending this email."
         render :layout => 'event', :action => :index    
