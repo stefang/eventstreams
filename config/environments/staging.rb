@@ -37,6 +37,12 @@ end
 # Enable threaded mode
 # config.threadsafe!
 
+ActionMailer::Base.delivery_method = :sendmail
+ActionMailer::Base.sendmail_settings = { 
+  :location       => '/usr/sbin/sendmail', 
+  :arguments      => '-i -t'
+}
+
 HOST = "staging.eventstreamsapp.com"
 DO_NOT_REPLY = "Eventstreams Staging <donotreply@staging.eventstreamsapp.com>"
 

@@ -19,16 +19,6 @@ end
 DO_NOT_REPLY = "donotreply@eventstreamsapp.com"
 Haml::Template.options[:format] = :html5
 
-ActionMailer::Base.smtp_settings = {
-  :enable_starttls_auto => true,
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => "eventstreamsapp.com",
-  :authentication => :plain,
-  :user_name => "donotreply@eventstreamsapp.com",
-  :password => "34Kl34"
-}
-
 def log_to(stream=$stdout)
   ActiveRecord::Base.logger = Logger.new(stream)
   ActiveRecord::Base.connection_pool.clear_reloadable_connections!
