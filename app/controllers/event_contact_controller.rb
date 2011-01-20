@@ -1,4 +1,7 @@
 class EventContactController < ApplicationController
+  
+  skip_before_filter :verify_authenticity_token, :only => :create
+  
   def index
     get_published_or_owned_event
     render :layout => 'event'
