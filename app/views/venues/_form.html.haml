@@ -10,8 +10,8 @@
       = f.text_area :description
     -unless @venue_types.blank?
       %li.select
-        = f.label :venue_type_id
-        = f.collection_select :venue_type_id, @venue_types, :id, :name, {:prompt => true}
+        = f.label :venue_type_id, "Location Type"
+        = f.collection_select :venue_type_id, @venue_types, :id, :name, {:prompt => false}
     %li
       = f.label :address_1
       = f.text_field :address_1
@@ -43,7 +43,7 @@
       = f.label :main_venue, "Show on front page"
       = f.check_box :main_venue
     %li.published
-      This venue is
+      This location is
       %em{:class => @venue.published ? "visible" : "hidden"}
         = @venue.published ? "Visible" : "Hidden"
       %span
