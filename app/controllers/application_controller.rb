@@ -32,7 +32,6 @@ class ApplicationController < ActionController::Base
   end
   
   def get_published_or_owned_event
-    
     if signed_in? && current_user.superadmin?
       @event = Event.find_by_subdomain(current_subdomain, :order => 'start_date DESC', :limit => 1)
     elsif signed_in?
@@ -40,7 +39,7 @@ class ApplicationController < ActionController::Base
     else
       @event = Event.find_by_subdomain(current_subdomain, :conditions => "published = true", :order => 'start_date DESC', :limit => 1)
     end
-  end  
+  end
   
   # def create_event_menu_item item
   #   menu_item = @event.menu_order.new(:item_type => item.class.to_s, :item_id => item.id)
