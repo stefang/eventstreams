@@ -21,7 +21,7 @@ module ApplicationHelper
   end
   
   def asset_display(text)
-    return text.gsub(/\[asset:([0-9+])\]/) {|s| find_asset_url($1)}
+    return text.gsub(/\[asset:([0-9]+)\]/) {|s| find_asset_url($1)}
   end
   
   def find_asset_url(asset_id)
