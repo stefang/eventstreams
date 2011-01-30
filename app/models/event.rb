@@ -33,6 +33,7 @@ class Event < ActiveRecord::Base
   has_many :owned_sponsors, :class_name => 'Sponsor', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_order'
   has_many :owned_venue_types, :class_name => 'VenueType', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_tweets, :class_name => 'Tweet', :foreign_key => :event_id, :dependent => :destroy, :order => 'created_at DESC'
+  has_many :owned_event_assets, :class_name => 'EventAsset', :foreign_key => :event_id, :dependent => :destroy
   has_many :menu_order_main, :class_name => 'EventMenu', :foreign_key => :event_id, :conditions=>{:location => 'main'}, :dependent => :destroy, :order => 'item_order'
   has_many :menu_order_footer, :class_name => 'EventMenu', :foreign_key => :event_id, :conditions=>{:location => 'footer'}, :dependent => :destroy, :order => 'item_order'
 

@@ -2,7 +2,7 @@
   - title @event.browser_title
   %section.overview
     %article.description
-      = auto_link(markdown(@event.description))
+      = auto_link(markdown(asset_display(@event.description)))
     -if @speakers.any?
       %section.speakers
         %h4.fontface_header 

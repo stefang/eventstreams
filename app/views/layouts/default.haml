@@ -59,6 +59,7 @@
                 %li= link_to "Talks", user_event_talks_path(current_user, @event), :class=>'button'
                 %li= link_to "Tracks", user_event_tracks_path(current_user, @event), :class=>'button'
                 %li= link_to "Sponsors", user_event_sponsors_path(current_user, @event), :class=>'button'
+                %li= link_to "Image Assets", user_event_event_assets_path(current_user, @event), :class=>'button'
                 %li= link_to "Manage Tweets", user_event_tweets_path(current_user, @event), :class=>'button'
             %section.event_content
               -unless @event.menu_order_main.any?

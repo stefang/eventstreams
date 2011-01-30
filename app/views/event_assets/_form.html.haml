@@ -1,0 +1,13 @@
+- form_for [current_user, @event, @event_asset], :html => { :multipart => true } do |f|
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :title
+      = f.text_field :title
+    %li.image_upload
+      = f.label :asset, "Image asset (Less than 1mb)"
+      = f.file_field :asset
+    %li
+      %button.button.save{:type => 'submit'}
+        Save

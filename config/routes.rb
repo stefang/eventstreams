@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :event_assets
 
   map.resources :invites, :conditions => { :subdomain => nil }
 
@@ -54,6 +55,7 @@ ActionController::Routing::Routes.draw do |map|
       e.resources :links
       e.resources :tracks
       e.resources :speakers
+      e.resources :event_assets
       e.resources :talks do |t|
         t.resources :videos
       end

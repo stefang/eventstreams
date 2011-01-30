@@ -2,4 +2,4 @@
 %article.event_page
   %h1
     =@event_page.title
-  = auto_link(markdown(@event_page.content))
+  = auto_link(markdown(asset_display(@event_page.content)))

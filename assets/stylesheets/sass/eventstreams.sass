@@ -199,6 +199,12 @@ section#eventstreams
             :position absolute
             :right 22px
             :font-size 11px
+          span.asset_thumbnail
+            :right 3px
+            :top 3px
+            img
+              :width 35px
+              :height 35px
           p.combo
             :margin 0 0 0 46px
           span.inline
@@ -474,7 +480,26 @@ section#eventstreams
           :border 2px solid #fff
           +box-shadow(0,2px,15px,rgba(0,0,0,0.5))
           +rounded(3px)
-        
+      li.asset_list
+        :border 1px solid #ccc
+        :width 420px
+        :padding 9px
+        +rounded(4px)
+        :margin-bottom 8px
+        :position relative
+        ul
+          li
+            background: white
+            margin-bottom: 1px
+            padding: 3px
+            img
+              width: 20px
+              height: 20px
+              vertical-align: middle
+              margin-right: 6px
+            .code
+              float: right
+              font-family: monospace
     nav#event_content
       :width 20%
       :height 100%

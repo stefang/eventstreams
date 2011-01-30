@@ -1,0 +1,2 @@
+module EventAssetsHelper
+end
