@@ -1,0 +1,26 @@
+@media print
+  body
+    #event_admin_bar
+      display: none
+    nav#main
+      display: none
+    #eventstreams_event
+      a
+        color: #333
+      header, section.main, section.footer
+        margin-left: 0
+        width: auto
+        .inner
+          width: auto
+      section.main
+        section.overview
+          article.description
+            padding-left: 0
+            background-image: none
+        section.programme
+          section.programme_day
+            width: 50%
+          table.programme
+            tr
+              td
+                border-bottom: 1px solid #333
