@@ -7,7 +7,6 @@ class VenuesController < ApplicationController
       @event = current_user.owned_events.find(params[:event_id])
       @venues = @event.owned_venues.all
       @global_venue_types = VenueType.all(:conditions => "global = true")
-      @owned_venue_types = @event.owned_venue_types.all
     else
       get_published_or_owned_event
       if @event.blank?

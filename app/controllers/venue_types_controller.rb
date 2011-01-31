@@ -10,7 +10,7 @@ class VenueTypesController < ApplicationController
   def create
     @event = current_user.owned_events.find(params[:event_id])
     @venue_type = VenueType.new(params[:venue_type])
-    @venue_type.event_id = @event
+    @venue_type.event_id = @event.id
     if @venue_type.save
       flash[:notice] = "Successfully created venue type."
       redirect_to user_event_venues_url(current_user, @event)

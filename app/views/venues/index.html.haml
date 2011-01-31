@@ -24,11 +24,12 @@
           = link_to 'Edit', edit_user_event_venue_path(current_user, @event, venue), :class=>'button manage'
           = venue.name
           = link_to 'Delete', user_event_venue_path(current_user, @event, venue), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'
+
   %section.item_list
     = link_to "New Location Type", new_user_event_venue_type_path, :class=>'button add'
     %h3 Custom Location Types
     %ul
-      - for venue_type in @owned_venue_types
+      - for venue_type in @event.owned_venue_types
         %li
           = link_to 'Edit', edit_user_event_venue_type_path(current_user, @event, venue_type), :class=>'button manage'
           = venue_type.name
