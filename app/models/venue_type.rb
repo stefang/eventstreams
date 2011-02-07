@@ -4,5 +4,6 @@ class VenueType < ActiveRecord::Base
   validates_uniqueness_of :name, :on => :create
   
   belongs_to :event
-    
+  has_many :published_venues, :class_name => 'Venue', :foreign_key => :venue_type_id, :conditions => {:published => true}
+  
 end

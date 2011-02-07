@@ -41,3 +41,20 @@
       - for venue_type in @global_venue_types
         %li
           = venue_type.name
+          
+  %hr
+  - for venue_type in @event.owned_venue_types
+    %li
+      = venue_type.event_id 
+      = venue_type.name 
+      %ul
+        -for venue in venue_type.published_venues
+          %li= venue.name
+  %hr
+  - for venue_type in @global_venue_types
+    %li
+      = venue_type.event_id 
+      = venue_type.name
+      %ul
+        -for venue in venue_type.published_venues
+          %li= venue.name
