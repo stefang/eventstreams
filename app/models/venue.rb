@@ -20,14 +20,6 @@ class Venue < ActiveRecord::Base
     
     return address_array.compact.reject(&:blank?).join(", ")
     
-    # = h venue.address_1
-    # = h venue.address_2
-    # = h venue.address_3
-    # = h venue.city
-    # = h venue.county
-    # = h venue.country
-    # = h venue.postcode
-    
   end
 
   private
