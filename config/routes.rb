@@ -48,7 +48,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users do |u|
     u.resources :events do |e|
-      e.resources :venues
+      e.resources :venues, :as => 'location'
       e.resources :venue_types, :except => [:index]      
       e.resources :event_pages
       e.resources :sponsors
