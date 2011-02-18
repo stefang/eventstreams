@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :event_assets
 
   map.resources :invites, :conditions => { :subdomain => nil }
 
