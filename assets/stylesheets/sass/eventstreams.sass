@@ -199,6 +199,10 @@ section#eventstreams
             :position absolute
             :right 22px
             :font-size 11px
+          abbr.date
+            :color #999
+            :margin-left 10px
+            :font-size 11px
           span.asset_thumbnail
             :right 3px
             :top 3px
@@ -211,7 +215,9 @@ section#eventstreams
             :position static
           .event_link.disabled
             :font-style italic
-            :color #ccc
+            :color #aaa
+            &:hover, &:focus
+              :color #666
           a.button.manage
             :float left
             :margin-top -4px
