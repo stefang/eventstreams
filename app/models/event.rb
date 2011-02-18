@@ -34,6 +34,7 @@ class Event < ActiveRecord::Base
   has_many :owned_venue_types, :class_name => 'VenueType', :foreign_key => :event_id, :dependent => :destroy
   has_many :owned_tweets, :class_name => 'Tweet', :foreign_key => :event_id, :dependent => :destroy, :order => 'created_at DESC'
   has_many :owned_event_assets, :class_name => 'EventAsset', :foreign_key => :event_id, :dependent => :destroy
+  has_many :owned_news_items, :class_name => 'EventNewsItem', :foreign_key => :event_id, :dependent => :destroy, :order => 'item_date DESC'
   has_many :menu_order_main, :class_name => 'EventMenu', :foreign_key => :event_id, :conditions=>{:location => 'main'}, :dependent => :destroy, :order => 'item_order'
   has_many :menu_order_footer, :class_name => 'EventMenu', :foreign_key => :event_id, :conditions=>{:location => 'footer'}, :dependent => :destroy, :order => 'item_order'
 
@@ -42,6 +43,7 @@ class Event < ActiveRecord::Base
   has_many :published_partners, :class_name => 'Sponsor', :foreign_key => :event_id, :conditions=>{:published => true, :sponsor_type => 'Partner'}, :order => 'item_order'
   has_many :published_links, :class_name => 'Link', :foreign_key => :event_id, :conditions=>{:published => true}
   has_many :published_talks, :class_name => 'Talk', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'start'
+  has_many :published_news_items, :class_name => 'EventNewsItem', :foreign_key => :event_id, :conditions=>{:published => true}, :order => 'item_date', :order => 'item_date DESC'
   
   attr_accessor :remove_logo
   before_save :perform_remove_logo

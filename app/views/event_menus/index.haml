@@ -47,6 +47,8 @@
     
     - if !@active_items.include?("static_items_home")
       %li.static_item#static_item_home='Home <span>/</span>'
+    - if !@event.owned_news_items.blank? && !@active_items.include?("static_items_news")
+      %li.static_item#static_item_news='News <span>/news</span>'
     - if !@event.owned_speakers.blank? && !@active_items.include?("static_items_speakers")
       %li.static_item#static_item_speakers='Speakers <span>/speakers</span>'
     - if !@event.published_talks.blank? && !@active_items.include?("static_items_programme")

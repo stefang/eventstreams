@@ -1,0 +1,11 @@
+one:
+  headline: MyString
+  content: MyText
+  item_date: 2011-02-18
+  event_id: 1
+
+two:
+  headline: MyString
+  content: MyText
+  item_date: 2011-02-18
+  event_id: 1

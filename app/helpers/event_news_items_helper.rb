@@ -1,0 +1,2 @@
+module EventNewsItemsHelper
+end

@@ -1,0 +1,28 @@
+- title "News | #{@event.title}"
+
+- unless current_subdomain.blank?
+  %h1 News
+  %ul.news_items
+    - for story in @event_news_items
+      %li[story]
+        %h4
+          = link_to story.headline, story
+          %span
+            ="#{story.item_date.to_date.to_s(:dmy_long)}"
+          
+        = auto_link(markdown(asset_display(story.content)))
+
+- else
+
+  %section.item_list
+    = link_to "New News Item", new_user_event_event_news_item_path, :class=>'button add'
+    %h3 
+      Your Event News
+    %ul
+      - for story in @event_news_items
+        %li[story]
+          = link_to 'Edit', edit_user_event_event_news_item_path(current_user, @event, story), :class=>'button manage'
+          = story.headline
+          %span
+            = story.item_date.to_s(:form_display)
+          = link_to 'Delete', user_event_event_news_item_path(current_user, @event, story), :confirm => 'Are you sure?', :method => :delete, :class=>'button delete'

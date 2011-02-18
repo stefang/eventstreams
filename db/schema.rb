@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101011155501) do
+ActiveRecord::Schema.define(:version => 20110218153531) do
+
+  create_table "event_assets", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+  end
 
   create_table "event_menus", :force => true do |t|
     t.string   "item_type"
@@ -20,7 +31,21 @@ ActiveRecord::Schema.define(:version => 20101011155501) do
     t.datetime "updated_at"
     t.string   "title"
     t.string   "url"
+    t.string   "location"
   end
+
+  create_table "event_news_items", :force => true do |t|
+    t.string   "headline"
+    t.text     "content"
+    t.date     "item_date"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "published"
+    t.string   "cached_slug"
+  end
+
+  add_index "event_news_items", ["cached_slug"], :name => "index_event_news_items_on_cached_slug"
 
   create_table "event_pages", :force => true do |t|
     t.string   "title"
@@ -57,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20101011155501) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.text     "contact_description"
   end
 
   create_table "invites", :force => true do |t|
@@ -130,6 +156,8 @@ ActiveRecord::Schema.define(:version => 20101011155501) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "url"
+    t.text     "description"
+    t.string   "sponsor_type"
   end
 
   create_table "talks", :force => true do |t|

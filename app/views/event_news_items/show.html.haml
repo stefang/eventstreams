@@ -1,0 +1,8 @@
+- title "#{@event_news_item.headline} | #{@event.title}" 
+%article.event_news_item
+  %h1
+    =@event_news_item.headline
+    %span
+      ="#{@event_news_item.item_date.to_date.to_s(:dmy_long)}"
+  = auto_link(markdown(asset_display(@event_news_item.content)))
+  

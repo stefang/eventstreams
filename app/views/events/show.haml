@@ -19,6 +19,18 @@
           - for venue in @venues
             %li.location{:data => {:lat => venue.lat, :lng => venue.lng, :venue_name => venue.name}}
               = h venue.name
+    -if @latest_news.any?
+      %section.latest_news
+        %h4.fontface_header
+          =link_to "Latest News", event_news_items_path
+        %ul
+          - for story in @latest_news
+            %li[story]
+              %h4
+                = link_to story.headline, story
+                %span
+                  ="#{story.item_date.to_date.to_s(:dmy_long)}"
+        
     -if @tweets.any?
       %section.tweets
         %h4.fontface_header

@@ -15,6 +15,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :venues, :as => 'location', :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :tweets, :only => [:index, :show], :conditions => { :subdomain => /.+/ }
   map.resources :sponsors, :only => [:index], :conditions => { :subdomain => /.+/ }
+  map.resources :event_news_items, :as => 'news', :only => [:index, :show], :conditions => { :subdomain => /.+/ }
+  
 
   map.with_options :controller => 'event_contact' do |c|
     c.contact '/contact',
@@ -55,6 +57,7 @@ ActionController::Routing::Routes.draw do |map|
       e.resources :tracks
       e.resources :speakers
       e.resources :event_assets
+      e.resources :event_news_items
       e.resources :talks do |t|
         t.resources :videos
       end

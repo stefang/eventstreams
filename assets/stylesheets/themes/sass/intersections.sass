@@ -307,12 +307,29 @@ section#eventstreams_event
       :margin-left 20px
       .map_wrap.homepage
         :display none
+      section.latest_news
+        :margin-bottom 40px
+        ul
+          li
+            :font-size 12px
+            :margin-bottom 9px
+            :clear left
+            border-bottom: 1px dotted #ddd
+            h4
+              margin-bottom: 10px
+              font-size: 14px
+              font-weight: bold
+              span
+                font-size: 11px
+                font-weight: normal
+                float: right
+                color: #777
       section.tweets
         :margin-bottom 40px
         ul
           li
             :font-size 12px
-            :margin-bottom 10px
+            :margin-bottom 20px
             :clear left
             :overflow auto
             img
@@ -436,6 +453,37 @@ section#eventstreams_event
         :color #aaa
         :font-size 12px
         :letter-spacing 0
+  .event_news_item
+    overflow: auto
+    h1, h4
+      clear: both
+    h1
+      span
+        float: right
+        font-size: 13px
+        font-weight: normal
+        letter-spacing: 0
+    p
+      img
+        float: left
+        margin-right: 20px
+        margin-bottom: 20px
+  ul.news_items
+    li.event_news_item
+      padding-bottom: 20px
+      margin-bottom: 40px
+      background:
+        image: url('../../images/themes/intersections/diagonals.png')
+        position: bottom
+        repeat: repeat-x
+      h4
+        span
+          float: right
+          font-size: 13px
+      &:last-child
+        background: none
+        paddin-bottom: 0
+        margin-bottom: 0
   section.programme_day
     width: 385px
     float: left

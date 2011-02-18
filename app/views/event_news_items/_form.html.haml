@@ -1,0 +1,26 @@
+- form_for [current_user, @event, @event_news_item] do |f|
+  %ol
+    %li
+      = f.error_messages
+    %li
+      = f.label :headline
+      = f.text_field :headline
+    %li
+      = f.label :content
+      = f.text_area :content
+    %li.asset_list
+      = render 'shared/assets_list'
+    %li
+      = f.label :item_date
+      = f.text_field :item_date, :class => "datepicker", :value =>@event_news_item.item_date ? @event_news_item.item_date.to_s(:form_display) : Date.today.to_s(:form_display)
+    %li.published
+      This story is
+      %em{:class => @event_news_item.published ? "visible" : "hidden"}
+        = @event_news_item.published ? "Visible" : "Hidden"
+      %span
+        = f.label :published, "Show"
+        = f.check_box :published
+      
+    %li
+      %button.button.save{:type => 'submit'}
+        Save
