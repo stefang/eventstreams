@@ -15,11 +15,11 @@ config.action_controller.perform_caching             = false
 
 # Sessions across subdomains
 
-COOKIE_DOMAIN = '.eventstreams.local'
+COOKIE_DOMAIN = '.hexxie.com'
 
 DO_NOT_REPLY = "donotreply@eventstreams.local"
 
-ActionController::Base.asset_host = "assets" + COOKIE_DOMAIN
+ActionController::Base.asset_host = "assets" + COOKIE_DOMAIN + ":3000"
 
 if ActionController::Base.session
   ActionController::Base.session[:domain] = COOKIE_DOMAIN
