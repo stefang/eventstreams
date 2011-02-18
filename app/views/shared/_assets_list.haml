@@ -1,9 +1,11 @@
-%ul
-  - for asset in @event.owned_event_assets
-    %li[asset]
-      %span.thumbnail
-        = image_tag(asset.asset.url(:tiny))
-      %span.title
-        = asset.title
-      %span.code
-        ="[asset:#{asset.id}]"
+-if @event.owned_event_assets.any?
+  %li.asset_list
+    %ul
+      - for asset in @event.owned_event_assets
+        %li[asset]
+          %span.thumbnail
+            = image_tag(asset.asset.url(:tiny))
+          %span.title
+            = asset.title
+          %span.code
+            ="[asset:#{asset.id}]"

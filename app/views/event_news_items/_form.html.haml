@@ -8,9 +8,8 @@
     %li
       = f.label :content
       = f.text_area :content
-    %li.asset_list
-      = render 'shared/assets_list'
-    %li
+    = render 'shared/assets_list'
+    %li.date
       = f.label :item_date
       = f.text_field :item_date, :class => "datepicker", :value =>@event_news_item.item_date ? @event_news_item.item_date.to_s(:form_display) : Date.today.to_s(:form_display)
     %li.published

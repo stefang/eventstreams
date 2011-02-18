@@ -8,8 +8,7 @@
     %li
       = f.label :content
       = f.text_area :content
-    %li.asset_list
-      = render 'shared/assets_list'
+    = render 'shared/assets_list'
     %li.published
       This page is
       %em{:class => @event_page.published ? "visible" : "hidden"}

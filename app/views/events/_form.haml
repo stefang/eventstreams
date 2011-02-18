@@ -39,8 +39,7 @@
     %li
       = f.label :contact_description
       = f.text_area :contact_description
-    %li.asset_list
-      = render 'shared/assets_list'
+    = render 'shared/assets_list'
   %ol
     %li.image_upload
       -if @event.logo?
