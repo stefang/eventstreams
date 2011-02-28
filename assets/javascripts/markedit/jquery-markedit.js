@@ -435,7 +435,6 @@ $.extend({
 
         // Locate textarea
         var textarea = MarkEdit.getTextArea(this);
-        textarea.focus();
 
         // Get IE selection (of course IE would take 5x the amount of code)
         var r;
@@ -1035,7 +1034,6 @@ $.extend({
                 var selEnd = selStart + state.select.length;
 
                 // Make active
-                $(textarea).focus();
 
                 if (textarea.setSelectionRange) {
 
