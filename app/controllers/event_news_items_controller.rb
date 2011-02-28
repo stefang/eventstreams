@@ -50,9 +50,9 @@ class EventNewsItemsController < ApplicationController
   
   def destroy
     @event = current_user.owned_events.find(params[:event_id])
-    @event_news_item = @event.owned_news_items.find(params[:id])
+    @event_news_item = @event.owned_news_items.find(params[:id], :scope => @event)
     @event_news_item.destroy
-    flash[:notice] = "Successfully destroyed event news item."
+    flash[:notice] = "Successfully deleted event news item."
     redirect_to user_event_event_news_items_path(current_user, @event)
   end
 end

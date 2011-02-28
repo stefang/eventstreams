@@ -52,4 +52,20 @@ Feature: Create event news item
     And I should see "Latest news headline"
     When I go to the myevent subdomain
     Then I should not see "Latest news headline"
+    
+  Scenario: User creates and deletes news item successfully
+    Given that I am a user
+    And I have an event called "myevent"
+    When I go to my user events page
+    Then I should see "myevent"
+    And I follow "Manage"
+    And I follow "News"
+    And I follow "New News Item"
+    Then I fill in "Headline" with "Latest news headline"
+    And I press "Save"
+    Then I should see "Successfully created event news item."
+    And I should see "Latest news headline"
+    When I follow "Delete"
+    Then I should see "Successfully deleted event news item."
+    
    
