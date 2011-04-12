@@ -1,0 +1,534 @@
+@import 'mixins'
+@import 'reset'
+
+body
+  :background #fff
+  :font
+    :family sans-serif
+  :color #333
+  p
+    :margin-bottom 20px
+  a
+    :color #e16736
+    &:hover, &:focus
+      :color #333    
+  h1, h2, h3, h4, h5
+    :font
+      :family sans-serif
+  form
+    ol
+      list-style: none
+      li
+        padding: 0
+        margin: 0
+        label
+          display: block
+          margin-bottom: 4px
+        input, textarea
+          width: 326px
+          border: 1px solid #ddd
+          padding: 6px
+          font:
+            size: 13px
+            family: sans-serif
+          margin-bottom: 20px
+          &:focus
+            border: 1px solid #aaa
+            +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.3))
+        textarea
+          height: 102px
+        button
+          padding: 6px 9px
+          border: 0
+          font-size: 12px
+          background: #333
+          color: #eee
+          cursor: pointer
+          border-radius: 3px
+          -moz-border-radius: 3px
+          -webkit-border-radius: 3px
+          text-shadow: rgba(0,0,0,0.6) 0px -1px 0px
+          +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.6))
+          :font
+            :family Georgia, sans-serif
+          &:focus, &:hover
+            background: #111
+  .fontface_header
+    :font-size 24px
+    :line-height 40px
+    :border-bottom 1px solid #eee
+    :margin-bottom 39px
+section#eventstreams_event
+  :clear both
+  .inner
+    :width 940px
+    :padding 0 20px
+    :margin 0 auto
+    :position relative
+  header
+    .inner
+      :padding-top 60px
+      :padding-bottom 40px
+    #event_logo
+      :font
+        :family sans-serif
+        :size 30px
+      :letter-spacing -1px
+      :line-height 40px
+      :width 680px
+      :margin-bottom 0
+    a.event_logo
+      :display block
+      :padding 0
+      :margin 0
+      img
+        :display block
+        :margin 0
+        :padding 0
+    .tagline
+      :font
+        :size 12px
+        :style italic
+      :line-height 12px
+      :margin 7px 0 0 0
+      :color #84837f
+      :text-shadow 0 1px 1px rgba(255,255,255,0.8)
+    .event_meta
+      :position absolute
+      :right 20px
+      :top 60px
+      :text-shadow 0 1px 1px rgba(255,255,255,0.8)
+      :width 340px
+      :text-align right
+  nav#main
+    .inner
+      ul
+        :background-color #749ABF
+        :height 40px
+        +rounded(3px)
+        li
+          a
+            :font
+              :size 14px
+              :weight normal
+            :display block
+            :float left
+            :padding 10px 20px
+            :border-right 1px solid white
+            :color white
+            :text-shadow 0 -1px 1px rgba(0,0,0,0.4)
+            &:hover, &:focus
+              :background-color rgba(0,0,0,0.1)
+        li.active
+          a
+            :background
+              :image url('../../images/themes/iwmw/menu_selected.png')
+              :repeat no-repeat
+              :position bottom
+      a.register
+        :position absolute
+        :top 0
+        :right 20px
+        :border 0
+        :border-left 1px solid white
+        :text-transform uppercase
+        :text-shadow 1px 1px 0 #f4f3ef, 2px 2px 0 rgba(0,0,0,0.2)
+        :letter-spacing 2px
+        :padding 10px 20px
+        :padding-right 15px
+        :font
+          :family 'LeagueGothicRegular', Impact, sans-serif
+          :size 24px
+        span
+          :display block
+          :width 20px
+          :height 40px
+          :position absolute
+          :right -20px
+          :top 0
+          :opacity 0.1
+          :background
+            :image url('../../images/register_end.png')
+        &:hover, &:focus
+          :background-color rgba(0,0,0,0.1)
+          span
+            :opacity 0.2
+  section.main
+    :clear both
+    :padding-top 40px
+    :padding-bottom 40px
+    :overflow hidden
+    h1
+      :font-size 24px
+      :line-height 40px
+      :border-bottom 1px solid #eee
+      :margin-bottom 39px
+    section.overview
+      :width 580px
+      :float left
+      article.description
+        :margin-bottom 40px
+        blockquote
+          :background #f1f1f1
+          :padding 19px 20px 1px 20px
+          :margin 0 0 20px 0
+          +rounded(3px)
+        ul, ol
+          :list-style disc
+          :padding-left 20px
+          :margin-bottom 20px
+        ol
+          :list-style-type decimal
+    ul.speakers_inline
+      :margin-bottom 20px
+      li.speaker
+        :float left
+        :clear none
+        :margin-right 20px
+        :margin-bottom 13px
+        :position relative
+        :background white
+        :width 100px
+        +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
+        a
+          :border 1px solid #aaa
+          :width 92px
+          :height 73px
+          :margin 3px 3px 9px 3px
+          :display block
+          :overflow hidden
+          :font-weight normal
+          img
+            :width 92px
+          span
+            :display none
+            :padding 3px 6px
+            :background rgba(0,0,0,0.8)
+            :color #eee
+            :position absolute
+            :top 3px
+            :left 3px
+            :width 82px
+            :height 69px
+            :font-size 11px
+          &:hover
+            span
+              :display block
+      li.speaker.last
+        :margin-right 0
+    section.videos
+      :clear both
+    section.event_meta
+      :width 340px
+      :float left
+      :margin-left 20px
+      .map_wrap.homepage
+        :width 318px
+        :padding 9px 10px 0 10px
+        :background white
+        :margin-bottom 19px
+        :border 1px solid #eee
+        +rounded(3px)
+        #map_canvas
+          :width 320px
+          :height 200px
+        ul.venues
+          :margin-bottom 0
+          li
+            :line-height 30px
+            :text-align right
+            :font-size 11px
+            :color #999
+      section.latest_news
+        :margin-bottom 40px
+        ul
+          li
+            :font-size 12px
+            :margin-bottom 9px
+            :clear left
+            border-bottom: 1px dotted #ddd
+            h4
+              margin-bottom: 10px
+              font-size: 14px
+              font-weight: bold
+              span
+                font-size: 11px
+                font-weight: normal
+                float: right
+                color: #777
+      section.tweets
+        :margin-bottom 40px
+        h4
+          :color #888
+          a
+            :color #555
+        ul
+          li
+            :font-size 11px
+            :margin-bottom 20px
+            img
+              :float left
+              :margin 0 6px 6px 0
+    ul.speakers
+      li.speaker
+        :border-bottom 1px solid #ddd
+        :margin-bottom 19px
+        :min-height 120px
+        h4
+          :font
+            :size 20px
+        a.portrait
+          :float left
+          :clear none
+          :margin-right 20px
+          :position relative
+          :background white
+          :width 100px
+          +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
+          :margin-bottom 20px
+          :margin-right 20px
+          img
+            :border 1px solid #aaa
+            :width 92px
+            :height 80px
+            :margin 3px 3px 14px 3px
+            :display block
+            :overflow hidden
+          &:hover, &:focus
+            +box-shadow(0, 2px, 5px, rgba(0,0,0,0.6))
+
+        p, ul
+          :margin-left 120px
+        ul
+          :margin-bottom 20px
+      li.speaker:last-child
+        :border-bottom 0px
+    h4.fontface_header
+      clear: both
+          
+    .map_wrap.venuepage
+      :width 920px
+      :height 200px
+      :padding 9px 10px 9px 10px
+      :background white
+      :margin-bottom 19px
+      :border 1px solid #eee
+      +rounded(3px)
+      #map_canvas.venues
+        :width 920px
+        :height 200px
+    section.event_venues, section.other_venues
+      :width 460px
+      :float left
+      h5
+        :font-weight bold
+        :letter-spacing -1px
+        :line-height 22px
+        :margin-bottom 0px
+      ul
+        li
+          :margin-bottom 22px
+          :position relative
+          span.type
+            :position absolute
+            :top 0
+            :right 0
+            :display block
+            :background #D8D7D3
+            :padding 2px 6px
+            :color #F6F5F1
+            :font
+              :family sans-serif
+              :size 11px
+              :weight bold
+          ul
+            li
+              :border-bottom 0
+              :padding-bottom 0
+              :margin-bottom 0
+              
+    section.other_venues
+      :margin-left 20px
+  article.event_page
+    h1
+      :font
+        :size 20px
+        :weight normal
+      :line-height 40px
+      :color #fff
+      :letter-spacing -1px
+      :margin-bottom 20px
+      :color #222
+    h2
+      :font
+        :size 18px
+        :weight normal
+      :line-height 20px
+      :color #fff
+      :letter-spacing -1px
+      :margin-bottom 20px
+      :color #000
+    ol, ul
+      padding-left: 20px
+      margin-bottom: 20px
+    ol
+      list-style: decimal
+    ul
+      list-style: disc
+
+  article.speaker
+    :padding-left 120px
+    img
+      :float left
+      :clear none
+      :margin-left -120px
+      :position relative
+      :background white
+      :width 90px
+      :padding 4px 4px 14px 3px
+      +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
+      :margin-bottom 20px
+      :margin-right 20px
+      :width 92px
+      :height 80px
+      :display block
+      :overflow hidden  
+  article.talk
+    h1.talk_title
+      :position relative
+      :height 20px
+      :font-size 20px
+      span
+        :position absolute
+        :right 0
+        :bottom 1px
+        :color #aaa
+        :font-size 12px
+  h5.day_header
+    :width 20%
+    :float left
+    :padding 8px 0px 8px
+  table.programme
+    :width 80%
+    :font-size 12px
+    :margin-bottom 40px
+    tr.date_header
+      td
+        :border-width 2px
+        :padding-top 18px
+        :padding-bottom 18px
+        :font-weight normal
+        :font-size 18px
+        :line-height 18px
+        :background none
+    tr
+      td
+        :vertical-align top
+        :padding 8px 8px 8px
+        :border-bottom 1px solid #ddd
+      td.time
+        :width 100px
+      td.description
+        ul
+          :margin 3px 0px 3px 10px
+          li
+            :line-height 20px
+            h4
+              :font-size 16px
+              :font-weight normal
+              :margin-bottom 1px
+          li.description
+            :margin-top 19px
+            p
+              :font-size 12px
+            p:last-child
+              :margin-bottom 0
+  ul.sponsors
+    li.sponsor
+      :float left
+      :margin-right 20px
+      :margin-bottom 20px
+      :float left
+      a.logo
+        :position relative
+        +box-shadow(0, 1px, 2px, rgba(0,0,0,0.3))
+        :padding 5px
+        :background
+          :color white
+          :repeat no-repeat
+          :position 50% 50%
+        :display block
+        :clear none
+        :width 210px
+        :height 90px
+        :text-align center
+        img
+          :max-width 210px
+          :max-height 90px
+        &:hover, &:focus
+          +box-shadow(0, 2px, 5px, rgba(0,0,0,0.6))
+    li.sponsor.last
+      :margin-right 0
+ 
+  section.footer
+    section.sponsors
+      :clear both
+      :background rgba(0,0,0,0.05)
+      :padding 36px 20px 20px 20px
+      :border-top 4px solid #ccc
+      :overflow auto
+      .inner
+        :height auto
+        :border 0
+      h4.fontface_header
+        :border-bottom 0
+        :padding-bottom 0
+    .inner
+      :height 79px
+      :border-top 1px solid #ddd
+      position: relative
+      nav#footer
+        float: left
+        margin-top: 14px
+        margin-bottom: 14px
+        ul
+          float: left
+          li
+            float: left
+            margin-right: 20px
+            a
+              display: block
+              padding: 6px
+    section.powered
+      :clear both
+      :background rgba(0,0,0,0.05)
+      :overflow auto
+      .inner
+        :border-top 0
+        :height auto
+      a.powered_by
+        margin-top: 20px
+        margin-bottom: 20px
+        float: right
+        opacity: 0.5
+        display: block
+        width: 166px
+        height: 29px
+        text-indent: -5000px
+        background: url(../../images/powered_by.png)
+        &:hover
+          opacity: 1
+            
+#flash
+  .inner
+    div
+      margin: 20px 0
+      background: #333
+      color: #eee
+      padding: 10px
+      +box-shadow(0px, 1px, 4px, rgba(0,0,0,0.6))
+      +rounded(3px)
+
+@import 'admin_bar'
+@import 'paper_mobile'
+@import 'print'

@@ -51,14 +51,15 @@
               %li
                 %a.hashtag{:href=>"http://search.twitter.com/search?q=#{u @event.hashtag}"}
                   =@event.hashtag
-      %nav#main
-        .inner
-          %ul.main
-            - for event_menu in @event.menu_order_main
-              %li{:class => event_menu.url == request.request_uri ? "active" : ""}
-                = link_to event_menu.title, event_menu.url
-          - unless @event.booking_url.blank?
-            = link_to t("#{@event.theme_name}.register")+"<span></span>", @event.booking_url, :class=> 'register'
+      -if @event.menu_order_main.any?
+        %nav#main
+          .inner
+            %ul.main
+              - for event_menu in @event.menu_order_main
+                %li{:class => event_menu.url == request.request_uri ? "active" : ""}
+                  = link_to event_menu.title, event_menu.url
+            - unless @event.booking_url.blank?
+              = link_to t("#{@event.theme_name}.register")+"<span></span>", @event.booking_url, :class=> 'register'
                 
       = render :partial => 'layouts/flashes'
       %section.main

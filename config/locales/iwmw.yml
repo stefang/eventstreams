@@ -1,0 +1,10 @@
+en:
+  iwmw:
+    register: "Get Tickets"
+    sponsors: "Sponsors"
+    partners: "Partners"
+    location: "Getting there"
+    front_page_speaker_total: 24
+    front_page_speaker_count: 4
+    front_page_tweet_count: 3
+    front_page_news_count: 3

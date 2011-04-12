@@ -11,7 +11,7 @@ function initialize_google_map() {
 	
 	if (positions.length > 0) {
 	  var myOptions = {
-	    zoom: 15,
+	    zoom: 12,
 	    center: positions[0],
 			disableDefaultUI: true,
 			 navigationControl: true,
