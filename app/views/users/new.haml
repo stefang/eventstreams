@@ -7,8 +7,7 @@
       =link_to t('authentication.sign_in'), new_session_path
 
   -form_for @user, :html => { :multipart => true }  do |form|
-    = hidden_field_tag :invite_code, params[:invite_code]
-    %ol
+    %ol.account_form
       = form.error_messages
       %li
         = form.label :first_name

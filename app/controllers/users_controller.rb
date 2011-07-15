@@ -6,31 +6,17 @@ class UsersController < Clearance::UsersController
   def create
     @user = ::User.new params[:user]
     @user.superadmin = false
-    invite_code = params[:invite_code]
-    @invite = Invite.find_redeemable(invite_code)
-    if invite_code && @invite
-      if @user.save
-        @invite.redeemed!
-        ::ClearanceMailer.deliver_confirmation @user
-        flash[:notice] = t('flash.users.notice.signed_up')
-        redirect_to url_after_create
-      else
-        render :controller=>'users', :action => 'new'
-      end
+    if @user.save
+      ::ClearanceMailer.deliver_confirmation @user
+      flash[:notice] = t('flash.users.notice.signed_up')
+      redirect_to url_after_create
     else
-      flash.now[:notice] = "Sorry, you need an invite to sign up"
-      render :action => 'new'
+      render :controller=>'users', :action => 'new'
     end
   end
 
   def new
     @user = User.new
-    @invite = Invite.find_by_invite_code(params[:invite_code]) if params[:invite_code]
-    @user.email = @invite.email unless @invite.blank?
-    if @invite.blank?
-      flash[:notice] = "Sorry, you need an invite to sign up"
-      redirect_to root_path
-    end
   end
 
   def index

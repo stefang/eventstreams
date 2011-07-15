@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218153531) do
+ActiveRecord::Schema.define(:version => 20110622144631) do
 
   create_table "event_assets", :force => true do |t|
     t.string   "title"
@@ -85,20 +85,6 @@ ActiveRecord::Schema.define(:version => 20110218153531) do
     t.text     "contact_description"
   end
 
-  create_table "invites", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "invite_code", :limit => 40
-    t.datetime "invited_at"
-    t.datetime "redeemed_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "invites", ["id", "email"], :name => "index_invites_on_id_and_email"
-  add_index "invites", ["id", "invite_code"], :name => "index_invites_on_id_and_invite_code"
-
   create_table "links", :force => true do |t|
     t.string   "title"
     t.string   "url"
@@ -156,8 +142,7 @@ ActiveRecord::Schema.define(:version => 20110218153531) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "url"
-    t.text     "description"
-    t.string   "sponsor_type"
+    t.string   "sponsor_type",      :default => "Sponsor"
   end
 
   create_table "talks", :force => true do |t|
@@ -205,13 +190,11 @@ ActiveRecord::Schema.define(:version => 20110218153531) do
     t.string   "email"
     t.string   "encrypted_password",  :limit => 128
     t.string   "salt",                :limit => 128
-    t.string   "confirmation_token",  :limit => 128
-    t.string   "remember_token",      :limit => 128
+    t.string   "token",               :limit => 128
+    t.datetime "token_expires_at"
     t.boolean  "email_confirmed",                    :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "token",               :limit => 128
-    t.datetime "token_expires_at"
     t.boolean  "superadmin",                         :default => false
     t.string   "first_name"
     t.string   "last_name"
@@ -223,9 +206,7 @@ ActiveRecord::Schema.define(:version => 20110218153531) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["id", "token"], :name => "index_users_on_id_and_token"
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["token"], :name => "index_users_on_token"
 
   create_table "venue_types", :force => true do |t|
