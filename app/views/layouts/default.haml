@@ -10,7 +10,6 @@
     = javascript_include_tag "jquery", "jquery_ui", "jquery-notice", "farbtastic-min", "eventstreams_admin", :cache => false
     -unless RAILS_ENV == "production" || RAILS_ENV == "staging"
       = javascript_include_tag "minigrid", :cache => false
-    = javascript_include_tag 'markedit/showdown', 'markedit/jquery-markedit'
     = stylesheet_link_tag 'eventstreams', :media => 'screen, projection', :cache => false
     -if RAILS_ENV == "production"
       = render :partial => 'layouts/ga' 

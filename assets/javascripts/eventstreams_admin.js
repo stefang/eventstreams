@@ -52,8 +52,6 @@ $(document).ready(function(){
 	
 	$("#sortable_source, #sortable_target").disableSelection();
 	
-	$('textarea').not('.no_markedit').markedit({'toolbar': { 'layout': 'bold italic quote | link numberlist bulletlist heading'}});
-	
   $('#flash').hide();
   if ($('#flash').length > 0) {
     flashType = $('#flash div').attr('id');
