@@ -9,7 +9,7 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
-COOKIE_DOMAIN = '.staging.eventstreamsapp.com'
+COOKIE_DOMAIN = '.staging.eventstreamsapp.triplegeek.com'
 
 ActionController::Base.asset_host = "assets" + COOKIE_DOMAIN
 
@@ -43,7 +43,7 @@ ActionMailer::Base.sendmail_settings = {
   :arguments      => '-i -t'
 }
 
-HOST = "staging.eventstreamsapp.com"
-DO_NOT_REPLY = "Eventstreams Staging <donotreply@staging.eventstreamsapp.com>"
+HOST = "staging.eventstreamsapp.triplegeek.com"
+DO_NOT_REPLY = "Eventstreams Staging <donotreply@staging.eventstreamsapp.triplegeek.com>"
 
 Paperclip.options[:image_magick_path] = "/usr/bin"

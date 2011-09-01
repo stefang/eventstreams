@@ -5,23 +5,23 @@ set :web_command, 'sudo /etc/init.d/nginx' # command to start/stop apache
 
 task :edge do
   set :rails_env, 'edge'
-  set :domain, "eventstreams@eventstreams.triplegeek.com"
-  set :my_deploy_path, "/var/www/eventstreams.triplegeek.com/app/"
-  set :deploy_to, "/var/www/eventstreams.triplegeek.com/app/"
+  set :domain, "g3@triplegeek.com"
+  set :my_deploy_path, "/var/www/edge.eventstreamsapp.com/app/"
+  set :deploy_to, "/var/www/edge.eventstreamsapp.com/app/"
 end
 
 task :staging do
   set :rails_env, 'staging'
-  set :domain, "app@eventstreamsapp.com"
-  set :my_deploy_path, "/srv/www/staging.eventstreamsapp.com/app/"
-  set :deploy_to, "/srv/www/staging.eventstreamsapp.com/app/"
+  set :domain, "g3@triplegeek.com"
+  set :my_deploy_path, "/var/www/staging.eventstreamsapp.com/app/"
+  set :deploy_to, "/var/www/staging.eventstreamsapp.com/app/"
 end
 
 task :production do
   set :rails_env, 'production'
-  set :domain, "app@eventstreamsapp.com"
-  set :my_deploy_path, "/srv/www/eventstreamsapp.com/app/"
-  set :deploy_to, "/srv/www/eventstreamsapp.com/app/"
+  set :domain, "g3@triplegeek.com"
+  set :my_deploy_path, "/var/www/eventstreamsapp.com/app/"
+  set :deploy_to, "/var/www/eventstreamsapp.com/app/"
 end
 
 desc "Full deployment cycle"
@@ -31,7 +31,7 @@ namespace :vlad do
       run "ln -s #{my_deploy_path}shared/bundled_gems #{my_deploy_path}current/vendor/bundle"
   end
   remote_task :manual_migrate do
-      run "cd #{my_deploy_path}current && /usr/bin/rake db:migrate RAILS_ENV=#{rails_env}"
+      run "cd #{my_deploy_path}current && /usr/local/bin/rake db:migrate RAILS_ENV=#{rails_env}"
   end
   remote_task :symlink_assets do
       run "ln -s #{my_deploy_path}shared/event_assets #{my_deploy_path}current/assets/event_assets"

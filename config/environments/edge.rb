@@ -9,7 +9,7 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
-COOKIE_DOMAIN = '.eventstreams.triplegeek.com'
+COOKIE_DOMAIN = '.edge.eventstreamsapp.triplegeek.com'
 
 ActionController::Base.asset_host = "assets" + COOKIE_DOMAIN
 
@@ -37,7 +37,7 @@ end
 # Enable threaded mode
 # config.threadsafe!
 
-HOST = "eventstreams.triplegeek.com"
-DO_NOT_REPLY = "Eventstreams Edge <donotreply@eventstreams.triplegeek.com>"
+HOST = "edge.eventstreamsapp.triplegeek.com"
+DO_NOT_REPLY = "Eventstreams Edge <donotreply@edge.eventstreamsapp.triplegeek.com>"
 
 Paperclip.options[:image_magick_path] = "/usr/local/bin"
