@@ -5,23 +5,23 @@ set :web_command, 'sudo /etc/init.d/nginx' # command to start/stop apache
 
 task :edge do
   set :rails_env, 'edge'
-  set :domain, "g3@triplegeek.com"
-  set :my_deploy_path, "/var/www/edge.eventstreamsapp.com/app/"
-  set :deploy_to, "/var/www/edge.eventstreamsapp.com/app/"
+  set :domain, "eventstreams@eventstreams.triplegeek.com"
+  set :my_deploy_path, "/var/www/eventstreams.triplegeek.com/app/"
+  set :deploy_to, "/var/www/eventstreams.triplegeek.com/app/"
 end
-
+ 
 task :staging do
   set :rails_env, 'staging'
-  set :domain, "g3@triplegeek.com"
-  set :my_deploy_path, "/var/www/staging.eventstreamsapp.com/app/"
-  set :deploy_to, "/var/www/staging.eventstreamsapp.com/app/"
+  set :domain, "app@eventstreamsapp.com"
+  set :my_deploy_path, "/srv/www/staging.eventstreamsapp.com/app/"
+  set :deploy_to, "/srv/www/staging.eventstreamsapp.com/app/"
 end
-
+ 
 task :production do
   set :rails_env, 'production'
-  set :domain, "g3@triplegeek.com"
-  set :my_deploy_path, "/var/www/eventstreamsapp.com/app/"
-  set :deploy_to, "/var/www/eventstreamsapp.com/app/"
+  set :domain, "app@eventstreamsapp.com"
+  set :my_deploy_path, "/srv/www/eventstreamsapp.com/app/"
+  set :deploy_to, "/srv/www/eventstreamsapp.com/app/"
 end
 
 desc "Full deployment cycle"
